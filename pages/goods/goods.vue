@@ -82,39 +82,39 @@ export default {
           img: [
             {
               mid: 0,
-              url: '/static/images/img.png'
+              url: '/static/images/img.jpg'
             },
             {
               mid: 1,
-              url: '/static/images/img.png'
+              url: '/static/images/img.jpg'
             },
             {
               mid: 2,
-              url: '/static/images/img.png'
+              url: '/static/images/img.jpg'
             },
             {
               mid: 3,
-              url: '/static/images/img.png'
+              url: '/static/images/img.jpg'
             },
             {
               mid: 4,
-              url: '/static/images/img.png'
+              url: '/static/images/img.jpg'
             },
             {
               mid: 5,
-              url: '/static/images/img.png'
+              url: '/static/images/img.jpg'
             },
             {
               mid: 6,
-              url: '/static/images/img.png'
+              url: '/static/images/img.jpg'
             },
             {
               mid: 7,
-              url: '/static/images/img.png'
+              url: '/static/images/img.jpg'
             },
             {
               mid: 8,
-              url: '/static/images/img.png'
+              url: '/static/images/img.jpg'
             }
           ]
         },
@@ -127,39 +127,39 @@ export default {
           img: [
             {
               mid: 0,
-              url: '/static/images/img.png'
+              url: '/static/images/img.jpg'
             },
             {
               mid: 1,
-              url: '/static/images/img.png'
+              url: '/static/images/img.jpg'
             },
             {
               mid: 2,
-              url: '/static/images/img.png'
+              url: '/static/images/img.jpg'
             },
             {
               mid: 3,
-              url: '/static/images/img.png'
+              url: '/static/images/img.jpg'
             },
             {
               mid: 4,
-              url: '/static/images/img.png'
+              url: '/static/images/img.jpg'
             },
             {
               mid: 5,
-              url: '/static/images/img.png'
+              url: '/static/images/img.jpg'
             },
             {
               mid: 6,
-              url: '/static/images/img.png'
+              url: '/static/images/img.jpg'
             },
             {
               mid: 7,
-              url: '/static/images/img.png'
+              url: '/static/images/img.jpg'
             },
             {
               mid: 8,
-              url: '/static/images/img.png'
+              url: '/static/images/img.jpg'
             }
           ]
         },
@@ -171,23 +171,23 @@ export default {
           img: [
             {
               mid: 0,
-              url: '/static/images/img.png'
+              url: '/static/images/img.jpg'
             },
             {
               mid: 1,
-              url: '/static/images/img.png'
+              url: '/static/images/img.jpg'
             },
             {
               mid: 2,
-              url: '/static/images/img.png'
+              url: '/static/images/img.jpg'
             },
             {
               mid: 3,
-              url: '/static/images/img.png'
+              url: '/static/images/img.jpg'
             },
             {
               mid: 4,
-              url: '/static/images/img.png'
+              url: '/static/images/img.jpg'
             }
           ]
         },
@@ -199,7 +199,7 @@ export default {
           img: [
             {
               mid: 0,
-              url: '/static/images/img.png'
+              url: '/static/images/img.jpg'
             }
           ]
         }

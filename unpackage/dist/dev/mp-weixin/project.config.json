@@ -38,8 +38,15 @@
 			"list": [
 				{
 					"id": -1,
-					"name": "pages/mine/mine",
-					"pathName": "pages/mine/mine",
+					"name": "pages/index/index",
+					"pathName": "pages/index/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/greenHealth/greenHealth",
+					"pathName": "pages/greenHealth/greenHealth",
 					"scene": null
 				}
 			]

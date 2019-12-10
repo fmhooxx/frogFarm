@@ -118,7 +118,6 @@ page {
 }
 .container {
   font-family: PingFang SC;
-  background: rgba(242, 242, 242, 1);
 }
 .big-title {
   font-size: 36rpx;

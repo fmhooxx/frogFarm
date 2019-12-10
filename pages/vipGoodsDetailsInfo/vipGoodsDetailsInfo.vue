@@ -5,13 +5,13 @@
 			<view class="page-section page-section-spacing swiper">
 				<swiper  autoplay="true"  interval="2500" circular='true' @change='getCurrentNum'>
 						<swiper-item current='1'>
-							<image src="../../static/images/vip-lunbo@2x.png" mode="widthFix"></image>
+							<image src="../../static/images/vip-lunbo@2x.jpg" mode="widthFix"></image>
 						</swiper-item>
 						<swiper-item current='2'>
-							<image src="../../static/images/vip-lunbo@2x.png" mode="widthFix"></image>
+							<image src="../../static/images/vip-lunbo@2x.jpg" mode="widthFix"></image>
 						</swiper-item>
 						<swiper-item current='3'>
-							<image src="../../static/images/vip-lunbo@2x.png" mode="widthFix"></image>
+							<image src="../../static/images/vip-lunbo@2x.jpg" mode="widthFix"></image>
 						</swiper-item>
 				</swiper>
 				<view class="currentNum">{{currentNum}}/3</view>

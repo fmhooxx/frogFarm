@@ -20,7 +20,7 @@
     </view>
     <view class="footer">
       <view class="price">¥<text>299</text></view>
-      <view class="footer-give" @click="goGiveRecord">立即赠送</view>
+      <view class="footer-give" @click="goVipGiveRecord">立即赠送</view>
     </view>
 	</view>
 </template>
@@ -32,9 +32,9 @@ export default {
   },
   methods: {
     // 去赠送记录页面
-    goGiveRecord() {
+    goVipGiveRecord() {
       uni.navigateTo({
-        url: '/pages/giveRecord/giveRecord'
+        url: '/pages/vipGiveRecord/vipGiveRecord'
       })
     }
   }

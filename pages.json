@@ -146,7 +146,7 @@
 		"path": "components/suspension/suspension",
 		"style": {}
 	}, {
-		"path": "pages/giveRecord/giveRecord",
+		"path": "pages/vipGiveRecord/vipGiveRecord",
 		"style": {
 			"navigationBarTitleText": "赠送记录"
 		}
@@ -294,6 +294,21 @@
 		"path": "pages/walletSuccessfulWithdrawals/walletSuccessfulWithdrawals",
 		"style": {
 			"navigationBarTitleText": "提现进度"
+		}
+	}, {
+		"path": "pages/indexLocation/indexLocation",
+		"style": {
+			"navigationBarTitleText": "我的位置"
+		}
+	}, {
+		"path": "pages/indexNews/indexNews",
+		"style": {
+			"navigationBarTitleText": "消息"
+		}
+	}, {
+		"path": "pages/indexNewsDetails/indexNewsDetails",
+		"style": {
+			"navigationBarTitleText": "消息详情"
 		}
 	}],
 	"globalStyle": {

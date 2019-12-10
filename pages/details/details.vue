@@ -134,7 +134,7 @@ export default {
         children: [
             {
               pid: 40,
-              url: '/static/images/vip-goodsC@2x.png',
+              url: '/static/images/vip-goodsC@2x.jpg',
               title: '基围虾',
               weight: '500g',
               new: '¥490.90',
@@ -149,7 +149,7 @@ export default {
         children: [
             {
               pid: 50,
-              url: '/static/images/detail-lunbo.png',
+              url: '/static/images/detail-lunbo.jpg',
               title: '冷冻鸡翅根',
               weight: '500g',
               new: '¥49.90',

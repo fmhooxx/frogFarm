@@ -29,7 +29,7 @@
     "pages/vipGive/vipGive",
     "pages/details/details",
     "components/suspension/suspension",
-    "pages/giveRecord/giveRecord",
+    "pages/vipGiveRecord/vipGiveRecord",
     "pages/wallet/wallet",
     "pages/walletCashWithdrawal/walletCashWithdrawal",
     "pages/walletBindingCard/walletBindingCard",
@@ -59,7 +59,10 @@
     "pages/mineAboutUs/mineAboutUs",
     "pages/mineFeedback/mineFeedback",
     "pages/walletPresentationDetails/walletPresentationDetails",
-    "pages/walletSuccessfulWithdrawals/walletSuccessfulWithdrawals"
+    "pages/walletSuccessfulWithdrawals/walletSuccessfulWithdrawals",
+    "pages/indexLocation/indexLocation",
+    "pages/indexNews/indexNews",
+    "pages/indexNewsDetails/indexNewsDetails"
   ],
   "subPackages": [],
   "window": {
@@ -107,6 +110,5 @@
     "base-tabbar": "/components/BaseTabbar",
     "suspension": "/components/suspension/suspension",
     "base-popup": "/components/BasePopup/BasePopup"
-  },
-  "sitemapLocation": "sitemap84.json"
+  }
 }
