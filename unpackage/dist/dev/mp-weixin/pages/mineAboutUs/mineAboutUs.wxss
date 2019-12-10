@@ -1,0 +1,14 @@
+.about.data-v-28c42b99 {
+  padding: 0 30rpx 0 37rpx;
+}
+.about .box.data-v-28c42b99 {
+  margin-top: 38rpx;
+  font-size: 28rpx;
+  font-family: Source Han Sans CN;
+  font-weight: 400;
+  color: #5f5f5f;
+}
+.about .box .footer.data-v-28c42b99 {
+  margin-top: 60rpx;
+}
+

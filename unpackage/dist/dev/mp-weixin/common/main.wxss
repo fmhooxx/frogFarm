@@ -1,0 +1,597 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*每个页面公共css */
+page {
+  /* background-color: #000; */
+  background-color: #f1f1f1;
+}
+.container {
+  font-family: PingFang SC;
+  background: rgba(242, 242, 242, 1);
+}
+.big-title {
+  font-size: 36rpx;
+  font-family: Microsoft YaHei;
+  font-weight: 400;
+  color: rgba(51, 51, 51, 1);
+  line-height: 42rpx;
+}
+.middle-title {
+  font-size: 32rpx;
+  font-family: Source Han Sans CN;
+  font-weight: 400;
+  color: rgba(0, 0, 0, 1);
+}
+.middle-title-light {
+  font-size: 32rpx;
+  font-family: Source Han Sans CN;
+  font-weight: 400;
+  color: rgba(90, 90, 90, 1);
+}
+.info-title {
+  /* 信息标题 */
+  font-size: 30rpx;
+  font-family: Source Han Sans CN;
+  font-weight: 500;
+  color: rgba(51, 51, 51, 1);
+}
+.info-subtitle {
+  font-size: 26rpx;
+  font-family: Source Han Sans CN;
+  font-weight: 400;
+  color: rgba(51, 51, 51, 1);
+}
+/* 小标题 */
+.info-small-title {
+  font-size: 30rpx;
+  font-family: Microsoft YaHei;
+  font-weight: 400;
+  color: rgba(51, 51, 51, 1);
+}
+.info-small-titlebol {
+  font-size: 30rpx;
+  font-family: Microsoft YaHei;
+  font-weight: bold;
+  color: rgba(51, 51, 51, 1);
+}
+.info-small-title-light {
+  font-size: 30rpx;
+  font-family: Microsoft YaHei;
+  font-weight: 400;
+  color: rgba(153, 153, 153, 1);
+}
+/* 小标题副标题 */
+.info-small-title-sub {
+  font-size: 26rpx;
+  font-family: Source Han Sans CN;
+  font-weight: 400;
+  color: rgba(51, 51, 51, 1);
+}
+/* 二级标题 */
+.info-two-title {
+  font-size: 28rpx;
+  font-family: Microsoft YaHei;
+  font-weight: bold;
+  color: rgba(51, 51, 51, 1);
+}
+/* 三级标题 */
+.info-three-titledel {
+  font-size: 24rpx;
+  font-family: Microsoft YaHei;
+  font-weight: 400;
+  text-decoration: line-through;
+  color: rgba(102, 102, 102, 1);
+}
+.info-three-title {
+  font-size: 24rpx;
+  font-family: Microsoft YaHei;
+  font-weight: 400;
+  color: rgba(102, 102, 102, 1);
+}
+.info-three-titlestro {
+  font-size: 24rpx;
+  font-family: Microsoft YaHei;
+  font-weight: bold;
+  color: rgba(51, 51, 51, 1);
+}
+/* 小内容 */
+.little-text {
+  font-size: 22rpx;
+  font-family: Microsoft YaHei;
+  font-weight: 400;
+  color: rgba(51, 51, 51, 1);
+  line-height: 23rpx;
+}
+/* 白色标题 */
+.order-title {
+  font-size: 40rpx;
+  font-family: Source Han Sans CN;
+  font-weight: 500;
+  color: rgba(247, 247, 247, 1);
+}
+/* 按钮文字 */
+.btn-text {
+  font-size: 36rpx;
+  font-family: Source Han Sans CN;
+  font-weight: 400;
+  color: rgba(255, 254, 254, 1);
+}
+/* 布局 */
+/* 浮动布局 */
+.flex-row {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+          justify-content: space-between;
+}
+.flex-column {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+          justify-content: space-between;
+}
+.list-box {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+          justify-content: space-between;
+  -webkit-flex-wrap: wrap;
+          flex-wrap: wrap;
+}
+/* 居中 */
+.vertical-center {
+  -webkit-align-self: center;
+          align-self: center;
+}
+.level-center {
+  margin: 0 auto;
+  text-align: center;
+}
+.position-center {
+  width: 600px;
+  height: 400px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin-top: -200px; /* 高度的一半 */
+  margin-left: -300px;
+}
+.position-vercenter {
+  width: 750rpx;
+  height: 50rpx;
+  position: relative;
+  top: 50%;
+  margin-top: -25rpx;
+}
+.fixed-bottom {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+}
+/* 盒子 */
+/* 按钮样式 */
+.btn-default {
+  width: 150rpx;
+  height: 56rpx;
+  font-size: 26rpx;
+  font-family: Source Han Sans CN;
+  font-weight: 400;
+  color: rgba(102, 102, 102, 1);
+  background: rgba(255, 255, 255, 1);
+  border: 2rpx solid rgba(229, 229, 229, 1);
+  border-radius: 28rpx;
+  text-align: center;
+  line-height: 56rpx;
+}
+.btn-confirm {
+  font-size: 26rpx;
+  font-family: Source Han Sans CN;
+  font-weight: 400;
+  width: 150rpx;
+  height: 56rpx;
+  background: rgba(255, 255, 255, 1);
+  border: 2rpx solid rgba(90, 195, 107, 1);
+  border-radius: 28rpx;
+  text-align: center;
+  line-height: 56rpx;
+  color: #5ac36b;
+}
+.btn-important {
+  width: 150rpx;
+  height: 56rpx;
+  font-size: 26rpx;
+  font-family: Source Han Sans CN;
+  font-weight: 400;
+  border-radius: 28rpx;
+  text-align: center;
+  line-height: 56rpx;
+  background: rgba(253, 72, 77, 1);
+  color: white;
+}
+.btn-default-long {
+  width: 690rpx;
+  height: 84rpx;
+  background: rgba(39, 149, 36, 1);
+  margin: 0 auto;
+  text-align: center;
+  line-height: 84rpx;
+  color: white;
+}
+.btn-default-longrad {
+  width: 660rpx;
+  height: 84rpx;
+  background: rgba(39, 149, 36, 1);
+  border-radius: 40rpx;
+  margin: 0 auto;
+  text-align: center;
+  line-height: 84rpx;
+}
+
+
+view.data-v-4134b96a,
+scroll-view.data-v-4134b96a {
+  box-sizing: border-box;
+}
+.QS-tabs.data-v-4134b96a {
+  width: 100%;
+  -webkit-transition-property: background-color, color;
+  transition-property: background-color, color;
+}
+.QS-tabs.data-v-4134b96a::-webkit-scrollbar {
+  display: none;
+  width: 0 !important;
+  height: 0 !important;
+  -webkit-appearance: none;
+  background: transparent;
+}
+.QS-tabs-scroll.data-v-4134b96a {
+  width: 100%;
+  white-space: nowrap;
+  position: relative;
+}
+.QS-tabs-scroll-box.data-v-4134b96a {
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  white-space: nowrap !important;
+  display: block !important;
+}
+.QS-tabs-scroll-item.data-v-4134b96a {
+  position: relative;
+  display: inline-block;
+  text-align: center;
+  -webkit-transition-property: background-color, color, font-weight;
+  transition-property: background-color, color, font-weight;
+  margin-bottom: 24rpx;
+  padding: 0 20rpx !important;
+}
+.content.data-v-4134b96a {
+  /* overflow: hidden; */
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.boxStyle.data-v-4134b96a {
+  pointer-events: none;
+  position: absolute;
+  -webkit-transition-property: all;
+  transition-property: all;
+}
+.boxStyle2.data-v-4134b96a {
+  pointer-events: none;
+  position: absolute;
+  bottom: 0;
+  -webkit-transition-property: all;
+  transition-property: all;
+  -webkit-transform: translateY(-100%);
+          transform: translateY(-100%);
+}
+.itemBackgroundBox.data-v-4134b96a {
+  pointer-events: none;
+  position: absolute;
+  top: 0;
+  -webkit-transition-property: left, background-color;
+  transition-property: left, background-color;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+          justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+          align-items: center;
+}
+.itemBackground.data-v-4134b96a {
+  height: 100%;
+  width: 100%;
+  -webkit-transition-property: all;
+  transition-property: all;
+}
+
+.suspension.data-v-212c3463 {
+  position: fixed;
+  bottom: 260rpx;
+  left: 30rpx;
+  z-index: 9;
+}
+.suspension image.data-v-212c3463 {
+  width: 100%;
+  height: 100%;
+}
+.suspension .share.data-v-212c3463 {
+  margin-bottom: 30rpx;
+}
+.suspension .cart.data-v-212c3463 {
+  position: relative;
+}
+.suspension .cart .tag.data-v-212c3463 {
+  width: 34rpx;
+  height: 34rpx;
+  line-height: 34rpx;
+  text-align: center;
+  color: #fff;
+  border-radius: 50%;
+  background-color: #FC5854;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.suspension .w.data-v-212c3463 {
+  width: 90rpx;
+  height: 90rpx;
+}
+
+@charset "UTF-8";
+/**
+ * 这里是uni-app内置的常用样式变量
+ *
+ * uni-app 官方扩展插件及插件市场（https://ext.dcloud.net.cn）上很多三方插件均使用了这些样式变量
+ * 如果你是插件开发者，建议你使用scss预处理，并在插件代码中直接使用这些变量（无需 import 这个文件），方便用户通过搭积木的方式开发整体风格一致的App
+ *
+ */
+/**
+ * 如果你是App开发者（插件使用者），你可以通过修改这些变量来定制自己的插件主题，实现自定义主题功能
+ *
+ * 如果你的项目同样使用了scss预处理，你也可以直接在你的 scss 代码中使用如下变量，同时无需 import 这个文件
+ */
+/* 颜色变量 */
+/* 行为相关颜色 */
+/* 文字基本颜色 */
+/* 背景颜色 */
+/* 边框颜色 */
+/* 尺寸变量 */
+/* 文字尺寸 */
+/* 图片尺寸 */
+/* Border Radius */
+/* 水平间距 */
+/* 垂直间距 */
+/* 透明度 */
+/* 文章场景相关 */
+.uni-popup {
+  position: fixed;
+  top: 0px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 8;
+  overflow: hidden;
+}
+.uni-popup__mask {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 8;
+    background: rgba(0, 0, 0, 0.4);
+    opacity: 0;
+}
+.uni-popup__mask.ani {
+      -webkit-transition: all 0.3s;
+      transition: all 0.3s;
+}
+.uni-popup__mask.uni-top, .uni-popup__mask.uni-bottom, .uni-popup__mask.uni-center {
+      opacity: 1;
+}
+.uni-popup__wrapper {
+    position: absolute;
+    z-index: 9;
+    box-sizing: border-box;
+}
+.uni-popup__wrapper.ani {
+      -webkit-transition: all 0.3s;
+      transition: all 0.3s;
+}
+.uni-popup__wrapper.top {
+      top: 0;
+      left: 0;
+      width: 100%;
+      -webkit-transform: translateY(-100%);
+              transform: translateY(-100%);
+}
+.uni-popup__wrapper.bottom {
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      -webkit-transform: translateY(100%);
+              transform: translateY(100%);
+}
+.uni-popup__wrapper.center {
+      width: 100%;
+      height: 100%;
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: flex;
+      -webkit-box-pack: center;
+      -webkit-justify-content: center;
+              justify-content: center;
+      -webkit-box-align: center;
+      -webkit-align-items: center;
+              align-items: center;
+      -webkit-transform: scale(1.2);
+              transform: scale(1.2);
+      opacity: 0;
+}
+.uni-popup__wrapper-box {
+      position: relative;
+      box-sizing: border-box;
+}
+.uni-popup__wrapper.uni-custom .uni-popup__wrapper-box {
+      border-radius: 20px;
+      background: #fff;
+}
+.uni-popup__wrapper.uni-custom.center .uni-popup__wrapper-box {
+      position: relative;
+      max-width: 80%;
+      max-height: 80%;
+      overflow-y: scroll;
+}
+.uni-popup__wrapper.uni-custom.top .uni-popup__wrapper-box, .uni-popup__wrapper.uni-custom.bottom .uni-popup__wrapper-box {
+      width: 100%;
+      max-height: 500px;
+      overflow-y: scroll;
+}
+.uni-popup__wrapper.uni-top, .uni-popup__wrapper.uni-bottom {
+      -webkit-transform: translateY(0);
+              transform: translateY(0);
+}
+.uni-popup__wrapper.uni-center {
+      -webkit-transform: scale(1);
+              transform: scale(1);
+      opacity: 1;
+}
+

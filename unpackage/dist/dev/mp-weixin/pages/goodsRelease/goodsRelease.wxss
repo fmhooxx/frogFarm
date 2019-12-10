@@ -1,0 +1,43 @@
+image.data-v-67e08307 {
+  width: 100%;
+  height: 100%;
+}
+.release.data-v-67e08307 {
+  padding: 0 32rpx;
+}
+.release .text.data-v-67e08307 {
+  font-size: 26rpx;
+  font-family: PingFang;
+  font-weight: 400;
+  color: #999999;
+  padding-top: 20rpx;
+}
+.release .text textarea.data-v-67e08307 {
+  height: 142rpx !important;
+}
+.release .picture.data-v-67e08307 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+          flex-wrap: wrap;
+  margin-bottom: 132rpx;
+}
+.release .picture > view.data-v-67e08307 {
+  margin: 10rpx;
+  width: 208rpx;
+  height: 208rpx;
+}
+.release .btn.data-v-67e08307 {
+  width: 660rpx;
+  height: 84rpx;
+  background: #279524;
+  border-radius: 41rpx;
+  line-height: 84rpx;
+  text-align: center;
+  font-size: 40rpx;
+  font-family: Source Han Sans CN;
+  font-weight: 400;
+  color: #ffffff;
+}
+

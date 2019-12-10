@@ -1,0 +1,360 @@
+<template>
+<!--pages/vipCard/vipCard.wxml-->
+	<view class="container">
+		<!-- 订单详情头部开始 -->
+    <!-- 未开通会员的卡片 -->
+		<view v-if="false">
+      <view class="order-header"></view>
+      <view class="vip-card">
+        <image src="/static/images/vip-manage.png"></image>
+        <view class="header-text">
+          <view class="title">购买年卡预计可省１023</view>
+          <view class="flex-row bottom">
+            <view class="cart-left">自用省钱 分享赚钱</view>
+            <view class="cart-right">开通年卡</view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <!-- 已开通会员的卡片 -->
+		<view v-if="true">
+      <view class="order-header"></view>
+      <view class="vip-card">
+        <image src="/static/images/vip-manage.png"></image>
+        <view class="header-box">
+          <view class="box-left">
+            <view class="header-left">
+              <image src="../../static/images/vip-header@2x.png"></image>
+            </view>
+            <view class="header-center">
+              <view class="center-uname">小蛙</view>
+              <view class="center-member">年卡会员</view>
+              <view class="center-timer">到期时间：<text>2019-12-01</text></view>
+            </view>
+          </view>
+          <view class="box-right" @click="goVipManage">管理</view>
+        </view>
+      </view>
+    </view>
+		<!-- 订单详情头部结束 -->
+
+		<!-- 会员充值列表开始 -->
+		<view class="vip-list">
+			<view class="list-title">会员卡</view>
+			<view class="list-info flex-row">
+				<view class="left">
+					<view class="price">299元</view>
+					<view class="type">年卡会员</view>
+				</view>
+				<view class="right">购买</view>
+			</view>
+
+			<view class="list-info flex-row">
+				<view class="left">
+					<view class="price">299元</view>
+					<view class="type">半年卡会员</view>
+				</view>
+				<view class="right">购买</view>
+			</view>
+
+			<view class="list-info flex-row">
+				<view class="left">
+					<view class="price">299元</view>
+					<view class="type">年卡会员</view>
+				</view>
+				<view class="right">购买</view>
+			</view>
+
+			<view class="list-info flex-row">
+				<view class="left">
+					<view class="price">299元</view>
+					<view class="type">年卡会员</view>
+				</view>
+				<view class="right">购买</view>
+			</view>
+
+			<view class="list-info flex-row">
+				<view class="left">
+					<view class="price">299元</view>
+					<view class="type">年卡会员</view>
+				</view>
+				<view class="right">购买</view>
+			</view>
+		</view>
+		<!-- 会员充值列表结束 -->
+
+		<!-- 服务协议开始 -->
+		<view class="pro">
+			<text class="left">已阅读并同意</text>
+			<text class="right">《会员服务协议》</text>
+		</view>
+		<!-- 服务协议结束 -->
+
+		<!-- 推荐开始 -->
+		<view class="flex-row tuijian">
+			<view class="flex-row item">
+				<view><image src="../../static/images/vip-cardA.png"></image></view>
+				<view>
+					<view class="info-title">推荐有礼</view>
+					<view class="info-three-title">邀请好友开通会员VIP</view>
+				</view>
+			</view>
+
+			<view class="flex-row item" @click="goVipGive">
+				<view><image src="../../static/images/vip-cardB.png"></image></view>
+				<view>
+					<view class="info-title">会员赠送</view>
+					<view class="info-three-title">帮好友开通会员VIP</view>
+				</view>
+			</view>
+		</view>
+		<!-- 推荐结束 -->
+	</view>
+</template>
+
+<script>
+	export default {
+		data() {
+			return {
+				
+			}
+		},
+		methods: {
+      // 去会员赠送页面
+			goVipGive() {
+        uni.navigateTo({
+          url: '/pages/vipGive/vipGive'
+        })
+      },
+      // 去会员管理页面
+      goVipManage() {
+        uni.navigateTo({
+					url: '/pages/vipManage/vipManage'
+				});
+      }
+		}
+	}
+</script>
+
+<style lang="less" scoped>
+// 会员卡片样式
+
+// 非会员卡片样式
+.container{
+  background: white
+}
+.order-header{
+  width:750rpx;
+  height:172rpx;
+  background:#333;
+
+}
+.vip-card{
+  position: relative;
+  width:690rpx;
+  height:249rpx;
+  background:rgba(57,172,54,1);
+  box-shadow:0px 0px 40rpx 0px rgba(101,205,98,0.2);
+  border-radius:20rpx;
+  // padding: 70rpx 38rpx;
+  box-sizing: border-box;
+  position: absolute;
+  top: 10rpx;
+  left: 50%;
+  margin-left: -345rpx;
+  image {
+    width: 100%;
+    height: 100%;
+  }
+  .header-text {
+    position: absolute;
+    width: 600rpx;
+    top: 80rpx;
+  }
+}
+.header-box {
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 52rpx 0 40rpx;
+  position: absolute;
+  top: 58rpx;
+  width: 100%;
+  image {
+    width: 100%;
+    height: 100%;
+  }
+  .box-left {
+    display: flex;
+    .header-left {
+      width: 102rpx;
+      height: 102rpx;
+      margin-right: 26rpx;
+    }
+    .header-center {
+      .center-uname {
+        font-size: 34rpx;
+        font-family: PingFang;
+        // font-weight:bold;
+        color:rgba(255,255,255,1);
+      }
+      .center-member {
+        width: 128rpx;
+        height: 34rpx;
+        line-height: 34rpx;
+        text-align: center;
+        font-size: 26rpx;
+        font-family: PingFang;
+        border: 1rpx solid rgba(221,178,48,1);
+        border-radius: 17rpx;
+        // font-weight: bold;
+        color:rgba(245,194,74,1);
+        margin: 10rpx 0 20rpx 0;
+      }
+      .center-timer {
+        // font-weight: bold;
+        color:rgba(255,255,255,1);
+        font-family: Source Han Sans CN;
+        font-size: 24rpx;
+        margin-right: 6rpx;
+      }
+    }
+  }
+  .box-right {
+    width: 126rpx;
+    height: 60rpx;
+    line-height: 60rpx;
+    text-align: center;
+    background:rgba(221,178,48,1);
+    box-shadow: 0rpx 3rpx 7rpx 0rpx rgba(247, 111, 108, 0.35);
+    border-radius: 30rpx;
+    font-size: 30rpx;
+    // font-weight: bold;
+    color:rgba(255,255,255,1);
+    font-family: PingFang;
+    margin-top: 60rpx;
+  }
+}
+.title{
+  width:442rpx;
+  height:36rpx;
+  font-size:34rpx;
+  font-family:Source Han Sans CN;
+  // font-weight:bold;
+  color:rgba(255,255,255,1);
+}
+
+.cart-left{
+  font-size:24rpx;
+  font-family:Source Han Sans CN;
+  // font-weight:bold;
+  color:rgba(255,255,255,1);
+  }
+.cart-right{
+  width:159rpx;
+  height:60rpx;
+  background:rgba(221,178,48,1);
+  box-shadow:0px 3rpx 7rpx 0px rgba(247, 111, 108, 0.35);
+  border-radius:30rpx;
+  font-size:30rpx;
+  font-family:PingFang;
+  // font-weight:bold;
+  color:rgba(255,255,255,1);
+  text-align: center;
+  line-height: 60rpx
+}
+.bottom{
+  margin-top: 38rpx
+}
+
+
+/* 会员充值列表样式开始 */
+.vip-list{
+  margin-top: 114rpx;
+}
+.list-title{
+  font-size:38rpx;
+  font-family:Microsoft YaHei;
+  // font-weight:bold;
+  color:rgba(51,51,51,1);
+  text-align: center
+}
+.list-info{
+  padding: 20rpx 30rpx;
+  box-sizing: border-box;
+  margin-bottom: 20rpx;
+  border-bottom: 1rpx solid rgba(235,235,235,1);
+
+}
+.list-info .left{
+  align-self: center
+}
+.list-info .right{
+  align-self: center;
+  width:126rpx;
+  height:60rpx;
+  border:2rpx solid rgba(254,59,14,1);
+  box-shadow:0px 3rpx 7rpx 0px rgba(247, 111, 108, 0.35);
+  border-radius:30rpx;
+  text-align: center;
+  line-height: 60rpx;
+  font-size:32rpx;
+  font-family:Source Han Sans CN;
+  // font-weight:bold;
+  color:rgba(254,59,14,1);
+}
+.price{
+  font-size:38rpx;
+  font-family:PingFang;
+  // font-weight:bold;
+  color:rgba(51,51,51,1);
+  line-height: 60rpx
+}
+.type{
+  font-size:26rpx;
+  font-family:PingFang;
+  // font-weight:bold;
+  color:rgba(57,172,54,1);
+  line-height:24rpx;
+}
+
+.pro{
+  font-size:24rpx;
+  font-family:PingFang;
+  // font-weight:500;
+  color:rgba(153,153,153,1);
+  line-height:23rpx;
+  text-align: center;
+  margin-top: 40rpx;
+  }
+// .pro .left{
+
+// }
+// .pro .left{
+
+// }
+/* 推荐样式开始 */
+.tuijian{
+  margin-top: 50rpx;
+  padding: 0 30rpx;
+  box-sizing: border-box;
+  margin-bottom: 134rpx
+}
+.tuijian image{
+  width:70rpx;
+  height:70rpx;
+}
+.tuijian .item{
+  width:337rpx;
+  height:126rpx;
+  background:rgba(255,255,255,1);
+  border:1rpx solid rgba(204,204,204,1);
+  box-shadow:0px 3rpx 5rpx 0px rgba(153,153,153,0.3);
+  border-radius:20rpx;
+  padding: 0 14rpx;
+  box-sizing: border-box
+}
+.tuijian .item>view{
+  align-self: center
+}
+</style>

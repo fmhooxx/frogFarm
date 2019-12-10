@@ -1,0 +1,126 @@
+image.data-v-6daaff45 {
+  width: 100%;
+  height: 100%;
+}
+.give.data-v-6daaff45 {
+  position: relative;
+  padding: 0 32rpx;
+}
+.give .member.data-v-6daaff45 {
+  position: relative;
+  width: 688rpx;
+  height: 350rpx;
+  background: #39ac36;
+  box-shadow: 0rpx 0rpx 7rpx 0rpx rgba(80, 136, 78, 0.36);
+  border-radius: 30rpx;
+  margin: 0 auto;
+}
+.give .member image.data-v-6daaff45 {
+  border-radius: 30rpx;
+}
+.give .member view.data-v-6daaff45 {
+  font-size: 36rpx;
+  font-family: PingFang;
+  color: #ffffff;
+}
+.give .member .vip.data-v-6daaff45 {
+  position: absolute;
+  top: 66rpx;
+  left: 54rpx;
+  font-weight: 500;
+}
+.give .member .money.data-v-6daaff45 {
+  position: absolute;
+  bottom: 48rpx;
+  right: 30rpx;
+  font-weight: bold;
+}
+.give .info .info-title.data-v-6daaff45 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+          justify-content: space-between;
+  margin: 60rpx 0;
+}
+.give .info .info-title .info-tel.data-v-6daaff45 {
+  font-size: 32rpx;
+  font-family: PingFang;
+  font-weight: 500;
+  color: #333333;
+}
+.give .info .info-title .record.data-v-6daaff45 {
+  font-family: PingFang;
+  color: #666666;
+  font-size: 30rpx;
+}
+.give .info .info-input.data-v-6daaff45 {
+  width: 100%;
+  height: 88rpx;
+  background: #ffffff;
+  border-bottom: 2rpx solid #cccccc;
+  border-radius: 5rpx;
+}
+.give .info .info-input input.data-v-6daaff45 {
+  padding-top: 22rpx;
+  background: none;
+  outline: none;
+  border: none;
+  width: 100%;
+  padding-left: 22rpx;
+}
+.give .info .info-input input .input-text.data-v-6daaff45 {
+  font-size: 28rpx;
+  font-family: PingFang;
+  font-weight: 500;
+  color: #999999;
+}
+.give .info .notes.data-v-6daaff45 {
+  font-size: 22rpx;
+  margin-top: 30rpx;
+  font-family: PingFang;
+  font-weight: 500;
+  color: #999999;
+}
+.give .footer.data-v-6daaff45 {
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+          justify-content: space-between;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 96rpx;
+  line-height: 96rpx;
+  padding: 0 32rpx;
+  background: #ffffff;
+  box-shadow: 0rpx 3rpx 5rpx 0rpx rgba(153, 153, 153, 0.3);
+}
+.give .footer .price.data-v-6daaff45 {
+  font-size: 24rpx;
+  font-family: Microsoft YaHei;
+  font-weight: bold;
+  color: #3cad39;
+}
+.give .footer .price text.data-v-6daaff45 {
+  font-size: 36rpx;
+}
+.give .footer .footer-give.data-v-6daaff45 {
+  width: 162rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  text-align: center;
+  background: #fd484d;
+  border-radius: 30rpx;
+  font-family: PingFang;
+  font-weight: bold;
+  color: #ffffff;
+  font-size: 28rpx;
+  margin-top: 18rpx;
+}
+

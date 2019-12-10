@@ -1,0 +1,68 @@
+<template>
+	<view>
+		<view class="succ-box">
+			<image src="../../static/images//paySuccess.png"></image>
+			<view class="succ">购买成功</view>
+		</view>
+
+		<!-- 底部操作按钮开始 -->
+		<view class="flex-row btn-box">
+			<view class="btn-left btn">再去逛逛</view>
+			<view class="btn-right btn">查看订单</view>
+		</view>
+		<!-- 底部操作按钮结束 -->
+	</view>
+</template>
+
+<script>
+	export default {
+		data() {
+			return {
+				
+			}
+		},
+		methods: {
+			
+		}
+	}
+</script>
+
+<style lang="less" scoped>
+.succ-box{
+  width: 200rpx;
+  height: 200rpx;
+  margin: 0 auto;
+  margin-top: 100rpx;
+  text-align: center
+ 
+}
+.succ-box image{
+  width:90rpx;
+  height:90rpx;
+}
+.succ{
+  font-size:34rpx;
+  font-family:Source Han Sans CN;
+  font-weight:400;
+  color:rgba(51,51,51,1);
+}
+
+/* 底部按钮样式 */
+.btn-box{
+  padding: 0 30rpx
+}
+.btn{
+  width:320rpx;
+  height:80rpx;
+  border:2rpx solid rgba(39, 149, 36, 1);
+  border-radius:40rpx;
+  text-align: center;
+  line-height: 80rpx
+}
+.btn-left{
+  background:rgba(39,149,36,1);
+}
+.btn-right{
+  background:rgba(255,255,255,1);
+}
+</style>

@@ -1,0 +1,15 @@
+page {
+  background-color: #fff;
+}
+
+.withdrawal-rules.data-v-3253eb8a {
+  margin: 28rpx 0rpx 0rpx 32rpx;
+  box-sizing: border-box;
+  width: 504rpx;
+  height: 125rpx;
+  font-size: 28rpx;
+  font-family: Source Han Sans CN;
+  font-weight: 400;
+  color: #666666;
+}
+

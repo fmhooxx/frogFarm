@@ -1,0 +1,298 @@
+image.data-v-63fe4227 {
+  width: 100%;
+  height: 100%;
+}
+.card.data-v-63fe4227 {
+  position: relative;
+  height: 214rpx;
+  width: 690rpx;
+  margin: 0 auto;
+  border-radius: 20rpx 20rpx 0rpx 0rpx;
+}
+.card-con.data-v-63fe4227 {
+  position: absolute;
+  top: 0;
+  left: 40rpx;
+  margin: 0 auto;
+  width: 630rpx;
+  height: 214rpx;
+  color: white;
+}
+.card-con .left.data-v-63fe4227 {
+  -webkit-align-self: center;
+          align-self: center;
+}
+.header.data-v-63fe4227 {
+  width: 112rpx;
+  height: 120rpx;
+}
+.card-con .right.data-v-63fe4227 {
+  -webkit-align-self: center;
+          align-self: center;
+}
+.name.data-v-63fe4227 {
+  font-size: 34rpx;
+  font-weight: bold;
+}
+.guanli.data-v-63fe4227 {
+  width: 450rpx;
+  height: 50rpx;
+}
+.guanli-left.data-v-63fe4227 {
+  width: 120rpx;
+  height: 34rpx;
+  border: 2rpx solid #fec825;
+  border-radius: 17rpx;
+  text-align: center;
+  font-size: 24rpx;
+  font-weight: bold;
+  color: #fec825;
+  -webkit-align-self: center;
+          align-self: center;
+}
+.guanli-right.data-v-63fe4227 {
+  text-align: center;
+  width: 126rpx;
+  height: 50rpx;
+  background: #ddb230;
+  box-shadow: 0px 0px 40rpx 0px rgba(186, 159, 77, 0.2);
+  border-radius: 25rpx;
+  -webkit-align-self: center;
+          align-self: center;
+  font-size: 30rpx;
+  font-weight: bold;
+  line-height: 50rpx;
+}
+.time.data-v-63fe4227 {
+  font-size: 24rpx;
+  font-family: Source Han Sans CN;
+  font-weight: bold;
+}
+/* 卡片样式结束 */
+/* 商品列表开始 */
+.title.data-v-63fe4227 {
+  font-size: 40rpx;
+  font-family: Source Han Sans CN;
+  font-weight: 500;
+  color: #333333;
+  padding: 30rpx 30rpx;
+  box-sizing: border-box;
+}
+.goods-list-box.data-v-63fe4227 {
+  width: 750rpx;
+  height: auto;
+  padding: 20rpx 0;
+  box-sizing: border-box;
+  background: #ffffff;
+  border-radius: 20px;
+}
+.goods-list.data-v-63fe4227 {
+  height: 268rpx;
+  width: 690rpx;
+  margin: 0 auto;
+  margin-bottom: 28rpx;
+}
+.goods-list > .left image.data-v-63fe4227 {
+  width: 200rpx;
+  height: 198rpx;
+}
+.goods-list .right.data-v-63fe4227 {
+  width: 494rpx;
+  height: 218rpx;
+  margin-left: 26rpx;
+}
+.top-left.data-v-63fe4227 {
+  font-size: 32rpx;
+  font-family: Microsoft YaHei;
+  font-weight: bold;
+  color: #333333;
+}
+.top-right.data-v-63fe4227 {
+  font-size: 26rpx;
+  font-family: Microsoft YaHei;
+  font-weight: 400;
+  color: #666666;
+}
+.original-price.data-v-63fe4227 {
+  font-size: 24rpx;
+  font-family: Microsoft YaHei;
+  font-weight: 400;
+  color: #666666;
+}
+.vip-price-left.data-v-63fe4227 {
+  font-size: 32rpx;
+  font-family: Microsoft YaHei;
+  font-weight: bold;
+  color: #ff3b39;
+  -webkit-align-self: center;
+          align-self: center;
+}
+.vip-price-right.data-v-63fe4227 {
+  font-size: 20rpx;
+  font-family: Microsoft YaHei;
+  font-weight: bold;
+  -webkit-align-self: center;
+          align-self: center;
+}
+.give.data-v-63fe4227 {
+  width: 119rpx;
+  height: 48rpx;
+  margin-right: 14rpx;
+  border: 1rpx solid #279524;
+  border-radius: 10rpx;
+  text-align: center;
+  line-height: 46rpx;
+  font-size: 26rpx;
+  font-family: Microsoft YaHei;
+  font-weight: 400;
+  color: #279524;
+}
+.buy.data-v-63fe4227 {
+  width: 79rpx;
+  height: 48rpx;
+  background: #279524;
+  border-radius: 10rpx;
+  font-size: 26rpx;
+  font-family: Microsoft YaHei;
+  font-weight: 400;
+  color: #ffffff;
+  line-height: 48rpx;
+  text-align: center;
+}
+/* 商品列表结束 */
+/* 更过商品列表开始 */
+.more.data-v-63fe4227 {
+  background: #f2f2f2;
+  padding-bottom: 10rpx;
+  box-sizing: border-box;
+  padding-left: 20rpx;
+  padding-right: 10rpx;
+}
+.goods-more-list.data-v-63fe4227 {
+  width: 350rpx;
+  height: 570rpx;
+  background: #ffffff;
+  padding: 40rpx 30rpx;
+  box-sizing: border-box;
+  border-radius: 10px;
+  margin-right: 10rpx;
+  margin-bottom: 20rpx;
+}
+.goods-more-list > image.data-v-63fe4227 {
+  width: 250rpx;
+  height: 166rpx;
+  display: block;
+  margin: 0 auto;
+}
+.icon-image.data-v-63fe4227 {
+  width: 50rpx;
+  height: 50rpx;
+}
+.share.data-v-63fe4227 {
+  font-size: 24rpx;
+  font-family: Source Han Sans CN;
+  font-weight: 400;
+  color: #ff3b39;
+  margin-top: 30rpx;
+}
+.share-left.data-v-63fe4227 {
+  width: 140rpx;
+  height: 36rpx;
+  background: #ffffff;
+  border: 1rpx solid #ff3b39;
+  border-radius: 4rpx;
+  text-align: center;
+  line-height: 36rpx;
+}
+/* 操作悬浮样式开始 */
+.hover.data-v-63fe4227 {
+  position: fixed;
+  bottom: 206rpx;
+  left: 28rpx;
+}
+.hover view.data-v-63fe4227 {
+  padding: 10rpx 0;
+  box-sizing: border-box;
+}
+.hover image.data-v-63fe4227 {
+  width: 90rpx;
+  height: 90rpx;
+}
+/* 更多样式开始 */
+.to-more.data-v-63fe4227 {
+  width: 120rpx;
+  height: 56rpx;
+  margin: 0 auto;
+  margin-bottom: 120rpx;
+}
+.more-tag.data-v-63fe4227 {
+  width: 120rpx;
+  height: 28rpx;
+}
+.more-tag image.data-v-63fe4227 {
+  width: 20rpx;
+  height: 20rpx;
+  -webkit-align-self: center;
+          align-self: center;
+}
+.more-tag view.data-v-63fe4227 {
+  -webkit-align-self: center;
+          align-self: center;
+}
+.suspension.data-v-63fe4227 {
+  position: fixed;
+  bottom: 260rpx;
+  left: 30rpx;
+  z-index: 9;
+}
+.suspension image.data-v-63fe4227 {
+  width: 100%;
+  height: 100%;
+}
+.suspension .share.data-v-63fe4227 {
+  margin-bottom: 30rpx;
+}
+.suspension .cart.data-v-63fe4227 {
+  position: relative;
+}
+.suspension .cart .tag.data-v-63fe4227 {
+  width: 34rpx;
+  height: 34rpx;
+  line-height: 34rpx;
+  text-align: center;
+  color: #fff;
+  border-radius: 50%;
+  background-color: #FC5854;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.suspension .w.data-v-63fe4227 {
+  width: 90rpx;
+  height: 90rpx;
+}
+/* 底部功能栏开始 */
+/* .user-defined {
+  width: 750rpx;
+  height: 98rpx;
+  padding-left: 24rpx;
+  box-sizing: border-box;
+  background: rgba(255, 255, 255, 1);
+  position: fixed;
+  bottom: 0;
+  left: 0;
+}
+
+.cart {
+  width: 94rpx;
+  height: 94rpx;
+}
+
+.toClear {
+  width: 220rpx;
+  height: 98rpx;
+  background: rgba(39, 149, 36, 1);
+  text-align: center;
+  line-height: 98rpx;
+} */
+

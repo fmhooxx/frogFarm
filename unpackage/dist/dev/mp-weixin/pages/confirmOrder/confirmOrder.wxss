@@ -1,0 +1,111 @@
+/* 地址栏样式开始 */
+.address.data-v-77801a27 {
+  width: 710rpx;
+  height: 150rpx;
+  background: #ffffff;
+  border-radius: 8rpx;
+  margin: 0 auto;
+  margin-top: 20rpx;
+  padding: 0 20rpx;
+  box-sizing: border-box;
+}
+.address image.data-v-77801a27 {
+  width: 14rpx;
+  height: 24rpx;
+  -webkit-align-self: center;
+          align-self: center;
+}
+.addAddr.data-v-77801a27 {
+  -webkit-align-self: center;
+          align-self: center;
+}
+/* 订单列表展示 */
+.goods-list.data-v-77801a27 {
+  width: 710rpx;
+  background: #ffffff;
+  border-radius: 10rpx;
+  margin: 0 auto;
+  margin-top: 90rpx;
+}
+.list-right.data-v-77801a27 {
+  width: 580rpx;
+  padding: 0 20rpx;
+}
+.list-left image.data-v-77801a27 {
+  width: 96rpx;
+  height: 99rpx;
+  border: 1rpx solid #e5e5e5;
+}
+.order-list-info.data-v-77801a27 {
+  padding: 20rpx 36rpx;
+}
+/* 列表备注开始 */
+.bei-title.data-v-77801a27 {
+  width: 710rpx;
+  height: 88rpx;
+  background: #ffffff;
+  border-radius: 10rpx;
+  margin: 0 auto;
+  line-height: 88rpx;
+  margin-top: 20rpx;
+  padding-left: 30rpx;
+  box-sizing: border-box;
+}
+.con-info.data-v-77801a27 {
+  width: 710rpx;
+  height: 360rpx;
+  background: #ffffff;
+  border-radius: 10rpx;
+  margin: 0 auto;
+}
+.con-info.data-v-77801a27 {
+  padding: 32rpx 30rpx;
+  box-sizing: border-box;
+  margin-top: 20rpx;
+  margin-bottom: 242rpx;
+}
+.con-list.data-v-77801a27 {
+  padding-bottom: 40rpx;
+}
+.total.data-v-77801a27 {
+  float: right;
+}
+.price.data-v-77801a27 {
+  font-size: 32rpx;
+  font-family: Microsoft YaHei;
+  font-weight: bold;
+  color: #FF4543;
+}
+/* 底部操作栏样式 */
+.user-defined.data-v-77801a27 {
+  width: 750rpx;
+  height: 98rpx;
+  padding-left: 24rpx;
+  box-sizing: border-box;
+  background: #ffffff;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+}
+.cart.data-v-77801a27 {
+  width: 94rpx;
+  height: 94rpx;
+}
+.toClear.data-v-77801a27 {
+  width: 220rpx;
+  height: 98rpx;
+  background: #fd484d;
+  text-align: center;
+  line-height: 98rpx;
+  font-size: 32rpx;
+  font-family: Source Han Sans CN;
+  font-weight: 500;
+  color: #ffffff;
+}
+.jiage.data-v-77801a27 {
+  font-size: 24rpx;
+  font-family: Source Han Sans CN;
+  font-weight: 400;
+  color: #ef3a37;
+}
+

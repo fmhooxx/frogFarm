@@ -1,0 +1,98 @@
+.addrAdd.data-v-08ff2327 {
+  height: 550rpx;
+  background: white;
+  margin-top: 20rpx;
+}
+.inpOne.data-v-08ff2327 {
+  border-bottom: 2rpx solid #979797;
+  border-top: 2rpx solid #979797;
+  height: 98rpx;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+          justify-content: space-between;
+  font-size: 28rpx;
+  padding-left: 40rpx;
+  padding-right: 40rpx;
+}
+.inpOne image.data-v-08ff2327 {
+  width: 42rpx;
+  height: 48rpx;
+}
+.inpOne input.data-v-08ff2327 {
+  padding-left: 110rpx;
+  box-sizing: border-box;
+}
+.inp.data-v-08ff2327 {
+  border-bottom: 2rpx solid #979797;
+  height: 98rpx;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+          justify-content: space-between;
+  font-size: 28rpx;
+  padding-left: 40rpx;
+  padding-right: 40rpx;
+}
+.inpadd.data-v-08ff2327 {
+  border-bottom: 2rpx solid #979797;
+  height: 98rpx;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+          justify-content: space-between;
+  font-size: 28rpx;
+  /* padding-left: 30rpx */
+}
+input.data-v-08ff2327 {
+  height: 98rpx;
+  line-height: 98rpx;
+  width: 504rpx;
+}
+.inpOne view.data-v-08ff2327 {
+  line-height: 98rpx;
+  height: 98rpx;
+}
+.inp view.data-v-08ff2327 {
+  line-height: 98rpx;
+  height: 98rpx;
+}
+image.data-v-08ff2327 {
+  vertical-align: middle;
+}
+/* 底部样式开始 */
+.bottom.data-v-08ff2327 {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  margin-left: -375rpx;
+  height: 130rpx;
+  width: 750rpx;
+  background: #ffffff;
+}
+.btn.data-v-08ff2327 {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  margin-top: -42rpx;
+  margin-left: -330rpx;
+}
+

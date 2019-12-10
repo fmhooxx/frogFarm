@@ -1,0 +1,35 @@
+.container.data-v-f78f58ca {
+  background: white;
+}
+.block.data-v-f78f58ca {
+  padding: 0 30rpx;
+}
+.title.data-v-f78f58ca {
+  margin: 40rpx 40rpx;
+}
+/* 内容盒子 */
+.list.data-v-f78f58ca {
+  font-size: 28rpx;
+  font-family: Microsoft YaHei;
+  font-weight: 400;
+  color: #666666;
+  line-height: 36rpx;
+  padding-left: 30rpx;
+  box-sizing: border-box;
+}
+.box.data-v-f78f58ca {
+  width: 144rpx;
+  height: 88rpx;
+  display: inline-block;
+  margin-right: 30rpx;
+  margin-bottom: 32rpx;
+  background: #f7f7f7;
+  border-radius: 10rpx;
+  text-align: center;
+  padding: 10rpx 0;
+  box-sizing: border-box;
+}
+.btn.data-v-f78f58ca {
+  margin-top: 70rpx;
+}
+

@@ -1,0 +1,24 @@
+image.data-v-679eebfb {
+  width: 100%;
+  height: 100%;
+}
+.recommend-courtesy.data-v-679eebfb {
+  position: relative;
+  background-color: #000;
+  height: 1800rpx;
+}
+.recommend-courtesy .header-bgi.data-v-679eebfb {
+  height: 488rpx;
+}
+.recommend-courtesy .courtesy-content-box .courtesy-content.data-v-679eebfb {
+  position: absolute;
+  top: 200rpx;
+  left: 125rpx;
+  box-shadow: 0rpx 4rpx 30rpx 4rpx red, 0rpx 0rpx 1rpx 0rpx red;
+}
+.recommend-courtesy .courtesy-content-box .courtesy-content .content-img.data-v-679eebfb {
+  height: 785rpx;
+  width: 500rpx;
+  background-color: skyblue;
+}
+

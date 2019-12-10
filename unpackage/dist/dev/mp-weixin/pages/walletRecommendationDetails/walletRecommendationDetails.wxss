@@ -1,0 +1,79 @@
+image.data-v-a0dd7a6e {
+  width: 100%;
+  height: 100%;
+}
+.recommendation.data-v-a0dd7a6e {
+  margin-top: 20rpx;
+}
+.recommendation .recommendation-box.data-v-a0dd7a6e {
+  padding: 0 40rpx 0 16rpx;
+  height: 152rpx;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+          justify-content: space-between;
+  background-color: #fff;
+  border-bottom: 2rpx solid #f3f3f3;
+}
+.recommendation .recommendation-box .box-left.data-v-a0dd7a6e {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+}
+.recommendation .recommendation-box .box-left .left-img.data-v-a0dd7a6e {
+  width: 68rpx;
+  height: 68rpx;
+  margin-right: 28rpx;
+  margin-top: 12rpx;
+}
+.recommendation .recommendation-box .box-left .left-content.data-v-a0dd7a6e {
+  margin-top: 29rpx;
+  font-size: 24rpx;
+  font-family: Source Han Sans CN;
+  font-weight: 400;
+  color: #666666;
+}
+.recommendation .recommendation-box .box-left .left-content .content-title.data-v-a0dd7a6e {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+          align-items: center;
+}
+.recommendation .recommendation-box .box-left .left-content .content-title .one.data-v-a0dd7a6e {
+  font-size: 30rpx;
+  font-weight: 500;
+  color: #000000;
+}
+.recommendation .recommendation-box .box-left .left-content .content-title .two.data-v-a0dd7a6e {
+  width: 90rpx;
+  height: 24rpx;
+  line-height: 24rpx;
+  text-align: center;
+  font-size: 20rpx;
+  color: #ffffff;
+  background: #279524;
+  border-radius: 2rpx;
+  margin-left: 15rpx;
+}
+.recommendation .recommendation-box .box-left .left-content .content-member.data-v-a0dd7a6e {
+  margin: 8rpx 0;
+}
+.recommendation .recommendation-box .box-right.data-v-a0dd7a6e {
+  margin-top: 31rpx;
+  font-family: Source Han Sans CN;
+  font-weight: 400;
+}
+.recommendation .recommendation-box .box-right .right-price.data-v-a0dd7a6e {
+  font-size: 36rpx;
+  color: #333333;
+}
+.recommendation .recommendation-box .box-right .right-text.data-v-a0dd7a6e {
+  font-size: 24rpx;
+  color: #666666;
+  margin-top: 27rpx;
+}
+

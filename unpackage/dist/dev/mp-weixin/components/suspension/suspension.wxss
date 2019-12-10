@@ -1,0 +1,33 @@
+.suspension.data-v-212c3463 {
+  position: fixed;
+  bottom: 260rpx;
+  left: 30rpx;
+  z-index: 9;
+}
+.suspension image.data-v-212c3463 {
+  width: 100%;
+  height: 100%;
+}
+.suspension .share.data-v-212c3463 {
+  margin-bottom: 30rpx;
+}
+.suspension .cart.data-v-212c3463 {
+  position: relative;
+}
+.suspension .cart .tag.data-v-212c3463 {
+  width: 34rpx;
+  height: 34rpx;
+  line-height: 34rpx;
+  text-align: center;
+  color: #fff;
+  border-radius: 50%;
+  background-color: #FC5854;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.suspension .w.data-v-212c3463 {
+  width: 90rpx;
+  height: 90rpx;
+}
+

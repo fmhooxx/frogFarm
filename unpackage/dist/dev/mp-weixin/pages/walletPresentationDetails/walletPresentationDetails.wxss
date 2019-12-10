@@ -1,0 +1,84 @@
+image.data-v-3505e472 {
+  width: 100%;
+  height: 100%;
+}
+.presentation-details .details-title.data-v-3505e472 {
+  height: 54rpx;
+  width: 220rpx;
+  text-align: center;
+  line-height: 54rpx;
+  background: #ffffff;
+  border: 1rpx solid #ededed;
+  border-radius: 27rpx;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  margin: 30rpx;
+}
+.presentation-details .details-title .title-month.data-v-3505e472 {
+  margin: 0 18rpx 0 25rpx;
+  font-size: 26rpx;
+  font-family: Source Han Sans CN;
+  font-weight: 400;
+  color: #1b1b1b;
+}
+.presentation-details .details-title .title-month .month-data.data-v-3505e472 {
+  width: 146rpx;
+}
+.presentation-details .details-title .title-img.data-v-3505e472 {
+  width: 16rpx;
+  height: 12rpx;
+}
+.presentation-details .list .list-item.data-v-3505e472 {
+  padding: 0 30rpx;
+  background-color: #fff;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+          justify-content: space-between;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+          align-items: center;
+  font-family: Microsoft YaHei;
+  font-weight: 400;
+  height: 121rpx;
+  box-sizing: border-box;
+  border-bottom: 2rpx solid #eeeeee;
+}
+.presentation-details .list .list-item .item-left .left-card.data-v-3505e472 {
+  font-size: 30rpx;
+  color: #333333;
+}
+.presentation-details .list .list-item .item-left .left-data.data-v-3505e472 {
+  font-size: 24rpx;
+  color: #666666;
+  margin-top: 10rpx;
+}
+.presentation-details .list .list-item .item-right.data-v-3505e472 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+          align-items: center;
+}
+.presentation-details .list .list-item .item-right .right-content.data-v-3505e472 {
+  text-align: right;
+}
+.presentation-details .list .list-item .item-right .right-content .content-price.data-v-3505e472 {
+  font-size: 30rpx;
+  color: #333333;
+}
+.presentation-details .list .list-item .item-right .right-content .content-balance.data-v-3505e472 {
+  font-size: 24rpx;
+  color: #666666;
+  margin-top: 10rpx;
+}
+.presentation-details .list .list-item .item-right .content-img.data-v-3505e472 {
+  width: 16rpx;
+  height: 26rpx;
+  margin-left: 20rpx;
+}
+
