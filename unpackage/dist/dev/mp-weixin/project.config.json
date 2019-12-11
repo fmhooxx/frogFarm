@@ -38,15 +38,36 @@
 			"list": [
 				{
 					"id": -1,
-					"name": "pages/index/index",
-					"pathName": "pages/index/index",
+					"name": "pages/greenHealth/greenHealth",
+					"pathName": "pages/greenHealth/greenHealth",
 					"query": "",
 					"scene": null
 				},
 				{
 					"id": -1,
-					"name": "pages/greenHealth/greenHealth",
-					"pathName": "pages/greenHealth/greenHealth",
+					"name": "pages/details/details",
+					"pathName": "pages/details/details",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/vipGoodsDetailsInfo/vipGoodsDetailsInfo",
+					"pathName": "pages/vipGoodsDetailsInfo/vipGoodsDetailsInfo",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/goodsDetailsInfo/goodsDetailsInfo",
+					"pathName": "pages/goodsDetailsInfo/goodsDetailsInfo",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/confirmOrder/confirmOrder",
+					"pathName": "pages/confirmOrder/confirmOrder",
 					"scene": null
 				}
 			]

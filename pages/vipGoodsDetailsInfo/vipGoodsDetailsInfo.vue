@@ -1,37 +1,31 @@
 <template>
 <!--pages/vipGoodsDetailsInfo/vipGoodsDetailsInfo.wxml-->
 	<view class="container">
-		<!-- 商品轮播图开始 -->
-			<view class="page-section page-section-spacing swiper">
-				<swiper  autoplay="true"  interval="2500" circular='true' @change='getCurrentNum'>
-						<swiper-item current='1'>
-							<image src="../../static/images/vip-lunbo@2x.jpg" mode="widthFix"></image>
-						</swiper-item>
-						<swiper-item current='2'>
-							<image src="../../static/images/vip-lunbo@2x.jpg" mode="widthFix"></image>
-						</swiper-item>
-						<swiper-item current='3'>
-							<image src="../../static/images/vip-lunbo@2x.jpg" mode="widthFix"></image>
-						</swiper-item>
-				</swiper>
-				<view class="currentNum">{{currentNum}}/3</view>
-			</view>
-			<!-- 商品轮播图结束 -->
+		<!-- 商品图片开始 -->
+      <view class="shop-img">
+        <image src="../../static/images/vip-goods-details.jpg"></image>
+      </view>
+    <!-- 商品图片结束 -->
 
-			<!-- 轮播图详情开始 -->
+			<!-- 图片详情开始 -->
 			<view class="swiper-info">
-				<view class="swiper-info-title">年卡会员套餐15种有机蔬</view>
+				<view class="swiper-info-title">年卡会员套餐</view>
 				<view class="swiper-info-introduce flex-row">
-					<view>每月4次 共48次配送</view>
+					<view>新鲜美味, 品种多多</view>
 					<view class="share">分享立赚10</view>
 				</view>
-
+        <!-- 普通价格区域 -->
+        <view class="ordinary-price">¥399</view>
 				<view class="mon">
 					<view class="price">299<text>元</text></view>
-					<view class="original-price">原价：¥1199</view>
+          <!-- 会员价格区域 -->
+          <view class="member">
+            <image src="../../static/images/6.png"></image>
+            <view>会员价</view>
+          </view>
 				</view>
 			</view>
-			<!-- 轮播图详情结束 -->
+			<!-- 图片详情结束 -->
 
 			<!-- 套餐 -->
 			<view class="introduce">
@@ -67,13 +61,15 @@
 			<!-- 回到顶部按钮测试结束 -->
 
 			<!-- 底部操作栏开始 -->
-		<view class="user-defined flex-row">
-			<view id="cart">
-				<image src="../../static/images/detail-cart.png" class="cart"></image>
-			</view>
-			<view class="toClear" @click="goConfirmOrder">去结算</view>
-		</view>
-		<!-- 底部操作栏结束 -->
+      <view class="user-defined flex-row">
+        <view id="cart">
+          <image src="../../static/images/detail-cart.png" class="cart"></image>
+          <view class="tag">3</view>
+        </view>
+        <view class="addCart">加入购物车</view>
+        <view class="toClear" @click="goConfirmOrder">立即购买</view>
+      </view>
+      <!-- 底部操作栏结束 -->
 
 	</view>
 </template>
@@ -82,15 +78,10 @@
 	export default {
 		data() {
 			return {
-				currentNum: 1,
 				goTopStatus: false
 			}
 		},
 		methods: {
-			//轮播图切换时获取index
-			getCurrentNum(e) {
-				this.currentNum = e.detail.current + 1
-			},
 			//监听页面高度(上滑或者下滑)
 			onPageScroll(obj) {
 				if (obj.scrollTop > 363) {
@@ -104,7 +95,7 @@
 					scrollTop: 0
 				})
       },
-      // 去结算页面
+      // 去确定订单页面
       goConfirmOrder() {
         uni.navigateTo({
           url: '/pages/confirmOrder/confirmOrder'
@@ -124,21 +115,15 @@ swiper-item image {
   height: 452rpx;
 }
 
-.currentNum {
-  width: 60rpx;
-  height: 36rpx;
-  background: rgba(0, 0, 0, 1);
-  opacity: 0.3;
-  border-radius: 18rpx;
-  color: white;
-  font-size: 22rpx;
-  font-family: Source Han Sans CN;
-  font-weight: 400;
-  text-align: center;
-  line-height: 36rpx;
-  position: absolute;
-  top: 520rpx;
-  right: 24rpx;
+// 商品图片区域
+.shop-img {
+  background-color: #fff;
+  > image {
+    width: 750rpx;
+    height: 580rpx;
+    vertical-align: middle;
+    // margin: 30rpx  0 122rpx 55rpx
+  }
 }
 
 /* 轮播图详情结束 */
@@ -156,7 +141,7 @@ swiper-item image {
 }
 
 .swiper-info-introduce {
-  font-size: 28rpx;
+  font-size: 26rpx;
   font-family: Source Han Sans CN;
   font-weight: 400;
   color: rgba(102, 102, 102, 1);
@@ -171,32 +156,46 @@ swiper-item image {
   text-align: center;
   color: white;
 }
-
-.price {
-  font-size: 64rpx;
-  font-family: Source Han Sans CN;
-  font-weight: 500;
-  color: rgba(253, 72, 77, 1);
-}
-
-.price text {
-  font-size: 32rpx;
-  font-family: Source Han Sans CN;
-  font-weight: 500;
-  color: rgba(86, 86, 86, 1);
-}
-
-.original-price {
-  font-size: 24rpx;
-  font-family: Adobe Heiti Std;
-  font-weight: normal;
+// 普通价格区域
+.ordinary-price {
   text-decoration: line-through;
-  color: rgba(102, 102, 102, 1);
-  margin-left: 28rpx;
+  font-size: 30rpx;
+  font-family: Source Han Sans CN;
+  font-weight: bold;
+  color: #279524;
 }
-
-.mon view {
-  display: inline;
+.mon {
+  display: flex;
+  align-items: flex-end;
+  .price {
+    font-size: 64rpx;
+    font-family: Source Han Sans CN;
+    font-weight: 500;
+    color: rgba(253, 72, 77, 1);
+    > text {
+      font-size: 32rpx;
+      margin-left: 12rpx;
+    }
+  }
+  // 会员价格区域
+  .member {
+    position: relative;
+    margin-left: 30rpx;
+    > image {
+      width: 90rpx;
+      height: 33rpx;
+    }
+    > view {
+      position: absolute;
+      top: 0;
+      left: 10rpx;
+      font-size: 25rpx;
+      font-family: Microsoft YaHei;
+      font-weight: bold;
+      color: red;
+      color: #fff;
+    }
+  }
 }
 
 /* 服务样式 */
@@ -290,7 +289,7 @@ swiper-item image {
 }
 
 
-/* 底部功能栏开始 */
+  /* 底部功能栏开始 */
 .user-defined {
   width: 750rpx;
   height: 98rpx;
@@ -303,16 +302,32 @@ swiper-item image {
 }
 
 .cart {
-  width: 36rpx;
-  height: 34rpx;
+  width: 42rpx;
+  height: 42rpx;
   line-height: 98rpx;
 }
 
 #cart {
   align-self: center;
+  position: relative;
 }
-
+.addCart{
+  width:220rpx;
+  height:70rpx;
+  font-size:28rpx;
+  font-family:Source Han Sans CN;
+  font-weight:500;
+  color:rgba(39,149,36,1);
+  background:rgba(255,255,255,1);
+  border:2rpx solid rgba(39,149,36,1);
+  border-radius:36rpx;
+  text-align: center;
+  line-height: 70rpx;
+  align-self: center;
+  margin-left: 180rpx
+}
 .toClear {
+  font-size: 28rpx;
   width: 220rpx;
   height: 70rpx;
   background: rgba(39, 149, 36, 1);
@@ -322,5 +337,21 @@ swiper-item image {
   align-self: center;
   margin-right: 30rpx;
   color: white
+}
+// 数字小标识
+.tag {
+  position: absolute;
+  top: -10rpx;
+  right: -20rpx;
+  width: 30rpx;
+  height: 30rpx;
+  line-height: 30rpx;
+  text-align: center;
+  background-color: #FC5854;
+  border-radius: 50%;
+  font-size: 24rpx;
+  font-family: Source Han Sans CN;
+  font-weight: 500;
+  color: #fff;
 }
 </style>

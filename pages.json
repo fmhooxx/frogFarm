@@ -55,7 +55,7 @@
 	}, {
 		"path": "pages/vipGoodsDetailsInfo/vipGoodsDetailsInfo",
 		"style": {
-			"navigationBarTitleText": "会员年卡商品详情页"
+			"navigationBarTitleText": "年卡套餐详情"
 		}
 	}, {
 		"path": "pages/vipCard/vipCard",

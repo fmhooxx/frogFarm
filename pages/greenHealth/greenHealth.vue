@@ -8,6 +8,7 @@
 			<!-- vip 的背景图片 -->
 			<image src="/static/images/green-health-bgi.png"></image>
 			<!-- 背景图片上面的内容 -->
+			<!-- vip 区域 -->
 			<view class="head-content">
 				<!-- 左边 -->
 				<view class="content-left">
@@ -26,14 +27,24 @@
 						<view class="timer">到期时间: 2019-12-01</view>
 					</view>
 					<!-- 管理 -->
-					<view class="administration">管理</view>
+					<view class="administration" @click="toVipManage">管理</view>
 				</view>
+			</view>
+			<!-- 非 vip 区域 -->
+			<view v-if="false" class="head-content no-vip">
+				<!-- 左边 -->
+				<view class="no-vip-left">
+					<view class="one">购买年卡预计可省1023/年</view>
+					<view class="two">自用省钱 分享赚钱</view>
+				</view>
+				<!-- 右边 -->
+				<view class="no-vip-right">开通会员</view>
 			</view>
 		</view>
 		<view class="title">会员套餐</view>
 		<!-- 套餐区域 -->
 		<view class="healthy">
-			<view class="healthy-list w">
+			<view class="healthy-list w" @click="toVipGoodsDetailsInfo">
 				<!-- 左边 -->
 				<view class="list-left">
 					<image src="/static/images/good.jpg"></image>
@@ -69,45 +80,7 @@
 					</view>
 				</view>
 			</view>
-			<view class="healthy-list w">
-				<!-- 左边 -->
-				<view class="list-left">
-					<image src="/static/images/good.jpg"></image>
-				</view>
-				<!-- 右边 -->
-				<view class="list-right">
-					<!-- 头部区域 -->
-					<view class="right-title">年卡全员套餐</view>
-					<!-- 次数 -->
-					<view class="right-num">
-						<text class="number">品种多多，尽享优惠</text>
-						
-					</view>
-
-					<!-- 价格以及会员 -->
-					<view class="price-member">
-						<!-- 价格 -->
-						<view class="price-box">
-							<!-- 最新价格 -->
-							<view class="new-price">
-								<!-- 人民币符号 -->
-								<text class="rmb">¥</text>
-								<!-- 金额 -->
-								<text class="price-num">299</text>
-							</view>
-							<!-- 划去的价格 -->
-							<text class="delimit">¥19999</text>
-						</view>
-						<view class="list-footer">
-							<!-- 赠送会员 -->
-							<view class="give">赠送好友</view>
-							<!-- 购买 -->
-							<view class="purchase">购买</view>
-						</view>
-					</view>
-				</view>
-			</view>
-			<view class="healthy-list w">
+			<view class="healthy-list w" @click="toVipGoodsDetailsInfo">
 				<!-- 左边 -->
 				<view class="list-left">
 					<image src="/static/images/good.jpg"></image>
@@ -145,7 +118,45 @@
 					</view>
 				</view>
 			</view>
-			<view class="healthy-list w">
+			<view class="healthy-list w" @click="toVipGoodsDetailsInfo">
+				<!-- 左边 -->
+				<view class="list-left">
+					<image src="/static/images/good.jpg"></image>
+				</view>
+				<!-- 右边 -->
+				<view class="list-right">
+					<!-- 头部区域 -->
+					<view class="right-title">年卡全员套餐</view>
+					<!-- 次数 -->
+					<view class="right-num">
+						<text class="number">品种多多，尽享优惠</text>
+						
+					</view>
+
+					<!-- 价格以及会员 -->
+					<view class="price-member">
+						<!-- 价格 -->
+						<view class="price-box">
+							<!-- 最新价格 -->
+							<view class="new-price">
+								<!-- 人民币符号 -->
+								<text class="rmb">¥</text>
+								<!-- 金额 -->
+								<text class="price-num">299</text>
+							</view>
+							<!-- 划去的价格 -->
+							<text class="delimit">¥19999</text>
+						</view>
+						<view class="list-footer">
+							<!-- 赠送会员 -->
+							<view class="give">赠送好友</view>
+							<!-- 购买 -->
+							<view class="purchase">购买</view>
+						</view>
+					</view>
+				</view>
+			</view>
+			<view class="healthy-list w" @click="toVipGoodsDetailsInfo">
 				<!-- 左边 -->
 				<view class="list-left">
 					<image src="/static/images/good.jpg"></image>
@@ -187,10 +198,133 @@
 		<view class="green-shop">绿色单品商品</view>
 		<!-- 绿色单品商品区域 -->
 		<view class="green-list">
-			<view class="list-item"></view>
-			<view class="list-item"></view>
+			<view class="list-item" @click="toGoodsDetailsInfo">
+				<!-- 图片区域 -->
+				<image src="/static/images/xiaobaixia.jpg"></image>
+				<!-- 中间内容区域 -->
+				<view class="item-content">
+					<!-- 名称以及重量区域 -->
+					<view class="name-weight">鲜小白虾500g</view>
+					<!-- 介绍 -->
+					<view class="introduce">新鲜有货，口感香甜</view>
+					<!-- 非会员价格 -->
+					<view	class="ordinary-price">￥55.90</view>
+					<!-- 会员价以及加号区域 -->
+					<view class="member-jiahao">
+						<view class="member">
+							<!-- 会员价格 -->
+							<view class="member-price">
+								￥49.<text>90</text>
+							</view>
+							<!-- 会员价字样 -->
+							<view class="membership-price">
+								<image src="/static/images/6.png"></image>
+								<text>会员价</text>
+							</view>
+						</view>
+						<!-- 加号 -->
+						<image src="/static/images/vip-add@2x.png"></image>
+					</view>
+				</view>
+			</view>
+			<view class="list-item" @click="toGoodsDetailsInfo">
+				<!-- 图片区域 -->
+				<image src="/static/images/xiaobaixia.jpg"></image>
+				<!-- 中间内容区域 -->
+				<view class="item-content">
+					<!-- 名称以及重量区域 -->
+					<view class="name-weight">鲜小白虾500g</view>
+					<!-- 介绍 -->
+					<view class="introduce">新鲜有货，口感香甜</view>
+					<!-- 非会员价格 -->
+					<view	class="ordinary-price">￥55.90</view>
+					<!-- 会员价以及加号区域 -->
+					<view class="member-jiahao">
+						<view class="member">
+							<!-- 会员价格 -->
+							<view class="member-price">
+								￥49.<text>90</text>
+							</view>
+							<!-- 会员价字样 -->
+							<view class="membership-price">
+								<image src="/static/images/6.png"></image>
+								<text>会员价</text>
+							</view>
+						</view>
+						<!-- 加号 -->
+						<image src="/static/images/vip-add@2x.png"></image>
+					</view>
+				</view>
+			</view>
+			<view class="list-item" @click="toGoodsDetailsInfo">
+				<!-- 图片区域 -->
+				<image src="/static/images/xiaobaixia.jpg"></image>
+				<!-- 中间内容区域 -->
+				<view class="item-content">
+					<!-- 名称以及重量区域 -->
+					<view class="name-weight">鲜小白虾500g</view>
+					<!-- 介绍 -->
+					<view class="introduce">新鲜有货，口感香甜</view>
+					<!-- 非会员价格 -->
+					<view	class="ordinary-price">￥55.90</view>
+					<!-- 会员价以及加号区域 -->
+					<view class="member-jiahao">
+						<view class="member">
+							<!-- 会员价格 -->
+							<view class="member-price">
+								￥49.<text>90</text>
+							</view>
+							<!-- 会员价字样 -->
+							<view class="membership-price">
+								<image src="/static/images/6.png"></image>
+								<text>会员价</text>
+							</view>
+						</view>
+						<!-- 加号 -->
+						<image src="/static/images/vip-add@2x.png"></image>
+					</view>
+				</view>
+			</view>
+			<view class="list-item" @click="toGoodsDetailsInfo">
+				<!-- 图片区域 -->
+				<image src="/static/images/xiaobaixia.jpg"></image>
+				<!-- 中间内容区域 -->
+				<view class="item-content">
+					<!-- 名称以及重量区域 -->
+					<view class="name-weight">鲜小白虾500g</view>
+					<!-- 介绍 -->
+					<view class="introduce">新鲜有货，口感香甜</view>
+					<!-- 非会员价格 -->
+					<view	class="ordinary-price">￥55.90</view>
+					<!-- 会员价以及加号区域 -->
+					<view class="member-jiahao">
+						<view class="member">
+							<!-- 会员价格 -->
+							<view class="member-price">
+								￥49.<text>90</text>
+							</view>
+							<!-- 会员价字样 -->
+							<view class="membership-price">
+								<image src="/static/images/6.png"></image>
+								<text>会员价</text>
+							</view>
+						</view>
+						<!-- 加号 -->
+						<image src="/static/images/vip-add@2x.png"></image>
+					</view>
+				</view>
+			</view>
 		</view>
-
+		<!-- 查看更多 -->
+		<view class="view-more" @click="goDetails">
+			查看更多
+			<image src="/static/images/green-more-bottom.png"></image>
+		</view>
+		<!-- 松开查看更多 -->
+		<view class="view-more">
+			松开查看
+			<image src="/static/images/green-more-top.png"></image>
+		</view>
   </view>
 </template>
 
@@ -234,12 +368,6 @@ export default {
 };
 </script>
 
-<style lang="less">
-page {
-  background-color: #000;
-}
-</style>
-
 <style lang="less" scoped>
 .green-health {
 	padding: 10rpx;
@@ -254,7 +382,7 @@ page {
 			height: 215rpx;
 			vertical-align: middle;
 		}
-		// 背景图片上面的内容
+		// 背景图片上面的内容 vip 区域
 		.head-content {
 			display: flex;
 			position: absolute;
@@ -319,6 +447,39 @@ page {
 				}
 			}
 		}
+		// 非 vip 区域
+		.no-vip {
+			width: 91%;
+			justify-content: space-between;
+		}
+		// 左边
+		.no-vip-left {
+			font-family: Source Han Sans CN;
+			font-weight: bold;
+			color:rgba(255,255,255,1);
+			.one {
+				font-size: 34rpx;
+			}
+			.two {
+				font-size: 24rpx;
+				margin-top: 38rpx;
+			}
+		}
+		// 右边
+		.no-vip-right {
+			margin-top: 56rpx;
+			width: 155rpx;
+			height: 60rpx;
+			line-height: 60rpx;
+			text-align: center;
+			background:rgba(221,178,48,1);
+			box-shadow: 0rpx 0rpx 40rpx 0rpx rgba(186,159,77,0.2);
+			border-radius: 30rpx;
+			font-size: 30rpx;
+			font-family: PingFang SC;
+			font-weight: bold;
+			color:rgba(255,255,255,1);
+		}
 	}
 	.title {
 		font-size: 40rpx;
@@ -381,6 +542,7 @@ page {
 					.price-box {
 						display: flex;
 						align-items: center;
+						margin-top: 14rpx;
 						// 最新价格
 						.new-price {
 							font-size: 32rpx;
@@ -441,7 +603,7 @@ page {
 		display: flex;
 		flex-wrap: wrap;
 		padding: 0 10rpx;
-		:nth-child(odd) {
+		:nth-child(2n + 1) {
 			margin-right: 10rpx;
 		}
 		.list-item {
@@ -449,6 +611,102 @@ page {
 			height: 430rpx;
 			background:rgba(255,255,255,1);
 			border-radius: 10rpx;
+			margin-bottom: 20rpx;
+			// 图片区域
+			> image {
+				width: 306rpx;
+				height: 220rpx;
+				border-radius: 10rpx 0 0 0;
+			}
+			// 中间内容区域
+			.item-content {
+				padding-left: 22rpx;
+				// 名称以及重量区域
+				.name-weight {
+					height: 30rpx;
+					font-size: 28rpx;
+					font-family:Microsoft YaHei;
+					font-weight:400;
+					color: #333;
+				}
+				// 介绍
+				.introduce {
+					font-size: 20rpx;
+					font-family: Microsoft YaHei;
+					font-weight: 400;
+					color: #666;
+					margin: 10rpx 0 40rpx 0;
+				}
+				// 非会员价格
+				.ordinary-price {
+					font-size: 24rpx;
+					font-family: Microsoft YaHei;
+					font-weight: 400;
+					color:rgba(39,149,36,1);
+				}
+				// 会员价以及加号区域
+				.member-jiahao {
+					display: flex;
+					position: relative;
+					justify-content: space-between;
+					.member {
+						display: flex;
+						// 会员价格
+						.member-price {
+							font-family: Microsoft YaHei;
+							font-weight: bold;
+							color:rgba(255,69,67,1);
+							margin-right: 0;
+							font-size: 32rpx;
+							> text {
+								font-size: 24rpx;
+							}
+						}
+						// 会员字样
+						.membership-price {
+							position: relative;
+							> image {
+								width: 66rpx;
+								height: 24rpx;
+							}
+							> text {
+								position: absolute;
+								top: 11rpx;
+								left: 9rpx;
+								font-size: 18rpx;
+								font-family: Microsoft YaHei;
+								font-weight: bold;
+								color:rgba(254,254,254,1);
+							}
+						}
+					}
+					// 加号
+					> image {
+						position: absolute;
+						bottom: 10rpx;
+						right: 20rpx;
+						width: 50rpx;
+						height: 50rpx;
+						// margin-right: 20rpx;
+					}
+				}
+			}
+		}
+	}
+	// 查看更多
+	.view-more {
+		font-size: 22rpx;
+		font-family: Microsoft YaHei;
+		font-weight: 400;
+		text-align: center;
+		color: #333;
+		// color: #fff;
+		margin-bottom: 10rpx;
+		> image {
+			width: 20rpx;
+			height: 20rpx;
+			margin-left: 15rpx;
+			vertical-align: center;
 		}
 	}
 }

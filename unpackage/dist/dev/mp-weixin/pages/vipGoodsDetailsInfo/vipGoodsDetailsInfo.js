@@ -198,23 +198,14 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
 var _default =
 {
   data: function data() {
     return {
-      currentNum: 1,
       goTopStatus: false };
 
   },
   methods: {
-    //轮播图切换时获取index
-    getCurrentNum: function getCurrentNum(e) {
-      this.currentNum = e.detail.current + 1;
-    },
     //监听页面高度(上滑或者下滑)
     onPageScroll: function onPageScroll(obj) {
       if (obj.scrollTop > 363) {
@@ -228,7 +219,7 @@ var _default =
         scrollTop: 0 });
 
     },
-    // 去结算页面
+    // 去确定订单页面
     goConfirmOrder: function goConfirmOrder() {
       uni.navigateTo({
         url: '/pages/confirmOrder/confirmOrder' });

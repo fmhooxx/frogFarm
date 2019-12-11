@@ -1,6 +1,6 @@
 (global["webpackJsonp"] = global["webpackJsonp"] || []).push([["components/BasePopup/BasePopup"],{
 
-/***/ 233:
+/***/ 235:
 /*!****************************************************************************************************!*\
   !*** C:/Users/Administrator/Desktop/资料/shop/main.js?{"page":"components%2FBasePopup%2FBasePopup"} ***!
   \****************************************************************************************************/
@@ -242,5 +242,5 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ })
 
-},[[233,"common/runtime","common/vendor"]]]);
+},[[235,"common/runtime","common/vendor"]]]);
 //# sourceMappingURL=../../../.sourcemap/mp-weixin/components/BasePopup/BasePopup.js.map

@@ -32,7 +32,7 @@
 // 悬浮窗样式
 .suspension {
 	position: fixed;
-	bottom: 260rpx;
+	bottom: 144rpx;
 	left: 30rpx;
 	z-index: 9;
 	image {
@@ -53,8 +53,8 @@
 			border-radius:50%;
 			background-color: #FC5854;
 			position: absolute;
-			top: 0;
 			right: 0;
+			top: 0;
 		}
 	}
 	.w {

@@ -1,62 +1,48 @@
 <template>
 <!--pages/goodsDetailsInfo/goodsDetailsInfo.wxml-->
 	<view class="container">
-			<!-- 商品轮播图开始 -->
-			<view class="page-section page-section-spacing swiper">
-				<swiper  autoplay="true"  interval="2500" circular='true' @change='getCurrentNum'>
-						<swiper-item current='1'>
-							<image src="../../static/images/detail-lunbo.jpg" mode="widthFix"></image>
-						</swiper-item>
-						<swiper-item current='2'>
-							<image src="../../static/images/detail-lunbo.jpg" mode="widthFix"></image>
-						</swiper-item>
-						<swiper-item current='3'>
-							<image src="../../static/images/detail-lunbo.jpg" mode="widthFix"></image>
-						</swiper-item>
-				</swiper>
-				<view class="currentNum">{{currentNum}}/3</view>
-			</view>
-			<!-- 商品轮播图结束 -->
+			<!-- 商品图片开始 -->
+      <view class="shop-img">
+        <image src="/static/images/detail-lunbo.jpg"></image>
+      </view>
+			<!-- 商品图片结束 -->
 
-			<!-- 轮播图详情开始 -->
+			<!-- 图片详情开始 -->
 			<view class="swiper-info">
 				<view class="swiper-info-title">夏黑葡萄 500g</view>
 				<view class="swiper-info-introduce flex-row">
 					<view>有机产品，营养丰富，味道鲜美</view>
-					<view class="share">分享立赚10</view>
+					<view class="share">分享有礼</view>
 				</view>
-
+        <!-- 普通的价格 -->
+        <view class="ordinary-price">¥39.9</view>
 				<view class="mon">
+          <!-- 会员价格区域 -->
 					<view class="price">29.9<text>元</text></view>
-					<view class="original-price">原价：¥39.9</view>
+          <view class="member">
+            <image src="/static/images/6.png"></image>
+            <view>会员价</view>
+          </view>
 				</view>
 			</view>
-			<!-- 轮播图详情结束 -->
-
-			<!-- 服务开始 -->
-				<view class="server">
-					<view class="title">服务</view>
-					<view class="sub-title" >付款后48小时内发货</view>
-					<view class="sub-title">满99元包邮</view>
-				</view>
-			<!-- 服务结束 -->
+			<!-- 图片详情结束 -->
 
 			<!-- 规格开始 -->
-				<view class="server">
-					<view class="title">规格</view>
-					<view class="sub-title">
-						<text class="sub-title-left">净含量</text>
-						<text class="sub-title-right">约500g</text>
-					</view>
-					<view class="sub-title">
-						<text class="sub-title-left">保存条件</text>
-						<text class="sub-title-right">冷藏</text>
-					</view>
-					<view class="sub-title">
-						<text class="sub-title-left">保质期</text>
-						<text class="sub-title-right">6天</text>
-					</view>
-				</view>
+      <view class="server">
+        <view class="title">规格</view>
+        <view class="sub-title">
+          <text class="sub-title-left">净含量</text>
+          <text class="sub-title-right">约500g</text>
+        </view>
+        <view class="sub-title">
+          <text class="sub-title-left">保存条件</text>
+          <text class="sub-title-right">冷藏</text>
+        </view>
+        <view class="sub-title">
+          <text class="sub-title-left">保质期</text>
+          <text class="sub-title-right">6天</text>
+        </view>
+      </view>
 			<!-- 规格结束 -->
 
 			<!-- 商品详情图富文本预留开始 -->
@@ -72,13 +58,14 @@
 			</view>
 			<!-- 回到顶部按钮测试结束 -->
 
-			<!-- 底部操作栏开始 -->
+    <!-- 底部操作栏开始 -->
 		<view class="user-defined flex-row">
 			<view id="cart">
 				<image src="../../static/images/detail-cart.png" class="cart"></image>
+        <view class="tag">3</view>
 			</view>
 			<view class="addCart">加入购物车</view>
-			<view class="toClear">去结算</view>
+			<view class="toClear" @click="goConfirmOrder">立即购买</view>
 		</view>
 		<!-- 底部操作栏结束 -->
 	</view>
@@ -88,9 +75,7 @@
 	export default {
 		data() {
 			return {
-				// 控制轮播图的哪一项
-				currentNum: 1,
-				// 控制回到顶部显示与隐藏
+      // 控制回到顶部显示与隐藏
 				goTopStatus: false
 			}
 		},
@@ -102,17 +87,19 @@
 			this.goTopStatus = false
 		},
 		methods: {
-			//轮播图切换时获取index
-			getCurrentNum(e) {
-				this.currentNum = e.detail.current
-			},
-			//点击回到顶部
-			goToTop() {
-				uni.pageScrollTo({
+      // 回到顶部
+      goToTop() {
+        uni.pageScrollTo({
 					scrollTop: 0
 				})
-			}
-		}
+      },
+      // 去确定订单页面
+      goConfirmOrder() {
+        uni.navigateTo({
+          url: '/pages/confirmOrder/confirmOrder'
+        });
+      }
+    }
 	}
 </script>
 
@@ -125,27 +112,24 @@ swiper-item image{
   width:100%;
   height: 452rpx
 }
-.currentNum{
-  width:60rpx;
-  height:36rpx;
-  background:rgba(0,0,0,1);
-  opacity:0.3;
-  border-radius:18rpx;
-  color: white;
-  font-size:22rpx;
-  font-family:Source Han Sans CN;
-  font-weight:400;
-  text-align: center;
-  line-height: 36rpx;
-  position: absolute;
-  top: 520rpx;
-  right: 24rpx
+// 商品图片区域
+.shop-img {
+  height: 664rpx;
+  background-color: #fff;
+  > image {
+    width: 718rpx;
+    height: 452rpx;
+    vertical-align: middle;
+    margin-top: 90rpx;
+    margin-left: 16rpx;
+  }
 }
 /* 轮播图详情结束 */
 .swiper-info{
   background: white;
   padding-left: 20rpx;
-  box-sizing: border-box
+  box-sizing: border-box;
+  padding-top: 34rpx;
 }
 
 .swiper-info-title{
@@ -162,39 +146,61 @@ swiper-item image{
   color:rgba(102,102,102,1);
 }
 .share{
-  min-width:210rpx;
+  width: 180rpx;
   height:70rpx;
   background:rgba(253,72,77,1);
   border-radius:36rpx 0px 0px 36rpx;
   line-height: 70rpx;
   text-align: center;
-  color: white
+  color: white;
+  font-size: 28rpx;
+  font-family: Source Han Sans CN;
+  font-weight: 500;
+  color: #fff;
 }
-.price{
-  font-size:64rpx;
-  font-family:Source Han Sans CN;
-  font-weight:500;
-  color:rgba(253,72,77,1);
+.mon {
+  display: flex;
+  align-items: flex-end;
+  .price {
+    font-size:64rpx;
+    font-family:Source Han Sans CN;
+    font-weight:500;
+    color:rgba(253,72,77,1);
+    > text {
+      font-size: 32rpx;
+      margin-left: 10rpx;
+    }
+  }
+  .member {
+    position: relative;
+    margin-left: 30rpx;
+    > image {
+      width: 90rpx;
+      height: 33rpx;
+    }
+    > view {
+      position: absolute;
+      top: 0;
+      left: 10rpx;
+      font-size: 25rpx;
+      font-family: Microsoft YaHei;
+      font-weight: bold;
+      color: #fff;
+    }
+  }
 }
-.price text{
-  font-size:32rpx;
-  font-family:Source Han Sans CN;
-  font-weight:500;
-  color:rgba(86,86,86,1);
-}
-.original-price{
-  font-size:24rpx;
-  font-family:Adobe Heiti Std;
-  font-weight:normal;
-  text-decoration:line-through;
-  color:rgba(102,102,102,1);
-  margin-left: 28rpx
-}
-.mon view{
-  display: inline
+// 普通的价格
+.ordinary-price {
+  margin-top: 26rpx;
+  font-size: 30rpx;
+  font-family: Source Han Sans CN;
+  font-weight: bold;
+  color: #279524;
+  text-decoration: line-through;
 }
 
-/* 服务样式 */
+/* 规格样式 */
+
 .server{
   background: white;
   margin-top: 20rpx;
@@ -292,13 +298,14 @@ swiper-item image{
 }
 
 .cart {
-  width: 36rpx;
-  height: 34rpx;
+  width: 42rpx;
+  height: 42rpx;
   line-height: 98rpx;
 }
 
 #cart {
   align-self: center;
+  position: relative;
 }
 .addCart{
   width:220rpx;
@@ -316,6 +323,7 @@ swiper-item image{
   margin-left: 180rpx
 }
 .toClear {
+  font-size: 28rpx;
   width: 220rpx;
   height: 70rpx;
   background: rgba(39, 149, 36, 1);
@@ -325,5 +333,21 @@ swiper-item image{
   align-self: center;
   margin-right: 30rpx;
   color: white
+}
+// 数字小标识
+.tag {
+  position: absolute;
+  top: -10rpx;
+  right: -20rpx;
+  width: 30rpx;
+  height: 30rpx;
+  line-height: 30rpx;
+  text-align: center;
+  background-color: #FC5854;
+  border-radius: 50%;
+  font-size: 24rpx;
+  font-family: Source Han Sans CN;
+  font-weight: 500;
+  color: #fff;
 }
 </style>

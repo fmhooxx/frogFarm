@@ -113,8 +113,8 @@
 
 /*每个页面公共css */
 page {
-  /* background-color: #000; */
-  background-color: #f1f1f1;
+  background-color: #000;
+  /* background-color: #f1f1f1; */
 }
 .container {
   font-family: PingFang SC;
@@ -443,7 +443,7 @@ scroll-view.data-v-4134b96a {
 
 .suspension.data-v-212c3463 {
   position: fixed;
-  bottom: 260rpx;
+  bottom: 144rpx;
   left: 30rpx;
   z-index: 9;
 }
@@ -466,8 +466,8 @@ scroll-view.data-v-4134b96a {
   border-radius: 50%;
   background-color: #FC5854;
   position: absolute;
-  top: 0;
   right: 0;
+  top: 0;
 }
 .suspension .w.data-v-212c3463 {
   width: 90rpx;

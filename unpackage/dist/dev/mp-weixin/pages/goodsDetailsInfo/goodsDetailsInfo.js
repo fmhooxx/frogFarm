@@ -195,25 +195,10 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 var _default =
 {
   data: function data() {
     return {
-      // 控制轮播图的哪一项
-      currentNum: 1,
       // 控制回到顶部显示与隐藏
       goTopStatus: false };
 
@@ -226,14 +211,16 @@ var _default =
     this.goTopStatus = false;
   },
   methods: {
-    //轮播图切换时获取index
-    getCurrentNum: function getCurrentNum(e) {
-      this.currentNum = e.detail.current;
-    },
-    //点击回到顶部
+    // 回到顶部
     goToTop: function goToTop() {
       uni.pageScrollTo({
         scrollTop: 0 });
+
+    },
+    // 去确定订单页面
+    goConfirmOrder: function goConfirmOrder() {
+      uni.navigateTo({
+        url: '/pages/confirmOrder/confirmOrder' });
 
     } } };exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
