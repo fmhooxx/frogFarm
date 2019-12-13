@@ -38,36 +38,50 @@
 			"list": [
 				{
 					"id": -1,
+					"name": "pages/greenCart/greenCart",
+					"pathName": "pages/greenCart/greenCart",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/indexNews/indexNews",
+					"pathName": "pages/indexNews/indexNews",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/mine/mine",
+					"pathName": "pages/mine/mine",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/goodsRelease/goodsRelease",
+					"pathName": "pages/goodsRelease/goodsRelease",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/goods/goods",
+					"pathName": "pages/goods/goods",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/vipGive/vipGive",
+					"pathName": "pages/vipGive/vipGive",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
 					"name": "pages/greenHealth/greenHealth",
 					"pathName": "pages/greenHealth/greenHealth",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "pages/details/details",
-					"pathName": "pages/details/details",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "pages/vipGoodsDetailsInfo/vipGoodsDetailsInfo",
-					"pathName": "pages/vipGoodsDetailsInfo/vipGoodsDetailsInfo",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "pages/goodsDetailsInfo/goodsDetailsInfo",
-					"pathName": "pages/goodsDetailsInfo/goodsDetailsInfo",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "pages/confirmOrder/confirmOrder",
-					"pathName": "pages/confirmOrder/confirmOrder",
 					"scene": null
 				}
 			]

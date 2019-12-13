@@ -3,16 +3,18 @@
   <view class="order">
     <!-- tab栏数据 -->
     <view class="tabs">
-      <view
-        class="tabs-item"
-        v-for="(item, index) in tabs"
-        :key="index"
-        :class="current == index ? 'active' : ''"
-        @click="tabsChange(index)"
-      >{{item.uname}}</view>
+      <scroll-view scroll-x class="tabs-box" scroll-with-animation @scroll="scrollChange">
+        <block v-for="(item, index) in tabs" :key="index">
+          <view class="tabs-item"
+          :class="current == index ? 'active' : ''"
+          @click="tabsChange(index)"
+          >{{item.uname}}</view>
+        </block>
+      </scroll-view>
     </view>
+    <!-- 有消息页面 -->
     <!-- tab 栏下面的数据 -->
-    <view class="list">
+    <view v-if="isBox" class="list">
       <!-- 待发货状态 -->
       <view class="list-item" @click="goGreenOrderDetails">
         <!-- 头部 时间 状态样式 -->
@@ -21,10 +23,29 @@
           <view>待发货</view>
         </view>
         <!-- 放置图片的区域 -->
-        <view class="item-img-box">
+
+        <scroll-view class="item-img-box" scroll-x scroll-with-animation>
+          <!-- <block v-for="(item, index) in tabs" :key="index"> -->
           <image src="/static/images/order-img.png"></image>
           <image src="/static/images/green-orderlistA.png"></image>
-        </view>
+          <image src="/static/images/green-orderlistA.png"></image>
+          <image src="/static/images/green-orderlistA.png"></image>
+          <image src="/static/images/green-orderlistA.png"></image>
+          <image src="/static/images/green-orderlistA.png"></image>
+          <image src="/static/images/green-orderlistA.png"></image>
+          <image src="/static/images/green-orderlistA.png"></image>
+          <image src="/static/images/green-orderlistA.png"></image>
+          <image src="/static/images/green-orderlistA.png"></image>
+          <image src="/static/images/green-orderlistA.png"></image>
+          <image src="/static/images/green-orderlistA.png"></image>
+          <!-- </block> -->
+        </scroll-view>
+
+
+        <!-- <view class="item-img-box">
+          <image src="/static/images/order-img.png"></image>
+          <image src="/static/images/green-orderlistA.png"></image>
+        </view> -->
         <!-- 商品件数以及金额 -->
         <view class="item-content">
           <text class="one">共 2 件商品 实付</text>
@@ -150,6 +171,12 @@
         <view class="modify">再次购买</view>
       </view>
     </view>
+    <!-- 无消息页面 -->
+    <view v-else class="no-index-news">
+			<image src="/static/images/green-order-list-bgi.png"></image>
+			<view class="info">暂无最新订单</view>
+			<view @click="refresh">刷新</view>
+		</view>
   </view>
 </template>
 
@@ -166,17 +193,25 @@ export default {
           uname: "待付款"
         },
         {
-          uname: "待发货"
+          uname: "已付款"
         },
         {
           uname: "待收货"
         },
         {
+          uname: "已收货"
+        },
+        {
           uname: "已完成"
+        },
+        {
+          uname: "退款售后"
         }
       ],
       // 默认选中的那一项
-      current: 0
+      current: 0,
+      // 控制有消息页面和无消息页面之间的切换
+      isBox: false
     };
   },
   methods: {
@@ -194,6 +229,13 @@ export default {
       uni.navigateTo({
         url: "/pages/greenStayPayment/greenStayPayment"
       });
+    },
+    scrollChange() {
+      console.log(22)
+    },
+    // 刷新
+    refresh() {
+      this.isBox = true
     }
   }
 };
@@ -201,6 +243,7 @@ export default {
 
 <style lang="less" scoped>
 .order {
+  position: relative;
   // tab 选中项的样式
   .active {
     color: rgba(39, 149, 36, 1) !important;
@@ -208,52 +251,63 @@ export default {
   }
   // tab 栏基本样式
   .tabs {
-    display: flex;
-    height: 86rpx;
+    // display: flex;
     line-height: 86rpx;
     margin-bottom: 20rpx;
-    // tab 栏数据样式
-    .tabs-item {
-      font-size: 30rpx;
-      width: 90rpx;
-      margin: 0 28rpx;
-      text-align: center;
-      font-family: Source Han Sans CN;
-      font-weight: 400;
-      color: rgba(102, 102, 102, 1);
+    background-color: #fff;
+    .tabs-box {
+      display: flex;
+      white-space: nowrap;
+      // tab 栏数据样式
+      .tabs-item {
+        margin: 0 34rpx;
+        display: inline-block;
+        font-size: 30rpx;
+        text-align: center;
+        font-family: Source Han Sans CN;
+        font-weight: 400;
+        color: rgba(102, 102, 102, 1);
+      }
     }
   }
+  // 有消息页面
   // tab 栏下面数据
   .list {
     .list-item {
       padding: 30rpx 28rpx 30rpx 28rpx;
-      height: 425rpx;
+      height: 532rpx;
       background: rgba(255, 255, 255, 1);
-      font-size: 24rpx;
+      font-size: 30rpx;
       font-family: Source Han Sans CN;
       font-weight: 400;
       color: rgba(102, 102, 102, 1);
       text-align: right;
       border-bottom: 20rpx;
+      margin-bottom: 20rpx;
       // 头部 时间 状态样式
       .item-title {
         display: flex;
         justify-content: space-between;
         margin-bottom: 40rpx;
+        padding-bottom: 30rpx;
+        border-bottom: 1rpx solid #f1f1f1;
       }
       // 放置图片的区域
       .item-img-box {
+        display: flex;
+        white-space: nowrap;
         margin: auto;
         width: 710rpx;
-        height: 170rpx;
+        height: 250rpx;
         background: rgba(247, 247, 247, 1);
         border-radius: 10rpx;
         padding: 30rpx;
         box-sizing: border-box;
         text-align: left;
         image {
-          width: 110rpx;
-          height: 110rpx;
+          width: 200rpx;
+          height: 200rpx;
+          display: inline-block;
           margin-right: 22rpx;
         }
       }
@@ -261,21 +315,24 @@ export default {
       .item-content {
         font-family: Microsoft YaHei;
         font-weight: bold;
-        margin: 31rpx 4rpx 44rpx 0;
+        margin-bottom: 20rpx;
+        padding: 30rpx 0 30rpx;
         color: #333;
+        border-bottom: 1rpx solid red;
+        border-bottom: 1rpx solid #f7f7f7;
         .one {
-          font-size: 24rpx;
+          font-size: 30rpx;
           color: #666;
           font-weight: 400;
         }
         .two {
-          font-size: 20rpx;
+          font-size: 24rpx;
         }
         .three {
-          font-size: 26rpx;
+          font-size: 30rpx;
         }
         .four {
-          font-size: 20rpx;
+          font-size: 24rpx;
         }
       }
       // 修改地址
@@ -336,5 +393,30 @@ export default {
       }
     }
   }
+  // 无消息页面
+  	// 没有消息区域
+	.no-index-news {
+		width: 335rpx;
+		height: 412rpx;
+		position: absolute;
+		top: 264rpx;
+		left: 208rpx;
+		text-align: center;
+		> image {
+			width: 390rpx;
+			height: 336rpx;
+		}
+		> view {
+			font-family: Source Han Sans CN;
+			font-weight: 400;
+			color: #279524;
+			font-size: 28rpx;
+		}
+		.info {
+			margin: 44rpx 0 28rpx 0;
+			font-size: 30rpx;
+			color: #666;
+		}
+	}
 }
 </style>

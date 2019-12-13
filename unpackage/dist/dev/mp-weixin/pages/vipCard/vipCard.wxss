@@ -27,6 +27,7 @@
   position: absolute;
   width: 600rpx;
   top: 80rpx;
+  left: 40rpx;
 }
 .header-box.data-v-54f60143 {
   box-sizing: border-box;

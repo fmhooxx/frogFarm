@@ -1,18 +1,21 @@
 <template>
 <!-- 商圈发布页面 ming -->
   <view class="release">
-    <view class="text">
-      <textarea placeholder="分享你的健康生活" focus auto-height></textarea>
-    </view>
-    <view class="picture">
-      <view v-for="(item, index) in pictureList" :key="index" @click="preview(index)" @longtap="del(index)">
-        <image :src="item"></image>
+    <view class="release-box">
+      <view class="text">
+        <textarea placeholder="分享你的健康生活" focus auto-height></textarea>
       </view>
-      <view v-for="(item, index) in videoList" :key="index">
-        <video :src="item"></video>
-      </view>
-      <view @click="upload">
-        <image src="/static/images/release.png"></image>
+      <view class="picture">
+        <view v-for="(item, index) in pictureList" :key="index" >
+          <icon class="tag" type="clear" @click="handle(index)" />
+          <image :src="item" @click="preview(index)"></image>
+        </view>
+        <view v-for="(item, index) in videoList" :key="index">
+          <video :src="item"></video>
+        </view>
+        <view @click="upload">
+          <image src="/static/images/release.png"></image>
+        </view>
       </view>
     </view>
     <view class="btn">发布</view>
@@ -52,8 +55,19 @@ export default {
         urls: [this.pictureList[index]]
       })
     },
-    del(index) {
-      console.log(11)
+    // 长按删除
+    handle(index) {
+      uni.showModal({
+        title: '提示',
+        content: '是否确认删除该张照片',
+        success: res => {
+          if (res.confirm) {
+              this.pictureList.splice(index, 1)
+          } else if (res.cancel) {
+              console.log('用户点击取消');
+          }
+        }
+      })
     }
   }
 };
@@ -64,8 +78,11 @@ image {
   width: 100%;
   height: 100%;
 }
+.release-box {
+  background-color: #fff;
+  padding: 0 32rpx 60rpx 30rpx;
+}
 .release {
-  padding: 0 32rpx;
   .text {
     font-size: 26rpx;
     font-family: PingFang;
@@ -79,14 +96,26 @@ image {
   .picture {
     display: flex;
     flex-wrap: wrap;
-    margin-bottom: 132rpx;
     > view {
+      position: relative;
       margin: 10rpx;
       width: 208rpx;
       height: 208rpx;
+      border: 1rpx solid #ccc;
+      box-sizing: border-box;
+      // 清楚符号
+      .tag {
+        position: absolute;
+        top: -24rpx;
+        right: -22rpx;
+        z-index: 9;
+        background-color: #666;
+        border-radius: 50%;
+      }
     }
   }
   .btn {
+    margin: 70rpx auto;
     width: 660rpx;
     height: 84rpx;
     background:rgba(39,149,36,1);

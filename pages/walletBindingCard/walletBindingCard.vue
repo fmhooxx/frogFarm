@@ -57,6 +57,7 @@ export default {
       background: rgba(255, 255, 255, 1);
       padding-left: 25rpx;
       box-sizing: border-box;
+      margin-bottom: 2rpx;
       .w {
         margin-right: 65rpx;
       }

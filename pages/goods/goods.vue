@@ -15,7 +15,8 @@
     <view class="list">
       <view class="list-bgc"></view>
       <view class="content">
-        <view class="content-box" v-for="(item, index) in contentList" :key="index" @longtap="longDel">
+        <view class="content-box" v-for="(item, index) in contentList" :key="index">
+          <image v-if="isTag" class="tag" src="/static/images/addr-del.png" @click="delContent(index)"></image>
           <view class="left">
             <image src="/static/images/user.png"></image>
           </view>
@@ -205,7 +206,7 @@ export default {
         }
       ],
       // 选中的哪一项
-      current: 0
+      current: 0,
     };
   },
   methods: {
@@ -219,23 +220,28 @@ export default {
         url: '/pages/goodsRelease/goodsRelease'
       })
     },
-    handle() {
-      console.log(111)
-    },
-    // 长按删除
-    longDel() {
+    delContent(index) {
       uni.showModal({
-        content: '确定删除?',
-        success: function (res) {
+        title: '提示',
+        content: '是否删除该条信息?',
+        success: res => {
           if (res.confirm) {
-              console.log('用户点击确定');
+            this.contentList.splice(index, 1)
           } else if (res.cancel) {
               console.log('用户点击取消');
           }
         }
-      });
+    });
     }
-  }
+  },
+  computed: {
+    isTag() {
+      if (this.current === 2) {
+        return true
+      }
+      return false
+    }
+  },
 };
 </script>
 
@@ -283,16 +289,24 @@ image {
       // background: rgba(255, 255, 255, 1);
       position: absolute;
       top: 0;
-      left: 30rpx;
+      left: 19rpx;
       // padding: 36rpx 24rpx 20rpx;
       box-sizing: border-box;
       .content-box {
+        position: relative;
         border-radius: 20px;
         padding: 38rpx 0 23rpx 23rpx;
         width: 690rpx;
         display: flex;
         margin-bottom: 45rpx;
         background-color: #fff;
+        .tag {
+          position: absolute;
+          top: 40rpx;
+          right: 30rpx;
+          width: 40rpx;
+          height: 40rpx;
+        }
         .left {
           width: 85rpx;
           height: 85rpx;

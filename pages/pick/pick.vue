@@ -1,33 +1,43 @@
 <template>
   <view class="container">
-    <swiper :previous-margin="previousMargin" :next-margin="nextMargin" @click="swiperBindchange">
-      <block v-for="(item, index) in qrCode" :key="index">
-        <swiper-item>
-          <view class="count">{{currentIndex+1}}/{{qrCode.length}}</view>
-          <view class="slide-qr" :class=" currentIndex == index ? 'zoom-in' : 'zoom-out' ">
-            <text class="order">订单编号：100012323466</text>
-            <image src="/static/images/qr.png" mode="widthFix" />
-            <view class="mess">
-              <text class="tit">取货时间</text>
-              <text>2019-10-15 07:00-19:00</text>
-              <text class="tit">取货地点</text>
-              <text class="address">合肥市蜀山区合肥市蜀山区合肥市蜀山区合肥市蜀山区合肥市蜀山区合肥市蜀山区合作化路与史河路交...</text>
-            </view>
-            <view class="share">
-              <view class="save">
-                <image src="/static/images/save.png" mode="widthFix" />
-                <text>保存</text>
+    <!-- 有消息页面 -->
+    <view v-if="isBox">
+      <swiper :previous-margin="previousMargin" :next-margin="nextMargin" @click="swiperBindchange">
+        <block v-for="(item, index) in qrCode" :key="index">
+          <swiper-item>
+            <view class="count">{{currentIndex+1}}/{{qrCode.length}}</view>
+            <view class="slide-qr" :class=" currentIndex == index ? 'zoom-in' : 'zoom-out' ">
+              <text class="order">订单编号：100012323466</text>
+              <image src="/static/images/qr.png" mode="widthFix" />
+              <view class="mess">
+                <text class="tit">取货时间</text>
+                <text>2019-10-15 07:00-19:00</text>
+                <text class="tit">取货地点</text>
+                <text class="address">合肥市蜀山区合肥市蜀山区合肥市蜀山区合肥市蜀山区合肥市蜀山区合肥市蜀山区合作化路与史河路交...</text>
               </view>
-              <view class="shareTo">
-                分享到：
-                <image src="/static/images/wechart.png" mode="widthFix" />
-                <image src="/static/images/qq.png" mode="widthFix" />
+              <view class="share">
+                <view class="save">
+                  <image src="/static/images/save.png" mode="widthFix" />
+                  <text>保存</text>
+                </view>
+                <view class="shareTo">
+                  分享到：
+                  <image src="/static/images/wechart.png" mode="widthFix" />
+                  <image src="/static/images/qq.png" mode="widthFix" />
+                </view>
               </view>
             </view>
-          </view>
-        </swiper-item>
-      </block>
-    </swiper>
+          </swiper-item>
+        </block>
+      </swiper>
+    </view>
+    <!-- 无消息页面 -->
+    <view v-else class="no-index-news">
+      <image src="/static/images/pick-bgi.png"></image>
+      <view class="one">没有货要取 那就休息咯</view>
+      <view class="two">购买完成后将会生成取货二维码</view>
+      <view class="three" @click="goIndex">去逛逛</view>
+    </view>
   </view>
 </template>
 
@@ -38,21 +48,70 @@ export default {
       qrCode: [{ id: 0 }, { id: 1 }],
       previousMargin: "100rpx", //前边距，可用于露出前一项的一小部分，接受 px 和 rpx 值
       nextMargin: "100rpx", //后边距，可用于露出后一项的一小部分，接受 px 和 rpx 值
-      currentIndex: 0 //swiper当前索引
+      currentIndex: 0, //swiper当前索引,
+      // 控制有消息页面与无消息页面的切换显示
+      isBox: false
     };
   },
   methods: {
     swiperBindchange(e) {
       this.currentIndex = e.detail.current;
+    },
+    // 去首页
+    goIndex() {
+      uni.switchTab({
+        url: '/pages/index/index'
+      })
     }
   }
 };
 </script>
 
-<style>
+<style lang="less" scoped>
 swiper {
   margin-top: 50rpx;
   height: 1000rpx;
+}
+.container {
+  position: relative;
+  // 无消息页面
+  .no-index-news {
+    position: absolute;
+    top: 230rpx;
+    left: 174rpx;
+    width: 400rpx;
+    height: 570rpx;
+    text-align: center;
+    > image {
+      width: 400rpx;
+      height: 344rpx;
+    }
+    > view {
+      font-family: Source Han Sans CN;
+      font-weight: 400;
+    }
+    .one {
+      margin-top: 32rpx;
+      font-size: 30rpx;
+      color: #666;
+    }
+    .two {
+      font-size: 20rpx;
+      color: #999;
+      margin: 24rpx 0;
+    }
+    .three {
+      width: 200rpx;
+      height: 50rpx;
+      line-height: 50rpx;
+      text-align: center;
+      border: 2rpx solid rgba(39,149,36,1);
+      border-radius: 25rpx;
+      font-size: 28rpx;
+      color: #279524;
+      margin: auto;
+    }
+  }
 }
 
 /* swiper-item {} */

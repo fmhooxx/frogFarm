@@ -1,6 +1,15 @@
+
+page {
+  background-color: #fff;
+}
+
 image.data-v-6daaff45 {
   width: 100%;
   height: 100%;
+}
+.vip-swiper.data-v-6daaff45 {
+  width: 688rpx;
+  height: 350rpx;
 }
 .give.data-v-6daaff45 {
   position: relative;
@@ -59,7 +68,7 @@ image.data-v-6daaff45 {
   width: 100%;
   height: 88rpx;
   background: #ffffff;
-  border-bottom: 2rpx solid #cccccc;
+  border: 2rpx solid #CCC;
   border-radius: 5rpx;
 }
 .give .info .info-input input.data-v-6daaff45 {

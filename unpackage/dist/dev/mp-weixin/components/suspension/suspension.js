@@ -97,7 +97,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ 252:
+/***/ 256:
 /*!******************************************************************************************************!*\
   !*** C:/Users/Administrator/Desktop/资料/shop/main.js?{"page":"components%2Fsuspension%2Fsuspension"} ***!
   \******************************************************************************************************/
@@ -123,9 +123,6 @@ createPage(_suspension.default);
 
 "use strict";
 /* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0; //
-//
-//
-//
 //
 //
 //
@@ -179,5 +176,5 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ })
 
-},[[252,"common/runtime","common/vendor"]]]);
+},[[256,"common/runtime","common/vendor"]]]);
 //# sourceMappingURL=../../../.sourcemap/mp-weixin/components/suspension/suspension.js.map

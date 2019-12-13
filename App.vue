@@ -113,8 +113,8 @@ export default {
 <style>
 /*每个页面公共css */
 page {
-  background-color: #000;
-  /* background-color: #f1f1f1; */
+  /* background-color: #000; */
+  background-color: #f1f1f1;
 }
 .container {
   font-family: PingFang SC;

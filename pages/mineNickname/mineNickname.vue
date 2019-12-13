@@ -9,6 +9,7 @@
         @blur="inputBlur"
         v-model="nicknameVal"
         placeholder-class="tel-nickname-class"
+        focus
       />
       <icon v-show="isIcon" @click="clearVal" size="19" color="#ccc" type="clear" />
     </view>
@@ -63,9 +64,10 @@ image {
   opacity: 1 !important;
 }
 .nickname {
-  padding: 0 30rpx;
   // 输入昵称区域
   .nickname-content {
+    padding: 0 30rpx;
+    background-color: #fff;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -73,6 +75,7 @@ image {
     margin-top: 20rpx;
     input {
       height: 100%;
+      width: 90%;
     }
     // 请输入昵称的 placeholder 样式
     .tel-nickname-class {
@@ -94,8 +97,8 @@ image {
   .nickname-btn {
     width: 630rpx;
     height: 90rpx;
-    margin-top: 150rpx;
     border-radius: 42rpx;
+    margin: 150rpx auto;
     .btn {
       width: 100%;
       background: rgba(39, 149, 36, 1);

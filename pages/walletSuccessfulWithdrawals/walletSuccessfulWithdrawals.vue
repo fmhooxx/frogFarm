@@ -15,6 +15,12 @@ export default {
 };
 </script>
 
+<style>
+page {
+	background-color: #fff;
+}
+</style>
+
 <style lang="less" scoped>
 .success {
 	image {
@@ -24,7 +30,8 @@ export default {
 	}
 	button {
 		width: 690rpx;
-		height:80rpx;
+		height: 80rpx;
+		line-height: 80rpx;
 		background:rgba(39,149,36,1);
 		border-radius:40rpx;
 		font-size: 36rpx;

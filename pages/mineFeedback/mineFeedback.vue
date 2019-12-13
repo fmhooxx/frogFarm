@@ -47,6 +47,12 @@ export default {
 };
 </script>
 
+<style>
+page {
+	background-color: #fff;
+}
+</style>
+
 <style lang="less" scoped>
 image {
 	width: 100%;

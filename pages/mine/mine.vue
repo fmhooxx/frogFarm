@@ -45,14 +45,17 @@
         </view>
       </view>
       <view class="container-list">
-        <view class="list" v-for="(item, index) in list" :key="index" @click="goOther(index)">
-          <view class="left">
-            <image :src="item.url"></image>
+        <view v-for="(item, index) in list" :key="index" @click="goOther(index)">
+          <view class="list">
+            <view class="left">
+              <image :src="item.url"></image>
+            </view>
+            <view class="right" :class="{ noborder: index === current }">
+              <text>{{item.text}}</text>
+              <image src="/static/images/arrow-right.png"></image>
+            </view>
           </view>
-          <view class="right">
-            <text>{{item.text}}</text>
-            <image src="/static/images/arrow-right.png"></image>
-          </view>
+          <view :class="{ bgc: index === current }"></view>
         </view>
       </view>
     </view>
@@ -77,39 +80,35 @@ export default {
         {
           id: 2,
           url: "/static/images/m3.png",
-          text: "售后服务"
+          text: "我的推荐码"
         },
         {
           id: 3,
-          url: "/static/images/m4.png",
-          text: "推荐有礼"
+          url: "/static/images/m5.png",
+          text: "收货地址"
         },
         {
           id: 4,
-          url: "/static/images/m5.png",
-          text: "地址管理"
+          url: "/static/images/m7.png",
+          text: "关于我们"
         },
         {
           id: 5,
           url: "/static/images/m6.png",
-          text: "关于我们"
+          text: "客服电话"
         },
         {
           id: 6,
-          url: "/static/images/m7.png",
-          text: "常见问题"
-        },
-        {
-          id: 7,
-          url: "/static/images/m8.png",
+          url: "/static/images/m10.png",
           text: "意见反馈"
         },
         {
-          id: 8,
+          id: 7,
           url: "/static/images/m9.png",
-          text: "设置"
+          text: "我的设置"
         }
-      ]
+      ],
+      current: 2
     };
   },
   methods: {
@@ -138,40 +137,43 @@ export default {
         return uni.navigateTo({
           url: "/pages/myOrder/myOrder"
         });
-        // 去推荐有礼页面
-      } else if (index === 3) {
+        // 去我的邀请码
+      } else if (index === 2) {
         return uni.navigateTo({
           url: "/pages/mineRecommendCourtesy/mineRecommendCourtesy"
         });
         // 去设置页面
-      } else if (index === 8) {
+      } else if (index === 7) {
         return uni.navigateTo({
           url: "/pages/mineSetUp/mineSetUp"
         });
         // 去地址管理页面
-      } else if (index === 4) {
+      } else if (index === 3) {
         return uni.navigateTo({
           url: "/pages/greenAddrManage/greenAddrManage"
         });
-        // 去售后服务页面
-      } else if (index === 2) {
-        return uni.navigateTo({
-          url: "/pages/mineAfterSaleService/mineAfterSaleService"
-        });
-      }
+        
+      } 
+      // 去售后服务页面
+      // else if (index === 2) {
+      //   return uni.navigateTo({
+      //     url: "/pages/mineAfterSaleService/mineAfterSaleService"
+      //   });
+      // }
       // 去常见问题页面
-      else if (index === 6) {
-        return uni.navigateTo({
-          url: "/pages/mineCommonProblem/mineCommonProblem"
-        });
-        // 去关于我们页面
-      } else if (index === 5) {
+      // else if (index === 7) {
+      //   return uni.navigateTo({
+      //     url: "/pages/mineCommonProblem/mineCommonProblem"
+      //   });
+      // } 
+      // 去关于我们页面
+      else if (index === 4) {
         return uni.navigateTo({
           url: "/pages/mineAboutUs/mineAboutUs"
         });
       }
       // 去意见反馈页面
-      else if (index === 7) {
+      else if (index === 6) {
         return uni.navigateTo({
           url: "/pages/mineFeedback/mineFeedback"
         });
@@ -284,16 +286,16 @@ page {
 .footer {
   position: absolute;
   top: 216rpx;
-  left: 20rpx;
+  // left: 20rpx;
   background: rgba(255, 255, 255, 1);
-  width: 710rpx;
+  // width: 710rpx;
   border-radius: 20rpx;
 }
 .box {
   width: 710rpx;
   height: 126rpx;
+  margin-left: 20rpx;
   position: absolute;
-  margin: auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -301,9 +303,12 @@ page {
   box-shadow: 0rpx 1rpx 5rpx 0rpx rgba(204, 204, 204, 0.35);
   border-radius: 20rpx;
   z-index: 9;
+  .vip {
+    border-right: 1rpx solid #f2f2f2;
+  }
   .w {
     width: 50%;
-    height: 100%;
+    height: 80%;
     margin: auto;
     display: flex;
     justify-content: center;
@@ -318,7 +323,8 @@ page {
 }
 .container-list {
   position: absolute;
-  width: 710rpx;
+  // width: 710rpx;
+  width: 750rpx;
   top: 126rpx;
   background-color: #fff;
 }
@@ -330,15 +336,15 @@ page {
   padding: 0 30rpx;
   .left {
     image {
-      width: 36rpx;
-      height: 42rpx;
+      width: 48rpx;
+      height: 48rpx;
       vertical-align: middle;
       margin-right: 26rpx;
     }
   }
   .right {
     width: 90%;
-    border-bottom: 2rpx solid rgba(220,220,220,1);
+    border-bottom: 2rpx solid #f1f1f1;
     text {
       font-size: 32rpx;
       font-family: Source Han Sans CN;
@@ -352,6 +358,14 @@ page {
       height: 22rpx;
     }
   }
+}
+.bgc {
+  height: 20rpx;
+  width: 100%;
+  background-color: #f2f2f2;
+}
+.noborder {
+  border-bottom: none !important;
 }
 .box image {
   width: 35rpx;

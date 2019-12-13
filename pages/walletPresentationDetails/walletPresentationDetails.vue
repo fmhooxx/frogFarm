@@ -10,9 +10,7 @@
 				</picker>
 			</view>
 			<!-- 下拉小箭头 -->
-			<view class="title-img">
-				<image src="/static/images/down-arrow.png"></image>
-			</view>
+			<image src="/static/images/down-arrow.png"></image>
 		</view>
 		<!-- 提现信息区域 -->
 		<view class="list">
@@ -146,14 +144,14 @@ image {
 	// 头部区域
 	.details-title {
 		height: 54rpx;
-		width: 220rpx;
-		// min-width: ;
+		width: 230rpx;
 		text-align: center;
 		line-height: 54rpx;
 		background:rgba(255,255,255,1);
 		border: 1rpx solid rgba(237,237,237,1);
 		border-radius: 27rpx;
 		display: flex;
+		align-items: center;
 		margin: 30rpx;
 		// 日期选择
 		.title-month {
@@ -167,9 +165,10 @@ image {
 			}
 		}
 		// 下拉小箭头
-		.title-img {
+		> image {
 			width: 16rpx;
 			height: 12rpx;
+			vertical-align: middle;
 		}
 	}
 	// 提现信息区域

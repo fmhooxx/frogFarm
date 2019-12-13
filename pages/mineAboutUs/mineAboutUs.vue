@@ -17,6 +17,12 @@ export default {
 };
 </script>
 
+<style>
+page {
+  background-color: #fff;
+}
+</style>
+
 <style lang="less" scoped>
 .about {
   padding: 0 30rpx 0 37rpx;

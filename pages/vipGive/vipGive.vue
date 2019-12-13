@@ -2,16 +2,21 @@
   <!-- form ming 会员赠送页面-->
   <view class="give">
     <!-- 头部图片以及内容 -->
-		<view class="member">
-			<image src="/static/images/vip-bgi.png" mode="scaleToFill"></image>
-      <view class="vip">蛙农场·VIP会员</view>
-      <view class="money">年卡会员299元</view>
-		</view>
+
+    <swiper class="vip-swiper" indicator-dots circular indicator-color="#fff" indicator-active-color="#279524" @change="change">
+      <swiper-item v-for="(item, index) in swiperList" :key="index">
+        <view class="member">
+          <image src="/static/images/vip-bgi.png" mode="scaleToFill"></image>
+          <view class="vip">蛙农场·VIP会员</view>
+          <view class="money">{{item.vip}}</view>
+        </view>
+      </swiper-item>
+    </swiper>
     <!-- 信息部分 -->
     <view class="info">
       <view class="info-title">
         <view class="info-tel">输入手机号赠送好友</view>
-        <view class="record">记录</view>
+        <view class="record" @click="goVipGiveRecord">记录</view>
       </view>
       <view class="info-input">
         <input placeholder="请输入好友手机号码" focus type="number" placeholder-class="input-text" />
@@ -19,8 +24,10 @@
       <view class="notes">注：会员卡领取有效期为30天，30天内未领取将返回到本人账户.</view>
     </view>
     <view class="footer">
-      <view class="price">¥<text>299</text></view>
-      <view class="footer-give" @click="goVipGiveRecord">立即赠送</view>
+      <view class="price" v-for="(item, index) in swiperList" :key="index" v-show=" num == index ">
+        ¥<text>{{item.money}}</text>
+      </view>
+      <view class="footer-give">立即赠送</view>
     </view>
 	</view>
 </template>
@@ -28,7 +35,31 @@
 <script>
 export default {
   data() {
-    return {};
+    return {
+      swiperList: [
+        {
+          id: 0,
+          vip: '年卡会员299元',
+          money: 299
+        },
+        {
+          id: 1,
+          vip: '半年卡会员149元',
+          money: 149
+        },
+        {
+          id: 2,
+          vip: '季卡会员49元',
+          money: 49
+        },
+        {
+          id: 3,
+          vip: '月卡会员19元',
+          money: 19
+        }
+      ],
+      num: 0
+    };
   },
   methods: {
     // 去赠送记录页面
@@ -36,15 +67,28 @@ export default {
       uni.navigateTo({
         url: '/pages/vipGiveRecord/vipGiveRecord'
       })
+    },
+    change(e) {
+      this.num = e.detail.current
     }
   }
 };
 </script>
 
+<style>
+page {
+  background-color: #fff;
+}
+</style>
+
 <style lang="less" scoped>
 image {
 	width: 100%;
 	height: 100%;
+}
+.vip-swiper {
+  width: 688rpx;
+  height: 350rpx;
 }
 .give {
   position: relative;
@@ -99,7 +143,7 @@ image {
       width: 100%;
       height: 88rpx;
       background:rgba(255,255,255,1);
-      border-bottom: 2rpx solid rgba(204,204,204,1);
+      border: 2rpx solid #CCC;
       border-radius: 5rpx;
       input {
         // margin-top: 20rpx;

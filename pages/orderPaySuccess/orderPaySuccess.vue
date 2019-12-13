@@ -27,6 +27,12 @@
 	}
 </script>
 
+<style>
+page {
+  background-color: #fff;
+}
+</style>
+
 <style lang="less" scoped>
 .succ-box{
   width: 200rpx;
@@ -57,12 +63,18 @@
   border:2rpx solid rgba(39, 149, 36, 1);
   border-radius:40rpx;
   text-align: center;
-  line-height: 80rpx
+  line-height: 80rpx;
+  color: #fff;
+  font-size: 30rpx;
 }
 .btn-left{
   background:rgba(39,149,36,1);
 }
 .btn-right{
+  font-size: 30rpx;
+  font-family: Source Han Sans CN;
+  font-weight: 500;
+  color: #279524;
   background:rgba(255,255,255,1);
 }
 </style>

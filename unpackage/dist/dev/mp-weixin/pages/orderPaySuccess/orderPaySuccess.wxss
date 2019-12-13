@@ -1,3 +1,8 @@
+
+page {
+  background-color: #fff;
+}
+
 .succ-box.data-v-346a75fb {
   width: 200rpx;
   height: 200rpx;
@@ -26,11 +31,17 @@
   border-radius: 40rpx;
   text-align: center;
   line-height: 80rpx;
+  color: #fff;
+  font-size: 30rpx;
 }
 .btn-left.data-v-346a75fb {
   background: #279524;
 }
 .btn-right.data-v-346a75fb {
+  font-size: 30rpx;
+  font-family: Source Han Sans CN;
+  font-weight: 500;
+  color: #279524;
   background: #ffffff;
 }
 

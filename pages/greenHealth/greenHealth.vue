@@ -73,9 +73,9 @@
 						</view>
 						<view class="list-footer">
 							<!-- 赠送会员 -->
-							<view class="give">赠送好友</view>
+							<view class="give" @click.stop="handle">赠送好友</view>
 							<!-- 购买 -->
-							<view class="purchase">购买</view>
+							<view class="purchase" @click="purchase">购买</view>
 						</view>
 					</view>
 				</view>
@@ -92,9 +92,7 @@
 					<!-- 次数 -->
 					<view class="right-num">
 						<text class="number">品种多多，尽享优惠</text>
-						
 					</view>
-
 					<!-- 价格以及会员 -->
 					<view class="price-member">
 						<!-- 价格 -->
@@ -111,9 +109,9 @@
 						</view>
 						<view class="list-footer">
 							<!-- 赠送会员 -->
-							<view class="give">赠送好友</view>
+							<view class="give" @click.stop="handle">赠送好友</view>
 							<!-- 购买 -->
-							<view class="purchase">购买</view>
+							<view class="purchase" @click="purchase">购买</view>
 						</view>
 					</view>
 				</view>
@@ -130,9 +128,7 @@
 					<!-- 次数 -->
 					<view class="right-num">
 						<text class="number">品种多多，尽享优惠</text>
-						
 					</view>
-
 					<!-- 价格以及会员 -->
 					<view class="price-member">
 						<!-- 价格 -->
@@ -149,9 +145,9 @@
 						</view>
 						<view class="list-footer">
 							<!-- 赠送会员 -->
-							<view class="give">赠送好友</view>
+							<view class="give" @click.stop="handle">赠送好友</view>
 							<!-- 购买 -->
-							<view class="purchase">购买</view>
+							<view class="purchase" @click="purchase">购买</view>
 						</view>
 					</view>
 				</view>
@@ -168,9 +164,7 @@
 					<!-- 次数 -->
 					<view class="right-num">
 						<text class="number">品种多多，尽享优惠</text>
-						
 					</view>
-
 					<!-- 价格以及会员 -->
 					<view class="price-member">
 						<!-- 价格 -->
@@ -187,9 +181,9 @@
 						</view>
 						<view class="list-footer">
 							<!-- 赠送会员 -->
-							<view class="give">赠送好友</view>
+							<view class="give" @click.stop="handle">赠送好友</view>
 							<!-- 购买 -->
-							<view class="purchase">购买</view>
+							<view class="purchase" @click="purchase">购买</view>
 						</view>
 					</view>
 				</view>
@@ -223,7 +217,7 @@
 							</view>
 						</view>
 						<!-- 加号 -->
-						<image src="/static/images/vip-add@2x.png"></image>
+						<image @click.stop="plus" src="/static/images/vip-add@2x.png"></image>
 					</view>
 				</view>
 			</view>
@@ -252,7 +246,7 @@
 							</view>
 						</view>
 						<!-- 加号 -->
-						<image src="/static/images/vip-add@2x.png"></image>
+						<image @click.stop="plus" src="/static/images/vip-add@2x.png"></image>
 					</view>
 				</view>
 			</view>
@@ -281,7 +275,7 @@
 							</view>
 						</view>
 						<!-- 加号 -->
-						<image src="/static/images/vip-add@2x.png"></image>
+						<image @click.stop="plus" src="/static/images/vip-add@2x.png"></image>
 					</view>
 				</view>
 			</view>
@@ -310,7 +304,7 @@
 							</view>
 						</view>
 						<!-- 加号 -->
-						<image src="/static/images/vip-add@2x.png"></image>
+						<image @click.stop="plus" src="/static/images/vip-add@2x.png"></image>
 					</view>
 				</view>
 			</view>
@@ -363,7 +357,19 @@ export default {
       uni.navigateTo({
         url: "/pages/details/details"
       });
-    }
+		},
+		// 赠送好友
+		handle() {
+			console.log('赠送好友')
+		},
+		// 购买
+		purchase() {
+			console.log('购买')
+		},
+		// 加入购物车
+		plus() {
+			console.log('加入购物车')
+		}
   }
 };
 </script>

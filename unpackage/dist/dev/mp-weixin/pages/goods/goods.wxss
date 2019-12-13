@@ -43,10 +43,11 @@ image.data-v-7b8bd215 {
 .goods .list .content.data-v-7b8bd215 {
   position: absolute;
   top: 0;
-  left: 30rpx;
+  left: 19rpx;
   box-sizing: border-box;
 }
 .goods .list .content .content-box.data-v-7b8bd215 {
+  position: relative;
   border-radius: 20px;
   padding: 38rpx 0 23rpx 23rpx;
   width: 690rpx;
@@ -55,6 +56,13 @@ image.data-v-7b8bd215 {
   display: flex;
   margin-bottom: 45rpx;
   background-color: #fff;
+}
+.goods .list .content .content-box .tag.data-v-7b8bd215 {
+  position: absolute;
+  top: 40rpx;
+  right: 30rpx;
+  width: 40rpx;
+  height: 40rpx;
 }
 .goods .list .content .content-box .left.data-v-7b8bd215 {
   width: 85rpx;

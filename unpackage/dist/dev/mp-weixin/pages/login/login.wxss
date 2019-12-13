@@ -1,3 +1,8 @@
+
+page {
+  background-color: #fff;
+}
+
 image.data-v-4d2384fb {
   width: 100%;
   height: 100%;
@@ -24,6 +29,10 @@ image.data-v-4d2384fb {
 }
 .login .login-content.data-v-4d2384fb {
   font-size: 24rpx;
+}
+.login .login-content > view.data-v-4d2384fb {
+  height: 80rpx;
+  border-bottom: 1rpx solid #ECECEC;
 }
 .login .login-content .login-tel.data-v-4d2384fb {
   margin-top: 123rpx;

@@ -89,6 +89,12 @@ export default {
 };
 </script>
 
+<style>
+page {
+  background-color: #fff;
+}
+</style>
+
 <style lang="less" scoped>
 image {
   width: 100%;
@@ -117,6 +123,10 @@ image {
   }
   // 手机号 验证码区域
   .login-content {
+    > view {
+      height: 80rpx;
+      border-bottom: 1rpx solid #ececec;
+    }
     .login-tel {
       margin-top: 60rpx;
       display: flex;

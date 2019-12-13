@@ -629,7 +629,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ 226:
+/***/ 228:
 /*!*****************************************************************************************!*\
   !*** C:/Users/Administrator/Desktop/资料/shop/main.js?{"page":"components%2FBaseTabbar"} ***!
   \*****************************************************************************************/
@@ -646,5 +646,5 @@ createPage(_BaseTabbar.default);
 
 /***/ })
 
-},[[226,"common/runtime","common/vendor"]]]);
+},[[228,"common/runtime","common/vendor"]]]);
 //# sourceMappingURL=../../.sourcemap/mp-weixin/components/BaseTabbar.js.map

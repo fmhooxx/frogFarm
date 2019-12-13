@@ -64,6 +64,12 @@ export default {
 };
 </script>
 
+<style>
+page {
+  background-color: #fff;
+}
+</style>
+
 <style lang="less" scoped>
 image {
   width: 100%;
@@ -85,6 +91,10 @@ image {
   }
   // 手机号 密码区域
   .login-content {
+    > view {
+      height: 80rpx;
+      border-bottom: 1rpx solid #ECECEC;
+    }
     .login-password {
       margin: 176rpx 0 94rpx 0;
     }

@@ -8,6 +8,7 @@
   -webkit-box-align: center;
   -webkit-align-items: center;
           align-items: center;
+  margin: 20rpx auto !important;
 }
 .order-remark image.data-v-2e576db2 {
   width: 13rpx;

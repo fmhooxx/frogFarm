@@ -20,6 +20,7 @@
   background: #ffffff;
   padding-left: 25rpx;
   box-sizing: border-box;
+  margin-bottom: 2rpx;
 }
 .binding-card .binding > view .w.data-v-4e359f3e {
   margin-right: 65rpx;

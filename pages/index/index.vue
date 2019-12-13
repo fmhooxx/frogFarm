@@ -274,7 +274,7 @@
 						<view class="info">
 							<scroll-view scroll-x class="scroll-content">
 								<block v-for="(item, index) in list" :key="index">
-									<view class="info-box" @click="goList">
+									<view class="info-box">
 										<view class="info-img">
 											<image :src="item.url" mode=""></image>
 										</view>
@@ -311,7 +311,7 @@
 						<view class="info">
 							<scroll-view scroll-x class="scroll-content">
 								<block v-for="(item, index) in list" :key="index">
-									<view class="info-box" @click="goList">
+									<view class="info-box">
 										<view class="info-img">
 											<image :src="item.url" mode=""></image>
 										</view>
@@ -348,7 +348,7 @@
 						<view class="info">
 							<scroll-view scroll-x class="scroll-content">
 								<block v-for="(item, index) in list" :key="index">
-									<view class="info-box" @click="goList">
+									<view class="info-box">
 										<view class="info-img">
 											<image :src="item.url" mode=""></image>
 										</view>

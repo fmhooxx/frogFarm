@@ -92,7 +92,6 @@
 				<view>支付方式：微信</view>
 			</view>
 		<!-- 订单详情结束 -->
-		<view class="geduan"></view>
       <!-- 底部操作栏开始 -->
 		<view class="user-defined flex-row">
 			<view class="vertical-center add">
@@ -125,6 +124,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin: 20rpx auto !important;
   image {
     width: 13rpx;
     height: 23rpx;

@@ -1,28 +1,30 @@
 <template>
   <!-- 我的 设置页面 ming -->
   <view class="account-management">
-    <view class="management-box w" @click="goMineAccountManagement">
-      <!-- 左边 -->
-      <view class="box-left">我的账户</view>
-      <!-- 右边 -->
-      <view class="box-right">
-        <view class="right-tel">1234567890</view>
-        <view class="tel-img">
-          <image src="/static/images/arrow-right.png"></image>
+    <view>
+      <view class="management-box w" @click="goMineAccountManagement">
+        <!-- 左边 -->
+        <view class="box-left">我的账户</view>
+        <!-- 右边 -->
+        <view class="box-right">
+          <view class="right-tel">1234567890</view>
+          <view class="tel-img">
+            <image src="/static/images/arrow-right.png"></image>
+          </view>
         </view>
       </view>
-    </view>
-    <view class="management-box">
-      <!-- 左边 -->
-      <view class="box-left">版本信息</view>
-      <!-- 右边 -->
-      <view class="box-right">V 2.1</view>
-    </view>
-    <view class="management-box">
-      <!-- 左边 -->
-      <view class="box-left">软件缓存</view>
-      <!-- 右边 -->
-      <view class="box-right">49.10M</view>
+      <view class="management-box">
+        <!-- 左边 -->
+        <view class="box-left">版本信息</view>
+        <!-- 右边 -->
+        <view class="box-right">V 2.1</view>
+      </view>
+      <view class="management-box">
+        <!-- 左边 -->
+        <view class="box-left">软件缓存</view>
+        <!-- 右边 -->
+        <view class="box-right">49.10M</view>
+      </view>
     </view>
     <view class="signOut" @click="openBasePopup">退出当前账号</view>
     <!-- 弹框内容 -->
@@ -64,12 +66,16 @@ image {
 	height: 100%;
 }
 .account-management {
-  background: rgba(255, 255, 255, 1);
+  > view {
+    background-color: #fff;
+    padding-bottom: 20rpx;
+  }
   margin-top: 20rpx;
   .w {
     padding-top: 40rpx !important;
   }
   .management-box {
+    background-color: #fff;
     display: flex;
     justify-content: space-between;
     padding: 0 30rpx;

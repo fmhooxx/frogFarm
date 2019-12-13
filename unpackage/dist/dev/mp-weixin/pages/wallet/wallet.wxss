@@ -39,9 +39,10 @@ image.data-v-b70da6f2 {
 }
 .wallet .footer.data-v-b70da6f2 {
   margin-top: 50rpx;
-  background-color: #fff;
 }
 .wallet .footer .footer-box.data-v-b70da6f2 {
+  margin: 1rpx 0;
+  background-color: #fff;
   display: -webkit-box;
   display: -webkit-flex;
   display: flex;

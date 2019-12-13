@@ -1,4 +1,7 @@
-.index-news .news-box.data-v-defe709a {
+.index-news-box.data-v-defe709a {
+  position: relative;
+}
+.index-news-box .index-news .news-box.data-v-defe709a {
   display: -webkit-box;
   display: -webkit-flex;
   display: flex;
@@ -6,7 +9,7 @@
   border-top: 2rpx solid #f1f1f1;
   background-color: #fff;
 }
-.index-news .news-box .news-left.data-v-defe709a {
+.index-news-box .index-news .news-box .news-left.data-v-defe709a {
   position: relative;
   width: 75rpx;
   height: 75rpx;
@@ -15,14 +18,14 @@
   margin: 21rpx 21rpx 24rpx 31rpx;
   box-sizing: border-box;
 }
-.index-news .news-box .news-left image.data-v-defe709a {
+.index-news-box .index-news .news-box .news-left image.data-v-defe709a {
   width: 41rpx;
   height: 46rpx;
   border-radius: 50%;
   margin: 15rpx 17rpx 14rpx 17rpx;
   vertical-align: middle;
 }
-.index-news .news-box .news-left .dot.data-v-defe709a {
+.index-news-box .index-news .news-box .news-left .dot.data-v-defe709a {
   position: absolute;
   top: 9rpx;
   right: 0;
@@ -31,7 +34,7 @@
   background: #ff0000;
   border-radius: 50%;
 }
-.index-news .news-box .new-right .right-head.data-v-defe709a {
+.index-news-box .index-news .news-box .new-right .right-head.data-v-defe709a {
   display: -webkit-box;
   display: -webkit-flex;
   display: flex;
@@ -43,19 +46,19 @@
           align-items: center;
   margin: 14rpx 0 8rpx 12rpx;
 }
-.index-news .news-box .new-right .right-head .type.data-v-defe709a {
+.index-news-box .index-news .news-box .new-right .right-head .type.data-v-defe709a {
   font-size: 32rpx;
   font-family: PingFang SC;
   font-weight: 400;
   color: #333333;
 }
-.index-news .news-box .new-right .right-head .timer.data-v-defe709a {
+.index-news-box .index-news .news-box .new-right .right-head .timer.data-v-defe709a {
   font-size: 24rpx;
   font-family: PingFang SC;
   font-weight: 500;
   color: #999999;
 }
-.index-news .news-box .new-right .right-footer.data-v-defe709a {
+.index-news-box .index-news .news-box .new-right .right-footer.data-v-defe709a {
   width: 612rpx;
   overflow: hidden;
   white-space: nowrap;
@@ -64,5 +67,28 @@
   font-family: PingFang SC;
   font-weight: 400;
   color: #999999;
+}
+.index-news-box .no-index-news.data-v-defe709a {
+  width: 335rpx;
+  height: 412rpx;
+  position: absolute;
+  top: 264rpx;
+  left: 208rpx;
+  text-align: center;
+}
+.index-news-box .no-index-news > image.data-v-defe709a {
+  width: 355rpx;
+  height: 290rpx;
+}
+.index-news-box .no-index-news > view.data-v-defe709a {
+  font-family: Source Han Sans CN;
+  font-weight: 400;
+  color: #279524;
+  font-size: 28rpx;
+}
+.index-news-box .no-index-news .info.data-v-defe709a {
+  margin: 44rpx 0 28rpx 0;
+  font-size: 30rpx;
+  color: #666;
 }
 

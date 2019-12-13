@@ -2,8 +2,9 @@ image.data-v-67e08307 {
   width: 100%;
   height: 100%;
 }
-.release.data-v-67e08307 {
-  padding: 0 32rpx;
+.release-box.data-v-67e08307 {
+  background-color: #fff;
+  padding: 0 32rpx 60rpx 30rpx;
 }
 .release .text.data-v-67e08307 {
   font-size: 26rpx;
@@ -21,14 +22,25 @@ image.data-v-67e08307 {
   display: flex;
   -webkit-flex-wrap: wrap;
           flex-wrap: wrap;
-  margin-bottom: 132rpx;
 }
 .release .picture > view.data-v-67e08307 {
+  position: relative;
   margin: 10rpx;
   width: 208rpx;
   height: 208rpx;
+  border: 1rpx solid #ccc;
+  box-sizing: border-box;
+}
+.release .picture > view .tag.data-v-67e08307 {
+  position: absolute;
+  top: -24rpx;
+  right: -22rpx;
+  z-index: 9;
+  background-color: #666;
+  border-radius: 50%;
 }
 .release .btn.data-v-67e08307 {
+  margin: 70rpx auto;
   width: 660rpx;
   height: 84rpx;
   background: #279524;

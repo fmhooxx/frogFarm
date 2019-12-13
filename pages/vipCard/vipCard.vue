@@ -3,7 +3,7 @@
 	<view class="container">
 		<!-- 订单详情头部开始 -->
     <!-- 未开通会员的卡片 -->
-		<view v-if="false">
+		<view v-if="isBox">
       <view class="order-header"></view>
       <view class="vip-card">
         <image src="/static/images/vip-manage.png"></image>
@@ -17,7 +17,7 @@
       </view>
     </view>
     <!-- 已开通会员的卡片 -->
-		<view v-if="true">
+		<view v-else>
       <view class="order-header"></view>
       <view class="vip-card">
         <image src="/static/images/vip-manage.png"></image>
@@ -116,7 +116,7 @@
 	export default {
 		data() {
 			return {
-				
+				isBox: false
 			}
 		},
 		methods: {
@@ -170,6 +170,7 @@
     position: absolute;
     width: 600rpx;
     top: 80rpx;
+    left: 40rpx;
   }
 }
 .header-box {

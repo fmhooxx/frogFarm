@@ -3,13 +3,17 @@ image.data-v-6849defd {
   height: 100%;
 }
 .account-management.data-v-6849defd {
-  background: #ffffff;
   margin-top: 20rpx;
+}
+.account-management > view.data-v-6849defd {
+  background-color: #fff;
+  padding-bottom: 20rpx;
 }
 .account-management .w.data-v-6849defd {
   padding-top: 40rpx !important;
 }
 .account-management .management-box.data-v-6849defd {
+  background-color: #fff;
   display: -webkit-box;
   display: -webkit-flex;
   display: flex;

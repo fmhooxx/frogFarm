@@ -148,8 +148,9 @@ image {
 	}
 	.footer {
 		margin-top: 50rpx;
-		background-color: #fff;
 		.footer-box {
+			margin: 1rpx 0;
+			background-color: #fff;
 			display: flex;
 			justify-content: space-between;
 			height: 90rpx;

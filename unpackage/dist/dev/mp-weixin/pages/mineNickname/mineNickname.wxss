@@ -6,10 +6,9 @@ image.data-v-2fa55d07 {
   background-color: #279524 !important;
   opacity: 1 !important;
 }
-.nickname.data-v-2fa55d07 {
-  padding: 0 30rpx;
-}
 .nickname .nickname-content.data-v-2fa55d07 {
+  padding: 0 30rpx;
+  background-color: #fff;
   display: -webkit-box;
   display: -webkit-flex;
   display: flex;
@@ -24,6 +23,7 @@ image.data-v-2fa55d07 {
 }
 .nickname .nickname-content input.data-v-2fa55d07 {
   height: 100%;
+  width: 90%;
 }
 .nickname .nickname-content .tel-nickname-class.data-v-2fa55d07 {
   font-size: 30rpx;
@@ -42,8 +42,8 @@ image.data-v-2fa55d07 {
 .nickname .nickname-btn.data-v-2fa55d07 {
   width: 630rpx;
   height: 90rpx;
-  margin-top: 150rpx;
   border-radius: 42rpx;
+  margin: 150rpx auto;
 }
 .nickname .nickname-btn .btn.data-v-2fa55d07 {
   width: 100%;

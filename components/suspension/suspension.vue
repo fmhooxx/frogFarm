@@ -1,9 +1,6 @@
 <template>
 	<!-- 悬浮操作页面 -->
 	<view class="suspension">
-		<view class="share w">
-			<image src="/static/images/green-index-share.png"></image>
-		</view>
 		<view class="cart w" @click="goGreenCart">
 			<image src="/static/images/green-index-cart.png"></image>
 			<text class="tag">1</text>
