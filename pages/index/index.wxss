@@ -1,0 +1,330 @@
+/**index.wxss**/
+page {
+  background-color: #F8F8F8;
+}
+
+/* 轮播图开始 */
+.index-swiper {
+  width: 100%;
+  height: 488rpx;
+}
+
+.swiper {
+  height: 100%;
+}
+
+.swiper-img {
+  height: 100%;
+  width: 100%;
+}
+
+/* 轮播图结束 */
+
+/* 套餐推荐 */
+.set-meal {
+  position: relative;
+  height: 108rpx;
+}
+
+.meal-img {
+  width: 100%;
+  height: 108rpx;
+}
+
+.meal-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 32rpx;
+  font-family: Microsoft YaHei;
+  font-weight: bold;
+  color: #00A3AF;
+  letter-spacing: 3rpx;
+}
+
+/* 套餐详情 */
+.list {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+/* 单个的盒子 */
+.list-item {
+  position: relative;
+  width: 366rpx;
+  height: 530rpx;
+  background-color: #fff;
+  font-family: Source Han Sans CN;
+  font-weight: 500;
+  box-sizing: border-box;
+  margin-bottom: 18rpx;
+}
+
+/* 会员标签 */
+.member {
+  position: absolute;
+  top: 24rpx;
+  right: 20rpx;
+  width: 85rpx;
+  height: 80rpx;
+  border-radius: 3rpx;
+}
+
+/* 标签图片 */
+.member-img {
+  width: 85rpx;
+  height: 80rpx;
+}
+
+/* 标签文字 */
+.member-text {
+  width: 56rpx;
+  height: 55rpx;
+  position: absolute;
+  top: 0;
+  left: 14rpx;
+  font-size: 28rpx;
+  font-family: Source Han Sans CN;
+  font-weight: bold;
+  color: #FFFEFE;
+}
+
+/* 商品图片 */
+.item-img {
+  width: 366rpx;
+  height: 340rpx;
+}
+
+/* 下面的盒子 */
+.item-box {
+  padding: 0 15rpx 0 20rpx;
+}
+
+/* 套餐类型 */
+.item-type {
+  font-size: 30rpx;
+  color: #0A0A0A;
+}
+
+/* 数量 */
+.item-num {
+  font-size: 24rpx;
+  color: #898989;
+  font-weight: 400;
+  margin: 10rpx 0 35rpx 0;
+}
+
+/* 结尾 */
+.item-footer {
+  display: flex;
+  justify-content: space-between;
+  /* align-items: flex-end; */
+}
+
+/* 价格 */
+/* .item-price {} */
+
+/* 新价格 */
+.new {
+  font-size: 34rpx;
+  color: #FF2C2C;
+}
+
+/* 旧价格 */
+.used {
+  font-size: 18rpx;
+  color: #898989;
+  margin-left: 20rpx;
+}
+
+/* 购买 */
+.purchase {
+  width: 80rpx;
+  height: 44rpx;
+  line-height: 44rpx;
+  background-color: #00939E;
+  text-align: center;
+  border-radius: 40rpx;
+  color: #fff;
+  font-size: 25rpx;
+}
+
+/* 查看更多 */
+.view-more {
+  height: 84rpx;
+  line-height: 84rpx;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 30rpx;
+}
+
+/* 查看更多文字 */
+.view-more view {
+  font-size: 26rpx;
+  font-family: Source Han Sans CN;
+  font-weight: 400;
+  color: #666;
+}
+
+/* 查看更多右箭头 */
+.view-more>image {
+  width: 14rpx;
+  height: 23rpx;
+  vertical-align: middle;
+  margin-left: 20rpx;
+}
+
+/* 附近商家详情 */
+.shop-box {
+  display: flex;
+  background-color: #fff;
+  font-family: Microsoft YaHei;
+  font-weight: 400;
+}
+
+/* 左边 */
+/* .shop-left {} */
+
+/* 商家图片 */
+.shop-left>image {
+  width: 180rpx;
+  height: 170rpx;
+  margin: 6rpx 24rpx 0 30rpx;
+}
+
+/* 右边 */
+/* .shop-right {} */
+
+/* 店铺名称 */
+.shop-uname {
+  font-size: 32rpx;
+  font-weight: bold;
+  color: #333;
+}
+
+/* 店铺地址 */
+.shop-address {
+  width: 471rpx;
+  font-size: 24rpx;
+  color: #666;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  margin: 10rpx 0;
+}
+
+/* 服务 */
+.shop-service>text {
+  display: inline-block;
+  width: 120rpx;
+  height: 36rpx;
+  line-height: 36rpx;
+  text-align: center;
+  font-size: 24rpx;
+  color: #666;
+  border: 2rpx solid rgba(0, 160, 172, 1);
+  border-radius: 19rpx 18rpx 18rpx 0rpx;
+}
+
+.shop-service-one {
+  margin-right: 10rpx;
+}
+
+/* 满 */
+.full-reduction {
+  display: flex;
+  align-items: center;
+  margin-top: 10rpx;
+}
+
+.fracture {
+  background-color: #FF9118 !important;
+}
+
+.full {
+  width: 24rpx;
+  height: 24rpx;
+  line-height: 24rpx;
+  text-align: center;
+  border-radius: 2rpx;
+  background-color: #FC4F4B;
+  font-size: 20rpx;
+  color: #fff;
+  margin-right: 10rpx;
+}
+
+.full-content {
+  font-size: 24rpx;
+  color: #666;
+  width: 441rpx;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+/* 可以滑动的区域 */
+.scroll {
+  white-space: nowrap;
+  padding-left: 234rpx;
+  padding-top: 20rpx;
+  background-color: #fff;
+  font-family: Source Han Sans CN;
+  font-weight: 400;
+  padding-bottom: 30rpx;
+}
+
+
+.content-box {
+  display: inline-block;
+  width: 200rpx;
+  height: 320rpx;
+  margin-right: 20rpx;
+  border: 1rpx solid rgba(241, 241, 241, .6);
+}
+
+/* 图片 */
+.content-box>image {
+  width: 199rpx;
+  height: 180rpx;
+}
+
+/* 底部内容 */
+.box-footer {
+  padding: 5rpx 0 0 14rpx;
+}
+
+/* 服务 */
+.service {
+  color: #555;
+  font-size: 26rpx;
+}
+
+/* 时间 */
+.timer {
+  font-size: 20rpx;
+  color: #999;
+  margin: 10rpx 0 6rpx 0;
+}
+
+/* 人民币符号 */
+.rmb {
+  font-size: 24rpx;
+}
+
+/* 新价格 */
+.price {
+  display: inline;
+  color: #FF2C2C;
+  font-size: 32rpx;
+}
+
+/* 旧价格 */
+.footer-used {
+  font-size: 20rpx;
+  color: #999;
+  margin-left: 8rpx;
+}
