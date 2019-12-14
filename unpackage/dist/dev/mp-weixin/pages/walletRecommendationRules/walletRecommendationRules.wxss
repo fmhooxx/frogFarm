@@ -3,7 +3,7 @@ page {
 }
 
 .recommendation-rules.data-v-752db39a {
-  font-size: 28rpx;
+  font-size: 30rpx;
   font-family: Source Han Sans CN;
   font-weight: 400;
   color: #666666;

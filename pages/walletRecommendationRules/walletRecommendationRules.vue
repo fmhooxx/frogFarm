@@ -24,7 +24,7 @@ page {
 
 <style lang="less" scoped>
 .recommendation-rules {
-  font-size: 28rpx;
+  font-size: 30rpx;
   font-family: Source Han Sans CN;
   font-weight: 400;
   color: rgba(102, 102, 102, 1);

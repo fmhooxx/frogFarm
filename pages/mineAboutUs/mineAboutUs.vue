@@ -28,7 +28,7 @@ page {
   padding: 0 30rpx 0 37rpx;
   .box {
     margin-top: 38rpx;
-    font-size: 28rpx;
+    font-size: 30rpx;
     font-family: Source Han Sans CN;
     font-weight: 400;
     color: rgba(95, 95, 95, 1);

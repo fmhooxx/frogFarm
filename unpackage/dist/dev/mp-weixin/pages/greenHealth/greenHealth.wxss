@@ -313,7 +313,7 @@
   height: 50rpx;
 }
 .green-health .view-more.data-v-63fe4227 {
-  font-size: 22rpx;
+  font-size: 30rpx;
   font-family: Microsoft YaHei;
   font-weight: 400;
   text-align: center;
@@ -321,9 +321,9 @@
   margin-bottom: 10rpx;
 }
 .green-health .view-more > image.data-v-63fe4227 {
-  width: 20rpx;
-  height: 20rpx;
+  width: 30rpx;
+  height: 30rpx;
   margin-left: 15rpx;
-  vertical-align: center;
+  vertical-align: middle;
 }
 

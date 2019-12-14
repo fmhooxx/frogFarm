@@ -110,5 +110,6 @@
     "base-tabbar": "/components/BaseTabbar",
     "suspension": "/components/suspension/suspension",
     "base-popup": "/components/BasePopup/BasePopup"
-  }
+  },
+  "sitemapLocation": "sitemap11.json"
 }

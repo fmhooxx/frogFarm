@@ -39,23 +39,23 @@ export default {
       swiperList: [
         {
           id: 0,
-          vip: '年卡会员299元',
-          money: 299
+          vip: '年卡会员39999元',
+          money: 39999
         },
         {
           id: 1,
-          vip: '半年卡会员149元',
-          money: 149
+          vip: '半年卡会员29999元',
+          money: 29999
         },
         {
           id: 2,
-          vip: '季卡会员49元',
-          money: 49
+          vip: '季卡会员19999元',
+          money: 19999
         },
         {
           id: 3,
-          vip: '月卡会员19元',
-          money: 19
+          vip: '月卡会员9999元',
+          money: 19999
         }
       ],
       num: 0

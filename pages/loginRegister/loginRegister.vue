@@ -116,7 +116,7 @@ image {
 			margin-top: 123rpx;
 			display: flex;
 			justify-content: space-between;
-			font-size: 24rpx;
+			font-size: 30rpx;
 			> input {
 				width: 69%;
 			}
@@ -144,7 +144,7 @@ image {
     }
     // 请输入手机号码和验证码的 placeholder 样式
     .tel-password-class {
-      font-size: 30rpx;
+      font-size: 30rpx !important;
       font-family: Source Han Sans CN;
       font-weight: 400;
       color: rgba(201, 200, 207, 1);

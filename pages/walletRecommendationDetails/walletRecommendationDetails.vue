@@ -134,7 +134,7 @@ image {
 				}
 				// 左边的文字
 				.left-content {
-					margin-top: 29rpx;
+					margin-top: 24rpx;
 					font-size: 24rpx;
 					font-family: Source Han Sans CN;
 					font-weight: 400;

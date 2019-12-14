@@ -15,9 +15,9 @@
 					<view class="share">分享立赚10</view>
 				</view>
         <!-- 普通价格区域 -->
-        <view class="ordinary-price">¥399</view>
+        <view class="ordinary-price">¥39999</view>
 				<view class="mon">
-					<view class="price">299<text>元</text></view>
+					<view class="price">29999<text>元</text></view>
           <!-- 会员价格区域 -->
           <view class="member">
             <image src="../../static/images/6.png"></image>

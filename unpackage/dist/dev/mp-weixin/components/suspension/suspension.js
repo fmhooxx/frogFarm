@@ -97,7 +97,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ 256:
+/***/ 258:
 /*!******************************************************************************************************!*\
   !*** C:/Users/Administrator/Desktop/资料/shop/main.js?{"page":"components%2Fsuspension%2Fsuspension"} ***!
   \******************************************************************************************************/
@@ -176,5 +176,5 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ })
 
-},[[256,"common/runtime","common/vendor"]]]);
+},[[258,"common/runtime","common/vendor"]]]);
 //# sourceMappingURL=../../../.sourcemap/mp-weixin/components/suspension/suspension.js.map

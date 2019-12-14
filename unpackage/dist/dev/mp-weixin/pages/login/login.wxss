@@ -28,7 +28,7 @@ image.data-v-4d2384fb {
   color: #979797;
 }
 .login .login-content.data-v-4d2384fb {
-  font-size: 24rpx;
+  font-size: 32rpx;
 }
 .login .login-content > view.data-v-4d2384fb {
   height: 80rpx;

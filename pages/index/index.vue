@@ -70,7 +70,7 @@
 					<!-- 右边 -->
 					<view class="list-right">
 						<!-- 头部区域 -->
-						<view class="right-title">年卡全员套餐</view>
+						<view class="right-title">年卡会员套餐</view>
 						<!-- 次数 -->
 						<view class="right-num">
 							<text class="number">每月共4次</text>
@@ -90,7 +90,91 @@
 									<!-- 人民币符号 -->
 									<text class="rmb">¥</text>
 									<!-- 金额 -->
-									<text class="price-num">299</text>
+									<text class="price-num">29999</text>
+								</view>
+								<!-- 划去的价格 -->
+								<text class="delimit">¥39999</text>
+							</view>
+							<view class="list-footer">
+								<!-- 赠送会员 -->
+								<view class="give">赠送好友</view>
+								<!-- 购买 -->
+								<view class="purchase">购买</view>
+							</view>
+						</view>
+					</view>
+				</view>
+				<view class="healthy-list">
+					<!-- 左边 -->
+					<view class="list-left">
+						<image src="/static/images/good.jpg"></image>
+					</view>
+					<!-- 右边 -->
+					<view class="list-right">
+						<!-- 头部区域 -->
+						<view class="right-title">半年卡会员套餐</view>
+						<!-- 次数 -->
+						<view class="right-num">
+							<text class="number">每月共4次</text>
+							<text class="common">共48次配送</text>
+						</view>
+						<!-- 搭配 -->
+						<view class="collocation">
+							<text class="add">蔬菜+油+调味料</text>
+							<text class="voluntarily">自行搭配</text>
+						</view>
+						<!-- 价格以及会员 -->
+						<view class="price-member">
+							<!-- 价格 -->
+							<view class="price-box">
+								<!-- 最新价格 -->
+								<view class="new-price">
+									<!-- 人民币符号 -->
+									<text class="rmb">¥</text>
+									<!-- 金额 -->
+									<text class="price-num">19999</text>
+								</view>
+								<!-- 划去的价格 -->
+								<text class="delimit">¥29999</text>
+							</view>
+							<view class="list-footer">
+								<!-- 赠送会员 -->
+								<view class="give">赠送好友</view>
+								<!-- 购买 -->
+								<view class="purchase">购买</view>
+							</view>
+						</view>
+					</view>
+				</view>
+				<view class="healthy-list">
+					<!-- 左边 -->
+					<view class="list-left">
+						<image src="/static/images/good.jpg"></image>
+					</view>
+					<!-- 右边 -->
+					<view class="list-right">
+						<!-- 头部区域 -->
+						<view class="right-title">季卡会员套餐</view>
+						<!-- 次数 -->
+						<view class="right-num">
+							<text class="number">每月共4次</text>
+							<text class="common">共48次配送</text>
+						</view>
+						<!-- 搭配 -->
+						<view class="collocation">
+							<text class="add">蔬菜+油+调味料</text>
+							<text class="voluntarily">自行搭配</text>
+						</view>
+						<!-- 价格以及会员 -->
+						<view class="price-member">
+							<!-- 价格 -->
+							<view class="price-box">
+								<!-- 最新价格 -->
+								<view class="new-price">
+									<!-- 人民币符号 -->
+									<text class="rmb">¥</text>
+									<!-- 金额 -->
+									<text class="price-num">9999</text>
 								</view>
 								<!-- 划去的价格 -->
 								<text class="delimit">¥19999</text>
@@ -112,7 +196,7 @@
 					<!-- 右边 -->
 					<view class="list-right">
 						<!-- 头部区域 -->
-						<view class="right-title">年卡全员套餐</view>
+						<view class="right-title">月卡会员套餐</view>
 						<!-- 次数 -->
 						<view class="right-num">
 							<text class="number">每月共4次</text>
@@ -132,94 +216,10 @@
 									<!-- 人民币符号 -->
 									<text class="rmb">¥</text>
 									<!-- 金额 -->
-									<text class="price-num">299</text>
+									<text class="price-num">4999</text>
 								</view>
 								<!-- 划去的价格 -->
-								<text class="delimit">¥19999</text>
-							</view>
-							<view class="list-footer">
-								<!-- 赠送会员 -->
-								<view class="give">赠送好友</view>
-								<!-- 购买 -->
-								<view class="purchase">购买</view>
-							</view>
-						</view>
-					</view>
-				</view>
-				<view class="healthy-list">
-					<!-- 左边 -->
-					<view class="list-left">
-						<image src="/static/images/good.jpg"></image>
-					</view>
-					<!-- 右边 -->
-					<view class="list-right">
-						<!-- 头部区域 -->
-						<view class="right-title">年卡全员套餐</view>
-						<!-- 次数 -->
-						<view class="right-num">
-							<text class="number">每月共4次</text>
-							<text class="common">共48次配送</text>
-						</view>
-						<!-- 搭配 -->
-						<view class="collocation">
-							<text class="add">蔬菜+油+调味料</text>
-							<text class="voluntarily">自行搭配</text>
-						</view>
-						<!-- 价格以及会员 -->
-						<view class="price-member">
-							<!-- 价格 -->
-							<view class="price-box">
-								<!-- 最新价格 -->
-								<view class="new-price">
-									<!-- 人民币符号 -->
-									<text class="rmb">¥</text>
-									<!-- 金额 -->
-									<text class="price-num">299</text>
-								</view>
-								<!-- 划去的价格 -->
-								<text class="delimit">¥19999</text>
-							</view>
-							<view class="list-footer">
-								<!-- 赠送会员 -->
-								<view class="give">赠送好友</view>
-								<!-- 购买 -->
-								<view class="purchase">购买</view>
-							</view>
-						</view>
-					</view>
-				</view>
-				<view class="healthy-list">
-					<!-- 左边 -->
-					<view class="list-left">
-						<image src="/static/images/good.jpg"></image>
-					</view>
-					<!-- 右边 -->
-					<view class="list-right">
-						<!-- 头部区域 -->
-						<view class="right-title">年卡全员套餐</view>
-						<!-- 次数 -->
-						<view class="right-num">
-							<text class="number">每月共4次</text>
-							<text class="common">共48次配送</text>
-						</view>
-						<!-- 搭配 -->
-						<view class="collocation">
-							<text class="add">蔬菜+油+调味料</text>
-							<text class="voluntarily">自行搭配</text>
-						</view>
-						<!-- 价格以及会员 -->
-						<view class="price-member">
-							<!-- 价格 -->
-							<view class="price-box">
-								<!-- 最新价格 -->
-								<view class="new-price">
-									<!-- 人民币符号 -->
-									<text class="rmb">¥</text>
-									<!-- 金额 -->
-									<text class="price-num">299</text>
-								</view>
-								<!-- 划去的价格 -->
-								<text class="delimit">¥19999</text>
+								<text class="delimit">¥9999</text>
 							</view>
 							<view class="list-footer">
 								<!-- 赠送会员 -->
@@ -232,7 +232,7 @@
 				</view>
 			</view>
 
-			<view class="footer-end">
+			<view class="footer-end" @click="goGreenHealth">
 				<text>查看更多</text>
 				<image src="/static/images/arrow-right.png" class="more" />
 			</view>
@@ -626,7 +626,7 @@ page {
 .index-banner {
 	margin: 30rpx 0;
 	image {
-		height: 150rpx;
+		height: 180rpx;
 		width: 100%;
 	}
 }

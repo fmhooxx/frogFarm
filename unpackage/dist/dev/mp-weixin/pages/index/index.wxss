@@ -167,7 +167,7 @@ page {
   margin: 30rpx 0;
 }
 .index-banner image.data-v-7aab2c0d {
-  height: 150rpx;
+  height: 180rpx;
   width: 100%;
 }
 .footer-end.data-v-7aab2c0d {

@@ -117,7 +117,7 @@ image {
   }
   // 手机号 密码区域
   .login-content {
-    font-size: 24rpx;
+    font-size: 32rpx;
     > view {
       height: 80rpx;
       border-bottom: 1rpx solid #ECECEC;

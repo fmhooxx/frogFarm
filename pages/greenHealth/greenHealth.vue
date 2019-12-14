@@ -52,7 +52,7 @@
 				<!-- 右边 -->
 				<view class="list-right">
 					<!-- 头部区域 -->
-					<view class="right-title">年卡全员套餐</view>
+					<view class="right-title">年卡会员套餐</view>
 					<!-- 次数 -->
 					<view class="right-num">
 						<text class="number">品种多多，尽享优惠</text>
@@ -66,7 +66,79 @@
 								<!-- 人民币符号 -->
 								<text class="rmb">¥</text>
 								<!-- 金额 -->
-								<text class="price-num">299</text>
+								<text class="price-num">29999</text>
+							</view>
+							<!-- 划去的价格 -->
+							<text class="delimit">¥39999</text>
+						</view>
+						<view class="list-footer">
+							<!-- 赠送会员 -->
+							<view class="give" @click.stop="handle">赠送好友</view>
+							<!-- 购买 -->
+							<view class="purchase" @click="purchase">购买</view>
+						</view>
+					</view>
+				</view>
+			</view>
+			<view class="healthy-list w" @click="toVipGoodsDetailsInfo">
+				<!-- 左边 -->
+				<view class="list-left">
+					<image src="/static/images/good.jpg"></image>
+				</view>
+				<!-- 右边 -->
+				<view class="list-right">
+					<!-- 头部区域 -->
+					<view class="right-title">半年卡会员套餐</view>
+					<!-- 次数 -->
+					<view class="right-num">
+						<text class="number">品种多多，尽享优惠</text>
+					</view>
+					<!-- 价格以及会员 -->
+					<view class="price-member">
+						<!-- 价格 -->
+						<view class="price-box">
+							<!-- 最新价格 -->
+							<view class="new-price">
+								<!-- 人民币符号 -->
+								<text class="rmb">¥</text>
+								<!-- 金额 -->
+								<text class="price-num">19999</text>
+							</view>
+							<!-- 划去的价格 -->
+							<text class="delimit">¥29999</text>
+						</view>
+						<view class="list-footer">
+							<!-- 赠送会员 -->
+							<view class="give" @click.stop="handle">赠送好友</view>
+							<!-- 购买 -->
+							<view class="purchase" @click="purchase">购买</view>
+						</view>
+					</view>
+				</view>
+			</view>
+			<view class="healthy-list w" @click="toVipGoodsDetailsInfo">
+				<!-- 左边 -->
+				<view class="list-left">
+					<image src="/static/images/good.jpg"></image>
+				</view>
+				<!-- 右边 -->
+				<view class="list-right">
+					<!-- 头部区域 -->
+					<view class="right-title">季卡会员套餐</view>
+					<!-- 次数 -->
+					<view class="right-num">
+						<text class="number">品种多多，尽享优惠</text>
+					</view>
+					<!-- 价格以及会员 -->
+					<view class="price-member">
+						<!-- 价格 -->
+						<view class="price-box">
+							<!-- 最新价格 -->
+							<view class="new-price">
+								<!-- 人民币符号 -->
+								<text class="rmb">¥</text>
+								<!-- 金额 -->
+								<text class="price-num">9999</text>
 							</view>
 							<!-- 划去的价格 -->
 							<text class="delimit">¥19999</text>
@@ -88,7 +160,7 @@
 				<!-- 右边 -->
 				<view class="list-right">
 					<!-- 头部区域 -->
-					<view class="right-title">年卡全员套餐</view>
+					<view class="right-title">月卡会员套餐</view>
 					<!-- 次数 -->
 					<view class="right-num">
 						<text class="number">品种多多，尽享优惠</text>
@@ -102,82 +174,10 @@
 								<!-- 人民币符号 -->
 								<text class="rmb">¥</text>
 								<!-- 金额 -->
-								<text class="price-num">299</text>
+								<text class="price-num">4999</text>
 							</view>
 							<!-- 划去的价格 -->
-							<text class="delimit">¥19999</text>
-						</view>
-						<view class="list-footer">
-							<!-- 赠送会员 -->
-							<view class="give" @click.stop="handle">赠送好友</view>
-							<!-- 购买 -->
-							<view class="purchase" @click="purchase">购买</view>
-						</view>
-					</view>
-				</view>
-			</view>
-			<view class="healthy-list w" @click="toVipGoodsDetailsInfo">
-				<!-- 左边 -->
-				<view class="list-left">
-					<image src="/static/images/good.jpg"></image>
-				</view>
-				<!-- 右边 -->
-				<view class="list-right">
-					<!-- 头部区域 -->
-					<view class="right-title">年卡全员套餐</view>
-					<!-- 次数 -->
-					<view class="right-num">
-						<text class="number">品种多多，尽享优惠</text>
-					</view>
-					<!-- 价格以及会员 -->
-					<view class="price-member">
-						<!-- 价格 -->
-						<view class="price-box">
-							<!-- 最新价格 -->
-							<view class="new-price">
-								<!-- 人民币符号 -->
-								<text class="rmb">¥</text>
-								<!-- 金额 -->
-								<text class="price-num">299</text>
-							</view>
-							<!-- 划去的价格 -->
-							<text class="delimit">¥19999</text>
-						</view>
-						<view class="list-footer">
-							<!-- 赠送会员 -->
-							<view class="give" @click.stop="handle">赠送好友</view>
-							<!-- 购买 -->
-							<view class="purchase" @click="purchase">购买</view>
-						</view>
-					</view>
-				</view>
-			</view>
-			<view class="healthy-list w" @click="toVipGoodsDetailsInfo">
-				<!-- 左边 -->
-				<view class="list-left">
-					<image src="/static/images/good.jpg"></image>
-				</view>
-				<!-- 右边 -->
-				<view class="list-right">
-					<!-- 头部区域 -->
-					<view class="right-title">年卡全员套餐</view>
-					<!-- 次数 -->
-					<view class="right-num">
-						<text class="number">品种多多，尽享优惠</text>
-					</view>
-					<!-- 价格以及会员 -->
-					<view class="price-member">
-						<!-- 价格 -->
-						<view class="price-box">
-							<!-- 最新价格 -->
-							<view class="new-price">
-								<!-- 人民币符号 -->
-								<text class="rmb">¥</text>
-								<!-- 金额 -->
-								<text class="price-num">299</text>
-							</view>
-							<!-- 划去的价格 -->
-							<text class="delimit">¥19999</text>
+							<text class="delimit">¥9999</text>
 						</view>
 						<view class="list-footer">
 							<!-- 赠送会员 -->
@@ -313,11 +313,6 @@
 		<view class="view-more" @click="goDetails">
 			查看更多
 			<image src="/static/images/green-more-bottom.png"></image>
-		</view>
-		<!-- 松开查看更多 -->
-		<view class="view-more">
-			松开查看
-			<image src="/static/images/green-more-top.png"></image>
 		</view>
   </view>
 </template>
@@ -701,7 +696,7 @@ export default {
 	}
 	// 查看更多
 	.view-more {
-		font-size: 22rpx;
+		font-size: 30rpx;
 		font-family: Microsoft YaHei;
 		font-weight: 400;
 		text-align: center;
@@ -709,10 +704,10 @@ export default {
 		// color: #fff;
 		margin-bottom: 10rpx;
 		> image {
-			width: 20rpx;
-			height: 20rpx;
+			width: 30rpx;
+			height: 30rpx;
 			margin-left: 15rpx;
-			vertical-align: center;
+			vertical-align: middle;
 		}
 	}
 }

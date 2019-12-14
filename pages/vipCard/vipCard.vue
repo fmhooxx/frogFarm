@@ -43,7 +43,7 @@
 			<view class="list-title">会员卡</view>
 			<view class="list-info flex-row">
 				<view class="left">
-					<view class="price">299元</view>
+					<view class="price">29999元</view>
 					<view class="type">年卡会员</view>
 				</view>
 				<view class="right">购买</view>
@@ -51,7 +51,7 @@
 
 			<view class="list-info flex-row">
 				<view class="left">
-					<view class="price">299元</view>
+					<view class="price">19999元</view>
 					<view class="type">半年卡会员</view>
 				</view>
 				<view class="right">购买</view>
@@ -59,24 +59,16 @@
 
 			<view class="list-info flex-row">
 				<view class="left">
-					<view class="price">299元</view>
-					<view class="type">年卡会员</view>
+					<view class="price">19999元</view>
+					<view class="type">季卡会员</view>
 				</view>
 				<view class="right">购买</view>
 			</view>
 
 			<view class="list-info flex-row">
 				<view class="left">
-					<view class="price">299元</view>
-					<view class="type">年卡会员</view>
-				</view>
-				<view class="right">购买</view>
-			</view>
-
-			<view class="list-info flex-row">
-				<view class="left">
-					<view class="price">299元</view>
-					<view class="type">年卡会员</view>
+					<view class="price">9999元</view>
+					<view class="type">月卡会员</view>
 				</view>
 				<view class="right">购买</view>
 			</view>
