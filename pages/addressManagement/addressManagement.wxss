@@ -1,4 +1,6 @@
 /* pages/addressManagement/addressManagement.wxss */
+@import '../../app.wxss';
+
 .addr {
   height: 200rpx;
   background: rgba(255, 255, 255, 1);
@@ -13,8 +15,7 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  margin: 0 50rpx 0 20rpx;
-  /* padding: 20rpx 0; */
+  margin: 10rpx 50rpx 0 20rpx;
 }
 
 /* .do {} */
@@ -55,6 +56,10 @@ radio {
   padding-bottom: 10rpx;
   margin: 0 50rpx 0 20rpx;
   border-bottom: 1rpx solid #efefef;
+}
+
+.info-three-title {
+  margin-left: 10rpx;
 }
 
 /* 底部样式开始 */

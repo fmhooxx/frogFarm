@@ -85,6 +85,27 @@
 					"id": -1,
 					"name": "pages/addressManagement/addressManagement",
 					"pathName": "pages/addressManagement/addressManagement",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/payment/payment",
+					"pathName": "pages/payment/payment",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/paymentSuccess/paymentSuccess",
+					"pathName": "pages/paymentSuccess/paymentSuccess",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/viewOrder/viewOrder",
+					"pathName": "pages/viewOrder/viewOrder",
 					"scene": null
 				}
 			]

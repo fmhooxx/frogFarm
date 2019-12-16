@@ -1,0 +1,14 @@
+<!-- pages/paymentSuccess/paymentSuccess.wxml -->
+<!-- 支付成功页面 -->
+<view>
+  <view class="succ-box">
+    <image src="../../images/payment-success.png"></image>
+    <view class="succ">购买成功</view>
+  </view>
+  <!-- 底部操作按钮开始 -->
+  <view class="flex-row btn-box">
+    <view class="btn-left btn" bindtap="goIndex">再去逛逛</view>
+    <view class="btn-right btn" bindtap="goViewOrder">查看订单</view>
+  </view>
+  <!-- 底部操作按钮结束 -->
+</view>

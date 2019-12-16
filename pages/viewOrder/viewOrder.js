@@ -1,4 +1,4 @@
-// pages/addressManagement/addressManagement.js
+// pages/viewOrder/viewOrder.js
 Page({
 
   /**
@@ -7,18 +7,7 @@ Page({
   data: {
 
   },
-  // 去新增地址页面
-  goAddrManageAdd() {
-    wx.navigateTo({
-      url: '/pages/addrManageAdd/addrManageAdd'
-    })
-  },
-  // 去确定订单页面
-  goConfirmOrder() {
-    wx.navigateTo({
-      url: '/pages/confirmOrder/confirmOrder'
-    })
-  },
+
   /**
    * 生命周期函数--监听页面加载
    */

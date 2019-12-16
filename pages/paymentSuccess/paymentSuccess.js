@@ -1,4 +1,4 @@
-// pages/addressManagement/addressManagement.js
+// pages/paymentSuccess/paymentSuccess.js
 Page({
 
   /**
@@ -7,16 +7,16 @@ Page({
   data: {
 
   },
-  // 去新增地址页面
-  goAddrManageAdd() {
-    wx.navigateTo({
-      url: '/pages/addrManageAdd/addrManageAdd'
+  // 去首页
+  goIndex() {
+    wx.switchTab({
+      url: '/pages/index/index'
     })
   },
-  // 去确定订单页面
-  goConfirmOrder() {
+  // 去查看订单页面
+  goViewOrder() {
     wx.navigateTo({
-      url: '/pages/confirmOrder/confirmOrder'
+      url: '/pages/viewOrder/viewOrder'
     })
   },
   /**

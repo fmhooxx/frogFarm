@@ -1,34 +1,29 @@
-<!-- pages/confirmOrder/confirmOrder.wxml -->
+<!-- pages/viewOrder/viewOrder.wxml -->
+<!-- 查看订单页面 -->
 <view class="container">
-  <!-- 添加地址信息开始 -->
-  <!-- 没有地址区域 -->
-  <view wx:if="{{false}}" class="address flex-row" bindtap="goAddrManageAdd">
-    <view class="addAddr">新建收货地址</view>
-    <image src="../../images/arrow-right.png"></image>
-  </view>
-  <!-- 有地址区域 -->
-  <view wx:else class="address flex-row" bindtap="goAddressManagement">
-    <!-- 左边 -->
-    <view class="info-left">
-      <!-- 个人信息 -->
-      <view class="user">
-        <!-- 用户名 -->
-        <text>小米</text>
-        <!-- 手机号码 -->
-        <text class="tel">12345678990</text>
-      </view>
-      <!-- 地址 -->
-      <view class="info-address">合肥市庐阳区银城公寓</view>
+  <!-- 订单详情头部开始 -->
+  <!-- 待发货状态 -->
+  <view class="order-header">
+    <view wx:if="{{true}}" class="order-title level-center" style="line-height:19rpx">
+      <image src="../../images/view-order-stay.png" class="tips"></image>
+      <text>待发货</text>
     </view>
-    <!-- 右边 -->
-    <view class="info-right">
-      <!-- 切换城市 -->
-      <view class="right-switch">切换城市</view>
-      <!-- 右箭头 -->
-      <image src="../../images/arrow-right.png"></image>
+    <!-- 已取消状态 -->
+    <view wx:if="{{false}}" class="order-title level-center" style="line-height:19rpx">
+      <image src="../../images/already-cancel-refund.png" class="tips"></image>
+      <text>已取消</text>
+    </view>
+    <!-- 已退款状态 -->
+    <view wx:if="{{false}}" class="order-title level-center" style="line-height:19rpx">
+      <image src="../../images/already-cancel-refund.png" class="tips"></image>
+      <text>已退款</text>
     </view>
   </view>
-  <!-- 添加地址信息结束 -->
+  <view class="addr-info">
+    <view class="info-small-title">小米 1234567890</view>
+    <view class="info-small-title-sub">合肥市庐阳区银城公寓</view>
+  </view>
+  <!-- 订单详情头部结束 -->
   <!-- 商品列表信息开始 -->
   <view class="goods-list">
     <view class="order-list-info flex-row">
@@ -40,7 +35,7 @@
           <view class="info-two-title">
             <!-- 折扣 -->
             <view class="discount">折</view>
-            <view>九子九仁汤</view>
+            <view>红水蜜桃500g</view>
           </view>
           <view>
             <text class="info-three-titledel">￥39.9</text>
@@ -59,7 +54,7 @@
           <view class="info-two-title">
             <!-- 折扣 -->
             <view class="discount">折</view>
-            <view>九子九仁汤</view>
+            <view>红水蜜桃500g</view>
           </view>
           <view>
             <text class="info-three-titledel">￥39.9</text>
@@ -77,8 +72,8 @@
         <view class="flex-row">
           <view class="info-two-title">
             <!-- 折扣 -->
-            <view class="discount">折</view>
-            <view>九子九仁汤</view>
+            <view wx:if="{{false}}" class="discount">折</view>
+            <view>红水蜜桃500g</view>
           </view>
           <view>
             <text class="info-three-titledel">￥39.9</text>
@@ -91,12 +86,6 @@
   </view>
   <!-- 商品列表信息结束 -->
   <!-- 订单备注开始 -->
-  <!-- <view class="info-title bei-title">
-    <view>订单备注</view>
-    <image src="../../images/arrow-right.png"></image>
-  </view> -->
-  <!-- 订单备注结束 -->
-  <!-- 订单信息开始 -->
   <view class="con-info">
     <view class="flex-row info-title con-list">
       <view>商品金额</view>
@@ -114,7 +103,7 @@
       <view>促销优惠</view>
       <view>-0.54</view>
     </view>
-    <view class="total">
+    <view class="con-list total">
       <view>合计:</view>
       <view class="price">
         <text>¥</text>
@@ -122,14 +111,34 @@
       </view>
     </view>
   </view>
-  <!-- 订单信息结束 -->
-  <!-- 底部操作栏开始 -->
-  <view class="user-defined flex-row">
-    <view class="vertical-center">
-      <text class="info-subtitle">预付款</text>
-      <text class="jiage">￥7.26</text>
+  <!-- 订单备注结束 -->
+  <!-- 订单详情开始 -->
+  <view class="order-details">
+    <view class="order-details-box">
+      <view>订单编号：101111231346</view>
+      <!-- 根据订单状态 判断是否显示 -->
+      <view wx:if="{{true}}" class="order-details-one">复制</view>
     </view>
-    <view class="toClear" bindtap="goPayment">去支付</view>
+    <view>订单类型：线上订单</view>
+    <view>下单时间：2019-10-16 13:14:49</view>
+    <view>支付时间：2019-10-16 13:15:00</view>
+    <view>支付方式：微信</view>
   </view>
-  <!-- 底部操作栏结束 -->
+  <!-- 订单详情结束 -->
+  <!-- 底部操作栏 -->
+  <!-- 已完成状态 -->
+  <!-- <view class="footer">
+    <view class="footer-box">
+      <view>删除订单</view>
+      <view>再次购买</view>
+    </view>
+  </view> -->
+  <!-- 待取货状态 -->
+  <view class="footer">
+    <view class="footer-box">
+      <view>退款</view>
+      <view class="code">取货码</view>
+    </view>
+  </view>
+  <!-- 底部操作栏 -->
 </view>

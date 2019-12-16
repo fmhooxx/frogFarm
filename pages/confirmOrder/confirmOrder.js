@@ -13,6 +13,18 @@ Page({
       url: '/pages/addrManageAdd/addrManageAdd'
     })
   },
+  // 去地址管理页面
+  goAddressManagement() {
+    wx.navigateTo({
+      url: '/pages/addressManagement/addressManagement'
+    })
+  },
+  // 去支付订单页面
+  goPayment() {
+    wx.navigateTo({
+      url: '/pages/payment/payment'
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */

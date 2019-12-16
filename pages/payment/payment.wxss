@@ -1,0 +1,78 @@
+/* pages/payment/payment.wxss */
+.price {
+  width: 750rpx;
+  height: 240rpx;
+  background: rgba(255, 255, 255, 1);
+  margin: 20rpx 0;
+  position: relative
+}
+
+.con {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-left: -85rpx;
+  margin-top: -60rpx
+}
+
+.top {
+  font-size: 36rpx;
+  font-family: Source Han Sans CN;
+  font-weight: 400;
+  color: rgba(2, 2, 2, 1);
+}
+
+.bottom {
+  font-size: 44rpx;
+  font-family: Source Han Sans CN;
+  font-weight: 500;
+  color: rgba(2, 2, 2, 1);
+}
+
+
+/* 支付方式样式开始 */
+
+.payWay {
+  height: 176rpx;
+  background: rgba(255, 255, 255, 1);
+  padding-right: 20rpx;
+  box-sizing: border-box;
+  align-self: center;
+  padding: 0 30rpx 0 33rpx;
+}
+
+.aaa {
+  height: 100rpx;
+  line-height: 100rpx;
+}
+
+.title {
+  height: 77rpx;
+  line-height: 77rpx;
+  box-sizing: border-box;
+  border-bottom: 1rpx solid #f1f1f1;
+}
+
+.payWay image {
+  width: 48rpx;
+  height: 42rpx;
+  vertical-align: middle;
+  margin-right: 22rpx;
+}
+
+.pay-way {
+  display: flex;
+  width: 280rpx;
+  box-sizing: border-box;
+}
+
+/* .check {
+} */
+
+.btn {
+  color: white;
+  font-size: 30rpx;
+  font-family: Source Han Sans CN;
+  font-weight: 400;
+  margin-top: 60rpx
+}

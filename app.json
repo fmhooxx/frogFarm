@@ -11,7 +11,10 @@
     "pages/packageDetails/packageDetails",
     "pages/confirmOrder/confirmOrder",
     "pages/addrManageAdd/addrManageAdd",
-    "pages/addressManagement/addressManagement"
+    "pages/addressManagement/addressManagement",
+    "pages/payment/payment",
+    "pages/paymentSuccess/paymentSuccess",
+    "pages/viewOrder/viewOrder"
   ],
   "window": {
     "backgroundTextStyle": "light",

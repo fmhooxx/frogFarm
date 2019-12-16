@@ -1,0 +1,28 @@
+<!-- pages/payment/payment.wxml -->
+<!-- 支付订单页面 -->
+<view class="container">
+  <!-- 金额详情开始 -->
+  <view class="price">
+    <view class="con">
+      <view class="top">应付金额</view>
+      <view class="bottom">￥1.26</view>
+    </view>
+  </view>
+  <!-- 金额详情结束 -->
+  <!-- 支付方式开始 -->
+  <view class="payWay">
+    <view class="title info-three-title">选择支付方式</view>
+    <view class="flex-row aaa">
+      <view class="pay-way">
+        <view>
+          <image src="../../images/wx-pay.png"></image>
+        </view>
+        <view>微信支付</view>
+      </view>
+      <checkbox class="check"></checkbox>
+    </view>
+  </view>
+  <!-- 支付方式结束 -->
+  <!-- 支付按钮 -->
+  <view class="btn-default-longrad btn" bindtap="goPaymentSuccess">微信支付￥1.26</view>
+</view>
