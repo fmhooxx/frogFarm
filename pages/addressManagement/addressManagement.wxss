@@ -1,0 +1,77 @@
+/* pages/addressManagement/addressManagement.wxss */
+.addr {
+  height: 200rpx;
+  background: rgba(255, 255, 255, 1);
+  /* padding: 0 50rpx 0 20rpx; */
+  box-sizing: border-box;
+  background: white;
+  margin-top: 26rpx
+}
+
+.addr_do {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 50rpx 0 20rpx;
+  /* padding: 20rpx 0; */
+}
+
+/* .do {} */
+.do view {
+  display: inline-block;
+}
+
+.do>image {
+  margin-right: 12rpx;
+}
+
+.one {
+  margin-right: 50rpx;
+}
+
+radio {
+  transform: scale(0.8);
+  margin-left: -16rpx;
+  color: rgba(102, 102, 102, 1);
+}
+
+.do image {
+  width: 28rpx;
+  height: 28rpx;
+  vertical-align: middle;
+}
+
+.addrInfo_details {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 0 0 20rpx 6rpx;
+  padding-top: 10rpx;
+}
+
+.addrInfo {
+  height: 120rpx;
+  padding-bottom: 10rpx;
+  margin: 0 50rpx 0 20rpx;
+  border-bottom: 1rpx solid #efefef;
+}
+
+/* 底部样式开始 */
+.bottom {
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  margin-left: -375rpx;
+  height: 130rpx;
+  width: 750rpx;
+  background: rgba(255, 255, 255, 1);
+}
+
+.btn {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  margin-top: -42rpx;
+  margin-left: -330rpx;
+}

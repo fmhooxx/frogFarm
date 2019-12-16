@@ -1,0 +1,117 @@
+/* pages/addrManageAdd/addrManageAdd.wxss */
+.address-add {
+  margin-top: 20rpx;
+  /* padding: 0 30rpx; */
+}
+
+.address-add>view {
+  background-color: #fff;
+}
+
+/* 所在地区 */
+.list {
+  height: 110rpx;
+  /* line-height: 110rpx; */
+  padding: 0 30rpx;
+  display: flex;
+  align-items: center;
+  border-bottom: 1rpx solid #f1f1f1;
+}
+
+/* 左边 */
+.region-left {
+  display: flex;
+  align-items: center;
+  font-size: 28rpx;
+  color: #333;
+  font-family: Source Han Sans CN;
+  font-weight: 400;
+}
+
+.region-left>view {
+  width: 160rpx;
+  /* margin-right: 30rpx; */
+}
+
+/* 请输入详细地址的 placeholder 样式 */
+.address-placeholder {
+  color: #999;
+  font-size: 28rpx;
+  font-family: Source Han Sans CN;
+  font-weight: 400;
+}
+
+/* 详细地址的输入框区域 */
+.region-left>input {
+  width: 79%;
+  margin-top: 4rpx;
+  /* width: 84%; */
+}
+
+/* 右边 */
+.region-right {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* 详细地址的输入框区域 地址选择 */
+.choice {
+  width: 100%;
+  font-size: 28rpx;
+  font-family: Source Han Sans CN;
+  font-weight: 400;
+  color: #999;
+  margin-left: -18rpx;
+}
+
+/* 右边小箭头 */
+.region-right>image {
+  width: 13rpx;
+  height: 23rpx;
+  vertical-align: middle;
+}
+
+/* 性别区域 */
+.choice-box {
+  display: flex;
+  font-size: 28rpx;
+  font-family: Source Han Sans CN;
+  font-weight: 400;
+  color: #999;
+  margin-left: 92rpx;
+}
+
+.box-item {
+  line-height: 5rpx;
+  display: flex;
+  align-items: center;
+  margin: 0 45rpx;
+}
+
+.box-item>text {
+  margin-left: 8rpx;
+}
+
+.active {
+  color: #333 !important;
+}
+
+.btn {
+  margin: 90rpx auto;
+  width: 690rpx;
+  height: 80rpx;
+  background: rgba(39, 149, 36, 1);
+  border-radius: 40rpx;
+}
+
+.btn>button {
+  width: 100%;
+  background-color: #279524;
+  border-radius: 40rpx;
+  font-size: 32rpx;
+  font-family: Source Han Sans CN;
+  font-weight: 400;
+  color: #fff;
+}

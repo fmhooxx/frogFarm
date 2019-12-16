@@ -1,0 +1,69 @@
+<!-- pages/addrManageAdd/addrManageAdd.wxml -->
+<!-- 新增收货地址 -->
+<view class="address-add">
+  <view>
+    <!-- 所在地区 -->
+    <view class="list">
+      <!-- 左边 -->
+      <view class="region-left">
+        <view>所在地区</view>
+      </view>
+      <!-- 右边 -->
+      <view class="region-right">
+        <!-- 详细地址的输入框区域 地址选择 -->
+        <view class="choice">
+          <picker mode="region" bindchange="bindPickerChange">
+            <view>{{address}}</view>
+          </picker>
+        </view>
+        <!-- 右边小箭头 -->
+        <image src="../../images/arrow-right.png"></image>
+      </view>
+    </view>
+    <!-- 详细地址 -->
+    <view class="list">
+      <!-- 左边 -->
+      <view class="region-left">
+        <view>详细地址</view>
+        <!-- 详细地址的输入框区域 -->
+        <input placeholder="列: 15栋3层301室" placeholder-class="address-placeholder" />
+      </view>
+    </view>
+    <!-- 收货人 -->
+    <view class="list">
+      <!-- 左边 -->
+      <view class="region-left">
+        <view>收货人</view>
+        <!-- 详细地址的输入框区域 -->
+        <input placeholder="收货人姓名" placeholder-class="address-placeholder" />
+      </view>
+    </view>
+    <!-- 性别 -->
+    <view class="list">
+      <!-- 右边 -->
+      <radio-group bindchange="radioChange">
+        <label class="choice-box">
+          <view class="box-item" wx:for="{{gender}}" wx:key="index">
+            <radio color="#279524" value="{{item.value}}" />
+            <text class="choice-text" class="{{current == item.value ? 'active' : ''}}">
+              {{item.text}}
+            </text>
+          </view>
+        </label>
+      </radio-group>
+    </view>
+    <!-- 手机号码 -->
+    <view class="list">
+      <!-- 左边 -->
+      <view class="region-left">
+        <view>收货人</view>
+        <!-- 详细地址的输入框区域 -->
+        <input placeholder="收货人手机号" placeholder-class="address-placeholder" />
+      </view>
+    </view>
+  </view>
+  <!-- 保存按钮 -->
+  <view class="btn" bindtap="goAddressManagement">
+    <button>保存</button>
+  </view>
+</view>

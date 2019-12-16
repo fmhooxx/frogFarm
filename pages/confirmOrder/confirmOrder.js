@@ -1,36 +1,18 @@
-// pages/packageDetails/packageDetails.js
+// pages/confirmOrder/confirmOrder.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    goTopStatus: false
-  },
-  //监听页面高度(上滑或者下滑)
-  onPageScroll(obj) {
-    if (obj.scrollTop > 363) {
-      return this.setData({
-        goTopStatus: true
-      })
-    }
-    return this.setData({
-      goTopStatus: false
-    })
-  },
-  //点击回到顶部
-  goToTop() {
-    wx.pageScrollTo({
-      scrollTop: 0
-    })
-  },
-  // 去确认订单页面
-  goConfirmOrder() {
-    wx.navigateTo({
-      url: '/pages/confirmOrder/confirmOrder'
-    })
-  },
 
+  },
+  // 去消息页面
+  goAddrManageAdd() {
+    wx.navigateTo({
+      url: '/pages/addrManageAdd/addrManageAdd'
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */

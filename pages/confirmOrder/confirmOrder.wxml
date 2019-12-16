@@ -1,0 +1,135 @@
+<!-- pages/confirmOrder/confirmOrder.wxml -->
+<view class="container">
+  <!-- 添加地址信息开始 -->
+  <!-- 没有地址区域 -->
+  <view wx:if="{{true}}" class="address flex-row" bindtap="goAddrManageAdd">
+    <view class="addAddr">新建收货地址</view>
+    <image src="../../images/arrow-right.png"></image>
+  </view>
+  <!-- 有地址区域 -->
+  <view wx:else class="address flex-row">
+    <!-- 左边 -->
+    <view class="info-left">
+      <!-- 个人信息 -->
+      <view class="user">
+        <!-- 用户名 -->
+        <text>小米</text>
+        <!-- 手机号码 -->
+        <text class="tel">12345678990</text>
+      </view>
+      <!-- 地址 -->
+      <view class="info-address">合肥市庐阳区银城公寓</view>
+    </view>
+    <!-- 右边 -->
+    <view class="info-right">
+      <!-- 切换城市 -->
+      <view class="right-switch">切换城市</view>
+      <!-- 右箭头 -->
+      <image src="../../images/arrow-right.png"></image>
+    </view>
+  </view>
+  <!-- 添加地址信息结束 -->
+  <!-- 商品列表信息开始 -->
+  <view class="goods-list">
+    <view class="order-list-info flex-row">
+      <view class="list-left">
+        <image src="../../images/package-details-head.jpg"></image>
+      </view>
+      <view class="list-right flex-column">
+        <view class="flex-row">
+          <view class="info-two-title">
+            <!-- 折扣 -->
+            <view class="discount">折</view>
+            <view>九子九仁汤</view>
+          </view>
+          <view>
+            <text class="info-three-titledel">￥39.9</text>
+            <text class="info-small-titlebol">￥29.9</text>
+          </view>
+        </view>
+        <view class="info-three-title">X1</view>
+      </view>
+    </view>
+    <view class="order-list-info flex-row">
+      <view class="list-left">
+        <image src="../../images/package-details-head.jpg"></image>
+      </view>
+      <view class="list-right flex-column">
+        <view class="flex-row">
+          <view class="info-two-title">
+            <!-- 折扣 -->
+            <view class="discount">折</view>
+            <view>九子九仁汤</view>
+          </view>
+          <view>
+            <text class="info-three-titledel">￥39.9</text>
+            <text class="info-small-titlebol">￥29.9</text>
+          </view>
+        </view>
+        <view class="info-three-title">X1</view>
+      </view>
+    </view>
+    <view class="order-list-info flex-row">
+      <view class="list-left">
+        <image src="../../images/package-details-head.jpg"></image>
+      </view>
+      <view class="list-right flex-column">
+        <view class="flex-row">
+          <view class="info-two-title">
+            <!-- 折扣 -->
+            <view class="discount">折</view>
+            <view>九子九仁汤</view>
+          </view>
+          <view>
+            <text class="info-three-titledel">￥39.9</text>
+            <text class="info-small-titlebol">￥29.9</text>
+          </view>
+        </view>
+        <view class="info-three-title">X1</view>
+      </view>
+    </view>
+  </view>
+  <!-- 商品列表信息结束 -->
+  <!-- 订单备注开始 -->
+  <!-- <view class="info-title bei-title">
+    <view>订单备注</view>
+    <image src="../../images/arrow-right.png"></image>
+  </view> -->
+  <!-- 订单备注结束 -->
+  <!-- 订单信息开始 -->
+  <view class="con-info">
+    <view class="flex-row info-title con-list">
+      <view>商品金额</view>
+      <view>¥89.7</view>
+    </view>
+    <view class="flex-row info-title con-list">
+      <view>会员折扣</view>
+      <view>7折</view>
+    </view>
+    <view class="flex-row info-title con-list">
+      <view>配送费</view>
+      <view>+6.00</view>
+    </view>
+    <view class="flex-row info-title con-list">
+      <view>促销优惠</view>
+      <view>-0.54</view>
+    </view>
+    <view class="total">
+      <view>合计:</view>
+      <view class="price">
+        <text>¥</text>
+        <text class="price-num">62.6</text>
+      </view>
+    </view>
+  </view>
+  <!-- 订单信息结束 -->
+  <!-- 底部操作栏开始 -->
+  <view class="user-defined flex-row">
+    <view class="vertical-center">
+      <text class="info-subtitle">预付款</text>
+      <text class="jiage">￥7.26</text>
+    </view>
+    <view class="toClear">去支付</view>
+  </view>
+  <!-- 底部操作栏结束 -->
+</view>

@@ -1,0 +1,34 @@
+<!-- pages/addressManagement/addressManagement.wxml -->
+<!-- 地址管理页面 -->
+<view class="container">
+  <view class="addr">
+    <view class="addrInfo">
+      <view class="addrInfo_details">
+        <view class="middle-title">姓名：小明</view>
+        <view class="middle-title">1234567890</view>
+      </view>
+      <view class="middle-title-light">合肥市xxxxxxxxxxxxxxx</view>
+    </view>
+    <view class="addr_do">
+      <view wx:if="{{true}}">
+        <radio color="#279524" checked='true'>默认地址</radio>
+      </view>
+      <view v-else>
+        <radio color="#CE0000" checked=''>默认地址</radio>
+      </view>
+      <view class="do">
+        <view class="one">
+          <image src="../../images/addr-editor.png"></image>
+          <text class="info-three-title">编辑</text>
+        </view>
+        <view class="two">
+          <image src="../../images/addr-del.png"></image>
+          <text class="info-three-title">删除</text>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="bottom">
+    <view class="btn-default-longrad btn-text btn">+新建地址</view>
+  </view>
+</view>

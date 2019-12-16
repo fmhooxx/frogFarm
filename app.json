@@ -8,7 +8,10 @@
     "pages/mine/mine",
     "pages/indexNews/indexNews",
     "pages/indexNewsDetails/indexNewsDetails",
-    "pages/packageDetails/packageDetails"
+    "pages/packageDetails/packageDetails",
+    "pages/confirmOrder/confirmOrder",
+    "pages/addrManageAdd/addrManageAdd",
+    "pages/addressManagement/addressManagement"
   ],
   "window": {
     "backgroundTextStyle": "light",

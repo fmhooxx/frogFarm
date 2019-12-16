@@ -1,33 +1,43 @@
-// pages/packageDetails/packageDetails.js
+// pages/addrManageAdd/addrManageAdd.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    goTopStatus: false
+    // 性别数据
+    gender: [{
+        id: 0,
+        text: "先生",
+        value: "0"
+      },
+      {
+        id: 1,
+        text: "女士",
+        value: "1"
+      }
+    ],
+    // 控制被选中性别的那一项
+    current: null,
+    // 地址选择
+    address: '选择详细地址',
   },
-  //监听页面高度(上滑或者下滑)
-  onPageScroll(obj) {
-    if (obj.scrollTop > 363) {
-      return this.setData({
-        goTopStatus: true
-      })
-    }
-    return this.setData({
-      goTopStatus: false
+  // 当选择性别发生改变的时候
+  radioChange(e) {
+    this.setData({
+      current: e.detail.value
     })
   },
-  //点击回到顶部
-  goToTop() {
-    wx.pageScrollTo({
-      scrollTop: 0
+  // 当地址选择框发生变化的时候
+  bindPickerChange(e) {
+    this.setData({
+      address: e.detail.value
     })
   },
-  // 去确认订单页面
-  goConfirmOrder() {
+  // 去地址管理页面
+  goAddressManagement() {
     wx.navigateTo({
-      url: '/pages/confirmOrder/confirmOrder'
+      url: '/pages/addressManagement/addressManagement'
     })
   },
 
