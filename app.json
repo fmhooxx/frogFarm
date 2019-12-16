@@ -6,7 +6,9 @@
     "pages/shop/shop",
     "pages/goods/goods",
     "pages/mine/mine",
-    "pages/indexNews/indexNews"
+    "pages/indexNews/indexNews",
+    "pages/indexNewsDetails/indexNewsDetails",
+    "pages/packageDetails/packageDetails"
   ],
   "window": {
     "backgroundTextStyle": "light",

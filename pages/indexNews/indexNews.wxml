@@ -1,33 +1,32 @@
-<!--pages/indexNews/indexNews.wxml-->
-	<!-- 首页消息页面 ming -->
-	<view class="index-news-box">
-		<!-- 有消息区域 --> 
-		<view wx:if="{{isBox}}" class="index-news">
-			<view class="news-box">
-				<!-- 左边 -->
-				<view class="news-left">
-					<image src="/static/images/index-news.png"></image>
-					<!-- 小圆点 -->
-					<view class="dot"></view>
-				</view>
-				<!-- 右边 -->
-				<view class="new-right">
-					<!-- 右边的头部 -->
-					<view class="right-head">
-						<!-- 消息类型 -->
-						<view class="type">系统消息</view>
-						<!-- 消息时间 -->
-						<view class="timer">2019/10/22</view>
-					</view>
-					<!-- 右边的底部 -->
-					<view class="right-footer">【APP上线】蛙农场APP今日上线啦，主要功能板块11</view>
-				</view>
-			</view>
-		</view>
-		<!-- 没有消息区域 -->
-		<view v-else class="no-index-news">
-			<image src="/static/images/index-news-bgi.png"></image>
-			<view class="info">这里最近一条消息都没有</view>
-			<view @click="refresh">刷新</view>
-		</view>
-	</view>
+<!-- pages/indexNews/indexNews.wxml -->
+<!-- 首页消息页面 ming -->
+<view class="index-news-box">
+  <!-- 有消息区域 -->
+  <view wx:if="{{isBox}}" class="index-news" bindtap="goIndexNewsDetails">
+    <view class="news-box">
+      <!-- 左边 -->
+      <view class="news-left">
+        <image src="../../images/index-news.png"></image>
+        <!-- 小圆点 -->
+        <view class="dot"></view>
+      </view>
+      <!-- 右边 -->
+      <view class="new-right">
+        <!-- 右边的头部 -->
+        <view class="right-head">
+          <!-- 消息类型 -->
+          <view class="type">系统消息</view>
+          <!-- 消息时间 -->
+          <view class="timer">2019/10/22</view>
+        </view>
+        <!-- 右边的底部 -->
+        <view class="right-footer">【APP上线】蛙农场APP今日上线啦，主要功能板块11</view>
+      </view>
+    </view>
+  </view>
+  <!-- 没有消息区域 -->
+  <view wx:else class="no-index-news">
+    <image src="../../images/index-news-bgi.png"></image>
+    <view class="info">暂无消息</view>
+  </view>
+</view>

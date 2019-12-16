@@ -1,19 +1,13 @@
-// pages/indexNews/indexNews.js
+// pages/indexNewsDetails/indexNewsDetails.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    // 控制有消息和无消息之间的切换
-    isBox: true
+
   },
-  // 去消息详情页面
-  goIndexNewsDetails() {
-    wx.navigateTo({
-      url: '/pages/indexNewsDetails/indexNewsDetails'
-    })
-  },
+
   /**
    * 生命周期函数--监听页面加载
    */

@@ -1,0 +1,70 @@
+<!-- pages/packageDetails/packageDetails.wxml -->
+<!-- 套餐详情页 -->
+<view class="container">
+  <!-- 商品图片开始 -->
+  <view class="shop-img">
+    <image src="../../images/package-details-head.jpg"></image>
+  </view>
+  <!-- 商品图片结束 -->
+  <!-- 图片详情开始 -->
+  <view class="swiper-info">
+    <view class="swiper-info-title">年卡会员套餐</view>
+    <view class="swiper-info-introduce flex-row">
+      <view>新鲜美味, 品种多多</view>
+      <view class="share">分享立赚10</view>
+    </view>
+    <!-- 普通价格区域 -->
+    <view class="ordinary-price">¥39999</view>
+    <view class="mon">
+      <view class="price">
+        29999
+        <text>元</text>
+      </view>
+      <!-- 会员价格区域 -->
+      <view class="member">
+        <view>会员价</view>
+      </view>
+    </view>
+  </view>
+  <!-- 图片详情结束 -->
+  <!-- 套餐 -->
+  <view class="introduce">
+    <view class="server">
+      <view class="title">套餐说明</view>
+      <view class="sub-title">
+        <text class="sub-title-left">配送时间</text>
+        <text class="sub-title-right">每月1、10/20、30号配送</text>
+      </view>
+      <view class="sub-title">
+        <text class="sub-title-left">配送次数</text>
+        <text class="sub-title-right">每月4次配送 共48次配送</text>
+      </view>
+      <view class="sub-title">
+        <text class="sub-title-left">注</text>
+        <text class="sub-title-right">配送时间、商品可以更改</text>
+      </view>
+    </view>
+    <!-- 套餐 -->
+    <!-- 商品详情图富文本预留开始 -->
+    <view class="detail">
+      <view class="img-title">商品详情</view>
+      <image src="../../static/images/green-orderlistA.png" class="detail-img" mode="scallToFill"></image>
+    </view>
+    <!-- 商品详情图富文本预留结束 -->
+  </view>
+  <!-- 回到顶部按钮测试开始 -->
+  <view v-if="goTopStatus" bindtap='goToTop' class="upTop">
+    <image src="../../images/upTop.png" mode='widthFix'></image>
+  </view>
+  <!-- 回到顶部按钮测试结束 -->
+  <!-- 底部操作栏开始 -->
+  <view class="user-defined flex-row">
+    <view id="cart">
+      <image src="../../static/images/detail-cart.png" class="cart"></image>
+      <view class="tag">3</view>
+    </view>
+    <view class="addCart">加入购物车</view>
+    <view class="toClear">立即购买</view>
+  </view>
+  <!-- 底部操作栏结束 -->
+</view>

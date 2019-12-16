@@ -89,10 +89,16 @@ Page({
       }
     ]
   },
-
+  // 去消息页面
   goIndexNews() {
     wx.navigateTo({
       url: '/pages/indexNews/indexNews'
+    })
+  },
+  // 去套餐详情页面
+  goPackageDetails() {
+    wx.navigateTo({
+      url: '/pages/packageDetails/packageDetails'
     })
   },
 })

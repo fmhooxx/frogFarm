@@ -1,19 +1,30 @@
-// pages/indexNews/indexNews.js
+// pages/packageDetails/packageDetails.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    // 控制有消息和无消息之间的切换
-    isBox: true
+    goTopStatus: false
   },
-  // 去消息详情页面
-  goIndexNewsDetails() {
-    wx.navigateTo({
-      url: '/pages/indexNewsDetails/indexNewsDetails'
+  //监听页面高度(上滑或者下滑)
+  onPageScroll(obj) {
+    if (obj.scrollTop > 363) {
+      this.setData({
+        goTopStatus: true
+      })
+    }
+    this.setData({
+      goTopStatus: false
     })
   },
+  //点击回到顶部
+  goToTop() {
+    uni.pageScrollTo({
+      scrollTop: 0
+    })
+  },
+
   /**
    * 生命周期函数--监听页面加载
    */

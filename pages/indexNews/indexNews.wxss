@@ -1,1 +1,113 @@
 /* pages/indexNews/indexNews.wxss */
+.index-news-box {
+  position: relative;
+
+}
+
+/* 有消息区域 */
+/* .index-news {} */
+
+.news-box {
+  display: flex;
+  height: 120rpx;
+  border-top: 2rpx solid #f1f1f1;
+  background-color: #fff;
+
+
+}
+
+/* 左边 */
+.news-left {
+  position: relative;
+  width: 75rpx;
+  height: 75rpx;
+  background: rgba(241, 255, 241, 1);
+  border-radius: 50%;
+  margin: 21rpx 21rpx 24rpx 31rpx;
+  box-sizing: border-box;
+
+
+}
+
+.news-left>image {
+  width: 75rpx;
+  height: 75rpx;
+  border-radius: 50%;
+  vertical-align: middle;
+}
+
+/* 小圆点 */
+.dot {
+  position: absolute;
+  top: 9rpx;
+  right: 0;
+  width: 12rpx;
+  height: 12rpx;
+  background: rgba(255, 0, 0, 1);
+  border-radius: 50%;
+}
+
+/* 右边 */
+/* .new-right {} */
+
+/* 消息类型 */
+.type {
+  font-size: 32rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: rgba(51, 51, 51, 1);
+}
+
+/* 消息时间 */
+.timer {
+  font-size: 24rpx;
+  font-family: PingFang SC;
+  font-weight: 500;
+  color: rgba(153, 153, 153, 1);
+}
+
+/* 右边的头部 */
+.right-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 14rpx 0 8rpx 12rpx;
+}
+
+/* 右边的底部 */
+.right-footer {
+  width: 612rpx;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  font-size: 26rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: rgba(153, 153, 153, 1);
+}
+
+/* 没有消息区域 */
+.no-index-news {
+  width: 335rpx;
+  height: 412rpx;
+  position: absolute;
+  top: 264rpx;
+  left: 208rpx;
+  text-align: center;
+}
+
+.no-index-news>image {
+  width: 355rpx;
+  height: 290rpx;
+}
+
+.no-index-news>view {
+  font-family: Source Han Sans CN;
+  font-weight: 400;
+}
+
+.info {
+  margin: 44rpx 0 28rpx 0;
+  font-size: 30rpx;
+  color: #666;
+}

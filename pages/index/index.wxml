@@ -38,7 +38,7 @@
   <!-- 推荐详情 -->
   <view class="list">
     <!-- 单个的盒子 -->
-    <view class="list-item" wx:for="{{shopList}}" wx:key="{{index}}">
+    <view class="list-item" wx:for="{{shopList}}" wx:key="{{index}}" bindtap="goPackageDetails">
       <!-- 会员标签 -->
       <view class="member" wx:if="{{item.member}}">
         <!-- 标签图片 -->
