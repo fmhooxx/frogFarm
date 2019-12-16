@@ -11,6 +11,25 @@
     </swiper>
   </view>
   <!-- 轮播图结束 -->
+  <!-- 消息以及定位开始 -->
+  <view class="news">
+    <!-- 定位 -->
+    <view class="location">
+      <!-- 定位图片 -->
+      <image class="location-img" src="../../images/location.png"></image>
+      <!-- 地区内容 -->
+      <view class="location-box">
+        <view>合肥市</view>
+      </view>
+      <!-- 下拉小箭头 -->
+      <image class="drop-down-img" src="../../images/down.png"></image>
+    </view>
+    <!-- 信息 -->
+    <view class="location-info" bindtap="goIndexNews">
+      <image src="../../images/info.png"></image>
+    </view>
+  </view>
+  <!-- 消息以及定位结束 -->
   <!-- 套餐推荐 -->
   <view class="set-meal">
     <image class="meal-img" src="../../images/index-recommend.jpg"></image>

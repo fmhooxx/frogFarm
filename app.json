@@ -5,7 +5,8 @@
     "pages/cart/cart",
     "pages/shop/shop",
     "pages/goods/goods",
-    "pages/mine/mine"
+    "pages/mine/mine",
+    "pages/indexNews/indexNews"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -15,12 +16,14 @@
   },
   "tabBar": {
     "selectedColor": "#00939E",
-    "list": [{
+    "list": [
+      {
         "pagePath": "pages/index/index",
         "text": "首页",
         "iconPath": "./images/index.png",
         "selectedIconPath": "./images/index2.jpg"
-      }, {
+      },
+      {
         "pagePath": "pages/shop/shop",
         "text": "商城",
         "iconPath": "./images/shop.jpg",
@@ -31,12 +34,14 @@
         "text": "商圈",
         "iconPath": "./images/goods.jpg",
         "selectedIconPath": "./images/goods2.jpg"
-      }, {
+      },
+      {
         "pagePath": "pages/cart/cart",
         "text": "购物车",
         "iconPath": "./images/cart.jpg",
         "selectedIconPath": "./images/cart2.jpg"
-      }, {
+      },
+      {
         "pagePath": "pages/mine/mine",
         "text": "我的",
         "iconPath": "./images/mine.jpg",

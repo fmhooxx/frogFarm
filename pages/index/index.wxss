@@ -19,6 +19,77 @@ page {
 }
 
 /* 轮播图结束 */
+/* 消息以及定位开始 */
+.news {
+  width: 100%;
+  height: 88rpx;
+  line-height: 88rpx;
+  position: absolute;
+  top: 0;
+  background-color: transparent;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* 定位 */
+.location {
+  display: flex;
+  align-items: center;
+  width: 30%;
+}
+
+/* 定位图片 */
+.location-img {
+  margin-left: 30rpx;
+  margin-right: 10rpx;
+  width: 24rpx;
+  height: 28rpx;
+  vertical-align: middle;
+}
+
+/* 地区内容 */
+.location-box {
+  /* width: 100%; */
+  min-width: 100rpx;
+  font-size: 32rpx;
+  font-family: Source Han Sans CN;
+  font-weight: 400;
+  color: #fff;
+}
+
+/* 需要渲染的真正的省市区区域 */
+.box-list {
+  display: flex;
+}
+
+.box-list>view {
+  margin-right: 8rpx;
+}
+
+/* 首先显示在页面上的地区信息 */
+.array-text {
+  margin-right: 8rpx;
+}
+
+/* 下拉小箭头 */
+.drop-down-img {
+  width: 18rpx;
+  height: 10rpx;
+}
+
+/* 信息 */
+.location-info {
+  margin-right: 30rpx;
+}
+
+.location-info>image {
+  width: 44rpx;
+  height: 44rpx;
+  vertical-align: middle;
+}
+
+/* 消息以及定位结束 */
 
 /* 套餐推荐 */
 .set-meal {

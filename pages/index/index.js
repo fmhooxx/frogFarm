@@ -55,8 +55,7 @@ Page({
       }
     ],
     // 商品可以滑动区域的数据
-    infoList: [
-      {
+    infoList: [{
         id: 0,
         url: '../../images/index-shop-service.png',
         service: '特色采耳',
@@ -89,5 +88,11 @@ Page({
         used: '¥39.9'
       }
     ]
+  },
+
+  goIndexNews() {
+    wx.navigateTo({
+      url: '/pages/indexNews/indexNews'
+    })
   },
 })
