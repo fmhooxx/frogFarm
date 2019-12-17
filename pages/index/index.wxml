@@ -82,7 +82,7 @@
     <view class="meal-text">— 附 / 近 / 商 / 家 —</view>
   </view>
   <!-- 附近商家详情 -->
-  <view>
+  <view bindtap="goStoreDetails">
     <view class="shop-box">
       <!-- 左边 -->
       <view class="shop-left">

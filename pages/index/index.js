@@ -101,4 +101,10 @@ Page({
       url: '/pages/packageDetails/packageDetails'
     })
   },
+  // 去店铺详情页面
+  goStoreDetails() {
+    wx.navigateTo({
+      url: '/pages/storeDetails/storeDetails'
+    })
+  },
 })

@@ -1,0 +1,100 @@
+<!-- pages/storeDetails/storeDetails.wxml -->
+<!-- 电铺详情页面 -->
+<view>
+  <view class="store-details">
+    <!-- 店铺照片 -->
+    <view class="head-box" bindtap="goShopPictures">
+      <view wx:for="{{imgList}}" wx:key="index" style="width: 230rpx; height: 160rpx; display: inline-block" class="{{index == 0 ? 'img' : ''}}">
+        <image src="{{item.url}}" class="{{index == 2 ? 'locations' : ''}}" />
+      </view>
+    </view>
+    <view class="img-num">共4张</view>
+    <!-- 营业中 -->
+    <view class="business">
+      <!-- 小图标 -->
+      <image src="../../images/shop.jpg" />
+      <!-- 文字 -->
+      <view>营业中 | 周一至周日00:00-23:59</view>
+    </view>
+    <!-- 位置 -->
+    <view class="location">
+      <!-- 左边 -->
+      <view class="location-left">
+        <!-- 定位图标 -->
+        <image src="../../images/white-location.png" />
+        <!-- 左边文字 -->
+        <view>长江中路与北含山路交口向西走 100米</view>
+      </view>
+      <!-- 右边 -->
+      <view class="location-right">
+        <!-- 汽车图标 -->
+        <image class="automobile" src="../../images/automobile.png" />
+        <view>|</view>
+        <!-- 电话图标 -->
+        <image class="phone" src="../../images/phone.png" />
+      </view>
+    </view>
+  </view>
+  <!-- 满减 -->
+  <view class="full-reduction">
+    <!-- 左边 -->
+    <view class="reduction-left">
+      <text class="full">满</text>
+      <text>满40减10，满70减20，满100减30，满…</text>
+    </view>
+    <!-- 右边 -->
+    <view class="reduction-right">
+      <image src="../../images/arrow-right.png" />
+    </view>
+  </view>
+  <!-- 服务项目 -->
+  <view class="service-items">
+    <view class="service-items-text">服务项目</view>
+    <!-- 服务项目内容 -->
+    <view class="list">
+      <!-- 左边 -->
+      <view class="list-left">
+        <!-- 服务项目照片 -->
+        <image src="../../images/index-shop-service.png" />
+        <!-- 服务项目详细内容 -->
+        <view class="list-content">
+          <view class="one">草本推拿 [产销项目]</view>
+          <view class="two">30分钟 | 养生</view>
+          <view class="three">￥39</view>
+        </view>
+      </view>
+      <!-- 右边 -->
+      <view class="list-right">预定</view>
+    </view>
+    <view class="list">
+      <!-- 左边 -->
+      <view class="list-left">
+        <!-- 服务项目照片 -->
+        <image src="../../images/index-shop-service.png" />
+        <!-- 服务项目详细内容 -->
+        <view class="list-content">
+          <view class="one">草本推拿 [产销项目]</view>
+          <view class="two">30分钟 | 养生</view>
+          <view class="three">￥39</view>
+        </view>
+      </view>
+      <!-- 右边 -->
+      <view class="list-right">预定</view>
+    </view>
+    <view class="list">
+      <!-- 左边 -->
+      <view class="list-left">
+        <!-- 服务项目照片 -->
+        <image src="../../images/index-shop-service.png" />
+        <!-- 服务项目详细内容 -->
+        <view class="list-content">
+          <view class="one">草本推拿 [产销项目]</view>
+          <view class="two">30分钟 | 养生</view>
+          <view class="three">￥39</view>
+        </view>
+      </view>
+      <!-- 右边 -->
+      <view class="list-right">预定</view>
+    </view>
+  </view>
+</view>

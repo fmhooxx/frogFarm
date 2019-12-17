@@ -1,7 +1,7 @@
 /* pages/viewOrder/viewOrder.wxss */
 .order-header {
   width: 750rpx;
-  height: 162rpx;
+  height: 170rpx;
   background: #00A0AC
 }
 
@@ -297,3 +297,41 @@
 }
 
 /* 订单详情结束 */
+/* 确认收货 */
+.confirm {
+  border: 1rpx solid #00A0AC !important;
+  color: #00A0AC !important;
+}
+
+/* 弹出框 */
+.popup-box {
+  width: 560rpx;
+  height: 270rpx;
+  box-sizing: border-box;
+}
+
+.box-title {
+  margin: auto;
+  padding: 54rpx 0 48rpx 0;
+  /* margin: 54rpx 65rpx 0; */
+  width: 432rpx;
+  height: 167rpx;
+  font-size: 30rpx;
+  font-family: Source Han Sans CN;
+  font-weight: 400;
+  color: #666;
+  border-bottom: 1rpx solid #F1F1F1;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.box-text {
+  margin: auto;
+  width: 110rpx;
+  height: 34rpx;
+  line-height: 102rpx;
+  font-size: 36rpx;
+  font-family: Source Han Sans CN;
+  font-weight: 400;
+  color: #666;
+}

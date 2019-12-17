@@ -2,21 +2,31 @@
 <!-- 查看订单页面 -->
 <view class="container">
   <!-- 订单详情头部开始 -->
-  <!-- 待发货状态 -->
   <view class="order-header">
-    <view wx:if="{{true}}" class="order-title level-center" style="line-height:19rpx">
+    <!-- 待发货状态 -->
+    <view wx:if="{{false}}" class="order-title level-center" style="line-height:60rpx">
       <image src="../../images/view-order-stay.png" class="tips"></image>
       <text>待发货</text>
     </view>
+    <!-- 待收货状态 -->
+    <view wx:if="{{false}}" class="order-title level-center" style="line-height:60rpx">
+      <image src="../../images/view-order-stay.png" class="tips"></image>
+      <text>待收货</text>
+    </view>
     <!-- 已取消状态 -->
-    <view wx:if="{{false}}" class="order-title level-center" style="line-height:19rpx">
+    <view wx:if="{{false}}" class="order-title level-center" style="line-height:60rpx">
       <image src="../../images/already-cancel-refund.png" class="tips"></image>
       <text>已取消</text>
     </view>
     <!-- 已退款状态 -->
-    <view wx:if="{{false}}" class="order-title level-center" style="line-height:19rpx">
+    <view wx:if="{{false}}" class="order-title level-center" style="line-height:60rpx">
       <image src="../../images/already-cancel-refund.png" class="tips"></image>
       <text>已退款</text>
+    </view>
+    <!-- 已完成状态 -->
+    <view wx:if="{{true}}" class="order-title level-center" style="line-height:60rpx">
+      <image src="../../images/already-cancel-refund.png" class="tips"></image>
+      <text>已完成</text>
     </view>
   </view>
   <view class="addr-info">
@@ -35,7 +45,7 @@
           <view class="info-two-title">
             <!-- 折扣 -->
             <view class="discount">折</view>
-            <view>红水蜜桃500g</view>
+            <view>九子九仁汤</view>
           </view>
           <view>
             <text class="info-three-titledel">￥39.9</text>
@@ -54,7 +64,7 @@
           <view class="info-two-title">
             <!-- 折扣 -->
             <view class="discount">折</view>
-            <view>红水蜜桃500g</view>
+            <view>九子九仁汤</view>
           </view>
           <view>
             <text class="info-three-titledel">￥39.9</text>
@@ -73,7 +83,7 @@
           <view class="info-two-title">
             <!-- 折扣 -->
             <view wx:if="{{false}}" class="discount">折</view>
-            <view>红水蜜桃500g</view>
+            <view>九子九仁汤</view>
           </view>
           <view>
             <text class="info-three-titledel">￥39.9</text>
@@ -85,7 +95,7 @@
     </view>
   </view>
   <!-- 商品列表信息结束 -->
-  <!-- 订单备注开始 -->
+  <!-- 订单详细开始 -->
   <view class="con-info">
     <view class="flex-row info-title con-list">
       <view>商品金额</view>
@@ -111,7 +121,7 @@
       </view>
     </view>
   </view>
-  <!-- 订单备注结束 -->
+  <!-- 订单详细结束 -->
   <!-- 订单详情开始 -->
   <view class="order-details">
     <view class="order-details-box">
@@ -126,19 +136,42 @@
   </view>
   <!-- 订单详情结束 -->
   <!-- 底部操作栏 -->
+  <!-- 已取消已退款状态 -->
+  <!-- <view class="footer">
+    <view class="footer-box">
+      <view>退款</view>
+      <view>修改地址</view>
+    </view>
+  </view> -->
   <!-- 已完成状态 -->
   <!-- <view class="footer">
     <view class="footer-box">
+      <view>查看物流</view>
       <view>删除订单</view>
       <view>再次购买</view>
     </view>
   </view> -->
-  <!-- 待取货状态 -->
+  <!-- 待收货状态 -->
+  <!-- <view class="footer">
+    <view class="footer-box">
+      <view>退换货</view>
+      <view>查看物流</view>
+      <view class="confirm">确认收货</view>
+    </view>
+  </view> -->
+  <!-- 待发货 -->
   <view class="footer">
     <view class="footer-box">
-      <view>退款</view>
-      <view class="code">取货码</view>
+      <view bindtap="open">退款</view>
+      <view>修改地址</view>
     </view>
   </view>
-  <!-- 底部操作栏 -->
+  <!-- 弹出框 -->
+  <van-cell title="展示弹出层" is-link bind:click="showPopup" />
+  <van-popup show="{{ show }}" bind:close="onClose">
+    <view class="popup-box">
+      <view class="box-title">订单已退款，退款金额将在3-5个 工作日内返还到您的支付账户</view>
+      <view class="box-text" bindtap="onClose">知道了</view>
+    </view>
+  </van-popup>
 </view>

@@ -1,0 +1,257 @@
+/* pages/storeDetails/storeDetails.wxss */
+/* 店铺详情 */
+.store-details {
+  background-color: #fff;
+}
+
+/* 店铺照片 */
+.head-box {
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  height: 340rpx;
+  padding: 20rpx 0 0 20rpx;
+}
+
+.head-box image {
+  width: 100%;
+  height: 100%;
+  margin-bottom: 10rpx;
+  border-radius: 10rpx;
+}
+
+.img {
+  width: 470rpx !important;
+  height: 340rpx !important;
+  margin-right: 10rpx;
+}
+
+.locations {
+  position: absolute;
+  right: 20rpx;
+  bottom: -9rpx;
+  width: 230rpx !important;
+  height: 170rpx !important;
+}
+
+/* 照片的张数 */
+.img-num {
+  position: absolute;
+  left: 42rpx;
+  top: 302rpx;
+  width: 80rpx;
+  height: 36rpx;
+  line-height: 36rpx;
+  text-align: center;
+  font-size: 24rpx;
+  font-family: Microsoft YaHei;
+  font-weight: 400;
+  color: #fff;
+  border-radius: 6rpx 4rpx 4rpx 4rpx;
+  background: rgba(0, 0, 0, 1);
+}
+
+/* 营业中 */
+.business {
+  height: 76rpx;
+  line-height: 76rpx;
+  display: flex;
+  vertical-align: center;
+  background-color: #fff;
+}
+
+/* 小图标 */
+.business>image {
+  width: 40rpx;
+  height: 40rpx;
+  vertical-align: middle;
+  margin-top: 21rpx;
+  margin: 21rpx 19rpx 0 30rpx;
+}
+
+/* 文字 */
+.business>view {
+  width: 100%;
+  font-size: 30rpx;
+  font-family: Microsoft YaHei;
+  font-weight: 400;
+  color: #333;
+  border-bottom: 1rpx solid #D2D2D2;
+}
+
+/* 位置 */
+.location {
+  display: flex;
+  justify-content: space-between;
+  height: 124rpx;
+}
+
+/* 左边 */
+.location-left {
+  display: flex;
+}
+
+/* 定位图标 */
+.location-left>image {
+  width: 30rpx;
+  height: 30rpx;
+  vertical-align: middle;
+  margin: 46rpx 21rpx 0 30rpx;
+}
+
+/* 左边文字 */
+.location-left>view {
+  display: flex;
+  width: 420rpx;
+  font-size: 30rpx;
+  font-family: Microsoft YaHei;
+  font-weight: 400;
+  color: #333;
+  padding-top: 22rpx;
+}
+
+/* 右边 */
+.location-right {
+  display: flex;
+  padding-top: 45rpx;
+  margin-right: 30rpx;
+}
+
+.location-right>image {
+  vertical-align: middle;
+}
+
+.location-right>view {
+  color: #D2D2D2;
+  margin: 0 36rpx 6rpx;
+}
+
+/* 汽车图标 */
+.automobile {
+  width: 36rpx;
+  height: 36rpx;
+}
+
+/* 电话图标 */
+.phone {
+  width: 36rpx;
+  height: 36rpx;
+}
+
+/* 满减 */
+.full-reduction {
+  margin: 20rpx 0;
+  height: 70rpx;
+  line-height: 70rpx;
+  display: flex;
+  justify-content: space-between;
+  background-color: #fff;
+  padding: 0 21rpx 0 39rpx;
+}
+
+/* 左边 */
+.reduction-left>text {
+  display: inline-block;
+  width: 442rpx;
+  font-size: 24rpx;
+  font-family: Microsoft YaHei;
+  font-weight: 400;
+  color: #666;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+/* 满 */
+.reduction-left .full {
+  width: 24rpx;
+  height: 24rpx;
+  line-height: 24rpx;
+  text-align: center;
+  background: rgba(255, 44, 44, 1);
+  border-radius: 2rpx;
+  font-size: 20rpx;
+  font-family: Microsoft YaHei;
+  font-weight: 400;
+  color: #fff;
+  margin-right: 10rpx;
+  margin-bottom: 23rpx;
+}
+
+/* 右边 */
+.reduction-right>image {
+  width: 14rpx;
+  height: 24rpx;
+}
+
+/* 服务项目 */
+.service-items {
+  background-color: #fff;
+  padding: 30rpx 20rpx 30rpx 29rpx;
+}
+
+.service-items-text {
+  font-size: 32rpx;
+  font-family: Microsoft YaHei;
+  font-weight: 400;
+  color: #333;
+}
+
+/* 服务项目内容 */
+.list {
+  display: flex;
+  justify-content: space-between;
+  height: 200rpx;
+  align-items: center;
+  border-bottom: 1rpx solid #ECECEC;
+}
+
+/* 左边 */
+.list-left {
+  display: flex;
+}
+
+/* 服务项目照片 */
+.list-left>image {
+  width: 140rpx;
+  height: 140rpx;
+  margin-right: 26rpx;
+}
+
+/* 服务项目详细内容 */
+.list-content>view {
+  font-family: Microsoft YaHei;
+  font-weight: 400;
+}
+
+.one {
+  font-size: 30rpx;
+  color: #333;
+}
+
+.two {
+  font-size: 24rpx;
+  color: #666;
+  margin: 10rpx 0;
+}
+
+.three {
+  font-size: 36rpx;
+  color: #FC4F4B;
+}
+
+/* 右边 */
+.list-right {
+  width: 100rpx;
+  height: 50rpx;
+  line-height: 50rpx;
+  text-align: center;
+  background: rgba(255, 44, 44, 1);
+  border-radius: 25rpx;
+  font-size: 24rpx;
+  font-family: Source Han Sans CN;
+  font-weight: 400;
+  color: #fff;
+  margin-top: 96rpx;
+}

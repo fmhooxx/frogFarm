@@ -5,7 +5,33 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    show: false
+  },
+  open() {
+    wx.showModal({
+      title: '确认退款?',
+      confirmColor: '#00A3AF',
+      success: res => {
+        if (res.confirm) {
+          this.showPopup()
+          console.log('用户点击确定')
+        } else if (res.cancel) {
+          console.log('用户点击取消')
+        }
+      }
+    })
+  },
+  // 打开弹出框
+  showPopup() {
+    this.setData({
+      show: true
+    });
+  },
+  // 关闭弹出框
+  onClose() {
+    this.setData({
+      show: false
+    });
   },
 
   /**
