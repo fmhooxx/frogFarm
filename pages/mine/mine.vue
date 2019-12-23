@@ -152,8 +152,12 @@ export default {
         return uni.navigateTo({
           url: "/pages/greenAddrManage/greenAddrManage"
         });
-        
-      } 
+      } else if (index === 1) {
+        // 去正在开发页面
+				uni.navigateTo({
+					url: '/pages/expect/expect'
+				})
+      }
       // 去售后服务页面
       // else if (index === 2) {
       //   return uni.navigateTo({
@@ -171,6 +175,33 @@ export default {
         return uni.navigateTo({
           url: "/pages/mineAboutUs/mineAboutUs"
         });
+        // 关于我们的信息
+        // uni.request({
+        //   url: 'http://192.168.1.143:8086/wanongchang/address/addAddress',
+        //   // data: {},
+        //   data: {
+        //     id: 1,
+        //     userid: 1,
+        //     address: '合肥市',
+        //     nplate: 'aa',
+        //     name: '凌大',
+        //     gender: '333',
+        //     phone: '1236',
+        //     lable: '字符串',
+        //     status: 1,
+        //     isdefault: 1
+				// 	},
+        //   header: {
+        //     'Content-Type': "application/x-www-form-urlencoded; charset=utf-8"
+        //   },
+        //   method: 'POST',
+        //   success: res => {
+        //     console.log(res)
+        //   },
+        //   fail: res => {
+        //     console.log(res)
+        //   }
+        // })
       }
       // 去意见反馈页面
       else if (index === 6) {
@@ -331,6 +362,7 @@ page {
 .list {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   height: 100rpx;
   line-height: 80rpx;
   padding: 0 30rpx;

@@ -1,5 +1,8 @@
 {
 	"pages": [{
+		"path": "pages/loginRegister/loginRegister",
+		"style": {}
+	}, {
 		"path": "pages/login/login",
 		"style": {
 			"navigationBarBackgroundColor": "#fff"
@@ -16,6 +19,11 @@
 			"navigationBarTextStyle": "white",
 			"navigationBarBackgroundColor": "#48BC5B",
 			"backgroundColor": "#F8F8F8"
+		}
+	}, {
+		"path": "pages/expect/expect",
+		"style": {
+			"navigationBarTitleText": "消息"
 		}
 	}, {
 		"path": "pages/greenAddrManageAdd/greenAddrManageAdd",
@@ -82,8 +90,6 @@
 	}, {
 		"path": "pages/greenOrderDetails/greenOrderDetails",
 		"style": {
-			"navigationBarTitleText": "已退款",
-			"navigationBarTextStyle": "white",
 			"navigationBarBackgroundColor": "#279524",
 			"backgroundColor": "#F8F8F8"
 		}
@@ -135,7 +141,9 @@
 	}, {
 		"path": "pages/vipGive/vipGive",
 		"style": {
-			"navigationBarTitleText": "会员赠送"
+			"navigationBarTitleText": "会员赠送",
+			"navigationBarTextStyle": "white",
+			"navigationBarBackgroundColor": "#333"
 		}
 	}, {
 		"path": "pages/details/details",
@@ -231,9 +239,6 @@
 			"navigationBarTitleText": "设置"
 		}
 	}, {
-		"path": "pages/loginRegister/loginRegister",
-		"style": {}
-	}, {
 		"path": "pages/loginSetLoginPassword/loginSetLoginPassword",
 		"style": {}
 	}, {
@@ -309,6 +314,11 @@
 		"path": "pages/indexNewsDetails/indexNewsDetails",
 		"style": {
 			"navigationBarTitleText": "消息详情"
+		}
+	}, {
+		"path": "pages/vipMemberManagementRules/vipMemberManagementRules",
+		"style": {
+			"navigationBarTitleText": "会员管理规则"
 		}
 	}],
 	"globalStyle": {

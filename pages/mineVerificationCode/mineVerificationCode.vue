@@ -1,27 +1,29 @@
 <template>
   <!-- 我的 手机验证码页面 ming -->
   <view class="verification-code">
-    <!-- 填写手机号码区域 -->
-    <view class="code-box">
-      <input
-        placeholder="请输入新手机号码"
-        v-model="telVal"
-        type="number"
-        placeholder-class="placeholder-tel"
-      />
-    </view>
-    <!-- 验证码区域 -->
-    <view class="code-box">
-      <input
-        placeholder="请输入新手机号码"
-        v-model="codeVal"
-        type="number"
-        placeholder-class="placeholder-tel"
-      />
-      <view class="box-text" v-show="isStart" @click="start">{{sendVal}}</view>
-      <view class="box-text" v-show="isTime">剩余{{time}}秒</view>
-    </view>
-    <!-- 提交按钮 -->
+	  <view class="box">
+	  	<!-- 填写手机号码区域 -->
+	  	<view class="code-box">
+	  	  <input
+	  	    placeholder="请输入新手机号码"
+	  	    v-model="telVal"
+	  	    type="number"
+	  	    placeholder-class="placeholder-tel"
+	  	  />
+	  	</view>
+	  	<!-- 验证码区域 -->
+	  	<view class="code-box">
+	  	  <input
+	  	    placeholder="请输入新手机号码"
+	  	    v-model="codeVal"
+	  	    type="number"
+	  	    placeholder-class="placeholder-tel"
+	  	  />
+	  	  <view class="box-text" v-show="isStart" @click="start">{{sendVal}}</view>
+	  	  <view class="box-text" v-show="isTime">剩余{{time}}秒</view>
+	  	</view>
+	  	<!-- 提交按钮 -->
+	  </view>
     <view class="code-btn" :class="{ active: isActive }" @click="submitVal">
       <button class="btn" :class="{ active: isActive }">提交</button>
     </view>
@@ -82,16 +84,24 @@ export default {
   background-color: #279524 !important;
   opacity: 1 !important;
 }
+.box {
+	background-color: #fff;
+}
 .verification-code {
   // 填写手机号码区域
   margin-top: 20rpx;
   .code-box {
-    padding: 35rpx 50rpx 30rpx 50rpx;
+	  margin-left: 40rpx;
+	height: 88rpx;
+	line-height: 88rpx;
+	background-color: #fff;
+	border-bottom: 1rpx solid #F1F1F1;
     display: flex;
     justify-content: space-between;
     align-items: center;
     input {
       width: 100%;
+	  padding-left: 10rpx;
     }
     // placeholder 样式
     .placeholder-tel {
@@ -101,6 +111,7 @@ export default {
       color: rgba(153, 153, 153, 1);
     }
     .box-text {
+		margin-right: 30rpx;
       width: 150rpx;
       height: 50rpx;
       line-height: 50rpx;

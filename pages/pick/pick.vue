@@ -36,7 +36,7 @@
       <image src="/static/images/pick-bgi.png"></image>
       <view class="one">没有货要取 那就休息咯</view>
       <view class="two">购买完成后将会生成取货二维码</view>
-      <view class="three" @click="goIndex">去逛逛</view>
+      <!-- <view class="three" @click="goIndex">去逛逛</view> -->
     </view>
   </view>
 </template>

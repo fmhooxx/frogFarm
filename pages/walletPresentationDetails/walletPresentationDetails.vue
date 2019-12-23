@@ -1,17 +1,6 @@
 <template>
   <!-- 提现明页面 ming -->
   <view class="presentation-details">
-		<!-- 头部区域 -->
-		<view class="details-title">
-			<!-- 日期选择 -->
-			<view class="title-month">
-				<picker class="month-data" mode="date" :value="date" :start="startDate" :end="endDate" @change="bindDateChange">
-					<view>{{date}}</view>
-				</picker>
-			</view>
-			<!-- 下拉小箭头 -->
-			<image src="/static/images/down-arrow.png"></image>
-		</view>
 		<!-- 提现信息区域 -->
 		<view class="list">
 			<view class="list-item" @click="goWalletSuccessfulWithdrawals">
@@ -141,36 +130,6 @@ image {
 	height: 100%;
 }
 .presentation-details {
-	// 头部区域
-	.details-title {
-		height: 54rpx;
-		width: 230rpx;
-		text-align: center;
-		line-height: 54rpx;
-		background:rgba(255,255,255,1);
-		border: 1rpx solid rgba(237,237,237,1);
-		border-radius: 27rpx;
-		display: flex;
-		align-items: center;
-		margin: 30rpx;
-		// 日期选择
-		.title-month {
-			margin: 0 18rpx 0 25rpx;
-			font-size: 26rpx;
-			font-family: Source Han Sans CN;
-			font-weight: 400;
-			color:rgba(27,27,27,1);
-			.month-data {
-				width: 146rpx;
-			}
-		}
-		// 下拉小箭头
-		> image {
-			width: 16rpx;
-			height: 12rpx;
-			vertical-align: middle;
-		}
-	}
 	// 提现信息区域
 	.list {
 		// padding: 0 30rpx 0 33rpx;

@@ -54,8 +54,36 @@
 			},
 			// 去确认订单页面
 			goConfirmOrder() {
-				uni.navigateTo({
-          url: '/pages/confirmOrder/confirmOrder'
+				// uni.navigateTo({
+        //   url: '/pages/confirmOrder/confirmOrder'
+				// })
+				this.getList()
+			},
+			getList() {
+				uni.request({
+          url: 'http://192.168.1.143:8086/wanongchang/address/getAddress?name=小明',
+          // data: {
+					// 	userid: 1,
+					// 	address: '111',
+					// 	nplate: 'aa',
+					// 	name: '张三',
+					// 	gedder: '333',
+					// 	phone: '1236',
+					// 	lable: '字符串',
+					// 	status: 1,
+					// 	isdefault: 1
+					// },
+					data: {},
+          header: {
+            'Content-Type': "application/x-www-form-urlencoded; charset=utf-8"
+          },
+          method: 'GET',
+          success: res => {
+            console.log(res)
+          },
+          fail: res => {
+            console.log(res)
+          }
         })
 			}
 		}
@@ -79,8 +107,7 @@
 	margin: 0 50rpx 0 20rpx;
   // padding: 20rpx 0;
 }
-.do {
-}
+// .do {}
 .do view{
 	 display: inline-block;
 	 	> image {

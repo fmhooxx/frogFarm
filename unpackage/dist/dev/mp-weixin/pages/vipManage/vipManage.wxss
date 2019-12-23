@@ -1,71 +1,101 @@
-/* 卡片样式开始 */
-.container.data-v-2ae96cad {
-  background: white;
+
+page {
+  background-color: #fff;
 }
-.card.data-v-2ae96cad {
+
+.vip-card.data-v-2ae96cad {
+  position: relative;
   width: 690rpx;
-  height: 286rpx;
+  height: 249rpx;
   background: #39ac36;
+  box-shadow: 0px 0px 40rpx 0px rgba(101, 205, 98, 0.2);
   border-radius: 20rpx;
-  margin: 0 auto;
+  box-sizing: border-box;
+  position: absolute;
+  top: 10rpx;
+  left: 50%;
+  margin-left: -345rpx;
 }
-.card-con.data-v-2ae96cad {
-  margin: 0 auto;
-  width: 630rpx;
-  height: 214rpx;
-  color: white;
+.vip-card image.data-v-2ae96cad {
+  width: 100%;
+  height: 100%;
 }
-.card-con .left.data-v-2ae96cad {
-  -webkit-align-self: center;
-          align-self: center;
+.vip-card .header-text.data-v-2ae96cad {
+  position: absolute;
+  width: 600rpx;
+  top: 80rpx;
+  left: 40rpx;
 }
-.header.data-v-2ae96cad {
-  width: 112rpx;
-  height: 120rpx;
+.header-box.data-v-2ae96cad {
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+          justify-content: space-between;
+  padding: 0 52rpx 0 40rpx;
+  position: absolute;
+  top: 58rpx;
+  width: 100%;
 }
-.card-con .right.data-v-2ae96cad {
-  -webkit-align-self: center;
-          align-self: center;
+.header-box image.data-v-2ae96cad {
+  width: 100%;
+  height: 100%;
 }
-.name.data-v-2ae96cad {
+.header-box .box-left.data-v-2ae96cad {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+}
+.header-box .box-left .header-left.data-v-2ae96cad {
+  width: 102rpx;
+  height: 102rpx;
+  margin-right: 26rpx;
+}
+.header-box .box-left .header-center .center-uname.data-v-2ae96cad {
   font-size: 34rpx;
-  font-weight: bold;
-}
-.guanli.data-v-2ae96cad {
-  width: 450rpx;
-  height: 50rpx;
-}
-.guanli-left.data-v-2ae96cad {
-  width: 120rpx;
-  height: 34rpx;
-  border: 2rpx solid #fec825;
-  border-radius: 17rpx;
-  text-align: center;
-  font-size: 24rpx;
-  font-weight: bold;
-  color: #fec825;
-  -webkit-align-self: center;
-          align-self: center;
-}
-.time.data-v-2ae96cad {
-  font-size: 24rpx;
-  font-family: Source Han Sans CN;
-  font-weight: bold;
-}
-.num.data-v-2ae96cad {
-  font-size: 24rpx;
-  font-family: Microsoft YaHei;
-  font-weight: 400;
+  font-family: PingFang;
   color: #ffffff;
-  line-height: 22px;
-  padding: 0 40rpx;
 }
+.header-box .box-left .header-center .center-member.data-v-2ae96cad {
+  width: 128rpx;
+  height: 34rpx;
+  line-height: 34rpx;
+  text-align: center;
+  font-size: 26rpx;
+  font-family: PingFang;
+  border: 1rpx solid #ddb230;
+  border-radius: 17rpx;
+  color: #f5c24a;
+  margin: 10rpx 0 20rpx 0;
+}
+.header-box .box-left .header-center .center-timer.data-v-2ae96cad {
+  color: #ffffff;
+  font-family: Source Han Sans CN;
+  font-size: 24rpx;
+  margin-right: 6rpx;
+}
+.header-box .box-right.data-v-2ae96cad {
+  width: 126rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  text-align: center;
+  background: #ddb230;
+  box-shadow: 0rpx 3rpx 7rpx 0rpx rgba(247, 111, 108, 0.35);
+  border-radius: 30rpx;
+  font-size: 30rpx;
+  color: #ffffff;
+  font-family: PingFang;
+  margin-top: 60rpx;
+}
+/* 卡片样式开始 */
 /* 会员管理内容样式开始 */
 .manage.data-v-2ae96cad {
   background: white;
-  margin-top: 88rpx;
   padding: 0 30rpx;
   box-sizing: border-box;
+  margin-top: 300rpx;
 }
 .manage image.data-v-2ae96cad {
   width: 13rpx;

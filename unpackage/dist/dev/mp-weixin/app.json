@@ -1,8 +1,10 @@
 {
   "pages": [
+    "pages/loginRegister/loginRegister",
     "pages/login/login",
     "pages/index/index",
     "pages/goods/goods",
+    "pages/expect/expect",
     "pages/greenAddrManageAdd/greenAddrManageAdd",
     "pages/goodsDetailsInfo/goodsDetailsInfo",
     "pages/confirmOrder/confirmOrder",
@@ -45,7 +47,6 @@
     "pages/mineRecommendCourtesy/mineRecommendCourtesy",
     "pages/mineAccountManagement/mineAccountManagement",
     "pages/mineSetUp/mineSetUp",
-    "pages/loginRegister/loginRegister",
     "pages/loginSetLoginPassword/loginSetLoginPassword",
     "pages/loginInvitationCode/loginInvitationCode",
     "pages/loginChangepasswordCode/loginChangepasswordCode",
@@ -62,7 +63,8 @@
     "pages/walletSuccessfulWithdrawals/walletSuccessfulWithdrawals",
     "pages/indexLocation/indexLocation",
     "pages/indexNews/indexNews",
-    "pages/indexNewsDetails/indexNewsDetails"
+    "pages/indexNewsDetails/indexNewsDetails",
+    "pages/vipMemberManagementRules/vipMemberManagementRules"
   ],
   "subPackages": [],
   "window": {
@@ -110,6 +112,5 @@
     "base-tabbar": "/components/BaseTabbar",
     "suspension": "/components/suspension/suspension",
     "base-popup": "/components/BasePopup/BasePopup"
-  },
-  "sitemapLocation": "sitemap11.json"
+  }
 }

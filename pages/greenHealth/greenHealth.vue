@@ -1,7 +1,7 @@
 <template>
   <view class="green-health">
     <!-- 操作栏悬浮穿开始 -->
-    <suspension></suspension>
+    <!-- <suspension></suspension> -->
     <!-- 操作栏悬浮穿结束 -->
     <!-- vip 区域 -->
     <view class="health-head">
@@ -73,9 +73,9 @@
 						</view>
 						<view class="list-footer">
 							<!-- 赠送会员 -->
-							<view class="give" @click.stop="handle">赠送好友</view>
+							<view class="give" @click.stop="goVipGive">赠送好友</view>
 							<!-- 购买 -->
-							<view class="purchase" @click="purchase">购买</view>
+							<view class="purchase" @click.stop="purchase">购买</view>
 						</view>
 					</view>
 				</view>
@@ -109,9 +109,9 @@
 						</view>
 						<view class="list-footer">
 							<!-- 赠送会员 -->
-							<view class="give" @click.stop="handle">赠送好友</view>
+							<view class="give" @click.stop="goVipGive">赠送好友</view>
 							<!-- 购买 -->
-							<view class="purchase" @click="purchase">购买</view>
+							<view class="purchase" @click.stop="purchase">购买</view>
 						</view>
 					</view>
 				</view>
@@ -145,9 +145,9 @@
 						</view>
 						<view class="list-footer">
 							<!-- 赠送会员 -->
-							<view class="give" @click.stop="handle">赠送好友</view>
+							<view class="give" @click.stop="goVipGive">赠送好友</view>
 							<!-- 购买 -->
-							<view class="purchase" @click="purchase">购买</view>
+							<view class="purchase" @click.stop="purchase">购买</view>
 						</view>
 					</view>
 				</view>
@@ -181,9 +181,45 @@
 						</view>
 						<view class="list-footer">
 							<!-- 赠送会员 -->
-							<view class="give" @click.stop="handle">赠送好友</view>
+							<view class="give" @click.stop="goVipGive">赠送好友</view>
 							<!-- 购买 -->
-							<view class="purchase" @click="purchase">购买</view>
+							<view class="purchase" @click.stop="purchase">购买</view>
+						</view>
+					</view>
+				</view>
+			</view>
+			<view class="healthy-list w" @click="toVipGoodsDetailsInfo">
+				<!-- 左边 -->
+				<view class="list-left">
+					<image src="/static/images/good.jpg"></image>
+				</view>
+				<!-- 右边 -->
+				<view class="list-right">
+					<!-- 头部区域 -->
+					<view class="right-title">活动卡会员套餐</view>
+					<!-- 次数 -->
+					<view class="right-num">
+						<text class="number">品种多多，尽享优惠</text>
+					</view>
+					<!-- 价格以及会员 -->
+					<view class="price-member">
+						<!-- 价格 -->
+						<view class="price-box">
+							<!-- 最新价格 -->
+							<view class="new-price">
+								<!-- 人民币符号 -->
+								<text class="rmb">¥</text>
+								<!-- 金额 -->
+								<text class="price-num">1999</text>
+							</view>
+							<!-- 划去的价格 -->
+							<text class="delimit">¥3999</text>
+						</view>
+						<view class="list-footer">
+							<!-- 赠送会员 -->
+							<view class="give" @click.stop="goVipGive">赠送好友</view>
+							<!-- 购买 -->
+							<view class="purchase" @click.stop="purchase">购买</view>
 						</view>
 					</view>
 				</view>
@@ -353,13 +389,17 @@ export default {
         url: "/pages/details/details"
       });
 		},
-		// 赠送好友
-		handle() {
-			console.log('赠送好友')
+		// 去会员赠礼页面
+		goVipGive() {
+      uni.navigateTo({
+        url: "/pages/vipGive/vipGive"
+			});
 		},
-		// 购买
+		// 去确定订单页面
 		purchase() {
-			console.log('购买')
+      uni.navigateTo({
+        url: "/pages/vipGoodsDetailsInfo/vipGoodsDetailsInfo"
+			});
 		},
 		// 加入购物车
 		plus() {

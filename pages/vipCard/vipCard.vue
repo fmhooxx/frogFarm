@@ -40,13 +40,12 @@
 
 		<!-- 会员充值列表开始 -->
 		<view class="vip-list">
-			<view class="list-title">会员卡</view>
 			<view class="list-info flex-row">
 				<view class="left">
 					<view class="price">29999元</view>
 					<view class="type">年卡会员</view>
 				</view>
-				<view class="right">购买</view>
+				<view class="right" @click="goVipGoodsDetailsInfo">购买</view>
 			</view>
 
 			<view class="list-info flex-row">
@@ -54,7 +53,7 @@
 					<view class="price">19999元</view>
 					<view class="type">半年卡会员</view>
 				</view>
-				<view class="right">购买</view>
+				<view class="right" @click="goVipGoodsDetailsInfo">购买</view>
 			</view>
 
 			<view class="list-info flex-row">
@@ -62,7 +61,7 @@
 					<view class="price">19999元</view>
 					<view class="type">季卡会员</view>
 				</view>
-				<view class="right">购买</view>
+				<view class="right" @click="goVipGoodsDetailsInfo">购买</view>
 			</view>
 
 			<view class="list-info flex-row">
@@ -70,7 +69,15 @@
 					<view class="price">9999元</view>
 					<view class="type">月卡会员</view>
 				</view>
-				<view class="right">购买</view>
+				<view class="right" @click="goVipGoodsDetailsInfo">购买</view>
+			</view>
+      
+			<view class="list-info flex-row">
+				<view class="left">
+					<view class="price">999元</view>
+					<view class="type">活动卡</view>
+				</view>
+				<view class="right" @click="goVipGoodsDetailsInfo">购买</view>
 			</view>
 		</view>
 		<!-- 会员充值列表结束 -->
@@ -84,7 +91,7 @@
 
 		<!-- 推荐开始 -->
 		<view class="flex-row tuijian">
-			<view class="flex-row item">
+			<view class="flex-row item" @click="goMineRecommendCourtesy">
 				<view><image src="../../static/images/vip-cardA.png"></image></view>
 				<view>
 					<view class="info-title">推荐有礼</view>
@@ -123,24 +130,33 @@
         uni.navigateTo({
 					url: '/pages/vipManage/vipManage'
 				});
+      },
+      // 去推荐有礼页面
+      goMineRecommendCourtesy() {
+        uni.navigateTo({
+					url: '/pages/mineRecommendCourtesy/mineRecommendCourtesy'
+				});
+      },
+      // 去会员套餐详情页面
+      goVipGoodsDetailsInfo() {
+        uni.navigateTo({
+					url: '/pages/vipGoodsDetailsInfo/vipGoodsDetailsInfo'
+				});
       }
 		}
 	}
 </script>
 
+<style>
+page {
+  background-color: #fff;
+}
+</style>
+
 <style lang="less" scoped>
 // 会员卡片样式
 
 // 非会员卡片样式
-.container{
-  background: white
-}
-.order-header{
-  width:750rpx;
-  height:172rpx;
-  background:#333;
-
-}
 .vip-card{
   position: relative;
   width:690rpx;
@@ -263,14 +279,7 @@
 
 /* 会员充值列表样式开始 */
 .vip-list{
-  margin-top: 114rpx;
-}
-.list-title{
-  font-size:38rpx;
-  font-family:Microsoft YaHei;
-  // font-weight:bold;
-  color:rgba(51,51,51,1);
-  text-align: center
+  margin-top: 270rpx;
 }
 .list-info{
   padding: 20rpx 30rpx;

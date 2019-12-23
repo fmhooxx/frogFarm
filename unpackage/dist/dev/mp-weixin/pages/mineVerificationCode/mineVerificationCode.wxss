@@ -2,11 +2,18 @@
   background-color: #279524 !important;
   opacity: 1 !important;
 }
+.box.data-v-54835172 {
+  background-color: #fff;
+}
 .verification-code.data-v-54835172 {
   margin-top: 20rpx;
 }
 .verification-code .code-box.data-v-54835172 {
-  padding: 35rpx 50rpx 30rpx 50rpx;
+  margin-left: 40rpx;
+  height: 88rpx;
+  line-height: 88rpx;
+  background-color: #fff;
+  border-bottom: 1rpx solid #F1F1F1;
   display: -webkit-box;
   display: -webkit-flex;
   display: flex;
@@ -19,6 +26,7 @@
 }
 .verification-code .code-box input.data-v-54835172 {
   width: 100%;
+  padding-left: 10rpx;
 }
 .verification-code .code-box .placeholder-tel.data-v-54835172 {
   font-size: 26rpx;
@@ -27,6 +35,7 @@
   color: #999999;
 }
 .verification-code .code-box .box-text.data-v-54835172 {
+  margin-right: 30rpx;
   width: 150rpx;
   height: 50rpx;
   line-height: 50rpx;

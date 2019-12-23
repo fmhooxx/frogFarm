@@ -57,7 +57,7 @@
         <view class="modify">修改地址</view>
       </view>
       <!-- 待收货状态 -->
-      <view class="list-item">
+      <view class="list-item" @click="goGreenOrderDetails">
         <!-- 头部 时间 状态样式 -->
         <view class="item-title">
           <view>2019-10-16 16:12:17</view>
@@ -105,7 +105,7 @@
         <view class="payment">立即支付</view>
       </view>
       <!-- 已完成状态 -->
-      <view class="list-item">
+      <view class="list-item" @click="goGreenOrderDetails">
         <!-- 头部 时间 状态样式 -->
         <view class="item-title">
           <view>2019-10-16 16:12:17</view>
@@ -127,7 +127,7 @@
         <view class="modify">再次购买</view>
       </view>
       <!-- 已退款状态 -->
-      <view class="list-item">
+      <view class="list-item" @click="goGreenOrderDetails">
         <!-- 头部 时间 状态样式 -->
         <view class="item-title">
           <view>2019-10-16 16:12:17</view>
@@ -149,7 +149,7 @@
         <view class="modify">已退款</view>
       </view>
       <!-- 已取消状态 -->
-      <view class="list-item">
+      <view class="list-item" @click="goGreenOrderDetails">
         <!-- 头部 时间 状态样式 -->
         <view class="item-title">
           <view>2019-10-16 16:12:17</view>
@@ -297,18 +297,19 @@ export default {
         display: flex;
         white-space: nowrap;
         margin: auto;
-        width: 710rpx;
-        height: 250rpx;
+        // width: 710rpx;
+        // height: 250rpx;
         background: rgba(247, 247, 247, 1);
         border-radius: 10rpx;
         padding: 30rpx;
         box-sizing: border-box;
         text-align: left;
         image {
-          width: 200rpx;
-          height: 200rpx;
+          width: 140rpx;
+          height: 140rpx;
           display: inline-block;
           margin-right: 22rpx;
+          border-radius: 10rpx;
         }
       }
       // 商品件数以及金额

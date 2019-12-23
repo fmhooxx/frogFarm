@@ -176,8 +176,8 @@ image {
 			// 右边区域
 			.item-right {
 				width: 100rpx;
-				height: 36rpx;
-				line-height: 36rpx;
+				height: 34rpx;
+				line-height: 34rpx;
 				text-align: center;
 				background:rgba(255,255,255,1);
 				border: 1rpx solid rgba(72,188,91,1);

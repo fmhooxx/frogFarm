@@ -43,7 +43,7 @@
 					<image src="/static/images/arrow-right.png"></image>
 				</view>
 			</view>
-			<view class="footer-box" @click="goWalletMyBankCard">
+			<view class="footer-box" @click="getCash">
 				<view class="text">提现账户</view>
 				<view class="box-img">
 					<image src="/static/images/arrow-right.png"></image>
@@ -57,8 +57,40 @@
 export default {
   data() {
     return {};
-  },
+	},
+	onLoad() {
+		// this.getList()
+	},
   methods: {
+		// 获取用户信息
+		getList() {
+			uni.request({
+				url: 'http://192.168.1.155:8086/WNC/wallet/getWallet',
+				data: {
+					userid: 1,
+				},
+				header: {
+					'Content-Type': "application/x-www-form-urlencoded; charset=utf-8"
+				},
+				succeee(res) {
+					console.log(res)
+				}
+			})
+		},
+		getCash() {
+			uni.request({
+				url: 'http://192.168.1.155:8086/WNC/wallet/getFriend',
+				data: {
+					id: 1
+				},
+				header: {
+					'Content-Type': "application/x-www-form-urlencoded; charset=utf-8"
+				},
+				succeee(res) {
+					console.log(res)
+				}
+			})
+		},
 		// 去提现页面
 		goCashWithdrawal() {
 			uni.navigateTo({

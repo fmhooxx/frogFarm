@@ -314,6 +314,7 @@
 	padding-left: 25rpx;
 	box-sizing: border-box;
 	.footer-box {
+		margin-top: 24rpx;
 		float: right;
 		display: flex;
 		> view {

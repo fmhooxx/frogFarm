@@ -8,8 +8,8 @@
     <!-- 输入手机号码和验证码区域 -->
     <view class="login-content">
       <view class="login-tel">
-        <input placeholder="请输入手机号" type="number" v-model="telVal" focus placeholder-class="tel-password-class" />
-				<view>|<text>获取验证码</text></view>
+        <input placeholder="请输入手机号" type="number" v-model="phone" focus placeholder-class="tel-password-class" />
+				<view>|<text @click="login">获取验证码</text></view>
       </view>
       <view class="login-password">
         <input placeholder="请输入收到的验证码" type="number" v-model="verificationVal" placeholder-class="tel-password-class" />
@@ -40,7 +40,7 @@ export default {
   data() {
     return {
       // 手机号码输入的内容
-      telVal: '',
+      phone: '',
       // 验证码输入的内容
       verificationVal: ''
     };
@@ -48,7 +48,7 @@ export default {
   methods: {
 		// (去设置登录密码页面 暂时废弃 直接使用验证码登录 然后跳转到输入邀请码页面)
 		goLoginSetLoginPassword() {
-			if (this.telVal !== '' && this.verificationVal) {
+			if (this.phone !== '' && this.verificationVal) {
         // return uni.navigateTo({
         //   url: "/pages/loginSetLoginPassword/loginSetLoginPassword"
         // })
@@ -61,11 +61,31 @@ export default {
           duration: 2000,
           icon: 'none'
       })
-		}
+    },
+    login() {
+      // var phone = ''
+      // this.$http.get('/WNC/wxlogin/register', {params: this.phone}).then(
+      //   res => {
+      //     console.log(res)
+      //   }
+      // )
+      // uni.request({
+      //   url: 'http://192.168.1.166:8086/WNC/wxlogin/register',
+      //   data: {
+      //     phone: this.phone
+      //   },
+      //   header: {
+      //   'Content-Type': "application/x-www-form-urlencoded; charset=utf-8"
+      //   },
+      //   success: res => {
+      //     console.log(res)
+      //   }
+      // })
+    }
   },
   computed: {
     isActive() {
-      if (this.telVal === '' || this.verificationVal === '') {
+      if (this.phone === '' || this.verificationVal === '') {
         return false
       }
       return true

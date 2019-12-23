@@ -232,6 +232,22 @@ export default {
           }
         }
     });
+    },
+    getList() {
+      uni.request({
+        url: 'http://192.168.1.155:8086/WNC/bus/getBcs',
+        data: {},
+        header: {
+          'Content-Type': "application/x-www-form-urlencoded; charset=utf-8"
+        },
+        method: 'GET',
+        success: res => {
+          console.log(res)
+        },
+        fail: res => {
+          console.log(res)
+        }
+      })
     }
   },
   computed: {
@@ -241,6 +257,10 @@ export default {
       }
       return false
     }
+  },
+  created() {
+    // 获取列表数据
+    this.getList()
   },
 };
 </script>

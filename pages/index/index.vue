@@ -38,15 +38,15 @@
 				<image src="/static/images/lv.png" />
 				<text>绿色健康</text>
 			</view>
-			<view>
+			<view @click="goExpect">
 				<image src="/static/images/chao.png" />
 				<text>超市便利</text>
 			</view>
-			<view>
+			<view @click="goExpect">
 				<image src="/static/images/zhu.png" />
 				<text>电商助农</text>
 			</view>
-			<view>
+			<view @click="goExpect">
 				<image src="/static/images/xiang.png" />
 				<text>乐享周末</text>
 			</view>
@@ -62,7 +62,7 @@
 
 			<!-- 健康专区数据区域 -->
 			<view class="healthy">
-				<view class="healthy-list">
+				<view class="healthy-list" @click="goVipGoodsDetailsInfo">
 					<!-- 左边 -->
 					<view class="list-left">
 						<image src="/static/images/good.jpg"></image>
@@ -97,14 +97,14 @@
 							</view>
 							<view class="list-footer">
 								<!-- 赠送会员 -->
-								<view class="give">赠送好友</view>
+								<view class="give" @click.stop="goVipGive">赠送好友</view>
 								<!-- 购买 -->
-								<view class="purchase">购买</view>
+								<view class="purchase" @click.stop="goVipGoodsDetailsInfo">购买</view>
 							</view>
 						</view>
 					</view>
 				</view>
-				<view class="healthy-list">
+				<view class="healthy-list" @click="goVipGoodsDetailsInfo">
 					<!-- 左边 -->
 					<view class="list-left">
 						<image src="/static/images/good.jpg"></image>
@@ -139,14 +139,14 @@
 							</view>
 							<view class="list-footer">
 								<!-- 赠送会员 -->
-								<view class="give">赠送好友</view>
+								<view class="give" @click.stop="goVipGive">赠送好友</view>
 								<!-- 购买 -->
-								<view class="purchase">购买</view>
+								<view class="purchase" @click.stop="goVipGoodsDetailsInfo">购买</view>
 							</view>
 						</view>
 					</view>
 				</view>
-				<view class="healthy-list">
+				<view class="healthy-list" @click="goVipGoodsDetailsInfo">
 					<!-- 左边 -->
 					<view class="list-left">
 						<image src="/static/images/good.jpg"></image>
@@ -181,14 +181,14 @@
 							</view>
 							<view class="list-footer">
 								<!-- 赠送会员 -->
-								<view class="give">赠送好友</view>
+								<view class="give" @click.stop="goVipGive">赠送好友</view>
 								<!-- 购买 -->
-								<view class="purchase">购买</view>
+								<view class="purchase" @click.stop="goVipGoodsDetailsInfo">购买</view>
 							</view>
 						</view>
 					</view>
 				</view>
-				<view class="healthy-list">
+				<view class="healthy-list" @click="goVipGoodsDetailsInfo">
 					<!-- 左边 -->
 					<view class="list-left">
 						<image src="/static/images/good.jpg"></image>
@@ -223,9 +223,51 @@
 							</view>
 							<view class="list-footer">
 								<!-- 赠送会员 -->
-								<view class="give">赠送好友</view>
+								<view class="give" @click.stop="goVipGive">赠送好友</view>
 								<!-- 购买 -->
-								<view class="purchase">购买</view>
+								<view class="purchase" @click.stop="goVipGoodsDetailsInfo">购买</view>
+							</view>
+						</view>
+					</view>
+				</view>
+				<view class="healthy-list" @click="goVipGoodsDetailsInfo">
+					<!-- 左边 -->
+					<view class="list-left">
+						<image src="/static/images/good.jpg"></image>
+					</view>
+					<!-- 右边 -->
+					<view class="list-right">
+						<!-- 头部区域 -->
+						<view class="right-title">活动卡卡会员套餐</view>
+						<!-- 次数 -->
+						<view class="right-num">
+							<text class="number">每月共4次</text>
+							<text class="common">共48次配送</text>
+						</view>
+						<!-- 搭配 -->
+						<view class="collocation">
+							<text class="add">蔬菜+油+调味料</text>
+							<text class="voluntarily">自行搭配</text>
+						</view>
+						<!-- 价格以及会员 -->
+						<view class="price-member">
+							<!-- 价格 -->
+							<view class="price-box">
+								<!-- 最新价格 -->
+								<view class="new-price">
+									<!-- 人民币符号 -->
+									<text class="rmb">¥</text>
+									<!-- 金额 -->
+									<text class="price-num">1999</text>
+								</view>
+								<!-- 划去的价格 -->
+								<text class="delimit">¥2999</text>
+							</view>
+							<view class="list-footer">
+								<!-- 赠送会员 -->
+								<view class="give" @click.stop="goVipGive">赠送好友</view>
+								<!-- 购买 -->
+								<view class="purchase" @click.stop="goVipGoodsDetailsInfo">购买</view>
 							</view>
 						</view>
 					</view>
@@ -428,7 +470,8 @@
 				]
 			};
 		},
-		onLoad() {},
+		onLoad() {
+		},
 		methods: {
 			// 去绿色健康页面
 			goGreenHealth() {
@@ -447,6 +490,33 @@
 				uni.navigateTo({
 					url: '/pages/indexNews/indexNews'
 				})
+			},
+			// getList() {
+			// 	this.$http.get('/wanongchang/banner/getBanner').then(res => {console.log(res)})
+			// },
+			// 去正在开发页面
+			goExpect() {
+				uni.navigateTo({
+					url: '/pages/expect/expect'
+				})
+			},
+			// 去会员套餐页面详情
+			goVipGoodsDetailsInfo() {
+				uni.navigateTo({
+					url: '/pages/vipGoodsDetailsInfo/vipGoodsDetailsInfo'
+				})
+			},
+			// 去会员套餐详情
+			goVipGoodsDetailsInfo() {
+				uni.navigateTo({
+					url: '/pages/vipGoodsDetailsInfo/vipGoodsDetailsInfo'
+				})
+			},
+			// 去会员赠送页面
+			goVipGive() {
+				uni.navigateTo({
+					url: '/pages/vipGive/vipGive'
+				})
 			}
 		}
 	};
@@ -454,7 +524,7 @@
 
 <style>
 page {
-	background-color: #fff !important;
+	background-color: #fff;
 }
 </style>
 
@@ -472,12 +542,16 @@ page {
 	align-items: center;
 	// 定位
 	.location {
+		margin-left: 20rpx;
 		display: flex;
 		align-items: center;
-		width: 30%;
+		width: 23%;
+		height: 60rpx;
+		background-color: rgba(0, 0, 0, .3);
+		border-radius: 44rpx;
 		// 定位图片
 		.location-img {
-			margin-left: 30rpx;
+			margin-left: 8rpx;
 			margin-right: 10rpx;
 			width: 24rpx;
 			height: 28rpx;

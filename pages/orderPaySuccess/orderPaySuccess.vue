@@ -7,8 +7,8 @@
 
 		<!-- 底部操作按钮开始 -->
 		<view class="flex-row btn-box">
-			<view class="btn-left btn">再去逛逛</view>
-			<view class="btn-right btn">查看订单</view>
+			<view class="btn-left btn" @click="goIndex">再去逛逛</view>
+			<view class="btn-right btn" @click="goGreenOrderList">查看订单</view>
 		</view>
 		<!-- 底部操作按钮结束 -->
 	</view>
@@ -22,7 +22,18 @@
 			}
 		},
 		methods: {
-			
+      // 去绿色订单页面展示
+      goGreenOrderList() {
+        uni.navigateTo({
+          url: '/pages/greenOrderList/greenOrderList'
+        })
+      },
+      // 去首页
+      goIndex() {
+        uni.switchTab({
+          url: '/pages/index/index'
+        })
+      },
 		}
 	}
 </script>

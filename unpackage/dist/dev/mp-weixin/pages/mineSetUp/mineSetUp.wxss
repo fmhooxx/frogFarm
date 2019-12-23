@@ -7,12 +7,9 @@ image.data-v-6849defd {
 }
 .account-management > view.data-v-6849defd {
   background-color: #fff;
-  padding-bottom: 20rpx;
-}
-.account-management .w.data-v-6849defd {
-  padding-top: 40rpx !important;
 }
 .account-management .management-box.data-v-6849defd {
+  margin-left: 30rpx;
   background-color: #fff;
   display: -webkit-box;
   display: -webkit-flex;
@@ -20,15 +17,17 @@ image.data-v-6849defd {
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
           justify-content: space-between;
-  padding: 0 30rpx;
+  padding-right: 30rpx;
   font-size: 26rpx;
   font-family: PingFang;
   font-weight: 500;
   color: #333333;
-  margin: 38rpx 0;
+  height: 100rpx;
+  line-height: 100rpx;
+  border-bottom: 1rpx solid #f1f1f1;
 }
 .account-management .management-box .box-left.data-v-6849defd {
-  font-weight: 500;
+  font-weight: 400;
 }
 .account-management .management-box .box-right.data-v-6849defd {
   display: -webkit-box;

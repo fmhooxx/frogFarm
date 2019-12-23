@@ -69,8 +69,8 @@ image.data-v-ddaa0ab2 {
 }
 .my-team .team-list .list-item .item-right.data-v-ddaa0ab2 {
   width: 100rpx;
-  height: 36rpx;
-  line-height: 36rpx;
+  height: 34rpx;
+  line-height: 34rpx;
   text-align: center;
   background: #ffffff;
   border: 1rpx solid #48bc5b;

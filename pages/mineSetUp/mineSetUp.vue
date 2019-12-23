@@ -32,8 +32,8 @@
       <view class="box">
         <view class="box-title">退出当前账号</view>
         <view class="box-content">
-          <text>取消</text>
-          <text>确定</text>
+          <text @click="closeBasePopup">取消</text>
+          <text @click="closeBasePopup">确定</text>
         </view>
       </view>
     </BasePopup>
@@ -55,6 +55,10 @@ export default {
     // 点击退出账号 打开弹框
     openBasePopup() {
       this.$refs.popup.open()
+    },
+    // 关闭弹框
+    closeBasePopup() {
+      this.$refs.popup.close()
     }
   }
 };
@@ -66,27 +70,27 @@ image {
 	height: 100%;
 }
 .account-management {
+  margin-top: 20rpx;
   > view {
     background-color: #fff;
-    padding-bottom: 20rpx;
-  }
-  margin-top: 20rpx;
-  .w {
-    padding-top: 40rpx !important;
   }
   .management-box {
+    margin-left: 30rpx;
     background-color: #fff;
     display: flex;
     justify-content: space-between;
-    padding: 0 30rpx;
+    padding-right: 30rpx;
     font-size: 26rpx;
     font-family: PingFang;
     font-weight: 500;
 		color: rgba(51, 51, 51, 1);
-		margin: 38rpx 0;
+    // margin: 38rpx 0;
+    height: 100rpx;
+    line-height: 100rpx;
+    border-bottom: 1rpx solid #f1f1f1;
     // 左边
     .box-left {
-			font-weight: 500;
+			font-weight: 400;
     }
     // 右边
     .box-right {

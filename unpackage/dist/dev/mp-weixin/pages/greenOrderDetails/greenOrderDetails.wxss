@@ -106,6 +106,7 @@
   box-sizing: border-box;
 }
 .footer .footer-box.data-v-598e95d2 {
+  margin-top: 24rpx;
   float: right;
   display: -webkit-box;
   display: -webkit-flex;

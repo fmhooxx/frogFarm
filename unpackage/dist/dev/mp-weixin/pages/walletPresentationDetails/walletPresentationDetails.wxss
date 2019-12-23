@@ -2,37 +2,6 @@ image.data-v-3505e472 {
   width: 100%;
   height: 100%;
 }
-.presentation-details .details-title.data-v-3505e472 {
-  height: 54rpx;
-  width: 230rpx;
-  text-align: center;
-  line-height: 54rpx;
-  background: #ffffff;
-  border: 1rpx solid #ededed;
-  border-radius: 27rpx;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: flex;
-  -webkit-box-align: center;
-  -webkit-align-items: center;
-          align-items: center;
-  margin: 30rpx;
-}
-.presentation-details .details-title .title-month.data-v-3505e472 {
-  margin: 0 18rpx 0 25rpx;
-  font-size: 26rpx;
-  font-family: Source Han Sans CN;
-  font-weight: 400;
-  color: #1b1b1b;
-}
-.presentation-details .details-title .title-month .month-data.data-v-3505e472 {
-  width: 146rpx;
-}
-.presentation-details .details-title > image.data-v-3505e472 {
-  width: 16rpx;
-  height: 12rpx;
-  vertical-align: middle;
-}
 .presentation-details .list .list-item.data-v-3505e472 {
   padding: 0 30rpx;
   background-color: #fff;

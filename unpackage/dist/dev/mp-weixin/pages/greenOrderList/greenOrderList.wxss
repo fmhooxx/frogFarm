@@ -54,8 +54,6 @@
   display: flex;
   white-space: nowrap;
   margin: auto;
-  width: 710rpx;
-  height: 250rpx;
   background: #f7f7f7;
   border-radius: 10rpx;
   padding: 30rpx;
@@ -63,10 +61,11 @@
   text-align: left;
 }
 .order .list .list-item .item-img-box image.data-v-37fd6c87 {
-  width: 200rpx;
-  height: 200rpx;
+  width: 140rpx;
+  height: 140rpx;
   display: inline-block;
   margin-right: 22rpx;
+  border-radius: 10rpx;
 }
 .order .list .list-item .item-content.data-v-37fd6c87 {
   font-family: Microsoft YaHei;

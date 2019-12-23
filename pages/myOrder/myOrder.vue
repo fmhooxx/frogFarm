@@ -2,7 +2,7 @@
   <!-- from ming 我的订单页面-->
   <view class="order">
 		<!-- 超市便利订单 -->
-		<view class="order-list">
+		<view class="order-list" @click="goExpect">
 			<view class="left">
 				<image src="/static/images/myOrder-1.png"></image>
 			</view>
@@ -22,7 +22,7 @@
 			</view>
 		</view>
 		<!-- 电商助农订单 -->
-		<view class="order-list">
+		<view class="order-list" @click="goExpect">
 			<view class="left">
 				<image src="/static/images/myOrder-3.png"></image>
 			</view>
@@ -44,6 +44,12 @@ export default {
 		goGreenOrderList() {
 			uni.navigateTo({
         url: "/pages/greenOrderList/greenOrderList"
+      });
+		},
+		// 去敬请期待页面
+		goExpect() {
+			uni.navigateTo({
+        url: "/pages/expect/expect"
       });
 		}
 	},

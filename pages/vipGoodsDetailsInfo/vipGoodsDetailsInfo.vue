@@ -12,7 +12,7 @@
 				<view class="swiper-info-title">年卡会员套餐</view>
 				<view class="swiper-info-introduce flex-row">
 					<view>新鲜美味, 品种多多</view>
-					<view class="share">分享立赚10</view>
+					<view class="share">分享有礼</view>
 				</view>
         <!-- 普通价格区域 -->
         <view class="ordinary-price">¥39999</view>
@@ -61,12 +61,12 @@
 			<!-- 回到顶部按钮测试结束 -->
 
 			<!-- 底部操作栏开始 -->
-      <view class="user-defined flex-row">
-        <view id="cart">
+      <view class="user-defined">
+        <!-- <view id="cart">
           <image src="../../static/images/detail-cart.png" class="cart"></image>
           <view class="tag">3</view>
         </view>
-        <view class="addCart">加入购物车</view>
+        <view class="addCart">加入购物车</view> -->
         <view class="toClear" @click="goConfirmOrder">立即购买</view>
       </view>
       <!-- 底部操作栏结束 -->
@@ -283,9 +283,11 @@ swiper-item image {
   opacity: 0.5;
 }
 .upTop image {
-  width: 50rpx;
-  height: auto;
-  margin-top: 10rpx;
+  // width: 50rpx;
+  // height: auto;
+  // margin-top: 10rpx;
+  width: 100%;
+  height: 100%;
 }
 
 
@@ -301,32 +303,34 @@ swiper-item image {
   left: 0;
 }
 
-.cart {
-  width: 42rpx;
-  height: 42rpx;
-  line-height: 98rpx;
-}
+// .cart {
+//   width: 42rpx;
+//   height: 42rpx;
+//   line-height: 98rpx;
+// }
 
-#cart {
-  align-self: center;
-  position: relative;
-}
-.addCart{
-  width:220rpx;
-  height:70rpx;
-  font-size:28rpx;
-  font-family:Source Han Sans CN;
-  font-weight:500;
-  color:rgba(39,149,36,1);
-  background:rgba(255,255,255,1);
-  border:2rpx solid rgba(39,149,36,1);
-  border-radius:36rpx;
-  text-align: center;
-  line-height: 70rpx;
-  align-self: center;
-  margin-left: 180rpx
-}
+// #cart {
+//   align-self: center;
+//   position: relative;
+// }
+// .addCart{
+//   width:220rpx;
+//   height:70rpx;
+//   font-size:28rpx;
+//   font-family:Source Han Sans CN;
+//   font-weight:500;
+//   color:rgba(39,149,36,1);
+//   background:rgba(255,255,255,1);
+//   border:2rpx solid rgba(39,149,36,1);
+//   border-radius:36rpx;
+//   text-align: center;
+//   line-height: 70rpx;
+//   align-self: center;
+//   margin-left: 180rpx
+// }
 .toClear {
+  margin-top: 16rpx;
+  float: right;
   font-size: 28rpx;
   width: 220rpx;
   height: 70rpx;
@@ -339,19 +343,19 @@ swiper-item image {
   color: white
 }
 // 数字小标识
-.tag {
-  position: absolute;
-  top: -10rpx;
-  right: -20rpx;
-  width: 30rpx;
-  height: 30rpx;
-  line-height: 30rpx;
-  text-align: center;
-  background-color: #FC5854;
-  border-radius: 50%;
-  font-size: 24rpx;
-  font-family: Source Han Sans CN;
-  font-weight: 500;
-  color: #fff;
-}
+// .tag {
+//   position: absolute;
+//   top: -10rpx;
+//   right: -20rpx;
+//   width: 30rpx;
+//   height: 30rpx;
+//   line-height: 30rpx;
+//   text-align: center;
+//   background-color: #FC5854;
+//   border-radius: 50%;
+//   font-size: 24rpx;
+//   font-family: Source Han Sans CN;
+//   font-weight: 500;
+//   color: #fff;
+// }
 </style>

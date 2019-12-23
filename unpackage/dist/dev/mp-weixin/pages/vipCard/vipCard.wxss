@@ -1,11 +1,8 @@
-.container.data-v-54f60143 {
-  background: white;
+
+page {
+  background-color: #fff;
 }
-.order-header.data-v-54f60143 {
-  width: 750rpx;
-  height: 172rpx;
-  background: #333;
-}
+
 .vip-card.data-v-54f60143 {
   position: relative;
   width: 690rpx;
@@ -121,13 +118,7 @@
 }
 /* 会员充值列表样式开始 */
 .vip-list.data-v-54f60143 {
-  margin-top: 114rpx;
-}
-.list-title.data-v-54f60143 {
-  font-size: 38rpx;
-  font-family: Microsoft YaHei;
-  color: #333333;
-  text-align: center;
+  margin-top: 270rpx;
 }
 .list-info.data-v-54f60143 {
   padding: 20rpx 30rpx;

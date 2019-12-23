@@ -23,7 +23,7 @@ image.data-v-46bc73a3 {
   border-bottom: 2rpx solid #f1f1f1;
 }
 .account-management .management-box .box-left.data-v-46bc73a3 {
-  font-weight: 500;
+  font-weight: 400;
 }
 .account-management .management-box .box-right.data-v-46bc73a3 {
   display: -webkit-box;

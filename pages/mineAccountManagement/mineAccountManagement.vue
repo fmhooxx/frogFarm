@@ -51,7 +51,7 @@ image {
     border-bottom: 2rpx solid #f1f1f1;
     // 左边
     .box-left {
-			font-weight: 500;
+			font-weight: 400;
     }
     // 右边
     .box-right {

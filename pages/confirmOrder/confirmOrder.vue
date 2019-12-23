@@ -109,14 +109,14 @@
 				<view>商品金额</view>
 				<view>¥89.7</view>
 			</view>
-			<view class="flex-row info-title con-list">
+			<!-- <view class="flex-row info-title con-list">
 				<view>会员折扣</view>
 				<view>7折</view>
 			</view>
 			<view class="flex-row info-title con-list">
 				<view>配送费</view>
 				<view>+6.00</view>
-			</view>
+			</view> -->
 			<view class="flex-row info-title con-list">
 				<view>促销优惠</view>
 				<view>-0.54</view>

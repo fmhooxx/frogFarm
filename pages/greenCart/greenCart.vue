@@ -1,62 +1,67 @@
 <template>
 	<!--pages/greenCart/greenCart.wxml-->
-	<view class="container">
-		<view class="head-box">
-			<!-- 绿色健康 -->
-			<view v-for="(item, index) in tabs" :key="index" :class="current == index ? 'activeborder' : ''" @click="changeText(index)">{{item.text}}</view>
-			<!-- 电商助农 -->
-		</view>
-		<!-- 有消息页面 -->
-		<view v-if="isBox" class="index-news-box">
-			<!-- 购物车列表开始 -->
-			<view class="cart-box">
-				<view class="cart-list-box">
-					<view class="del">
-						<image src="../../static/images/green-del.png"></image>
-					</view>
-					<view class="list flex-row">
-						<view class="one">
-							<radio color="#39AC36"></radio>
+	<view class="green-cart">
+		<view class="container" v-if="false">
+			<view class="head-box">
+				<!-- 绿色健康 -->
+				<view v-for="(item, index) in tabs" :key="index" :class="current == index ? 'activeborder' : ''" @click="changeText(index)">{{item.text}}</view>
+				<!-- 电商助农 -->
+			</view>
+			<!-- 有消息页面 -->
+			<view v-if="isBox" class="index-news-box">
+				<!-- 购物车列表开始 -->
+				<view class="cart-box">
+					<view class="cart-list-box">
+						<view class="del">
+							<image src="../../static/images/green-del.png"></image>
 						</view>
-						<view class="box">
-							<view class="list-left">
-								<image src="../../static/images/green-cart.png"></image>
+						<view class="list flex-row">
+							<view class="one">
+								<radio color="#39AC36"></radio>
 							</view>
-							<view class="list-right flex-column">
-								<view class="top">
-									<view>玲珑小番茄500g</view>
+							<view class="box">
+								<view class="list-left">
+									<image src="../../static/images/green-cart.png"></image>
 								</view>
-								<view class="bottom flex-row">
-									<view><text class="price">¥9.9</text><text class="fen">/份</text><text class="original">¥19.9</text></view>
-									<!-- 购物车数量区域 -->
-									<view class="base-count">
-										<view @click="reduce" :class="{ fontColor: isColor }" class="count-sub">-</view>
-										<input type="number" v-model="num" @input="input" @blur="blur">
-										<view @click="plus" class="count-add">+</view>
+								<view class="list-right flex-column">
+									<view class="top">
+										<view>玲珑小番茄500g</view>
+									</view>
+									<view class="bottom flex-row">
+										<view><text class="price">¥9.9</text><text class="fen">/份</text><text class="original">¥19.9</text></view>
+										<!-- 购物车数量区域 -->
+										<view class="base-count">
+											<view @click="reduce" :class="{ fontColor: isColor }" class="count-sub">-</view>
+											<input type="number" v-model="num" @input="input" @blur="blur">
+											<view @click="plus" class="count-add">+</view>
+										</view>
 									</view>
 								</view>
 							</view>
 						</view>
 					</view>
 				</view>
-			</view>
-			<!-- 购物车列表结束 -->
-			<!-- 底部操作栏开始 -->
-			<view class="user-defined flex-row">
-				<radio>全选</radio>
-				<view class="vertical-center add">
-					<text class="info-subtitle">合计</text>
-					<text class="jiage">￥3.15</text>
+				<!-- 购物车列表结束 -->
+				<!-- 底部操作栏开始 -->
+				<view class="user-defined flex-row">
+					<radio>全选</radio>
+					<view class="vertical-center add">
+						<text class="info-subtitle">合计</text>
+						<text class="jiage">￥3.15</text>
+					</view>
+					<view class="toClear">去结算</view>
 				</view>
-				<view class="toClear">去结算</view>
+				<!-- 底部操作栏结束 -->
 			</view>
-			<!-- 底部操作栏结束 -->
+			<!-- 没消息页面 -->
+			<view v-else class="no-index-news">
+				<image src="/static/images/green-cart-bgi.png"></image>
+				<view class="info">这里是被我搬空了吗</view>
+				<view class="stroll-around" @click="goIndex">去逛逛</view>
+			</view>
 		</view>
-		<!-- 没消息页面 -->
-		<view v-else class="no-index-news">
-			<image src="/static/images/green-cart-bgi.png"></image>
-			<view class="info">这里是被我搬空了吗</view>
-			<view class="stroll-around" @click="goIndex">去逛逛</view>
+		<view v-else class="expect-bgi" >
+			<image src="../../static/images/expect-bgi.png"></image>
 		</view>
 	</view>
 </template>
@@ -131,6 +136,12 @@ export default {
 }
 </script>
 
+<style>
+page {
+	background-color: #fff;
+}
+</style>
+
 <style lang="less" scoped>
 .container {
 	position: relative;
@@ -204,7 +215,7 @@ export default {
 .one {
 	margin-top: 24rpx;
 }
-	.info-right {
+.info-right {
 		position: absolute;
 		right: 0;
 		bottom: 0rpx;
@@ -269,12 +280,12 @@ export default {
     color: #ccc;
   }
 }
-	.cart-box {
-		width: 690rpx;
-		background: white;
-		border-radius: 20rpx 20rpx 0px 0px;
-		margin: 0 auto;
-		margin-top: 30rpx
+.cart-box {
+	width: 690rpx;
+	background: white;
+	border-radius: 20rpx 20rpx 0px 0px;
+	margin: 0 auto;
+	margin-top: 30rpx
 	}
 	.cart-list-box {
 		padding-right: 20rpx;
@@ -354,7 +365,7 @@ export default {
 		min-height: 0
 	}
 	/* 
-底部操作栏样式开始 */
+	底部操作栏样式开始 */
 	.user-defined {
 		width: 750rpx;
 		height: 98rpx;
@@ -402,5 +413,17 @@ export default {
 		display: flex;
 		flex-direction: column;
 		justify-content: space-between;
+	}
+	.expect-bgi {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		width:400rpx;
+		height:344rpx;
+		> image {
+			width: 100%;
+			height: 100%;
+		}
 	}
 </style>

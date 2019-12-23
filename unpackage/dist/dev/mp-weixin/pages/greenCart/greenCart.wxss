@@ -1,3 +1,8 @@
+
+page {
+	background-color: #fff;
+}
+
 .container.data-v-1074702f {
   position: relative;
 }
@@ -223,7 +228,7 @@ input.data-v-1074702f {
   min-height: 0;
 }
 /* 
-底部操作栏样式开始 */
+	底部操作栏样式开始 */
 .user-defined.data-v-1074702f {
   width: 750rpx;
   height: 98rpx;
@@ -287,5 +292,18 @@ radio.data-v-1074702f {
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
           justify-content: space-between;
+}
+.expect-bgi.data-v-1074702f {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 400rpx;
+  height: 344rpx;
+}
+.expect-bgi > image.data-v-1074702f {
+  width: 100%;
+  height: 100%;
 }
 
