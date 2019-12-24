@@ -122,7 +122,11 @@ __webpack_require__.r(__webpack_exports__);
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0; //
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0; //
+//
+//
+//
+//
 //
 //
 //
@@ -146,17 +150,46 @@ var _default =
       // 真实姓名输入框内容
       uname: "",
       // 银行卡号输入框内容
-      cardNum: "" };
+      cardNum: "",
+      // 开户行名称
+      cardName: "" };
 
   },
-  methods: {},
+  methods: {
+    // 绑定银行卡
+    getBank: function getBank() {
+      uni.request({
+        url: "http://192.168.1.155:8086/WNC/wallet/getBank",
+        data: {
+          wallet_id: 1,
+          user_id: 1,
+          // 用户名真实姓名
+          real_name: this.uname,
+          // 银行卡号
+          account: this.cardNum,
+          // 开户行名称
+          acc_type: this.cardName },
+
+        header: {
+          "Content-Type": "application/x-www-form-urlencoded; charset=utf-8" },
+
+        succeee: function succeee(res) {
+          console.log(res);
+        } });
+
+      uni.navigateTo({
+        url: "/pages/walletCashWithdrawal/walletCashWithdrawal" });
+
+    } },
+
   computed: {
     isActive: function isActive() {
-      if (this.uname === "" || this.cardNum === "") {
+      if (this.uname === "" || this.cardNum === "" || this.cardName === "") {
         return false;
       }
       return true;
     } } };exports.default = _default;
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
 

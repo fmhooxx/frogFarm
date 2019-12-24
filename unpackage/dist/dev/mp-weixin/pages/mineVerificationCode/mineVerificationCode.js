@@ -154,6 +154,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 var _default =
 {
   data: function data() {
@@ -169,22 +170,76 @@ var _default =
       // 控制剩余时间的显示与隐藏
       isTime: false,
       // 控制点击发送的显示与隐藏
-      isStart: true };
+      isStart: true,
+      // 返回的验证码
+      ObtainCode: "" };
 
   },
   methods: {
+    // 发送验证码
+    getUpdatePhone: function getUpdatePhone() {var _this = this;
+      uni.request({
+        url: "http://192.168.1.143:8086/WNC/user/generatePhoneCode",
+        data: {
+          phone: this.telVal },
+
+        header: {
+          "Content-Type": "application/x-www-form-urlencoded; charset=utf-8" },
+
+        success: function success(res) {
+          _this.ObtainCode = res.data;
+          // console.log(res);
+          // 如果res.data 没有收到 需要需要一个弹出框提醒用户
+          if (res === "") {
+            uni.showToast({
+              title: "请输入正确的验证码",
+              duration: 2000,
+              icon: "none" });
+
+          }
+        } });
+
+    },
     // 点击提交按钮
     submitVal: function submitVal() {
-      if (this.telVal !== "" && this.codeVal !== "") {
-        return uni.navigateTo({
-          url: "/pages/mineVerificationCodeSuccess/mineVerificationCodeSuccess" });
+      if (
+      this.telVal !== "" &&
+      this.codeVal !== "" &&
+      this.codeVal !== this.ObtainCode)
+      {
+        uni.request({
+          url: "http://192.168.1.143:8086/WNC/user/updatePhone",
+          data: {
+            phone: this.telVal,
+            userId: 1,
+            code: this.codeVal },
+
+          header: {
+            "Content-Type": "application/x-www-form-urlencoded; charset=utf-8" },
+
+          success: function success(res) {
+            // console.log(res);
+          } });
+
+        uni.showToast({
+          title: "更换成功",
+          duration: 2000,
+          icon: "none",
+          success: function success(res) {
+            setTimeout(function () {
+              uni.navigateBack({
+                url: "/pages/mineUserInformation/mineUserInformation" });
+
+            }, 2000);
+          } });
+
+      } else {
+        uni.showToast({
+          title: "请输入手机号码或验证码",
+          duration: 2000,
+          icon: "none" });
 
       }
-      return uni.showToast({
-        title: "请输入手机号码或验证码",
-        duration: 2000,
-        icon: "none" });
-
     },
     start: function start() {
       this.isTime = !this.isTime;

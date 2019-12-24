@@ -122,7 +122,7 @@ __webpack_require__.r(__webpack_exports__);
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0; //
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0; //
 //
 //
 //
@@ -148,7 +148,7 @@ var _default =
 {
   data: function data() {
     return {
-      // 密码输入的内容
+      // 昵称输入的内容
       nicknameVal: "",
       // 控制按钮的颜色
       isActive: false,
@@ -157,7 +157,7 @@ var _default =
 
   },
   methods: {
-    // 当密码框有输入内容的时候
+    // 当昵称框有输入内容的时候
     inputVal: function inputVal() {
       this.isActive = true;
       this.isIcon = true;
@@ -173,7 +173,23 @@ var _default =
     clearVal: function clearVal() {
       this.nicknameVal = "";
       this.isIcon = false;
+    },
+    submit: function submit() {
+      uni.request({
+        url: "http://192.168.1.143:8086/WNC/user/updatenickName",
+        data: {
+          userId: 1,
+          nickName: this.nicknameVal },
+
+        header: {
+          "Content-Type": "application/x-www-form-urlencoded; charset=utf-8" },
+
+        success: function success(res) {
+          console.log(res);
+        } });
+
     } } };exports.default = _default;
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
 

@@ -1,6 +1,9 @@
 .binding-card .active.data-v-4e359f3e {
   background: #48bc5b !important;
 }
+.binding-card input.data-v-4e359f3e {
+  width: 74%;
+}
 .binding-card .binding.data-v-4e359f3e {
   margin-top: 20rpx;
 }

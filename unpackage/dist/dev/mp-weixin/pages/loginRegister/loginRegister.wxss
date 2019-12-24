@@ -22,7 +22,7 @@ image.data-v-176acb7e {
   margin-bottom: 24rpx;
 }
 .login .login-register.data-v-176acb7e {
-  font-size: 24rpx;
+  font-size: 30rpx;
   font-family: Source Han Sans CN;
   font-weight: 400;
   color: #979797;
@@ -39,7 +39,6 @@ image.data-v-176acb7e {
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
           justify-content: space-between;
-  font-size: 30rpx;
 }
 .login .login-content .login-tel > input.data-v-176acb7e {
   width: 69%;
@@ -56,7 +55,7 @@ image.data-v-176acb7e {
   background: #ffffff;
   border: 1rpx solid #c9c8cf;
   border-radius: 25rpx;
-  font-size: 22rpx;
+  font-size: 26rpx;
   font-family: Source Han Sans CN;
   font-weight: 400;
   color: #a8a8a8;
@@ -100,7 +99,7 @@ image.data-v-176acb7e {
   text-align: center;
 }
 .login .login-third .third-text.data-v-176acb7e {
-  font-size: 20rpx;
+  font-size: 30rpx;
   font-family: Source Han Sans CN;
   font-weight: 400;
   color: #a5a5a5;

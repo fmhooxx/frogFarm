@@ -2,41 +2,14 @@
   <!-- 我的银行卡页面 ming -->
   <view class="my-bank-card">
 		<!-- 头部文字 -->
-    <view class="card-title">
+    <view v-if="false" class="card-title">
       我的卡
       <text>共两张</text>
     </view>
-		<!-- 我的银行卡 第一张银行卡-->
-		<view class="my-card">
-			<!-- 银卡卡图片与文字 -->
-			<view class="card-box">
-				<!-- 图片 -->
-				<view class="box-img">
-					<image src="../../static/images/my-bank-card-2.png"></image>
-				</view>
-				<!-- 文字 -->
-				<view class="box-content">
-					<view class="content-title">
-						<view class="one">农业银行</view>
-						<view class="two">储蓄卡</view>
-					</view>
-					<view class="content-text">****1234</view>
-				</view>
-			</view>
-			<!-- 第二张银行卡 -->
-			<view class="card-box next">
-				<!-- 图片 -->
-				<view class="box-img">
-					<image src="../../static/images/my-bank-card-1.png"></image>
-				</view>
-				<!-- 文字 -->
-				<view class="box-content">
-					<view class="content-title">
-						<view class="one">建设银行</view>
-						<view class="two">储蓄卡</view>
-					</view>
-					<view class="content-text">****1234</view>
-				</view>
+		<view class="list" v-if="false">
+			<view class="list-item">
+				<view class="item-left">农业银行</view>
+				<view class="item-right">*****1321</view>
 			</view>
 		</view>
 		<!-- 添加银行卡区域 -->
@@ -77,12 +50,13 @@ image {
 	height: 100%;
 }
 .my-bank-card {
-	padding: 30rpx;
+	padding: 30rpx 0;
 	// 头部文字
   .card-title {
     font-size: 36rpx;
     font-family: Microsoft YaHei;
-    font-weight: bold;
+		font-weight: bold;
+		margin-left: 30rpx;
 		color: rgba(51, 51, 51, 1);
 		margin-bottom: 20rpx;
     > text {
@@ -93,56 +67,9 @@ image {
       margin-left: 16rpx;
     }
 	}
-	.my-card {
-		// 银行卡图片与文字
-		.card-box {
-			position: absolute;
-			width: 690rpx;
-			height: 310rpx;
-			border-radius: 10rpx;
-			// 图片
-			.box-img {
-				width: 690rpx;
-				height: 310rpx;
-				border-radius: 10rpx;
-			}
-			// 文字
-			.box-content {
-				width: 560rpx;
-				position: absolute;
-				top: 28rpx;
-				right: 0;
-				display: flex;
-				justify-content: space-between;
-				font-family: Source Han Sans CN;
-				font-weight: bold;
-				color:rgba(255,255,255,1);
-				.content-title {
-					.one {
-						font-size: 34rpx;
-					}
-					.two {
-						font-size: 24rpx;
-						font-weight: 400;
-						margin-top: 10rpx;
-					}
-				}
-				.content-text {
-					margin: 23rpx 37rpx 0 0;
-				}
-			}
-		}
-	}
-	.next {
-		top: 240rpx;
-	}
-	.footer {
-		margin-top: 460rpx;
-	}
 	.withdrawals-account {
-		// margin-top: 600rpx;
-		position: absolute;
-		top: 580rpx;
+		position: relative;
+		margin: 20rpx auto;
 		width: 690rpx;
 		height: 310rpx;
 		background: rgba(255, 255, 255, 1);
@@ -176,6 +103,16 @@ image {
 				}
 			}
 		}
+	}
+}
+.list {
+	.list-item {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		height: 80rpx;
+		background-color: #fff;
+		padding: 0 30rpx;
 	}
 }
 </style>

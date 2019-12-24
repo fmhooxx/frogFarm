@@ -8,42 +8,42 @@
 			<view class="header-text">
 				<view>钱包余额</view>
 				<view class="price">450.50</view>
-				<view class="tixian" @click="goCashWithdrawal">提现</view>
+				<view class="tixian" @click="getWallet">提现</view>
 			</view>
 		</view>
 		<!-- 列表数据 -->
 		<view class="footer">
-			<view class="footer-box" @click="goWalletRecommendationDetails">
+			<view class="footer-box" @click="getgoWalletRecommendationDetails">
 				<view class="text">推荐明细</view>
 				<view class="box-img">
 					<image src="/static/images/arrow-right.png"></image>
 				</view>
 			</view>
-			<view class="footer-box" @click="gowWlletRecommendationRules">
+			<view class="footer-box" @click="walletRecommendationRules">
 				<view class="text">推荐规则</view>
 				<view class="box-img">
 					<image src="/static/images/arrow-right.png"></image>
 				</view>
 			</view>
-			<view class="footer-box" @click="goWalletMyTeam">
+			<view class="footer-box" @click="getTeam">
 				<view class="text">我的团队</view>
 				<view class="box-img">
 					<image src="/static/images/arrow-right.png"></image>
 				</view>
 			</view>
-			<view class="footer-box" @click="goWalletWithdrawalRules">
+			<view class="footer-box" @click="getgoWalletWithdrawalRules">
 				<view class="text">提现规则</view>
 				<view class="box-img">
 					<image src="/static/images/arrow-right.png"></image>
 				</view>
 			</view>
-			<view class="footer-box" @click="goWalletPresentationDetails">
+			<view class="footer-box" @click="getRecom">
 				<view class="text">提现明细</view>
 				<view class="box-img">
 					<image src="/static/images/arrow-right.png"></image>
 				</view>
 			</view>
-			<view class="footer-box" @click="getCash">
+			<view class="footer-box" @click="getAcc">
 				<view class="text">提现账户</view>
 				<view class="box-img">
 					<image src="/static/images/arrow-right.png"></image>
@@ -58,16 +58,19 @@ export default {
   data() {
     return {};
 	},
-	onLoad() {
-		// this.getList()
-	},
   methods: {
-		// 获取用户信息
-		getList() {
+		// 去提现页面
+		getWallet() {
+			uni.navigateTo({
+        url: '/pages/walletCashWithdrawal/walletCashWithdrawal'
+      })
+		},
+		// 推荐明细接口
+		getRecom() {
 			uni.request({
-				url: 'http://192.168.1.155:8086/WNC/wallet/getWallet',
+				url: 'http://192.168.1.155:8086/WNC/wallet/getRecom',
 				data: {
-					userid: 1,
+					user_id: 1
 				},
 				header: {
 					'Content-Type': "application/x-www-form-urlencoded; charset=utf-8"
@@ -76,12 +79,16 @@ export default {
 					console.log(res)
 				}
 			})
+			uni.navigateTo({
+        url: '/pages/walletRecommendationDetails/walletRecommendationDetails'
+      })
 		},
-		getCash() {
+		// 推荐规则接口
+		walletRecommendationRules() {
 			uni.request({
-				url: 'http://192.168.1.155:8086/WNC/wallet/getFriend',
+				url: 'http://192.168.1.155:8086/WNC/wallet/getWallet',
 				data: {
-					id: 1
+					user_id: 1
 				},
 				header: {
 					'Content-Type': "application/x-www-form-urlencoded; charset=utf-8"
@@ -89,6 +96,81 @@ export default {
 				succeee(res) {
 					console.log(res)
 				}
+			})
+			uni.navigateTo({
+        url: '/pages/walletRecommendationRules/walletRecommendationRules'
+      })
+		},
+		// 我的团队接口
+		getTeam() {
+			uni.request({
+				url: 'http://192.168.1.155:8086/WNC/wallet/getTeam',
+				data: {
+					captain_id: 1
+				},
+				header: {
+					'Content-Type': "application/x-www-form-urlencoded; charset=utf-8"
+				},
+				succeee(res) {
+					console.log(res)
+				}
+			})
+			uni.navigateTo({
+        url: '/pages/walletMyTeam/walletMyTeam'
+      })
+		},
+		// 提现规则接口
+		getgoWalletWithdrawalRules() {
+			uni.request({
+				url: 'http://192.168.1.155:8086/WNC/wallet/getWallet',
+				data: {
+					user_id: 1
+				},
+				header: {
+					'Content-Type': "application/x-www-form-urlencoded; charset=utf-8"
+				},
+				succeee(res) {
+					console.log(res)
+				}
+			})
+			uni.navigateTo({
+        url: '/pages/walletWithdrawalRules/walletWithdrawalRules'
+      })
+		},
+		// 提现明细接口
+		getgoWalletRecommendationDetails() {
+			uni.request({
+				url: 'http://192.168.1.155:8086/WNC/wallet/getRecom',
+				data: {
+					user_id: 1
+				},
+				header: {
+					'Content-Type': "application/x-www-form-urlencoded; charset=utf-8"
+				},
+				succeee(res) {
+					console.log(res)
+				}
+			})
+			uni.navigateTo({
+        url: '/pages/walletPresentationDetails/walletPresentationDetails'
+      })
+		},
+		// 提现账户接口
+		getAcc() {
+			uni.request({
+				url: 'http://192.168.1.155:8086/WNC/wallet/getRecom',
+				data: {
+					user_id: 1
+				},
+				header: {
+					'Content-Type': "application/x-www-form-urlencoded; charset=utf-8"
+				},
+				succeee(res) {
+					console.log(res)
+				}
+			})
+			uni.navigateTo({
+				url: '/pages/walletMyBankCard/walletMyBankCard'
 			})
 		},
 		// 去提现页面

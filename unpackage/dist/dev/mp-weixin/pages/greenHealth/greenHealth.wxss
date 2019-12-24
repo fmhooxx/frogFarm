@@ -298,8 +298,8 @@
 }
 .green-health .green-list .list-item .item-content .member-jiahao .member .membership-price > text.data-v-63fe4227 {
   position: absolute;
-  top: 11rpx;
-  left: 9rpx;
+  top: 14rpx;
+  left: 10rpx;
   font-size: 18rpx;
   font-family: Microsoft YaHei;
   font-weight: bold;

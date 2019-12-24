@@ -1,7 +1,7 @@
 <template>
   <!-- 修改昵称页面 ming -->
   <view class="nickname">
-    <!-- 输入手机号码和密码区域 -->
+    <!-- 输入昵称区域 -->
     <view class="nickname-content">
       <input
         placeholder="最大支持10个字符"
@@ -14,7 +14,7 @@
       <icon v-show="isIcon" @click="clearVal" size="19" color="#ccc" type="clear" />
     </view>
     <!-- 提交按钮 -->
-    <view class="nickname-btn" :class="{ active: isActive }">
+    <view class="nickname-btn" :class="{ active: isActive }" @click="submit">
       <button class="btn" :class="{ active: isActive }">提交</button>
     </view>
   </view>
@@ -24,7 +24,7 @@
 export default {
   data() {
     return {
-      // 密码输入的内容
+      // 昵称输入的内容
       nicknameVal: "",
       // 控制按钮的颜色
       isActive: false,
@@ -33,7 +33,7 @@ export default {
     };
   },
   methods: {
-    // 当密码框有输入内容的时候
+    // 当昵称框有输入内容的时候
     inputVal() {
       this.isActive = true;
       this.isIcon = true;
@@ -49,6 +49,21 @@ export default {
     clearVal() {
       this.nicknameVal = "";
       this.isIcon = false;
+    },
+    submit() {
+      uni.request({
+        url: "http://192.168.1.143:8086/WNC/user/updatenickName",
+        data: {
+          userId: 1,
+          nickName: this.nicknameVal
+        },
+        header: {
+          "Content-Type": "application/x-www-form-urlencoded; charset=utf-8"
+        },
+        success: res => {
+          console.log(res);
+        }
+      });
     }
   }
 };

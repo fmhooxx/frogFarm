@@ -122,30 +122,7 @@ __webpack_require__.r(__webpack_exports__);
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0; //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0; //
 //
 //
 //
@@ -179,12 +156,60 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 var _default =
 {
   data: function data() {
-    return {};
+    return {
+      list: [
+      {
+        id: 0,
+        value: 0,
+        type: "农业银行",
+        card_num: 12312315,
+        checked: true },
+
+      {
+        id: 1,
+        value: 1,
+        type: "邮政储蓄",
+        card_num: 564864656,
+        checked: false },
+
+      {
+        id: 2,
+        value: 2,
+        type: "农业银行",
+        card_num: 897988989,
+        checked: false }] };
+
+
+
   },
   methods: {
-    radioChange: function radioChange(e) {
-      console.log(e);
+    // 点击删除
+    del: function del(index) {var _this = this;
+      uni.showModal({
+        content: "确定删除吗?",
+        success: function success(res) {
+          if (res.confirm) {
+            _this.list.splice(index, 1);
+          } else if (res.cancel) {
+            console.log("用户点击取消");
+          }
+        } });
+
+    },
+    // 去绑定银行卡页面
+    goWalletBindingCard: function goWalletBindingCard() {
+      uni.navigateTo({
+        url: '/pages/walletBindingCard/walletBindingCard' });
+
+    },
+    checkboxChange: function checkboxChange(e) {
+      for (var i = 0; i < this.list.length; i++) {
+        this.list[i].checked = false;
+      }
+      console.log(e.detail.value);
+      this.list[e.detail.value].checked = true;
     } } };exports.default = _default;
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
 

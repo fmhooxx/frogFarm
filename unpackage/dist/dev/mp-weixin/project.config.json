@@ -38,22 +38,22 @@
 			"list": [
 				{
 					"id": -1,
-					"name": "pages/index/index",
-					"pathName": "pages/index/index",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "pages/mineAccountManagement/mineAccountManagement",
-					"pathName": "pages/mineAccountManagement/mineAccountManagement",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
 					"name": "pages/wallet/wallet",
 					"pathName": "pages/wallet/wallet",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/walletChoiceBankCard/walletChoiceBankCard",
+					"pathName": "pages/walletChoiceBankCard/walletChoiceBankCard",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/walletChoiceBankCard/walletChoiceBankCard",
+					"pathName": "pages/walletChoiceBankCard/walletChoiceBankCard",
 					"scene": null
 				}
 			]

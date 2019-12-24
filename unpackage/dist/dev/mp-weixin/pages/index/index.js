@@ -597,6 +597,7 @@ var _default =
 
   },
   onLoad: function onLoad() {
+    // this.getList()
   },
   methods: (_methods = {
     // 去绿色健康页面

@@ -168,6 +168,22 @@ var _default =
       uni.previewImage({
         urls: [this.previewList[index]] });
 
+    },
+    // 意见反馈接口
+    submit: function submit() {
+      uni.request({
+        url: "http://192.168.1.143:8086/WNC/user/addOpinion",
+        data: {
+          userId: 1,
+          msg: '1232' },
+
+        header: {
+          "Content-Type": "application/x-www-form-urlencoded; charset=utf-8" },
+
+        success: function success(res) {
+          console.log(res);
+        } });
+
     } } };exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 

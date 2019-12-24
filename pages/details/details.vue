@@ -28,7 +28,7 @@
 					</view>
 				</block>
 			</scroll-view>
-			<suspension></suspension>
+			<!-- <suspension></suspension> -->
 		</view>
 	</view>
 </template>

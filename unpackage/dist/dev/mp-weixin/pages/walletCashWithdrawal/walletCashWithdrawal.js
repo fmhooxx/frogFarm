@@ -177,6 +177,24 @@ var _default =
       uni.navigateTo({
         url: '/pages/walletChoiceBankCard/walletChoiceBankCard' });
 
+    },
+    getAccount: function getAccount() {
+      uni.request({
+        url: 'http://192.168.1.155:8086/WNC/wallet/getAccount',
+        data: {
+          wallet_id: 1,
+          acc_id: 1,
+          // 提现金额
+          money: this.money,
+          user_id: 1 },
+
+        header: {
+          'Content-Type': "application/x-www-form-urlencoded; charset=utf-8" },
+
+        succeee: function succeee(res) {
+          console.log(res);
+        } });
+
     } },
 
   computed: {

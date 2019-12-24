@@ -111,6 +111,12 @@ export default {
 </script>
 
 <style>
+/* #ifdef APP-PLUS ||MP-WEIXIN */
+checkbox .wx-checkbox-input {
+  border-radius: 50% !important;
+  color: #48bc5b !important;
+}
+/* #endif */
 /*每个页面公共css */
 page {
   /* background-color: #000; */

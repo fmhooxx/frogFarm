@@ -37,6 +37,7 @@ image.data-v-6de33376 {
           align-items: center;
 }
 .user-info .info-head .head-right image.data-v-6de33376 {
+  border-radius: 50%;
   vertical-align: middle;
 }
 .user-info .info-head .head-right .right-one.data-v-6de33376 {

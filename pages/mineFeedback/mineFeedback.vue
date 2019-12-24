@@ -11,7 +11,7 @@
 				<view class="content-text">上传照片</view>
 			</view>
 		</view>
-    <view class="btn">
+    <view class="btn" @click="submit">
       <button>提交</button>
     </view>
   </view>
@@ -42,7 +42,23 @@ export default {
       uni.previewImage({
         urls: [this.previewList[index]]
       })
-    }
+		},
+	// 意见反馈接口
+		submit() {
+			uni.request({
+				url: "http://192.168.1.143:8086/WNC/user/addOpinion",
+				data: {
+					userId: 1,
+					msg: '1232'
+				},
+				header: {
+					"Content-Type": "application/x-www-form-urlencoded; charset=utf-8"
+				},
+				success: res => {
+					console.log(res);
+				}
+			});
+		}
 	}
 };
 </script>

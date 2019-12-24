@@ -308,7 +308,6 @@
 	}, {
 		"path": "pages/indexNews/indexNews",
 		"style": {
-			"navigationBarTitleText": "消息"
 		}
 	}, {
 		"path": "pages/indexNewsDetails/indexNewsDetails",

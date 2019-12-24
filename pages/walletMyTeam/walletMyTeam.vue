@@ -26,7 +26,7 @@
 					</view>
 				</view>
 				<!-- 右边区域 -->
-				<view class="item-right" @click="goWalletHisFriend">他的好友</view>
+				<view class="item-right" @click="getFriend">他的好友</view>
 			</view>
 			<view class="list-item">
 				<!-- 左边区域 -->
@@ -44,7 +44,7 @@
 					</view>
 				</view>
 				<!-- 右边区域 -->
-				<view class="item-right" @click="goWalletHisFriend">他的好友</view>
+				<view class="item-right" @click="getFriend">他的好友</view>
 			</view>
 			<view class="list-item">
 				<!-- 左边区域 -->
@@ -62,7 +62,7 @@
 					</view>
 				</view>
 				<!-- 右边区域 -->
-				<view class="item-right" @click="goWalletHisFriend">他的好友</view>
+				<view class="item-right" @click="getFriend">他的好友</view>
 			</view>
 			<view class="list-item">
 				<!-- 左边区域 -->
@@ -80,7 +80,7 @@
 					</view>
 				</view>
 				<!-- 右边区域 -->
-				<view class="item-right" @click="goWalletHisFriend">他的好友</view>
+				<view class="item-right" @click="getFriend">他的好友</view>
 			</view>
 		</view>
   </view>
@@ -92,12 +92,30 @@ export default {
     return {};
   },
   methods: {
-		// 去他的好友页面
-		goWalletHisFriend() {
+		// 我的好友接口
+		getFriend() {
+			uni.request({
+				url: 'http://192.168.1.155:8086/WNC/wallet/getFriend',
+				data: {
+					user_id: 1
+				},
+				header: {
+					'Content-Type': "application/x-www-form-urlencoded; charset=utf-8"
+				},
+				succeee(res) {
+					console.log(res)
+				}
+			})
 			uni.navigateTo({
         url: '/pages/walletHisFriend/walletHisFriend'
       })
-		}
+		},
+		// 去他的好友页面
+		// getFriend() {
+		// 	uni.navigateTo({
+    //     url: '/pages/walletHisFriend/walletHisFriend'
+    //   })
+		// }
 	}
 };
 </script>

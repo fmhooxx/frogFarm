@@ -216,8 +216,20 @@ var _default =
     return {};
   },
   methods: {
-    // 去他的好友页面
-    goWalletHisFriend: function goWalletHisFriend() {
+    // 我的好友接口
+    getFriend: function getFriend() {
+      uni.request({
+        url: 'http://192.168.1.155:8086/WNC/wallet/getFriend',
+        data: {
+          user_id: 1 },
+
+        header: {
+          'Content-Type': "application/x-www-form-urlencoded; charset=utf-8" },
+
+        succeee: function succeee(res) {
+          console.log(res);
+        } });
+
       uni.navigateTo({
         url: '/pages/walletHisFriend/walletHisFriend' });
 

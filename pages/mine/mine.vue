@@ -139,6 +139,18 @@ export default {
         });
         // 去我的邀请码
       } else if (index === 2) {
+				uni.request({
+					url: "http://192.168.1.143:8086/WNC/user/getCode",
+					data: {
+						userId: 1,
+					},
+					header: {
+						"Content-Type": "application/x-www-form-urlencoded; charset=utf-8"
+					},
+					success: res => {
+						console.log(res)
+					}
+        });
         return uni.navigateTo({
           url: "/pages/mineRecommendCourtesy/mineRecommendCourtesy"
         });
@@ -149,6 +161,18 @@ export default {
         });
         // 去地址管理页面
       } else if (index === 3) {
+				uni.request({
+					url: "http://192.168.1.143:8086/WNC/user/getAllAddress",
+					data: {
+						userId: 1,
+					},
+					header: {
+						"Content-Type": "application/x-www-form-urlencoded; charset=utf-8"
+					},
+					success: res => {
+						console.log(res)
+					}
+        });
         return uni.navigateTo({
           url: "/pages/greenAddrManage/greenAddrManage"
         });
@@ -172,36 +196,19 @@ export default {
       // } 
       // 去关于我们页面
       else if (index === 4) {
-        return uni.navigateTo({
-          url: "/pages/mineAboutUs/mineAboutUs"
+        uni.request({
+					url: "http://192.168.1.143:8086/WNC/user/getUserAbout",
+					data: {},
+					header: {
+						"Content-Type": "application/x-www-form-urlencoded; charset=utf-8"
+					},
+					success: res => {
+						console.log(res)
+					}
         });
-        // 关于我们的信息
-        // uni.request({
-        //   url: 'http://192.168.1.143:8086/wanongchang/address/addAddress',
-        //   // data: {},
-        //   data: {
-        //     id: 1,
-        //     userid: 1,
-        //     address: '合肥市',
-        //     nplate: 'aa',
-        //     name: '凌大',
-        //     gender: '333',
-        //     phone: '1236',
-        //     lable: '字符串',
-        //     status: 1,
-        //     isdefault: 1
-				// 	},
-        //   header: {
-        //     'Content-Type': "application/x-www-form-urlencoded; charset=utf-8"
-        //   },
-        //   method: 'POST',
-        //   success: res => {
-        //     console.log(res)
-        //   },
-        //   fail: res => {
-        //     console.log(res)
-        //   }
-        // })
+        // return uni.navigateTo({
+        //   url: "/pages/mineAboutUs/mineAboutUs"
+        // });
       }
       // 去意见反馈页面
       else if (index === 6) {

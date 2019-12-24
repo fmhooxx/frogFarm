@@ -38,7 +38,7 @@
 					<view class="two">自用省钱 分享赚钱</view>
 				</view>
 				<!-- 右边 -->
-				<view class="no-vip-right">开通会员</view>
+				<!-- <view class="no-vip-right">开通会员</view> -->
 			</view>
 		</view>
 		<view class="title">会员套餐</view>
@@ -712,8 +712,8 @@ export default {
 							}
 							> text {
 								position: absolute;
-								top: 11rpx;
-								left: 9rpx;
+								top: 14rpx;
+								left: 10rpx;
 								font-size: 18rpx;
 								font-family: Microsoft YaHei;
 								font-weight: bold;

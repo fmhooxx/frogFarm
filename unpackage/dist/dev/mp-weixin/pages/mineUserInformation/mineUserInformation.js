@@ -203,13 +203,28 @@ var _default =
       format: true });
 
     return {
-      date: currentDate };
+      url: '../../static/images/mine-head-portrait.png',
+      date: currentDate,
+      file: [] };
 
   },
   methods: {
     // 当选择的日期发生改变的时候 改变页面的日期
     bindDateChange: function bindDateChange(e) {
       this.date = e.target.value;
+      uni.request({
+        url: "http://192.168.1.143:8086/WNC/user/updateBirthday",
+        data: {
+          userId: 1,
+          birthday: this.date },
+
+        header: {
+          "Content-Type": "application/x-www-form-urlencoded; charset=utf-8" },
+
+        success: function success(res) {
+          console.log(res);
+        } });
+
     },
     // 日期的格式
     getDate: function getDate(type) {
@@ -241,6 +256,43 @@ var _default =
     goMineVerificationCode: function goMineVerificationCode() {
       uni.navigateTo({
         url: '/pages/mineVerificationCode/mineVerificationCode' });
+
+    },
+    // 点击更换用户头像
+    replace: function replace() {var _this = this;
+      uni.chooseImage({
+        count: 1,
+        success: function success(res) {
+          console.log(res);
+          _this.file = res.tempFilePaths;
+          _this.url = res.tempFilePaths[0];
+          var imageSrc = res.tempFilePaths[0];
+          uni.uploadFile({
+            url: 'http://192.168.1.143:8086/WNC/user/updateimageUrl',
+            filePath: imageSrc,
+            name: 'file',
+            formData: {
+              userId: 1 },
+
+            success: function success(res) {
+              console.log(res);
+            } });
+
+
+          // uni.request({
+          // 	url: "http://192.168.1.143:8086/WNC/user/updateimageUrl",
+          // 	data: {
+          // 		file: this.file,
+          // 		userId: 1
+          // 	},
+          // 	header: {
+          // 		"Content-Type": "application/x-www-form-urlencoded; charset=utf-8"
+          // 	},
+          // 	success: res => {
+          // 		console.log(res)
+          // 	}
+          // });
+        } });
 
     } },
 

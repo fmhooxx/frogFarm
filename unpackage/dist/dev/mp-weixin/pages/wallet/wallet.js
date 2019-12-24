@@ -182,16 +182,37 @@ var _default =
   data: function data() {
     return {};
   },
-  onLoad: function onLoad() {
-    // this.getList()
-  },
   methods: {
-    // 获取用户信息
-    getList: function getList() {
+    // 去提现页面
+    getWallet: function getWallet() {
+      uni.navigateTo({
+        url: '/pages/walletCashWithdrawal/walletCashWithdrawal' });
+
+    },
+    // 推荐明细接口
+    getRecom: function getRecom() {
+      uni.request({
+        url: 'http://192.168.1.155:8086/WNC/wallet/getRecom',
+        data: {
+          user_id: 1 },
+
+        header: {
+          'Content-Type': "application/x-www-form-urlencoded; charset=utf-8" },
+
+        succeee: function succeee(res) {
+          console.log(res);
+        } });
+
+      uni.navigateTo({
+        url: '/pages/walletRecommendationDetails/walletRecommendationDetails' });
+
+    },
+    // 推荐规则接口
+    walletRecommendationRules: function walletRecommendationRules() {
       uni.request({
         url: 'http://192.168.1.155:8086/WNC/wallet/getWallet',
         data: {
-          userid: 1 },
+          user_id: 1 },
 
         header: {
           'Content-Type': "application/x-www-form-urlencoded; charset=utf-8" },
@@ -199,13 +220,17 @@ var _default =
         succeee: function succeee(res) {
           console.log(res);
         } });
+
+      uni.navigateTo({
+        url: '/pages/walletRecommendationRules/walletRecommendationRules' });
 
     },
-    getCash: function getCash() {
+    // 我的团队接口
+    getTeam: function getTeam() {
       uni.request({
-        url: 'http://192.168.1.155:8086/WNC/wallet/getFriend',
+        url: 'http://192.168.1.155:8086/WNC/wallet/getTeam',
         data: {
-          id: 1 },
+          captain_id: 1 },
 
         header: {
           'Content-Type': "application/x-www-form-urlencoded; charset=utf-8" },
@@ -213,6 +238,63 @@ var _default =
         succeee: function succeee(res) {
           console.log(res);
         } });
+
+      uni.navigateTo({
+        url: '/pages/walletMyTeam/walletMyTeam' });
+
+    },
+    // 提现规则接口
+    getgoWalletWithdrawalRules: function getgoWalletWithdrawalRules() {
+      uni.request({
+        url: 'http://192.168.1.155:8086/WNC/wallet/getWallet',
+        data: {
+          user_id: 1 },
+
+        header: {
+          'Content-Type': "application/x-www-form-urlencoded; charset=utf-8" },
+
+        succeee: function succeee(res) {
+          console.log(res);
+        } });
+
+      uni.navigateTo({
+        url: '/pages/walletWithdrawalRules/walletWithdrawalRules' });
+
+    },
+    // 提现明细接口
+    getgoWalletRecommendationDetails: function getgoWalletRecommendationDetails() {
+      uni.request({
+        url: 'http://192.168.1.155:8086/WNC/wallet/getRecom',
+        data: {
+          user_id: 1 },
+
+        header: {
+          'Content-Type': "application/x-www-form-urlencoded; charset=utf-8" },
+
+        succeee: function succeee(res) {
+          console.log(res);
+        } });
+
+      uni.navigateTo({
+        url: '/pages/walletPresentationDetails/walletPresentationDetails' });
+
+    },
+    // 提现账户接口
+    getAcc: function getAcc() {
+      uni.request({
+        url: 'http://192.168.1.155:8086/WNC/wallet/getRecom',
+        data: {
+          user_id: 1 },
+
+        header: {
+          'Content-Type': "application/x-www-form-urlencoded; charset=utf-8" },
+
+        succeee: function succeee(res) {
+          console.log(res);
+        } });
+
+      uni.navigateTo({
+        url: '/pages/walletMyBankCard/walletMyBankCard' });
 
     },
     // 去提现页面

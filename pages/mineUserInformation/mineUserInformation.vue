@@ -2,13 +2,13 @@
 	<!-- 用户信息页面 ming -->
 		<view class="user-info">
 			<!-- 更换头像区域 -->
-			<view class="info-head">
+			<view class="info-head" @click="replace">
 				<!-- 左边 -->
 				<view class="head-left">点击更换头像</view>
 				<!-- 右边 -->
 				<view class="head-right">
 					<!-- 头像图片 -->
-					<image class="right-one" src="../../static/images/mine-head-portrait.png"></image>
+					<image class="right-one" :src="url"></image>
 					<!-- 右箭头图片 -->
 					<image class="right-two" src="../../static/images/arrow-right.png"></image>
 				</view>
@@ -79,13 +79,28 @@
 				format: true
 			})
 			return {
-				date: currentDate
+				url: '../../static/images/mine-head-portrait.png',
+				date: currentDate,
+				file: []
 			};
 		},
 		methods: {
 			// 当选择的日期发生改变的时候 改变页面的日期
 			bindDateChange(e) {
 				this.date = e.target.value
+				uni.request({
+					url: "http://192.168.1.143:8086/WNC/user/updateBirthday",
+					data: {
+						userId: 1,
+						birthday: this.date
+					},
+					header: {
+						"Content-Type": "application/x-www-form-urlencoded; charset=utf-8"
+					},
+					success: res => {
+						console.log(res)
+					}
+				});
 			},
 			// 日期的格式
 			getDate(type) {
@@ -117,6 +132,43 @@
 			goMineVerificationCode() {
 				uni.navigateTo({
 					url: '/pages/mineVerificationCode/mineVerificationCode'
+				})
+			},
+			// 点击更换用户头像
+			replace() {				
+				uni.chooseImage({
+					count: 1,
+					success: res => {
+						console.log(res)
+						this.file = res.tempFilePaths
+						this.url = res.tempFilePaths[0]
+						var imageSrc = res.tempFilePaths[0]
+						uni.uploadFile({
+							url: 'http://192.168.1.143:8086/WNC/user/updateimageUrl',
+							filePath: imageSrc,
+							name: 'file',
+							formData: {
+									userId: 1
+								},
+							success: res => {
+								console.log(res)
+							}
+						})
+
+						// uni.request({
+						// 	url: "http://192.168.1.143:8086/WNC/user/updateimageUrl",
+						// 	data: {
+						// 		file: this.file,
+						// 		userId: 1
+						// 	},
+						// 	header: {
+						// 		"Content-Type": "application/x-www-form-urlencoded; charset=utf-8"
+						// 	},
+						// 	success: res => {
+						// 		console.log(res)
+						// 	}
+						// });
+					}
 				})
 			}
 		},
@@ -163,6 +215,7 @@
 				display: flex;
 				align-items: center;
 				image {
+					border-radius: 50%;
 					vertical-align: middle;
 				}
 				// 头像图片

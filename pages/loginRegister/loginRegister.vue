@@ -121,7 +121,7 @@ image {
   }
   // 注册
   .login-register {
-    font-size: 24rpx;
+    font-size: 30rpx;
     font-family: Source Han Sans CN;
     font-weight: 400;
     color: rgba(151, 151, 151, 1);
@@ -136,7 +136,7 @@ image {
 			margin-top: 123rpx;
 			display: flex;
 			justify-content: space-between;
-			font-size: 30rpx;
+			// font-size: 30rpx;
 			> input {
 				width: 69%;
 			}
@@ -151,7 +151,7 @@ image {
 					background:rgba(255,255,255,1);
 					border: 1rpx solid rgba(201, 200, 207, 1);
 					border-radius:25rpx;
-					font-size: 22rpx;
+					font-size: 26rpx;
 					font-family: Source Han Sans CN;
 					font-weight: 400;
 					color:rgba(168,168,168,1);
@@ -201,7 +201,7 @@ image {
     bottom: 60rpx;
     text-align: center;
     .third-text {
-      font-size: 20rpx;
+      font-size: 30rpx;
       font-family: Source Han Sans CN;
       font-weight: 400;
       color:rgba(165,165,165,1);

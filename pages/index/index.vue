@@ -471,6 +471,7 @@
 			};
 		},
 		onLoad() {
+			// this.getList()
 		},
 		methods: {
 			// 去绿色健康页面

@@ -10,8 +10,12 @@
         <view class="w">银行卡号</view>
         <input placeholder="请输入您的银行卡号" v-model="cardNum" placeholder-class="text" />
       </view>
+      <view>
+        <view class="w">开户行名</view>
+        <input placeholder="请输入您的开户银行名称" v-model="cardName" placeholder-class="text" />
+      </view>
     </view>
-    <view class="btn" :class="{ active: isActive }">确认</view>
+    <view class="btn" :class="{ active: isActive }" @click="getBank">确认</view>
   </view>
 </template>
 
@@ -22,13 +26,41 @@ export default {
       // 真实姓名输入框内容
       uname: "",
       // 银行卡号输入框内容
-      cardNum: ""
+      cardNum: "",
+      // 开户行名称
+      cardName: ""
     };
   },
-  methods: {},
+  methods: {
+    // 绑定银行卡
+    getBank() {
+      uni.request({
+        url: "http://192.168.1.155:8086/WNC/wallet/getBank",
+        data: {
+          wallet_id: 1,
+          user_id: 1,
+          // 用户名真实姓名
+          real_name: this.uname,
+          // 银行卡号
+          account: this.cardNum,
+          // 开户行名称
+          acc_type: this.cardName
+        },
+        header: {
+          "Content-Type": "application/x-www-form-urlencoded; charset=utf-8"
+        },
+        succeee(res) {
+          console.log(res);
+        }
+      });
+      uni.navigateTo({
+        url: "/pages/walletCashWithdrawal/walletCashWithdrawal"
+      });
+    }
+  },
   computed: {
     isActive() {
-      if (this.uname === "" || this.cardNum === "") {
+      if (this.uname === "" || this.cardNum === "" || this.cardName === "") {
         return false;
       }
       return true;
@@ -42,6 +74,9 @@ export default {
   // 选中的背景颜色
   .active {
     background: rgba(72, 188, 91, 1) !important;
+  }
+  input {
+    width: 74%;
   }
   .binding {
     margin-top: 20rpx;

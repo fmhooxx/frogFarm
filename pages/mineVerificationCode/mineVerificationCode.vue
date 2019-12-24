@@ -1,29 +1,30 @@
 <template>
   <!-- 我的 手机验证码页面 ming -->
   <view class="verification-code">
-	  <view class="box">
-	  	<!-- 填写手机号码区域 -->
-	  	<view class="code-box">
-	  	  <input
-	  	    placeholder="请输入新手机号码"
-	  	    v-model="telVal"
-	  	    type="number"
-	  	    placeholder-class="placeholder-tel"
-	  	  />
-	  	</view>
-	  	<!-- 验证码区域 -->
-	  	<view class="code-box">
-	  	  <input
-	  	    placeholder="请输入新手机号码"
-	  	    v-model="codeVal"
-	  	    type="number"
-	  	    placeholder-class="placeholder-tel"
-	  	  />
-	  	  <view class="box-text" v-show="isStart" @click="start">{{sendVal}}</view>
-	  	  <view class="box-text" v-show="isTime">剩余{{time}}秒</view>
-	  	</view>
-	  	<!-- 提交按钮 -->
-	  </view>
+    <view class="box">
+      <!-- 填写手机号码区域 -->
+      <view class="code-box">
+        <input
+          placeholder="请输入新手机号码"
+          v-model="telVal"
+          type="number"
+          placeholder-class="placeholder-tel"
+        />
+      </view>
+      <!-- 验证码区域 -->
+      <view class="code-box">
+        <input
+          placeholder="请输入验证码"
+          v-model="codeVal"
+          type="number"
+          placeholder-class="placeholder-tel"
+        />
+        <!-- <view class="box-text" v-show="isStart" @click="start">{{sendVal}}</view> -->
+        <view class="box-text" v-show="isStart" @click="getUpdatePhone">{{sendVal}}</view>
+        <!-- <view class="box-text" v-show="isTime">剩余{{time}}秒</view> -->
+      </view>
+      <!-- 提交按钮 -->
+    </view>
     <view class="code-btn" :class="{ active: isActive }" @click="submitVal">
       <button class="btn" :class="{ active: isActive }">提交</button>
     </view>
@@ -45,22 +46,76 @@ export default {
       // 控制剩余时间的显示与隐藏
       isTime: false,
       // 控制点击发送的显示与隐藏
-      isStart: true
+      isStart: true,
+      // 返回的验证码
+      ObtainCode: ""
     };
   },
   methods: {
+    // 发送验证码
+    getUpdatePhone() {
+      uni.request({
+        url: "http://192.168.1.143:8086/WNC/user/generatePhoneCode",
+        data: {
+          phone: this.telVal
+        },
+        header: {
+          "Content-Type": "application/x-www-form-urlencoded; charset=utf-8"
+        },
+        success: res => {
+          this.ObtainCode = res.data;
+          // console.log(res);
+          // 如果res.data 没有收到 需要需要一个弹出框提醒用户
+          if (res === "") {
+            uni.showToast({
+              title: "请输入正确的验证码",
+              duration: 2000,
+              icon: "none"
+            });
+          }
+        }
+      });
+    },
     // 点击提交按钮
     submitVal() {
-      if (this.telVal !== "" && this.codeVal !== "") {
-        return uni.navigateTo({
-          url: "/pages/mineVerificationCodeSuccess/mineVerificationCodeSuccess"
+      if (
+        this.telVal !== "" &&
+        this.codeVal !== "" &&
+        this.codeVal !== this.ObtainCode
+      ) {
+        uni.request({
+          url: "http://192.168.1.143:8086/WNC/user/updatePhone",
+          data: {
+            phone: this.telVal,
+            userId: 1,
+            code: this.codeVal
+          },
+          header: {
+            "Content-Type": "application/x-www-form-urlencoded; charset=utf-8"
+          },
+          success: res => {
+            // console.log(res);
+          }
+        });
+        uni.showToast({
+          title: "更换成功",
+          duration: 2000,
+          icon: "none",
+          success: res => {
+            setTimeout(() => {
+              uni.navigateBack({
+                url: "/pages/mineUserInformation/mineUserInformation"
+              });
+            }, 2000);
+          }
+        });
+      } else {
+        uni.showToast({
+          title: "请输入手机号码或验证码",
+          duration: 2000,
+          icon: "none"
         });
       }
-      return uni.showToast({
-        title: "请输入手机号码或验证码",
-        duration: 2000,
-        icon: "none"
-      });
     },
     start() {
       this.isTime = !this.isTime;
@@ -85,23 +140,23 @@ export default {
   opacity: 1 !important;
 }
 .box {
-	background-color: #fff;
+  background-color: #fff;
 }
 .verification-code {
   // 填写手机号码区域
   margin-top: 20rpx;
   .code-box {
-	  margin-left: 40rpx;
-	height: 88rpx;
-	line-height: 88rpx;
-	background-color: #fff;
-	border-bottom: 1rpx solid #F1F1F1;
+    margin-left: 40rpx;
+    height: 88rpx;
+    line-height: 88rpx;
+    background-color: #fff;
+    border-bottom: 1rpx solid #f1f1f1;
     display: flex;
     justify-content: space-between;
     align-items: center;
     input {
       width: 100%;
-	  padding-left: 10rpx;
+      padding-left: 10rpx;
     }
     // placeholder 样式
     .placeholder-tel {
@@ -111,7 +166,7 @@ export default {
       color: rgba(153, 153, 153, 1);
     }
     .box-text {
-		margin-right: 30rpx;
+      margin-right: 30rpx;
       width: 150rpx;
       height: 50rpx;
       line-height: 50rpx;

@@ -9,9 +9,9 @@
 		<!-- 绑定银行卡 -->
 		<view v-if="true" class="card" @click="goWalletChoiceBankCard">
 			<View class="card-left">
-				<view class="card-img">
+				<!-- <view class="card-img">
 					<image src="/static/images/bank-card.png"></image>
-				</view>
+				</view> -->
 				<view class="card-text">
 					<view class="card-title">农业银行</view>
 					<view class="num">尾号1234 储蓄卡</view>
@@ -29,7 +29,7 @@
 			</View>
 			<View class="text">可提现金额0.00</View>
 		</view>
-		<View class="btn" :class="{ active: isActive }">申请提现</View>
+		<View class="btn" :class="{ active: isActive }" @click="getAccount">申请提现</View>
   </view>
 </template>
 
@@ -53,6 +53,24 @@ export default {
 			uni.navigateTo({
         url: '/pages/walletChoiceBankCard/walletChoiceBankCard'
       })
+		},
+		getAccount() {
+			uni.request({
+				url: 'http://192.168.1.155:8086/WNC/wallet/getAccount',
+				data: {
+					wallet_id: 1,
+					acc_id: 1,
+					// 提现金额
+					money: this.money,
+					user_id: 1
+				},
+				header: {
+					'Content-Type': "application/x-www-form-urlencoded; charset=utf-8"
+				},
+				succeee(res) {
+					console.log(res)
+				}
+			})
 		}
 	},
 	computed: {
