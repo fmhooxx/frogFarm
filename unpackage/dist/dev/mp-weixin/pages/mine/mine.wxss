@@ -40,6 +40,7 @@ page {
   width: 106rpx;
   height: 106rpx;
   margin-right: 36rpx;
+  border-radius: 50%;
 }
 .head .head-content .content-left .left-text .user.data-v-7e5b8247 {
   font-size: 28rpx;
@@ -60,12 +61,21 @@ page {
 }
 .head .head-content .content-left .left-text .tel .tel-text.data-v-7e5b8247 {
   font-size: 26rpx;
+  margin-left: 10rpx;
 }
 .head .head-content .content-left .login.data-v-7e5b8247 {
+  height: 50rpx;
+  line-height: 50rpx;
+  text-align: center;
+  width: 170rpx;
+  border: 1rpx solid red;
+  border: 1rpx solid #f1f1f1;
+  border-radius: 50rpx;
   font-size: 28rpx;
   font-family: Source Han Sans CN;
   font-weight: 500;
   color: #ffffff;
+  background-color: transparent;
   margin-top: 32rpx;
 }
 .head .head-content .content-right.data-v-7e5b8247 {

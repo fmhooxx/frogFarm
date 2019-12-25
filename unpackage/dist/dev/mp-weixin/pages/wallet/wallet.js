@@ -122,7 +122,7 @@ __webpack_require__.r(__webpack_exports__);
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0; //
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _methods;function _defineProperty(obj, key, value) {if (key in obj) {Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });} else {obj[key] = value;}return obj;} //
 //
 //
 //
@@ -182,9 +182,27 @@ var _default =
   data: function data() {
     return {};
   },
-  methods: {
+  onLoad: function onLoad() {
+    this.getWalletBalance();
+  },
+  methods: (_methods = {
+    // 获取用户钱包余额
+    getWalletBalance: function getWalletBalance() {
+      uni.request({
+        url: 'http://192.168.1.155:8086/WNC/wallet/getWallet',
+        data: {
+          user_id: 1 },
+
+        header: {
+          'Content-Type': "application/x-www-form-urlencoded; charset=utf-8" },
+
+        succeee: function succeee(res) {
+          console.log(res);
+        } });
+
+    },
     // 去提现页面
-    getWallet: function getWallet() {
+    getWalletWithdrawal: function getWalletWithdrawal() {
       uni.navigateTo({
         url: '/pages/walletCashWithdrawal/walletCashWithdrawal' });
 
@@ -208,7 +226,7 @@ var _default =
 
     },
     // 推荐规则接口
-    walletRecommendationRules: function walletRecommendationRules() {
+    getWallet: function getWallet() {
       uni.request({
         url: 'http://192.168.1.155:8086/WNC/wallet/getWallet',
         data: {
@@ -260,85 +278,43 @@ var _default =
       uni.navigateTo({
         url: '/pages/walletWithdrawalRules/walletWithdrawalRules' });
 
-    },
-    // 提现明细接口
-    getgoWalletRecommendationDetails: function getgoWalletRecommendationDetails() {
-      uni.request({
-        url: 'http://192.168.1.155:8086/WNC/wallet/getRecom',
-        data: {
-          user_id: 1 },
+    } }, _defineProperty(_methods, "getRecom", function getRecom()
 
-        header: {
-          'Content-Type': "application/x-www-form-urlencoded; charset=utf-8" },
+  {
+    uni.request({
+      url: 'http://192.168.1.155:8086/WNC/wallet/getRecom',
+      data: {
+        user_id: 1 },
 
-        succeee: function succeee(res) {
-          console.log(res);
-        } });
+      header: {
+        'Content-Type': "application/x-www-form-urlencoded; charset=utf-8" },
 
-      uni.navigateTo({
-        url: '/pages/walletPresentationDetails/walletPresentationDetails' });
+      succeee: function succeee(res) {
+        console.log(res);
+      } });
 
-    },
-    // 提现账户接口
-    getAcc: function getAcc() {
-      uni.request({
-        url: 'http://192.168.1.155:8086/WNC/wallet/getRecom',
-        data: {
-          user_id: 1 },
+    uni.navigateTo({
+      url: '/pages/walletRecommendationDetails/walletRecommendationDetails' });
 
-        header: {
-          'Content-Type': "application/x-www-form-urlencoded; charset=utf-8" },
+  }), _defineProperty(_methods, "getAcc", function getAcc()
 
-        succeee: function succeee(res) {
-          console.log(res);
-        } });
+  {
+    uni.request({
+      url: 'http://192.168.1.155:8086/WNC/wallet/getAcc',
+      data: {
+        user_id: 1 },
 
-      uni.navigateTo({
-        url: '/pages/walletMyBankCard/walletMyBankCard' });
+      header: {
+        'Content-Type': "application/x-www-form-urlencoded; charset=utf-8" },
 
-    },
-    // 去提现页面
-    goCashWithdrawal: function goCashWithdrawal() {
-      uni.navigateTo({
-        url: '/pages/walletCashWithdrawal/walletCashWithdrawal' });
+      succeee: function succeee(res) {
+        console.log(res);
+      } });
 
-    },
-    // 去推荐明细页面
-    goWalletRecommendationDetails: function goWalletRecommendationDetails() {
-      uni.navigateTo({
-        url: '/pages/walletRecommendationDetails/walletRecommendationDetails' });
+    uni.navigateTo({
+      url: '/pages/walletMyBankCard/walletMyBankCard' });
 
-    },
-    // 去推荐规则页面
-    gowWlletRecommendationRules: function gowWlletRecommendationRules() {
-      uni.navigateTo({
-        url: '/pages/walletRecommendationRules/walletRecommendationRules' });
-
-    },
-    // 去我的团队页面
-    goWalletMyTeam: function goWalletMyTeam() {
-      uni.navigateTo({
-        url: '/pages/walletMyTeam/walletMyTeam' });
-
-    },
-    // 去提现规则页面
-    goWalletWithdrawalRules: function goWalletWithdrawalRules() {
-      uni.navigateTo({
-        url: '/pages/walletWithdrawalRules/walletWithdrawalRules' });
-
-    },
-    // 去提现账户页面(如果没有绑定银行卡去我的银行卡页面)
-    goWalletMyBankCard: function goWalletMyBankCard() {
-      uni.navigateTo({
-        url: '/pages/walletMyBankCard/walletMyBankCard' });
-
-    },
-    // 去提现明细页面
-    goWalletPresentationDetails: function goWalletPresentationDetails() {
-      uni.navigateTo({
-        url: '/pages/walletPresentationDetails/walletPresentationDetails' });
-
-    } } };exports.default = _default;
+  }), _methods) };exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),

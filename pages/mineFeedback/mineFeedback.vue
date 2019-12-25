@@ -1,8 +1,8 @@
 <template>
   <!-- 意见反馈页面 ming -->
   <view class="feedback">
-    <view class="title">我们想听听你的心声,如果愿意,你也可以留下联系 方式,我们期待与您真诚沟通</view>
-    <view class="box">
+    <textarea focus class="title" v-model="val" placeholder="我们想听听你的心声,如果愿意,你也可以留下联系 方式,我们期待与您真诚沟通" placeholder-class="textarea-placeholder"></textarea>
+		<view class="box">
 			<view class="preview" v-for="(item, index) in previewList" :key="index" @click="preview(index)">
 				<image :src="item" mode="scaleToFill"></image>
 			</view>
@@ -22,7 +22,11 @@ export default {
   data() {
     return {
 			// 预览图片的地址
-			previewList: []
+			previewList: [],
+			// textarea 框内输入的内容
+			val: '',
+			// 上传图片的地址
+			imageSrc: [],
 		};
   },
   methods: {
@@ -34,6 +38,23 @@ export default {
 				sourceType: ['album'], //从相册选择
 				success: res => {
 					this.previewList.push(res.tempFilePaths[0])
+					this.imageSrc = res.tempFilePaths[0]
+					// for (var i = 0; i < res.tempFilePaths.length; i++) {
+					// 	this.previewList.push(res.tempFilePaths[i])
+					// 	this.imageSrc.push(res.tempFilePaths[i])
+					// }
+					uni.uploadFile({
+						url: 'http://192.168.1.143:8086/WNC/user/addOpinion',
+						filePath: this.imageSrc,
+						name: 'file',
+						formData: {
+							userId: 1,
+							// msg: this.val
+						},
+						success: res => {
+							console.log(res)
+						}
+					})
 				}
 			})
 		},
@@ -45,19 +66,54 @@ export default {
 		},
 	// 意见反馈接口
 		submit() {
-			uni.request({
-				url: "http://192.168.1.143:8086/WNC/user/addOpinion",
-				data: {
-					userId: 1,
-					msg: '1232'
-				},
-				header: {
-					"Content-Type": "application/x-www-form-urlencoded; charset=utf-8"
-				},
-				success: res => {
-					console.log(res);
-				}
-			});
+			console.log((this.imageSrc))
+			// console.log(JSON.stringify(this.imageSrc))
+			if (this.val !== '') {
+				// uni.uploadFile({
+				// 	url: 'http://192.168.1.143:8086/WNC/user/addOpinion',
+				// 	filePath: JSON.stringify(this.imageSrc),
+				// 	name: 'file',
+				// 	formData: {
+				// 		userId: 1,
+				// 		msg: this.val
+				// 	},
+				// 	success: res => {
+				// 		console.log(res)
+				// 	}
+				// })
+				uni.request({
+					url: "http://192.168.1.143:8086/WNC/user/addOpinion",
+					data: {
+						userId: 1,
+						msg: this.val
+					},
+					header: {
+						"Content-Type": "application/x-www-form-urlencoded; charset=utf-8"
+					},
+					success: res => {
+						console.log(res);
+					}
+				});
+			} else {
+				uni.showToast({
+						title: '请输入文字内容',
+						duration: 2000,
+						icon: "none"
+				});
+			}
+			// uni.request({
+			// 	url: "http://192.168.1.143:8086/WNC/user/addOpinion",
+			// 	data: {
+			// 		userId: 1,
+			// 		msg: '1232'
+			// 	},
+			// 	header: {
+			// 		"Content-Type": "application/x-www-form-urlencoded; charset=utf-8"
+			// 	},
+			// 	success: res => {
+			// 		console.log(res);
+			// 	}
+			// });
 		}
 	}
 };
@@ -75,7 +131,11 @@ image {
 	height: 100%;
 }
 .feedback {
-  padding: 0 30rpx;
+	padding: 0 30rpx;
+	.textarea-placeholder {
+		font-size: 32rpx;
+		color: #999;
+	}
   .title {
     height: 222rpx;
     font-size: 32rpx;
@@ -83,8 +143,8 @@ image {
     padding-top: 52rpx;
     box-sizing: border-box;
     font-family: Source Han Sans CN;
-    font-weight: 400;
-    color: rgba(153, 153, 153, 1);
+		font-weight: 400;
+		color: #333;
 	}
 	.box {
 		margin: 50rpx 0 70rpx 0;

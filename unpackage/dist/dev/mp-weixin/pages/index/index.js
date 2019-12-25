@@ -538,6 +538,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 var _default =
 {
   data: function data() {
@@ -597,7 +598,7 @@ var _default =
 
   },
   onLoad: function onLoad() {
-    // this.getList()
+    this.getList();
   },
   methods: (_methods = {
     // 去绿色健康页面
@@ -618,9 +619,19 @@ var _default =
         url: '/pages/indexNews/indexNews' });
 
     },
-    // getList() {
-    // 	this.$http.get('/wanongchang/banner/getBanner').then(res => {console.log(res)})
-    // },
+    getList: function getList() {
+      // this.$http.get('/wanongchang/banner/getBanner').then(res => {console.log(res)})
+      // uni.request({
+      // 	url: "http://192.168.1.166:8086/WNC/banner/getBanner",
+      // 	data: {},
+      // 	header: {
+      // 		"Content-Type": "application/x-www-form-urlencoded; charset=utf-8"
+      // 	},
+      // 	success: res => {
+      // 		console.log(res)
+      // 	}
+      // });
+    },
     // 去正在开发页面
     goExpect: function goExpect() {
       uni.navigateTo({

@@ -40,8 +40,6 @@
           <image src="/static/images/green-orderlistA.png"></image>
           <!-- </block> -->
         </scroll-view>
-
-
         <!-- <view class="item-img-box">
           <image src="/static/images/order-img.png"></image>
           <image src="/static/images/green-orderlistA.png"></image>
@@ -274,7 +272,7 @@ export default {
   // tab 栏下面数据
   .list {
     .list-item {
-      padding: 30rpx 28rpx 30rpx 28rpx;
+      padding: 30rpx 28rpx 0 28rpx;
       height: 532rpx;
       background: rgba(255, 255, 255, 1);
       font-size: 30rpx;

@@ -78,9 +78,14 @@
 	export default {
 		data() {
 			return {
-				goTopStatus: false
+        goTopStatus: false,
+        // 存储用户登录的凭证
+        userLogin: ''
 			}
-		},
+    },
+    onLoad() {
+      this.userLogin = uni.getStorageSync('userLogin')
+    },
 		methods: {
 			//监听页面高度(上滑或者下滑)
 			onPageScroll(obj) {
@@ -97,9 +102,15 @@
       },
       // 去确定订单页面
       goConfirmOrder() {
-        uni.navigateTo({
-          url: '/pages/confirmOrder/confirmOrder'
-        })
+        if (this.userLogin == '') {
+          uni.navigateTo({
+            url: '/pages/loginRegister/loginRegister'
+          })
+        } else {
+          uni.navigateTo({
+            url: '/pages/confirmOrder/confirmOrder'
+          })
+        }
       }
 		}
 	}

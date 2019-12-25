@@ -2,6 +2,8 @@
   height: 290rpx;
   background: #ffffff;
   border: 1rpx solid #eeeeee;
+  padding: 30rpx;
+  box-sizing: border-box;
 }
 .history-list.data-v-a5f34ff2 {
   width: 390rpx;

@@ -36,7 +36,7 @@
 }
 .verification-code .code-box .box-text.data-v-54835172 {
   margin-right: 30rpx;
-  width: 150rpx;
+  width: 180rpx;
   height: 50rpx;
   line-height: 50rpx;
   text-align: center;

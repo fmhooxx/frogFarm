@@ -202,8 +202,13 @@ var _default =
 {
   data: function data() {
     return {
-      goTopStatus: false };
+      goTopStatus: false,
+      // 存储用户登录的凭证
+      userLogin: '' };
 
+  },
+  onLoad: function onLoad() {
+    this.userLogin = uni.getStorageSync('userLogin');
   },
   methods: {
     //监听页面高度(上滑或者下滑)
@@ -221,9 +226,15 @@ var _default =
     },
     // 去确定订单页面
     goConfirmOrder: function goConfirmOrder() {
-      uni.navigateTo({
-        url: '/pages/confirmOrder/confirmOrder' });
+      if (this.userLogin == '') {
+        uni.navigateTo({
+          url: '/pages/loginRegister/loginRegister' });
 
+      } else {
+        uni.navigateTo({
+          url: '/pages/confirmOrder/confirmOrder' });
+
+      }
     } } };exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 

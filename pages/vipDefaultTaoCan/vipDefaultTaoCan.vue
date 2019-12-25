@@ -94,8 +94,9 @@ export default {
 }
 .btn {
   margin-top: 50rpx;
-  height: 60rpx;
-  line-height: 60rpx;
+  height: 84rpx;
+  line-height: 84rpx;
+  text-align: center;
   font-size: 30rpx;
   font-family: Microsoft YaHei;
   font-weight: 400;

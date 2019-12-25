@@ -9,20 +9,21 @@
         <!-- 左边 -->
         <view class="content-left">
           <!-- 头像 -->
-          <image src="/static/images/head.png"></image>
+          <image :src="defaultHead"></image>
           <!-- 左边的文字 -->
           <!-- 未登录区域 -->
-          <view v-if="false" class="login">立即登录</view>
+          <!-- <button open-type="getUserInfo" @click="getUserInfos" v-if="isLogin" class="login">立即登录</button> -->
+          <button @click="userInfo" v-if="isLogin" class="login">立即登录</button>
           <!-- 已登录区域 -->
-          <view class="left-text">
+          <view v-else class="left-text">
             <!-- 用户昵称 -->
-            <view class="user">蛙农场用户</view>
+            <view class="user">{{defaultUname}}</view>
             <!-- 手机号码区域 -->
             <view class="tel">
               <!-- 手机标识 -->
               <image src="/static/images/phone.png"></image>
               <!-- 手机号码 -->
-              <view class="tel-text">183****1234</view>
+              <view class="tel-text">{{phone}}</view>
             </view>
           </view>
         </view>
@@ -108,8 +109,25 @@ export default {
           text: "我的设置"
         }
       ],
-      current: 2
+      current: 2,
+      // 控制已登录和未登录的切换显示
+      isLogin: false,
+      // 默认头像
+      defaultHead: '/static/images/head.png',
+      // 默认名称
+      defaultUname: '蛙农场用户',
+      // 存储用户登录的凭证
+      userLogin: '',
+      // 存储手机号码
+      phone: ''
     };
+  },
+  onLoad() {
+    this.userLogin = uni.getStorageSync('userLogin')
+    this.phone = uni.getStorageSync('phone')
+    if (this.userLogin == '') {
+      this.isLogin = true
+    }
   },
   methods: {
     // 去会员卡页面
@@ -216,6 +234,26 @@ export default {
           url: "/pages/mineFeedback/mineFeedback"
         });
       }
+    },
+    // 获取用户信息
+    // getUserInfos() {
+    //   uni.getUserInfo({
+    //     success: res => {
+    //       console.log(res)
+    //       this.defaultHead = res.userInfo.avatarUrl
+    //       this.defaultUname = res.userInfo.nickName
+    //       this.isLogin = false
+    //     }
+    //   })
+    // }
+    isUserInfo() {
+      if (this.userInfo == '') {
+        uni.navigateTo({
+          url: "/pages/loginRegister/loginRegister"
+        });
+      } else {
+        this.isLogin = true
+      }
     }
   }
 };
@@ -261,6 +299,7 @@ page {
         width: 106rpx;
         height: 106rpx;
         margin-right: 36rpx;
+        border-radius: 50%;
       }
       // 左边的文字 已登录区域
       .left-text {
@@ -282,15 +321,24 @@ page {
           // 手机号码
           .tel-text {
             font-size: 26rpx;
+            margin-left: 10rpx;
           }
         }
       }
       // 未登录区域
       .login {
+        height: 50rpx;
+        line-height: 50rpx;
+        text-align: center;
+        width: 170rpx;
+        border: 1rpx solid red;
+        border: 1rpx solid #f1f1f1;
+        border-radius: 50rpx;
         font-size: 28rpx;
         font-family: Source Han Sans CN;
         font-weight: 500;
         color:rgba(255,255,255,1);
+        background-color: transparent;
         margin-top: 32rpx;
       }
     }

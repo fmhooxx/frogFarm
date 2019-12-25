@@ -99,10 +99,11 @@
 			</view>
 		</view>
 		<!-- 商品列表信息结束 -->
-		<view class="info-title bei-title" @click="toGreenOrderDetailBeizhu">
+		<!-- <view class="info-title bei-title" @click="toGreenOrderDetailBeizhu">
 			<view>订单备注</view>
+			<text>{{val}}</text>
 			<image src="../../static/images/arrow-right.png"></image>
-		</view>
+		</view> -->
 		<!-- 订单备注开始 -->
 		<view class="con-info">
 			<view class="flex-row info-title con-list">
@@ -145,8 +146,12 @@
 	export default {
 		data() {
 			return {
-				
+				val: ''
 			};
+		},
+		onLoad(options) {
+			this.val = options.val
+			console.log(options.val)
 		},
 		methods: {
 			//点击跳转地址管理
@@ -156,11 +161,11 @@
 				})
 			},
 			//点击填写备注
-			toGreenOrderDetailBeizhu() {
-				uni.navigateTo({
-					url: '/pages/greenOrderDetailBeizhu/greenOrderDetailBeizhu'
-				})
-			},
+			// toGreenOrderDetailBeizhu() {
+			// 	uni.navigateTo({
+			// 		url: '/pages/greenOrderDetailBeizhu/greenOrderDetailBeizhu'
+			// 	})
+			// },
 			// 去支付页面
 			goOrderPay() {
 				uni.navigateTo({
@@ -320,15 +325,10 @@
   width:710rpx;
   background:rgba(255,255,255,1);
   border-radius:10rpx;
-  margin: 0 auto
-}
-.con-info{
-  padding: 0 30rpx;
+	margin: 20rpx auto 0;
+	padding: 0 30rpx;
   box-sizing: border-box;
-	margin-top: 20rpx;
-	margin-bottom: 100rpx;
 }
-
 .con-list{
 	height: 88rpx;
 	line-height: 88rpx;

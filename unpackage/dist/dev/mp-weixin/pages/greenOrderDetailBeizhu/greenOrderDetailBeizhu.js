@@ -145,14 +145,29 @@ __webpack_require__.r(__webpack_exports__);
 var _default =
 {
   data: function data() {
-    return {};
+    return {
+      // 备注1
+      one: "请不要敲门，到了后打电话",
+      // 备注2
+      two: "如果没人就放门口",
+      // textarea 里面输入的内容
+      val: "" };
+
   },
   methods: {
     // 去确认订单页面
     goConfirmOrder: function goConfirmOrder() {
       uni.navigateTo({
-        url: "/pages/confirmOrder/confirmOrder" });
+        url: "/pages/confirmOrder/confirmOrder?val=" + this.val });
 
+    },
+    fillOne: function fillOne() {
+      this.val = "";
+      this.val = this.one;
+    },
+    fillTwo: function fillTwo() {
+      this.val = "";
+      this.val = this.two;
     } } };exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 

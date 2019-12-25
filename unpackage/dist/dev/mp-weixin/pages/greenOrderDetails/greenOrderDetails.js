@@ -283,6 +283,29 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 var _default =
 {
   data: function data() {
@@ -298,8 +321,8 @@ var _default =
 
   },
   methods: {
-    // 点击删除订单 打开弹框
-    delOrder: function delOrder() {
+    // 点击退款按钮 打开弹框
+    refund: function refund() {
       this.$refs.popup.open();
     },
     // 点击了取消按钮

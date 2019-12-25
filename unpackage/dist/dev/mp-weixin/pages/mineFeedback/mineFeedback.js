@@ -148,7 +148,11 @@ var _default =
   data: function data() {
     return {
       // 预览图片的地址
-      previewList: [] };
+      previewList: [],
+      // textarea 框内输入的内容
+      val: '',
+      // 上传图片的地址
+      imageSrc: [] };
 
   },
   methods: {
@@ -160,6 +164,23 @@ var _default =
         sourceType: ['album'], //从相册选择
         success: function success(res) {
           _this.previewList.push(res.tempFilePaths[0]);
+          _this.imageSrc = res.tempFilePaths[0];
+          // for (var i = 0; i < res.tempFilePaths.length; i++) {
+          // 	this.previewList.push(res.tempFilePaths[i])
+          // 	this.imageSrc.push(res.tempFilePaths[i])
+          // }
+          uni.uploadFile({
+            url: 'http://192.168.1.143:8086/WNC/user/addOpinion',
+            filePath: _this.imageSrc,
+            name: 'file',
+            formData: {
+              userId: 1
+              // msg: this.val
+            },
+            success: function success(res) {
+              console.log(res);
+            } });
+
         } });
 
     },
@@ -171,19 +192,54 @@ var _default =
     },
     // 意见反馈接口
     submit: function submit() {
-      uni.request({
-        url: "http://192.168.1.143:8086/WNC/user/addOpinion",
-        data: {
-          userId: 1,
-          msg: '1232' },
+      console.log(this.imageSrc);
+      // console.log(JSON.stringify(this.imageSrc))
+      if (this.val !== '') {
+        // uni.uploadFile({
+        // 	url: 'http://192.168.1.143:8086/WNC/user/addOpinion',
+        // 	filePath: JSON.stringify(this.imageSrc),
+        // 	name: 'file',
+        // 	formData: {
+        // 		userId: 1,
+        // 		msg: this.val
+        // 	},
+        // 	success: res => {
+        // 		console.log(res)
+        // 	}
+        // })
+        uni.request({
+          url: "http://192.168.1.143:8086/WNC/user/addOpinion",
+          data: {
+            userId: 1,
+            msg: this.val },
 
-        header: {
-          "Content-Type": "application/x-www-form-urlencoded; charset=utf-8" },
+          header: {
+            "Content-Type": "application/x-www-form-urlencoded; charset=utf-8" },
 
-        success: function success(res) {
-          console.log(res);
-        } });
+          success: function success(res) {
+            console.log(res);
+          } });
 
+      } else {
+        uni.showToast({
+          title: '请输入文字内容',
+          duration: 2000,
+          icon: "none" });
+
+      }
+      // uni.request({
+      // 	url: "http://192.168.1.143:8086/WNC/user/addOpinion",
+      // 	data: {
+      // 		userId: 1,
+      // 		msg: '1232'
+      // 	},
+      // 	header: {
+      // 		"Content-Type": "application/x-www-form-urlencoded; charset=utf-8"
+      // 	},
+      // 	success: res => {
+      // 		console.log(res);
+      // 	}
+      // });
     } } };exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 

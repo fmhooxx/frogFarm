@@ -205,10 +205,15 @@ var _default =
     return {
       url: '../../static/images/mine-head-portrait.png',
       date: currentDate,
-      file: [] };
+      file: [],
+      // 存储手机号码
+      phone: '' };
 
   },
   methods: {
+    onLoad: function onLoad() {
+      this.phone = uni.getStorageSync('phone');
+    },
     // 当选择的日期发生改变的时候 改变页面的日期
     bindDateChange: function bindDateChange(e) {
       this.date = e.target.value;
@@ -244,7 +249,20 @@ var _default =
     },
     // 性别单选框发生改变的时候
     radioChange: function radioChange(e) {
-      console.log(e);
+      // console.log(e.detail.value)
+      uni.request({
+        url: "http://192.168.1.143:8086/WNC/user/updateGender",
+        data: {
+          userId: 1,
+          gender: e.detail.value },
+
+        header: {
+          "Content-Type": "application/x-www-form-urlencoded; charset=utf-8" },
+
+        success: function success(res) {
+          console.log(res);
+        } });
+
     },
     // 去修改昵称页面
     goMineNickname: function goMineNickname() {
@@ -266,10 +284,10 @@ var _default =
           console.log(res);
           _this.file = res.tempFilePaths;
           _this.url = res.tempFilePaths[0];
-          var imageSrc = res.tempFilePaths[0];
+          // var imageSrc = res.tempFilePaths[0]
           uni.uploadFile({
             url: 'http://192.168.1.143:8086/WNC/user/updateimageUrl',
-            filePath: imageSrc,
+            filePath: _this.url,
             name: 'file',
             formData: {
               userId: 1 },
@@ -277,7 +295,6 @@ var _default =
             success: function success(res) {
               console.log(res);
             } });
-
 
           // uni.request({
           // 	url: "http://192.168.1.143:8086/WNC/user/updateimageUrl",

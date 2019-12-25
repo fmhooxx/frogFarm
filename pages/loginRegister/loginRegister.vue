@@ -42,45 +42,46 @@ export default {
       // 手机号码输入的内容
       phone: '',
       // 验证码输入的内容
-      verificationVal: ''
+      verificationVal: '',
+      // 收到的验证码
+      code: ''
     };
   },
   methods: {
 		// (去设置登录密码页面 暂时废弃 直接使用验证码登录 然后跳转到输入邀请码页面)
 		goLoginSetLoginPassword() {
-			if (this.phone !== '' && this.verificationVal) {
+			if (this.phone !== '' && this.verificationVal == this.code ) {
         // return uni.navigateTo({
         //   url: "/pages/loginSetLoginPassword/loginSetLoginPassword"
         // })
+        // 先假定一个字段 来判断用户的登录状态 未设置过期时间
+        uni.setStorageSync('userLogin', 'userLogin')
         return uni.navigateTo({
           url: "/pages/loginInvitationCode/loginInvitationCode"
         })
+      } else {
+        uni.showToast({
+            title: '请输入手机号码或验证码',
+            duration: 2000,
+            icon: 'none'
+        })
       }
-      return uni.showToast({
-          title: '请输入手机号码或验证码',
-          duration: 2000,
-          icon: 'none'
-      })
     },
     login() {
-      // var phone = ''
-      // this.$http.get('/WNC/wxlogin/register', {params: this.phone}).then(
-      //   res => {
-      //     console.log(res)
-      //   }
-      // )
-      // uni.request({
-      //   url: 'http://192.168.1.166:8086/WNC/wxlogin/register',
-      //   data: {
-      //     phone: this.phone
-      //   },
-      //   header: {
-      //   'Content-Type': "application/x-www-form-urlencoded; charset=utf-8"
-      //   },
-      //   success: res => {
-      //     console.log(res)
-      //   }
-      // })
+      uni.request({
+        url: 'http://192.168.1.166:8086/WNC/wxlogin/register',
+        data: {
+          phone: this.phone
+        },
+        header: {
+        'Content-Type': "application/x-www-form-urlencoded; charset=utf-8"
+        },
+        success: res => {
+          console.log(res)
+          this.code = res.data.code
+          uni.setStorageSync('phone', this.phone)
+        }
+      })
     }
   },
   computed: {

@@ -1,8 +1,8 @@
 {
   "pages": [
+    "pages/index/index",
     "pages/loginRegister/loginRegister",
     "pages/login/login",
-    "pages/index/index",
     "pages/goods/goods",
     "pages/expect/expect",
     "pages/greenAddrManageAdd/greenAddrManageAdd",
@@ -64,7 +64,8 @@
     "pages/indexLocation/indexLocation",
     "pages/indexNews/indexNews",
     "pages/indexNewsDetails/indexNewsDetails",
-    "pages/vipMemberManagementRules/vipMemberManagementRules"
+    "pages/vipMemberManagementRules/vipMemberManagementRules",
+    "pages/vipMemberAgreement/vipMemberAgreement"
   ],
   "subPackages": [],
   "window": {

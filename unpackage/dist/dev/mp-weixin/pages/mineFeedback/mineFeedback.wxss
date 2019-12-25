@@ -10,6 +10,10 @@ image.data-v-5ab9aa67 {
 .feedback.data-v-5ab9aa67 {
   padding: 0 30rpx;
 }
+.feedback .textarea-placeholder.data-v-5ab9aa67 {
+  font-size: 32rpx;
+  color: #999;
+}
 .feedback .title.data-v-5ab9aa67 {
   height: 222rpx;
   font-size: 32rpx;
@@ -18,7 +22,7 @@ image.data-v-5ab9aa67 {
   box-sizing: border-box;
   font-family: Source Han Sans CN;
   font-weight: 400;
-  color: #999999;
+  color: #333;
 }
 .feedback .box.data-v-5ab9aa67 {
   margin: 50rpx 0 70rpx 0;

@@ -8,18 +8,18 @@
 			<view class="header-text">
 				<view>钱包余额</view>
 				<view class="price">450.50</view>
-				<view class="tixian" @click="getWallet">提现</view>
+				<view class="tixian" @click="getWalletWithdrawal">提现</view>
 			</view>
 		</view>
 		<!-- 列表数据 -->
 		<view class="footer">
-			<view class="footer-box" @click="getgoWalletRecommendationDetails">
+			<view class="footer-box" @click="getRecom">
 				<view class="text">推荐明细</view>
 				<view class="box-img">
 					<image src="/static/images/arrow-right.png"></image>
 				</view>
 			</view>
-			<view class="footer-box" @click="walletRecommendationRules">
+			<view class="footer-box" @click="getWallet">
 				<view class="text">推荐规则</view>
 				<view class="box-img">
 					<image src="/static/images/arrow-right.png"></image>
@@ -58,9 +58,27 @@ export default {
   data() {
     return {};
 	},
+	onLoad() {
+		this.getWalletBalance()
+	},
   methods: {
+		// 获取用户钱包余额
+		getWalletBalance() {
+			uni.request({
+				url: 'http://192.168.1.155:8086/WNC/wallet/getWallet',
+				data: {
+					user_id: 1
+				},
+				header: {
+					'Content-Type': "application/x-www-form-urlencoded; charset=utf-8"
+				},
+				succeee(res) {
+					console.log(res)
+				}
+			})
+		},
 		// 去提现页面
-		getWallet() {
+		getWalletWithdrawal() {
 			uni.navigateTo({
         url: '/pages/walletCashWithdrawal/walletCashWithdrawal'
       })
@@ -84,7 +102,7 @@ export default {
       })
 		},
 		// 推荐规则接口
-		walletRecommendationRules() {
+		getWallet() {
 			uni.request({
 				url: 'http://192.168.1.155:8086/WNC/wallet/getWallet',
 				data: {
@@ -138,7 +156,7 @@ export default {
       })
 		},
 		// 提现明细接口
-		getgoWalletRecommendationDetails() {
+		getRecom() {
 			uni.request({
 				url: 'http://192.168.1.155:8086/WNC/wallet/getRecom',
 				data: {
@@ -152,13 +170,13 @@ export default {
 				}
 			})
 			uni.navigateTo({
-        url: '/pages/walletPresentationDetails/walletPresentationDetails'
+        url: '/pages/walletRecommendationDetails/walletRecommendationDetails'
       })
 		},
 		// 提现账户接口
 		getAcc() {
 			uni.request({
-				url: 'http://192.168.1.155:8086/WNC/wallet/getRecom',
+				url: 'http://192.168.1.155:8086/WNC/wallet/getAcc',
 				data: {
 					user_id: 1
 				},
@@ -174,47 +192,47 @@ export default {
 			})
 		},
 		// 去提现页面
-		goCashWithdrawal() {
-			uni.navigateTo({
-        url: '/pages/walletCashWithdrawal/walletCashWithdrawal'
-      })
-		},
+		// goCashWithdrawal() {
+		// 	uni.navigateTo({
+    //     url: '/pages/walletCashWithdrawal/walletCashWithdrawal'
+    //   })
+		// },
 		// 去推荐明细页面
-		goWalletRecommendationDetails() {
-			uni.navigateTo({
-        url: '/pages/walletRecommendationDetails/walletRecommendationDetails'
-      })
-		},
+		// goWalletRecommendationDetails() {
+		// 	uni.navigateTo({
+    //     url: '/pages/walletRecommendationDetails/walletRecommendationDetails'
+    //   })
+		// },
 		// 去推荐规则页面
-		gowWlletRecommendationRules() {
-			uni.navigateTo({
-        url: '/pages/walletRecommendationRules/walletRecommendationRules'
-      })
-		},
+		// gowWlletRecommendationRules() {
+		// 	uni.navigateTo({
+    //     url: '/pages/walletRecommendationRules/walletRecommendationRules'
+    //   })
+		// },
 		// 去我的团队页面
-		goWalletMyTeam() {
-			uni.navigateTo({
-        url: '/pages/walletMyTeam/walletMyTeam'
-      })
-		},
+		// goWalletMyTeam() {
+		// 	uni.navigateTo({
+    //     url: '/pages/walletMyTeam/walletMyTeam'
+    //   })
+		// },
 		// 去提现规则页面
-		goWalletWithdrawalRules() {
-			uni.navigateTo({
-        url: '/pages/walletWithdrawalRules/walletWithdrawalRules'
-      })
-		},
+		// goWalletWithdrawalRules() {
+		// 	uni.navigateTo({
+    //     url: '/pages/walletWithdrawalRules/walletWithdrawalRules'
+    //   })
+		// },
 		// 去提现账户页面(如果没有绑定银行卡去我的银行卡页面)
-		goWalletMyBankCard() {
-			uni.navigateTo({
-        url: '/pages/walletMyBankCard/walletMyBankCard'
-      })
-		},
+		// goWalletMyBankCard() {
+		// 	uni.navigateTo({
+    //     url: '/pages/walletMyBankCard/walletMyBankCard'
+    //   })
+		// },
 		// 去提现明细页面
-		goWalletPresentationDetails() {
-			uni.navigateTo({
-        url: '/pages/walletPresentationDetails/walletPresentationDetails'
-      })
-		}
+		// goWalletPresentationDetails() {
+		// 	uni.navigateTo({
+    //     url: '/pages/walletPresentationDetails/walletPresentationDetails'
+    //   })
+		// }
 	}
 };
 </script>

@@ -84,8 +84,11 @@
 
 		<!-- 服务协议开始 -->
 		<view class="pro">
+      <checkbox-group @change="checkboxChange">
+        <checkbox value="1" checked='true'></checkbox>
+      </checkbox-group>
 			<text class="left">已阅读并同意</text>
-			<text class="right">《会员服务协议》</text>
+			<text class="right" @click="goVipMemberAgreement">《会员服务协议》</text>
 		</view>
 		<!-- 服务协议结束 -->
 
@@ -142,6 +145,15 @@
         uni.navigateTo({
 					url: '/pages/vipGoodsDetailsInfo/vipGoodsDetailsInfo'
 				});
+      },
+      // 去会员协议页面
+      goVipMemberAgreement() {
+        uni.navigateTo({
+					url: '/pages/vipMemberAgreement/vipMemberAgreement'
+				});
+      },
+      checkboxChange(e) {
+        console.log(e.detail.value)
       }
 		}
 	}
@@ -321,20 +333,20 @@ page {
 }
 
 .pro{
+  display: flex;
   font-size:24rpx;
   font-family:PingFang;
+  justify-content: center;
+  align-items: center;
   // font-weight:500;
   color:rgba(153,153,153,1);
   line-height:23rpx;
   text-align: center;
   margin-top: 40rpx;
+  .right {
+    color: #3FAF3C;
   }
-// .pro .left{
-
-// }
-// .pro .left{
-
-// }
+  }
 /* 推荐样式开始 */
 .tuijian{
   margin-top: 50rpx;

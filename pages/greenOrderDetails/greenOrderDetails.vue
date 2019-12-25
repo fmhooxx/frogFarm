@@ -82,24 +82,26 @@
 			</view>
 		</view>
 		<!-- 商品列表信息结束 -->
-		<view class="info-title bei-title" @click="toGreenOrderDetailBeizhu">
+		<!-- 订单备注开始 -->
+		<!-- <view class="info-title bei-title">
 			<view>订单备注</view>
 			<image src="../../static/images/arrow-right.png"></image>
-		</view>
-		<!-- 订单备注开始 -->
+		</view> -->
+		<!-- 订单备注结束 -->
+
 		<view class="con-info">
 			<view class="flex-row info-title con-list">
 				<view>商品金额</view>
 				<view>¥89.7</view>
 			</view>
-			<view class="flex-row info-title con-list">
+			<!-- <view class="flex-row info-title con-list">
 				<view>会员折扣</view>
 				<view>7折</view>
-			</view>
-			<view class="flex-row info-title con-list">
+			</view> -->
+			<!-- <view class="flex-row info-title con-list">
 				<view>配送费</view>
 				<view>+6.00</view>
-			</view>
+			</view> -->
 			<view class="flex-row info-title con-list">
 				<view>促销优惠</view>
 				<view>-0.54</view>
@@ -109,7 +111,6 @@
 				<view class="price"><text>￥</text>62.6</view>
 			</view>
 		</view>
-		<!-- 订单备注结束 -->
 
 		<!-- 订单详情开始 -->
 		<view class="order-details">
@@ -126,20 +127,42 @@
 		<!-- 订单详情结束 -->
 
 		<!-- 底部操作栏 -->
-		<!-- 已完成状态 -->
-		<view class="footer">
+		<!-- 已取消状态 -->
+		<!-- <view class="footer">
 			<view class="footer-box">
-				<view @click="delOrder">删除订单</view>
+				<view>删除订单</view>
 				<view>再次购买</view>
 			</view>
-		</view>
+		</view> -->
+		<!-- 已退款状态 -->
+		<!-- <view class="footer">
+			<view class="footer-box">
+				<view>删除订单</view>
+				<view>再次购买</view>
+			</view>
+		</view> -->
+		<!-- 已完成状态 -->
+		<!-- <view class="footer">
+			<view class="footer-box">
+				<view>删除订单</view>
+				<view>再次购买</view>
+			</view>
+		</view> -->
 		<!-- 待取货状态 -->
 		<!-- <view class="footer">
 			<view class="footer-box">
-				<view>退款</view>
-				<view class="code">取货码</view>
+				<view @click="refund">退款</view>
+				<view class="confirm">修改地址</view>
 			</view>
 		</view> -->
+		<!-- 待发货 -->
+		<view class="footer">
+			<view class="footer-box">
+				<view>客服介入</view>
+				<view>查看物流</view>
+				<view class="confirm">确认收货</view>
+			</view>
+		</view>
 		<!-- 底部操作栏 -->
 		<!-- 弹框区域 -->
 		<BasePopup ref="popup" type="center">
@@ -174,8 +197,8 @@
 			}
 		},
 		methods: {
-			// 点击删除订单 打开弹框
-			delOrder() {
+			// 点击退款按钮 打开弹框
+			refund() {
 				this.$refs.popup.open()
 			},
 			// 点击了取消按钮
@@ -332,9 +355,9 @@
 			margin: 0 25rpx;
 		}
 	}
-	.code {
-		border: 2rpx solid rgba(39, 149, 36, 1);
-		color:rgba(39,149,36,1);
+	.confirm {
+		border: 2rpx solid rgba(39, 149, 36, 1) !important;
+		color:rgba(39,149,36,1) !important;
 	}
 }
 	// 弹框区域

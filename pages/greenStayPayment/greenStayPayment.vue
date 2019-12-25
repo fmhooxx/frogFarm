@@ -57,31 +57,35 @@
 		</view>
 		<!-- 订单列表展示结束 -->
 
-		<view class="info-title bei-title order-remark">
+		<!-- 订单备注开始 -->
+		<!-- <view class="info-title bei-title order-remark">
       <view>订单备注</view>
       <image src="../../static/images/arrow-right.png"></image>
-    </view>
+    </view> -->
+		<!-- 订单备注结束 -->
 
-		<!-- 订单备注开始 -->
 		<view class="con-info">
 			<view class="flex-row info-title con-list">
 				<view>商品金额</view>
-				<view>89.7</view>
+				<view>¥89.7</view>
 			</view>
-			<view class="flex-row info-title con-list">
+			<!-- <view class="flex-row info-title con-list">
 				<view>会员折扣</view>
 				<view>7折</view>
 			</view>
+			<view class="flex-row info-title con-list">
+				<view>配送费</view>
+				<view>+6.00</view>
+			</view> -->
 			<view class="flex-row info-title con-list">
 				<view>促销优惠</view>
 				<view>-0.54</view>
 			</view>
 			<view class="total">
-				<text class="info-title">合计：</text>
-				<text class="price">￥62.6</text>
+				<view>合计:</view>
+				<view class="price"><text>￥</text>62.6</view>
 			</view>
 		</view>
-		<!-- 订单备注结束 -->
 
 		<!-- 订单详情开始 -->
 			<view class="info">
@@ -98,7 +102,7 @@
 				<text class="info-subtitle">预支付</text>
 				<text class="jiage">￥3.15</text>
 			</view>
-			<view class="toClear">去支付</view>
+			<view class="toClear" @click="goOrderPay">去支付</view>
 		</view>
 		<!-- 底部操作栏结束 -->
 	</view>
@@ -113,12 +117,19 @@
 			}
 		},
 		methods: {
-			
+			goOrderPay() {
+        uni.navigateTo({
+          url: '/pages/orderPay/orderPay'
+        })
+      }
 		}
 	}
 </script>
 
 <style lang="less" scoped>
+.container {
+  padding-bottom: 130rpx;
+}
 // 订单备注
 .order-remark {
   display: flex;
@@ -233,7 +244,8 @@
   background:rgba(255,255,255,1);
   border-radius:10rpx;
   margin:0 auto;
-  margin-top: 90rpx
+  margin-top: 90rpx;
+  margin-bottom: 20rpx;
 }
 .list-right{
   width: 580rpx;
@@ -260,27 +272,41 @@
   padding-left: 30rpx;
   box-sizing: border-box
 }
+
 .con-info{
   width:710rpx;
-  height:360rpx;
   background:rgba(255,255,255,1);
   border-radius:10rpx;
-  margin: 0 auto;
-  padding: 32rpx 30rpx;
+	margin: 20rpx auto 0;
+	padding: 0 30rpx;
   box-sizing: border-box;
 }
+
 .con-list{
-  padding-bottom: 40rpx
+	height: 88rpx;
+	line-height: 88rpx;
+	border-bottom: 1rpx solid #F3F3F3;
 }
-.total{
-  float: right
+.total {
+	height: 88rpx;
+	line-height: 88rpx;
+	text-align: right;
+	font-family: Microsoft YaHei;
+	font-weight: bold;
+	> view {
+		display: inline-block;
+		font-size: 26rpx;
+		color: #333;
+	}
+	.price {
+		font-size: 36rpx;
+		color: #FF4543;
+		> text {
+			font-size: 26rpx;
+		}
+	}
 }
-.price{
-  font-size:32rpx;
-  font-family:Microsoft YaHei;
-  font-weight:bold;
-  color:#FF4543;
-}
+
 .info{
   width:710rpx;
   height:340rpx;
@@ -291,10 +317,7 @@
   padding: 34rpx 32rpx;
   box-sizing: border-box;
 }
-.geduan{
-  background:rgba(242,242,242,1);
-  height: 174rpx
-}
+
 .info view{
   margin-bottom: 20rpx;
   font-size:26rpx;

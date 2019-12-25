@@ -1,16 +1,16 @@
 {
 	"pages": [{
+		"path": "pages/index/index",
+		"style": {
+			"navigationBarTitleText": "蛙农场"
+		}
+	}, {
 		"path": "pages/loginRegister/loginRegister",
 		"style": {}
 	}, {
 		"path": "pages/login/login",
 		"style": {
 			"navigationBarBackgroundColor": "#fff"
-		}
-	}, {
-		"path": "pages/index/index",
-		"style": {
-			"navigationBarTitleText": "蛙农场"
 		}
 	}, {
 		"path": "pages/goods/goods",
@@ -307,8 +307,7 @@
 		}
 	}, {
 		"path": "pages/indexNews/indexNews",
-		"style": {
-		}
+		"style": {}
 	}, {
 		"path": "pages/indexNewsDetails/indexNewsDetails",
 		"style": {
@@ -319,6 +318,9 @@
 		"style": {
 			"navigationBarTitleText": "会员管理规则"
 		}
+	}, {
+		"path": "pages/vipMemberAgreement/vipMemberAgreement",
+		"style": {}
 	}],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",

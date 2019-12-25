@@ -265,12 +265,17 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 var _default =
 {
   data: function data() {
-    return {};
+    return {
+      val: '' };
 
-
+  },
+  onLoad: function onLoad(options) {
+    this.val = options.val;
+    console.log(options.val);
   },
   methods: {
     //点击跳转地址管理
@@ -280,11 +285,11 @@ var _default =
 
     },
     //点击填写备注
-    toGreenOrderDetailBeizhu: function toGreenOrderDetailBeizhu() {
-      uni.navigateTo({
-        url: '/pages/greenOrderDetailBeizhu/greenOrderDetailBeizhu' });
-
-    },
+    // toGreenOrderDetailBeizhu() {
+    // 	uni.navigateTo({
+    // 		url: '/pages/greenOrderDetailBeizhu/greenOrderDetailBeizhu'
+    // 	})
+    // },
     // 去支付页面
     goOrderPay: function goOrderPay() {
       uni.navigateTo({

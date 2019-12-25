@@ -58,6 +58,7 @@ export default {
     },
     // 关闭弹框
     closeBasePopup() {
+      uni.clearStorageSync()
       this.$refs.popup.close()
     }
   }

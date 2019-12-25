@@ -160,18 +160,17 @@ var _default =
     // 点击上传图片
     upload: function upload() {var _this = this;
       if (this.pictureList.length < 9) {
-        return uni.chooseImage({
-          count: 9 - this.pictureList.length,
+        uni.chooseImage({
+          count: 9,
           success: function success(res) {
-            _this.pictureList.push(res.tempFilePaths[0]);
+            // this.pictureList.push(res.tempFilePaths[0])
+            console.log(res.tempFilePaths.length);
+            for (var i = 0; i < res.tempFilePaths.length; i++) {
+              _this.pictureList.push(res.tempFilePaths[i]);
+            }
           } });
 
       }
-      return uni.showToast({
-        title: '最多选择九张图片',
-        duration: 2000,
-        icon: 'none' });
-
     },
     // 点击预览图片
     preview: function preview(index) {

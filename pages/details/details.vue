@@ -235,10 +235,44 @@
 				secondCates: []
 			}
 		},
+		onLoad() {
+			// 获取左边的商品类别接口
+			this.getClass()
+			// 获取分类商品信息数据接口
+			this.getMarket1()
+		},
 		mounted() {
 			this.secondCates = this.list[this.num].children
 		},
 		methods: {
+			// 获取商品类别数据接口
+			getClass() {
+				uni.request({
+					url: 'http://192.168.1.155:8086/WNC/com/getClass',
+					data: {},
+					header: {
+						'Content-Type': "application/x-www-form-urlencoded; charset=utf-8"
+					},
+					succeee(res) {
+						console.log(res)
+					}
+				})
+			},
+			// 获取分类商品信息数据接口
+			getMarket1() {
+				uni.request({
+					url: 'http://192.168.1.155:8086/WNC/com/getMarket1',
+					data: {
+						id: 1
+					},
+					header: {
+						'Content-Type': "application/x-www-form-urlencoded; charset=utf-8"
+					},
+					succeee(res) {
+						console.log(res)
+					}
+				})
+			},
 			// 点击左边 重新加载数据
 			tabTap(id) {
 				this.isActive = id

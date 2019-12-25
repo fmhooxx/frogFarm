@@ -3,14 +3,14 @@
   <view class="container">
     <!-- 备注填写输入框开始 -->
     <view class="textarea">
-      <textarea focus style="height: 3em" />
+      <textarea focus placeholder="请输入您的备注内容" style="height: 3em" :value="val" />
     </view>
     <!-- 备注填写输入框结束 -->
 
     <!-- 历史记录开始 -->
     <view class="history">
-      <view class="history-list">请不要敲门，到了后打电话</view>
-      <view class="history-list">如果没人就放门口</view>
+      <view class="history-list" @click="fillOne">{{one}}</view>
+      <view class="history-list" @click="fillTwo">{{two}}</view>
     </view>
     <!-- 历史记录结束 -->
 
@@ -21,14 +21,29 @@
 <script>
 export default {
   data() {
-    return {};
+    return {
+      // 备注1
+      one: "请不要敲门，到了后打电话",
+      // 备注2
+      two: "如果没人就放门口",
+      // textarea 里面输入的内容
+      val: ""
+    };
   },
   methods: {
     // 去确认订单页面
     goConfirmOrder() {
       uni.navigateTo({
-        url: "/pages/confirmOrder/confirmOrder"
+        url: "/pages/confirmOrder/confirmOrder?val=" + this.val
       });
+    },
+    fillOne() {
+      this.val = "";
+      this.val = this.one;
+    },
+    fillTwo() {
+      this.val = "";
+      this.val = this.two;
     }
   }
 };
@@ -39,6 +54,8 @@ export default {
   height: 290rpx;
   background: rgba(255, 255, 255, 1);
   border: 1rpx solid rgba(238, 238, 238, 1);
+  padding: 30rpx;
+  box-sizing: border-box;
 }
 // .history{
 

@@ -2,7 +2,8 @@
 	<view class="container">
 		<!-- 轮播图开始 -->
 		<view class="banner">
-			<swiper :indicator-dots="indicatorDots" indicator-active-color="#48BC5B" :indicator-color="indicatorColor" :autoplay="autoplay" :interval="interval" :duration="duration" :circular="circular">
+			<swiper :indicator-dots="indicatorDots" indicator-active-color="#48BC5B" :indicator-color="indicatorColor" :autoplay="autoplay"
+			 :interval="interval" :duration="duration" :circular="circular">
 				<block v-for="(item, index) in imgUrls" :key="index">
 					<swiper-item>
 						<image :src="item" class="slide-image" mode="widthFix" bindtap="toPath" :data-id="item.id" />
@@ -471,7 +472,7 @@
 			};
 		},
 		onLoad() {
-			// this.getList()
+			this.getList()
 		},
 		methods: {
 			// 去绿色健康页面
@@ -492,9 +493,19 @@
 					url: '/pages/indexNews/indexNews'
 				})
 			},
-			// getList() {
-			// 	this.$http.get('/wanongchang/banner/getBanner').then(res => {console.log(res)})
-			// },
+			getList() {
+				// this.$http.get('/wanongchang/banner/getBanner').then(res => {console.log(res)})
+				// uni.request({
+				// 	url: "http://192.168.1.166:8086/WNC/banner/getBanner",
+				// 	data: {},
+				// 	header: {
+				// 		"Content-Type": "application/x-www-form-urlencoded; charset=utf-8"
+				// 	},
+				// 	success: res => {
+				// 		console.log(res)
+				// 	}
+				// });
+			},
 			// 去正在开发页面
 			goExpect() {
 				uni.navigateTo({
@@ -524,205 +535,233 @@
 </script>
 
 <style>
-page {
-	background-color: #fff;
-}
+	page {
+		background-color: #fff;
+	}
 </style>
 
 <style lang="less" scoped>
-// 消息以及定位开始
-.news {
-	width: 100%;
-	height: 88rpx;
-	line-height: 88rpx;
-	position: absolute;
-	top: 0;
-	background-color: transparent;
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	// 定位
-	.location {
-		margin-left: 20rpx;
+	// 消息以及定位开始
+	.news {
+		width: 100%;
+		height: 88rpx;
+		line-height: 88rpx;
+		position: absolute;
+		top: 0;
+		background-color: transparent;
 		display: flex;
+		justify-content: space-between;
 		align-items: center;
-		width: 23%;
-		height: 60rpx;
-		background-color: rgba(0, 0, 0, .3);
-		border-radius: 44rpx;
-		// 定位图片
-		.location-img {
-			margin-left: 8rpx;
-			margin-right: 10rpx;
-			width: 24rpx;
-			height: 28rpx;
-			vertical-align: middle;
-		}
-		// 地区内容
-		.location-box {
-			// width: 100%;
-			min-width: 100rpx;
-			font-size: 32rpx;
-			font-family: Source Han Sans CN;
-			font-weight: 400;
-			color: #fff;
-			// 首先显示在页面上的地区信息
-			.array-text {
-				margin-right: 8rpx;
+
+		// 定位
+		.location {
+			margin-left: 20rpx;
+			display: flex;
+			align-items: center;
+			width: 23%;
+			height: 60rpx;
+			background-color: rgba(0, 0, 0, .3);
+			border-radius: 44rpx;
+
+			// 定位图片
+			.location-img {
+				margin-left: 8rpx;
+				margin-right: 10rpx;
+				width: 24rpx;
+				height: 28rpx;
+				vertical-align: middle;
 			}
-			// 需要渲染的真正的省市区区域
-			.box-list {
-				display: flex;
-				> view {
+
+			// 地区内容
+			.location-box {
+				// width: 100%;
+				min-width: 100rpx;
+				font-size: 32rpx;
+				font-family: Source Han Sans CN;
+				font-weight: 400;
+				color: #fff;
+
+				// 首先显示在页面上的地区信息
+				.array-text {
 					margin-right: 8rpx;
 				}
+
+				// 需要渲染的真正的省市区区域
+				.box-list {
+					display: flex;
+
+					>view {
+						margin-right: 8rpx;
+					}
+				}
+			}
+
+			// 下拉小箭头
+			.drop-down-img {
+				width: 18rpx;
+				height: 10rpx;
 			}
 		}
-		// 下拉小箭头
-		.drop-down-img {
-			width: 18rpx;
-			height: 10rpx;
-		}
-	}
-	// 信息
-	.location-info {
-		margin-right: 30rpx;
-		image {
-			width: 44rpx;
-			height: 44rpx;
-			vertical-align: middle;
-		}
-	}
-}
-// 消息以及定位结束
 
-// 绿色健康数据区域开始
-.healthy {
-	text-align: left;
-	font-family: Microsoft YaHei;
-	font-weight: 400;
-	
-	.healthy-list {
-		display: flex;
-		margin-top: 20rpx;
-		border-bottom: 1rpx solid #F0F0F0;
-		// 左边
-		.list-left {
+		// 信息
+		.location-info {
+			margin-right: 30rpx;
+
 			image {
-				width: 200rpx;
-				height: 200rpx;
-				margin-right: 24rpx;
-			}
-		}
-		// 右边
-		.list-right {
-			width: 100%;
-			// 头部区域
-			.right-title {
-				font-size: 32rpx;
-				font-weight: bold;
-				color:rgba(51,51,51,1);
-			}
-			// 次数
-			.right-num {
-				font-size: 26rpx;
-				color: #666;
-				margin: 16rpx 0 20rpx 0;
-				.number {
-					margin-right: 16rpx;
-				}
-			}
-			// 搭配
-			.collocation {
-				font-size: 26rpx;
-				color: #666;
-				margin-bottom: 40rpx;
-			}
-			// 价格以及会员
-			.price-member {
-				display: flex;
-				justify-content: space-between;
-				align-items: center;
-				width: 100%;
-				margin-bottom: 30rpx;
-				.price-box {
-					display: flex;
-					align-items: center;
-					// 最新价格
-					.new-price {
-						font-size: 32rpx;
-						color: #FF3B39;
-						font-weight: bold;
-						// 人民币符号
-						// 金额
-					}
-					// 划去的价格
-					.delimit {
-						text-decoration: line-through;
-						font-size: 22rpx;
-						color: #666;
-						font-weight: bold;
-						margin-left: 20rpx;
-					}
-				}
-				.list-footer {
-					display: flex;
-					// 赠送会员
-					.give {
-						width: 120rpx;
-						height: 48rpx;
-						line-height: 48rpx;
-						border-radius: 10rpx;
-						border: 1rpx solid rgba(39,149,36,1);
-						text-align: center;
-						font-size: 26rpx;
-						color: #279524;
-						margin-right: 15rpx;
-					}
-					// 购买
-					.purchase {
-						width: 80rpx;
-						height: 48rpx;
-						line-height: 48rpx;
-						text-align: center;
-						border-radius: 10rpx;
-						background-color: #279524;
-						font-size: 26rpx;
-						color: #fff;
-					}
-				}
+				width: 44rpx;
+				height: 44rpx;
+				vertical-align: middle;
 			}
 		}
 	}
-}
-// 绿色健康数据区域结束
 
-// index-banner 区域开始
-.index-banner {
-	margin: 30rpx 0;
-	image {
-		height: 180rpx;
-		width: 100%;
+	// 消息以及定位结束
+
+	// 绿色健康数据区域开始
+	.healthy {
+		text-align: left;
+		font-family: Microsoft YaHei;
+		font-weight: 400;
+
+		.healthy-list {
+			display: flex;
+			margin-top: 20rpx;
+			border-bottom: 1rpx solid #F0F0F0;
+
+			// 左边
+			.list-left {
+				image {
+					width: 200rpx;
+					height: 200rpx;
+					margin-right: 24rpx;
+				}
+			}
+
+			// 右边
+			.list-right {
+				width: 100%;
+
+				// 头部区域
+				.right-title {
+					font-size: 32rpx;
+					font-weight: bold;
+					color: rgba(51, 51, 51, 1);
+				}
+
+				// 次数
+				.right-num {
+					font-size: 26rpx;
+					color: #666;
+					margin: 16rpx 0 20rpx 0;
+
+					.number {
+						margin-right: 16rpx;
+					}
+				}
+
+				// 搭配
+				.collocation {
+					font-size: 26rpx;
+					color: #666;
+					margin-bottom: 40rpx;
+				}
+
+				// 价格以及会员
+				.price-member {
+					display: flex;
+					justify-content: space-between;
+					align-items: center;
+					width: 100%;
+					margin-bottom: 30rpx;
+
+					.price-box {
+						display: flex;
+						align-items: center;
+
+						// 最新价格
+						.new-price {
+							font-size: 32rpx;
+							color: #FF3B39;
+							font-weight: bold;
+							// 人民币符号
+							// 金额
+						}
+
+						// 划去的价格
+						.delimit {
+							text-decoration: line-through;
+							font-size: 22rpx;
+							color: #666;
+							font-weight: bold;
+							margin-left: 20rpx;
+						}
+					}
+
+					.list-footer {
+						display: flex;
+
+						// 赠送会员
+						.give {
+							width: 120rpx;
+							height: 48rpx;
+							line-height: 48rpx;
+							border-radius: 10rpx;
+							border: 1rpx solid rgba(39, 149, 36, 1);
+							text-align: center;
+							font-size: 26rpx;
+							color: #279524;
+							margin-right: 15rpx;
+						}
+
+						// 购买
+						.purchase {
+							width: 80rpx;
+							height: 48rpx;
+							line-height: 48rpx;
+							text-align: center;
+							border-radius: 10rpx;
+							background-color: #279524;
+							font-size: 26rpx;
+							color: #fff;
+						}
+					}
+				}
+			}
+		}
 	}
-}
-// index-banner 区域结束
-// 查看更多
-.footer-end {
-	height: 50rpx;
-	line-height: 50rpx;
-	font-size: 26rpx;
-	font-family:Microsoft YaHei;
-	font-weight:400;
-	color:rgba(102,102,102,1);
-	border-bottom: 1rpx solid #F0F0F0;
-	// margin-bottom: 44rpx;
-	image {
-		width: 14rpx;
-		height: 24rpx;
-		vertical-align: middle;
-		margin-left: 74rpx;
+
+	// 绿色健康数据区域结束
+
+	// index-banner 区域开始
+	.index-banner {
+		margin: 30rpx 0;
+
+		image {
+			height: 180rpx;
+			width: 100%;
+		}
 	}
-}
+
+	// index-banner 区域结束
+	// 查看更多
+	.footer-end {
+		height: 50rpx;
+		line-height: 50rpx;
+		font-size: 26rpx;
+		font-family: Microsoft YaHei;
+		font-weight: 400;
+		color: rgba(102, 102, 102, 1);
+		border-bottom: 1rpx solid #F0F0F0;
+
+		// margin-bottom: 44rpx;
+		image {
+			width: 14rpx;
+			height: 24rpx;
+			vertical-align: middle;
+			margin-left: 74rpx;
+		}
+	}
+
 	.top {
 		position: absolute;
 		top: 0;
@@ -789,6 +828,7 @@ page {
 		flex-direction: column;
 		align-items: center;
 	}
+
 	.class image {
 		width: 85rpx;
 		height: 85rpx;
@@ -815,6 +855,7 @@ page {
 		color: #555;
 		margin-top: 23rpx;
 	}
+
 	.block {
 		padding: 0 25rpx;
 		text-align: center;
@@ -825,7 +866,7 @@ page {
 		position: relative;
 		margin-top: 30rpx;
 	}
-	
+
 	.green-healthy {
 		left: 288rpx !important;
 	}
@@ -839,7 +880,7 @@ page {
 		font-size: 28rpx;
 		font-family: Source Han Sans CN;
 		font-weight: 400;
-		color:rgba(255,255,255,1);
+		color: rgba(255, 255, 255, 1);
 		position: absolute;
 		top: 44rpx;
 		left: 304rpx;
@@ -869,43 +910,53 @@ page {
 			height: 180rpx;
 			width: 100%;
 		}
+
 		.business {
 			margin: 34rpx 0 34rpx 38rpx;
 			font-size: 40rpx;
 			font-weight: 500;
 		}
+
 		.footer {
 			display: flex;
 			margin-top: 40rpx;
+
 			.left {
 				margin: 0 22rpx;
+
 				image {
 					height: 170rpx;
 					width: 180rpx;
 				}
 			}
+
 			.right {
 				width: 70%;
 				font-size: 24rpx;
 				color: #666;
+
 				.titles {
 					color: #333;
 					font-size: 32rpx;
 					font-weight: 600;
 				}
+
 				.center {
 					margin: 14rpx 0;
 				}
+
 				.parity {
 					width: 120rpx;
 					height: 36rpx;
 					line-height: 36rpx;
 					text-align: center;
-					border: 2rpx solid rgba(239,239,239,1);
+					border: 2rpx solid rgba(239, 239, 239, 1);
 					border-radius: 19rpx 18rpx 18rpx 0rpx;
 				}
+
 				.full-reduction {
 					margin: 18rpx 0;
+
 					.full {
 						display: inline-block;
 						width: 24rpx;
@@ -920,6 +971,7 @@ page {
 						margin-right: 10rpx;
 					}
 				}
+
 				.discount {
 					.fracture {
 						display: inline-block;
@@ -936,10 +988,12 @@ page {
 				}
 			}
 		}
+
 		.info {
 			.scroll-content {
 				display: flex;
 				white-space: nowrap;
+
 				.info-box {
 					margin-right: 16rpx;
 					padding: 0 10rpx;
@@ -949,22 +1003,26 @@ page {
 					margin-top: 30rpx;
 					border: 1rpx solid rgba(241, 241, 241, .6);
 					display: inline-block;
-					background:rgba(255,255,255,1);
+					background: rgba(255, 255, 255, 1);
 					border-radius: 10rpx;
+
 					.info-img {
 						width: 180rpx;
 						height: 180rpx;
 					}
+
 					.weight {
 						font-size: 26rpx;
 						color: #555;
 						margin-bottom: 16rpx;
 					}
+
 					.num {
 						color: #999;
 						font-size: 20rpx;
 						margin-bottom: 19rpx;
 					}
+
 					.price {
 						.new {
 							font-size: 24rpx;

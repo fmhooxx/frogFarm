@@ -52,8 +52,127 @@
 				},
 				{
 					"id": -1,
-					"name": "pages/walletChoiceBankCard/walletChoiceBankCard",
-					"pathName": "pages/walletChoiceBankCard/walletChoiceBankCard",
+					"name": "pages/confirmOrder/confirmOrder",
+					"pathName": "pages/confirmOrder/confirmOrder",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/mineFeedback/mineFeedback",
+					"pathName": "pages/mineFeedback/mineFeedback",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/greenStayPayment/greenStayPayment",
+					"pathName": "pages/greenStayPayment/greenStayPayment",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/greenOrderList/greenOrderList",
+					"pathName": "pages/greenOrderList/greenOrderList",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/greenOrderDetails/greenOrderDetails",
+					"pathName": "pages/greenOrderDetails/greenOrderDetails",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/vipCard/vipCard",
+					"pathName": "pages/vipCard/vipCard",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/vipDefaultTaoCan/vipDefaultTaoCan",
+					"pathName": "pages/vipDefaultTaoCan/vipDefaultTaoCan",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/greenHealth/greenHealth",
+					"pathName": "pages/greenHealth/greenHealth",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/greenHealth/greenHealth",
+					"pathName": "pages/greenHealth/greenHealth",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/details/details",
+					"pathName": "pages/details/details",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/goodsRelease/goodsRelease",
+					"pathName": "pages/goodsRelease/goodsRelease",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/mine/mine",
+					"pathName": "pages/mine/mine",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/mineUserInformation/mineUserInformation",
+					"pathName": "pages/mineUserInformation/mineUserInformation",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/mine/mine",
+					"pathName": "pages/mine/mine",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/vipGoodsDetailsInfo/vipGoodsDetailsInfo",
+					"pathName": "pages/vipGoodsDetailsInfo/vipGoodsDetailsInfo",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/mineVerificationCode/mineVerificationCode",
+					"pathName": "pages/mineVerificationCode/mineVerificationCode",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/mineUserInformation/mineUserInformation",
+					"pathName": "pages/mineUserInformation/mineUserInformation",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/mineSetUp/mineSetUp",
+					"pathName": "pages/mineSetUp/mineSetUp",
 					"scene": null
 				}
 			]

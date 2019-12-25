@@ -26,7 +26,7 @@
   color: #666666;
 }
 .order .list .list-item.data-v-37fd6c87 {
-  padding: 30rpx 28rpx 30rpx 28rpx;
+  padding: 30rpx 28rpx 0 28rpx;
   height: 532rpx;
   background: #ffffff;
   font-size: 30rpx;

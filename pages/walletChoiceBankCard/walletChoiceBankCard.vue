@@ -1,18 +1,20 @@
 <template>
   <!-- 选择银行卡页面 ming -->
   <view>
-    <view class="card" v-for="(item, index) in list" :key="index">
-      <view class="left">
-        <radio-group @change=checkboxChange>
-          <radio :checked="item.checked" :value="item.value" color="#48BC5B"></radio>
-        </radio-group>
-        <view class="content">
-          <view>{{item.type}}</view>
-          <view class="num">{{item.card_num}}</view>
-        </view>
-      </view>
-      <view class="right" @click="del(index)">删除</view>
-    </view>
+		<view class="card">
+			<radio-group @change="radioChange">
+				<label class="list" v-for="(item, index) in list" :key="index">
+					<view class="left">
+						<radio :value="item.value" checked="true"/>
+						<view class="content">
+							<view>{{item.uname}}</view>
+							<view class="num">{{item.card_num}}</view>
+						</view>
+					</view>
+					<view class="right" @click="del(index)">删除</view>
+				</label>
+			</radio-group>
+		</view>
 		<!-- 添加银行卡区域 -->
 		<view class="footer">
 			<view class="withdrawals-account">
@@ -37,28 +39,46 @@ export default {
         {
 					id: 0,
 					value: 0,
-          type: "农业银行",
+          uname: "农业银行",
 					card_num: 12312315,
-					checked: true
+					// checked: true
         },
         {
 					id: 1,
 					value: 1,
-          type: "邮政储蓄",
+          uname: "邮政储蓄",
 					card_num: 564864656,
-					checked: false
+					// checked: false
         },
         {
 					id: 2,
 					value: 2,
-          type: "农业银行",
+          uname: "农业银行",
 					card_num: 897988989,
-					checked: false
+					// checked: false
         }
-      ]
+			],
+			current: 0
     };
   },
+  onLoad() {
+    this.handle()
+  },
   methods: {
+    handle() {
+			uni.request({
+				url: 'http://192.168.1.155:8086/WNC/wallet/getRecom',
+				data: {
+					user_id: 1
+				},
+				header: {
+					'Content-Type': "application/x-www-form-urlencoded; charset=utf-8"
+				},
+				succeee(res) {
+					console.log(res)
+				}
+			})
+    },
 		// 点击删除
     del(index) {
       uni.showModal({
@@ -78,58 +98,60 @@ export default {
         url: '/pages/walletBindingCard/walletBindingCard'
       })
 		},
-		checkboxChange(e) {
-		for (let i = 0; i < this.list.length; i++) {
-			this.list[i].checked = false			
-		}
-		console.log(e.detail.value)
-		this.list[e.detail.value].checked = true
+		radioChange(e) {
+			console.log(e.detail.value)
+			// this.current = e.detail.value
+		// for (let i = 0; i < this.list.length; i++) {
+		// 	this.list[i].checked = false			
+		// }
+		// 	this.list[e.detail.value].checked = true
 		}
   }
 };
 </script>
 
 <style lang="less" scoped>
-.card {
-  margin-top: 20rpx;
-  height: 120rpx;
-  width: 100%;
-  box-sizing: border-box;
-  padding: 0 30rpx;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: #fff;
-  .left {
-    display: flex;
-    align-items: center;
-    view {
-      font-size: 32rpx;
-      font-family: Microsoft YaHei;
-      font-weight: 400;
-      color: #333;
-    }
-    .content {
-      margin-left: 30rpx;
-      .num {
-        color: #666;
-        margin-top: 10rpx;
-      }
-    }
-  }
+.list {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	background-color: #fff;
+	margin-top: 20rpx;
+	height: 130rpx;
+	padding: 0 30rpx;
+	box-sizing: border-box;
+	.left {
+		display: flex;
+		align-items: center;
+		.content {
+			margin-left: 20rpx;
+			> view {
+				font-size: 32rpx;
+				font-family: Microsoft YaHei;
+				font-weight: 400;
+				color: #333;
+			}
+			.num {
+				color: #666;
+				margin-top: 10rpx;
+			}
+		}
+	}
   .right {
     width: 100rpx;
     height: 60rpx;
     line-height: 60rpx;
     text-align: center;
-    font-size: 32rpx;
+    font-size: 28rpx;
     font-family: Microsoft YaHei;
     font-weight: 400;
     color: #333;
-    border-radius: 50rpx;
+		border-radius: 60rpx;
     border: 1rpx solid #f1f1f1;
+    // border: 1rpx solid red;
 	}
 }
+// 添加银行卡
 .withdrawals-account {
 		position: relative;
 		margin: 20rpx auto;

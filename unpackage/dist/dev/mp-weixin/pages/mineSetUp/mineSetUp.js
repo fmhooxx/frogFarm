@@ -182,6 +182,7 @@ var _default =
     },
     // 关闭弹框
     closeBasePopup: function closeBasePopup() {
+      uni.clearStorageSync();
       this.$refs.popup.close();
     } } };exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))

@@ -228,7 +228,7 @@
 		<view class="green-shop">绿色单品商品</view>
 		<!-- 绿色单品商品区域 -->
 		<view class="green-list">
-			<view class="list-item" @click="toGoodsDetailsInfo">
+			<view class="list-item" @click="getDetails">
 				<!-- 图片区域 -->
 				<image src="/static/images/xiaobaixia.jpg"></image>
 				<!-- 中间内容区域 -->
@@ -257,7 +257,7 @@
 					</view>
 				</view>
 			</view>
-			<view class="list-item" @click="toGoodsDetailsInfo">
+			<view class="list-item" @click="getDetails">
 				<!-- 图片区域 -->
 				<image src="/static/images/xiaobaixia.jpg"></image>
 				<!-- 中间内容区域 -->
@@ -286,7 +286,7 @@
 					</view>
 				</view>
 			</view>
-			<view class="list-item" @click="toGoodsDetailsInfo">
+			<view class="list-item" @click="getDetails">
 				<!-- 图片区域 -->
 				<image src="/static/images/xiaobaixia.jpg"></image>
 				<!-- 中间内容区域 -->
@@ -315,7 +315,7 @@
 					</view>
 				</view>
 			</view>
-			<view class="list-item" @click="toGoodsDetailsInfo">
+			<view class="list-item" @click="getDetails">
 				<!-- 图片区域 -->
 				<image src="/static/images/xiaobaixia.jpg"></image>
 				<!-- 中间内容区域 -->
@@ -357,16 +357,45 @@
 export default {
   data() {
     return {};
-  },
+	},
+	onLoad() {
+		// 获取首页置顶的商品信息
+		this.getMarket()
+	},
   methods: {
+		// 获取首页置顶的商品信息
+		getMarket() {
+			uni.request({
+				url: 'http://192.168.1.155:8086/WNC/com/getMarket',
+				data: {},
+				header: {
+					'Content-Type': "application/x-www-form-urlencoded; charset=utf-8"
+				},
+				succeee(res) {
+					console.log(res)
+				}
+			})
+		},
     //点击会员管理
     toVipManage() {
       uni.navigateTo({
         url: "/pages/vipManage/vipManage"
       });
     },
-    //点击商品图片跳转到商品详情页
-    toGoodsDetailsInfo() {
+    // 单品商品详情页接口
+    getDetails() {
+			uni.request({
+				url: 'http://192.168.1.155:8086/WNC/com/getDetails',
+				data: {
+					com_id: 1
+				},
+				header: {
+					'Content-Type': "application/x-www-form-urlencoded; charset=utf-8"
+				},
+				succeee(res) {
+					console.log(res)
+				}
+			})
       uni.navigateTo({
         url: "/pages/goodsDetailsInfo/goodsDetailsInfo"
       });

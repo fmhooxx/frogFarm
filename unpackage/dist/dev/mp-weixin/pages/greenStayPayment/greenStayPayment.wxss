@@ -1,3 +1,6 @@
+.container.data-v-2e576db2 {
+  padding-bottom: 130rpx;
+}
 .order-remark.data-v-2e576db2 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -115,6 +118,7 @@
   border-radius: 10rpx;
   margin: 0 auto;
   margin-top: 90rpx;
+  margin-bottom: 20rpx;
 }
 .list-right.data-v-2e576db2 {
   width: 580rpx;
@@ -142,24 +146,35 @@
 }
 .con-info.data-v-2e576db2 {
   width: 710rpx;
-  height: 360rpx;
   background: #ffffff;
   border-radius: 10rpx;
-  margin: 0 auto;
-  padding: 32rpx 30rpx;
+  margin: 20rpx auto 0;
+  padding: 0 30rpx;
   box-sizing: border-box;
 }
 .con-list.data-v-2e576db2 {
-  padding-bottom: 40rpx;
+  height: 88rpx;
+  line-height: 88rpx;
+  border-bottom: 1rpx solid #F3F3F3;
 }
 .total.data-v-2e576db2 {
-  float: right;
-}
-.price.data-v-2e576db2 {
-  font-size: 32rpx;
+  height: 88rpx;
+  line-height: 88rpx;
+  text-align: right;
   font-family: Microsoft YaHei;
   font-weight: bold;
+}
+.total > view.data-v-2e576db2 {
+  display: inline-block;
+  font-size: 26rpx;
+  color: #333;
+}
+.total .price.data-v-2e576db2 {
+  font-size: 36rpx;
   color: #FF4543;
+}
+.total .price > text.data-v-2e576db2 {
+  font-size: 26rpx;
 }
 .info.data-v-2e576db2 {
   width: 710rpx;
@@ -170,10 +185,6 @@
   margin-top: 20rpx;
   padding: 34rpx 32rpx;
   box-sizing: border-box;
-}
-.geduan.data-v-2e576db2 {
-  background: #f2f2f2;
-  height: 174rpx;
 }
 .info view.data-v-2e576db2 {
   margin-bottom: 20rpx;

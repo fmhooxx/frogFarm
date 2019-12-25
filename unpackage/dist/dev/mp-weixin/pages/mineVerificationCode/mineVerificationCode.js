@@ -166,39 +166,48 @@ var _default =
       // 点击发送的内容
       sendVal: "点击发送",
       // 倒计时内容
-      time: 60,
+      num: 6,
       // 控制剩余时间的显示与隐藏
       isTime: false,
       // 控制点击发送的显示与隐藏
       isStart: true,
       // 返回的验证码
-      ObtainCode: "" };
+      ObtainCode: "",
+      timer: "" };
 
   },
   methods: {
     // 发送验证码
     getUpdatePhone: function getUpdatePhone() {var _this = this;
-      uni.request({
-        url: "http://192.168.1.143:8086/WNC/user/generatePhoneCode",
-        data: {
-          phone: this.telVal },
+      // 当手机号码输入框不为 0 的时候
+      if (this.telVal == "") {
+        // 显示点击发送 隐藏剩余时间
+        this.isTime = !this.isTime;
+        this.isStart = !this.isStart;
+        // 启动定时器
+        this.countDown();
+        uni.request({
+          url: "http://192.168.1.143:8086/WNC/user/generatePhoneCode",
+          data: {
+            phone: this.telVal },
 
-        header: {
-          "Content-Type": "application/x-www-form-urlencoded; charset=utf-8" },
+          header: {
+            "Content-Type": "application/x-www-form-urlencoded; charset=utf-8" },
 
-        success: function success(res) {
-          _this.ObtainCode = res.data;
-          // console.log(res);
-          // 如果res.data 没有收到 需要需要一个弹出框提醒用户
-          if (res === "") {
-            uni.showToast({
-              title: "请输入正确的验证码",
-              duration: 2000,
-              icon: "none" });
+          success: function success(res) {
+            _this.ObtainCode = res.data;
+            // console.log(res);
+            // 如果res.data 没有收到 需要需要一个弹出框提醒用户
+            if (res === "") {
+              uni.showToast({
+                title: "请输入正确的验证码",
+                duration: 2000,
+                icon: "none" });
 
-          }
-        } });
+            }
+          } });
 
+      }
     },
     // 点击提交按钮
     submitVal: function submitVal() {
@@ -241,9 +250,31 @@ var _default =
 
       }
     },
-    start: function start() {
-      this.isTime = !this.isTime;
-      this.isStart = !this.isStart;
+    // start() {
+    //   this.isTime = !this.isTime;
+    //   this.isStart = !this.isStart;
+    // }
+    // 倒计时效果
+    countDown: function countDown() {var _this2 = this;
+      // 获取倒计时初始值
+      var time = this.num;
+      // 未定时器命名
+      this.timer = setInterval(function () {
+        // 每隔一秒 num 就减一，实现同步
+        time--;
+        // 然后把 num 存进 data，好让用户知道时间在倒计着
+        _this2.num = time;
+        // 在倒计时还未到0时，这中间可以做其他的事情，按项目需求来
+        if (time === 0) {
+          // 这里特别要注意，计时器是始终一直在走的，如果你的时间为0，那么就要关掉定时器！不然相当耗性能
+          // 因为timer是存在data里面的，所以在关掉时，也要在data里取出后再关闭
+          clearInterval(_this2.timer);
+          // 当时间为 0 的时候 隐藏定时的内容 显示发送的内容 并且为定时器重新赋值
+          _this2.isStart = !_this2.isStart,
+          _this2.isTime = !_this2.isTime,
+          _this2.num = 6;
+        }
+      }, 1000);
     } },
 
   computed: {

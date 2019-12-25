@@ -153,6 +153,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 var _default =
 {
   data: function data() {
@@ -161,28 +163,46 @@ var _default =
       {
         id: 0,
         value: 0,
-        type: "农业银行",
-        card_num: 12312315,
-        checked: true },
-
+        uname: "农业银行",
+        card_num: 12312315
+        // checked: true
+      },
       {
         id: 1,
         value: 1,
-        type: "邮政储蓄",
-        card_num: 564864656,
-        checked: false },
-
+        uname: "邮政储蓄",
+        card_num: 564864656
+        // checked: false
+      },
       {
         id: 2,
         value: 2,
-        type: "农业银行",
-        card_num: 897988989,
-        checked: false }] };
+        uname: "农业银行",
+        card_num: 897988989
+        // checked: false
+      }],
 
-
+      current: 0 };
 
   },
+  onLoad: function onLoad() {
+    this.handle();
+  },
   methods: {
+    handle: function handle() {
+      uni.request({
+        url: 'http://192.168.1.155:8086/WNC/wallet/getRecom',
+        data: {
+          user_id: 1 },
+
+        header: {
+          'Content-Type': "application/x-www-form-urlencoded; charset=utf-8" },
+
+        succeee: function succeee(res) {
+          console.log(res);
+        } });
+
+    },
     // 点击删除
     del: function del(index) {var _this = this;
       uni.showModal({
@@ -202,12 +222,13 @@ var _default =
         url: '/pages/walletBindingCard/walletBindingCard' });
 
     },
-    checkboxChange: function checkboxChange(e) {
-      for (var i = 0; i < this.list.length; i++) {
-        this.list[i].checked = false;
-      }
+    radioChange: function radioChange(e) {
       console.log(e.detail.value);
-      this.list[e.detail.value].checked = true;
+      // this.current = e.detail.value
+      // for (let i = 0; i < this.list.length; i++) {
+      // 	this.list[i].checked = false			
+      // }
+      // 	this.list[e.detail.value].checked = true
     } } };exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 

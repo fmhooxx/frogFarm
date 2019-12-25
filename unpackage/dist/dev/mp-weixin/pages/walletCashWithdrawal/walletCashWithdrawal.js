@@ -165,7 +165,25 @@ var _default =
       money: '' };
 
   },
+  onLoad: function onLoad() {
+    this.getAcc();
+  },
   methods: {
+    // 获取银行卡信息
+    getAcc: function getAcc() {
+      uni.request({
+        url: 'http://192.168.1.155:8086/WNC/wallet/getAcc',
+        data: {
+          user_id: 1 },
+
+        header: {
+          'Content-Type': "application/x-www-form-urlencoded; charset=utf-8" },
+
+        succeee: function succeee(res) {
+          console.log(res);
+        } });
+
+    },
     // 去绑定银行卡页面
     goWalletBindingCard: function goWalletBindingCard() {
       uni.navigateTo({
@@ -178,6 +196,7 @@ var _default =
         url: '/pages/walletChoiceBankCard/walletChoiceBankCard' });
 
     },
+    // 申请提现接口
     getAccount: function getAccount() {
       uni.request({
         url: 'http://192.168.1.155:8086/WNC/wallet/getAccount',

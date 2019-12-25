@@ -237,6 +237,9 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
 var _default =
 {
   data: function data() {
@@ -268,6 +271,15 @@ var _default =
       uni.navigateTo({
         url: '/pages/vipGoodsDetailsInfo/vipGoodsDetailsInfo' });
 
+    },
+    // 去会员协议页面
+    goVipMemberAgreement: function goVipMemberAgreement() {
+      uni.navigateTo({
+        url: '/pages/vipMemberAgreement/vipMemberAgreement' });
+
+    },
+    checkboxChange: function checkboxChange(e) {
+      console.log(e.detail.value);
     } } };exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 

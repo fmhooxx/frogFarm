@@ -482,15 +482,44 @@ var _default =
   data: function data() {
     return {};
   },
+  onLoad: function onLoad() {
+    // 获取首页置顶的商品信息
+    this.getMarket();
+  },
   methods: {
+    // 获取首页置顶的商品信息
+    getMarket: function getMarket() {
+      uni.request({
+        url: 'http://192.168.1.155:8086/WNC/com/getMarket',
+        data: {},
+        header: {
+          'Content-Type': "application/x-www-form-urlencoded; charset=utf-8" },
+
+        succeee: function succeee(res) {
+          console.log(res);
+        } });
+
+    },
     //点击会员管理
     toVipManage: function toVipManage() {
       uni.navigateTo({
         url: "/pages/vipManage/vipManage" });
 
     },
-    //点击商品图片跳转到商品详情页
-    toGoodsDetailsInfo: function toGoodsDetailsInfo() {
+    // 单品商品详情页接口
+    getDetails: function getDetails() {
+      uni.request({
+        url: 'http://192.168.1.155:8086/WNC/com/getDetails',
+        data: {
+          com_id: 1 },
+
+        header: {
+          'Content-Type': "application/x-www-form-urlencoded; charset=utf-8" },
+
+        succeee: function succeee(res) {
+          console.log(res);
+        } });
+
       uni.navigateTo({
         url: "/pages/goodsDetailsInfo/goodsDetailsInfo" });
 

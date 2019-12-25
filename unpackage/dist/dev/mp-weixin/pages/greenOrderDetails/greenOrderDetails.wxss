@@ -126,9 +126,9 @@
   color: #666666;
   margin: 0 25rpx;
 }
-.footer .code.data-v-598e95d2 {
-  border: 2rpx solid #279524;
-  color: #279524;
+.footer .confirm.data-v-598e95d2 {
+  border: 2rpx solid #279524 !important;
+  color: #279524 !important;
 }
 .box.data-v-598e95d2 {
   width: 560rpx;

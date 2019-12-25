@@ -124,7 +124,7 @@ __webpack_require__.r(__webpack_exports__);
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0; //
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0; //
 //
 //
 //
@@ -361,10 +361,44 @@ var _default =
       secondCates: [] };
 
   },
+  onLoad: function onLoad() {
+    // 获取左边的商品类别接口
+    this.getClass();
+    // 获取分类商品信息数据接口
+    this.getMarket1();
+  },
   mounted: function mounted() {
     this.secondCates = this.list[this.num].children;
   },
   methods: {
+    // 获取商品类别数据接口
+    getClass: function getClass() {
+      uni.request({
+        url: 'http://192.168.1.155:8086/WNC/com/getClass',
+        data: {},
+        header: {
+          'Content-Type': "application/x-www-form-urlencoded; charset=utf-8" },
+
+        succeee: function succeee(res) {
+          console.log(res);
+        } });
+
+    },
+    // 获取分类商品信息数据接口
+    getMarket1: function getMarket1() {
+      uni.request({
+        url: 'http://192.168.1.155:8086/WNC/com/getMarket1',
+        data: {
+          id: 1 },
+
+        header: {
+          'Content-Type': "application/x-www-form-urlencoded; charset=utf-8" },
+
+        succeee: function succeee(res) {
+          console.log(res);
+        } });
+
+    },
     // 点击左边 重新加载数据
     tabTap: function tabTap(id) {
       this.isActive = id;
@@ -374,6 +408,7 @@ var _default =
       this.num = result;
       this.secondCates = this.list[this.num].children;
     } } };exports.default = _default;
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
 

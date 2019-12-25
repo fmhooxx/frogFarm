@@ -143,6 +143,11 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
 var _default =
 {
   data: function data() {
@@ -156,30 +161,56 @@ var _default =
 
   },
   methods: {
+    cardNumBlur: function cardNumBlur() {
+      var regExp = /^([1-9]{1})(\d{15}|\d{18})$/;
+      if (regExp.test(this.cardNum)) {
+        console.log(11);
+      } else {
+        uni.showToast({
+          title: "请输入16位或者19位的银行卡号",
+          duration: 3000,
+          icon: "none" });
+
+      }
+    },
     // 绑定银行卡
     getBank: function getBank() {
-      uni.request({
-        url: "http://192.168.1.155:8086/WNC/wallet/getBank",
-        data: {
-          wallet_id: 1,
-          user_id: 1,
-          // 用户名真实姓名
-          real_name: this.uname,
-          // 银行卡号
-          account: this.cardNum,
-          // 开户行名称
-          acc_type: this.cardName },
+      // 正则表达式 验证银行卡号位数 16 19 验证正确
+      var regExp = /^([1-9]{1})(\d{15}|\d{18})$/;
+      if (
+      this.uname !== "" &&
+      regExp.test(this.cardNum) &&
+      this.cardName !== "")
+      {
+        uni.request({
+          url: "http://192.168.1.155:8086/WNC/wallet/getBank",
+          data: {
+            wallet_id: 1,
+            user_id: 1,
+            // 用户名真实姓名
+            real_name: this.uname,
+            // 银行卡号
+            account: this.cardNum,
+            // 开户行名称
+            acc_type: this.cardName },
 
-        header: {
-          "Content-Type": "application/x-www-form-urlencoded; charset=utf-8" },
+          header: {
+            "Content-Type": "application/x-www-form-urlencoded; charset=utf-8" },
 
-        succeee: function succeee(res) {
-          console.log(res);
-        } });
+          succeee: function succeee(res) {
+            console.log(res);
+          } });
 
-      uni.navigateTo({
-        url: "/pages/walletCashWithdrawal/walletCashWithdrawal" });
+        uni.navigateTo({
+          url: "/pages/walletCashWithdrawal/walletCashWithdrawal" });
 
+      } else {
+        uni.showToast({
+          title: "请您将信息填写完整",
+          duration: 2000,
+          icon: "none" });
+
+      }
     } },
 
   computed: {

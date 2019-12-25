@@ -35,11 +35,11 @@
 						<label class="choice-box">
 								<view class="choice-woman">
 									<text class="choice-text">女</text>
-									<radio color="#279524" />
+									<radio value="2" checked="false" color="#279524" />
 								</view>
 								<view>
 									<text class="choice-text">男</text>
-									<radio color="#279524" />
+									<radio value="1" checked="true" color="#279524" />
 								</view>
 						</label>
 					</radio-group>
@@ -64,7 +64,7 @@
 				<!-- 右边 -->
 				<view class="head-right">
 					<!-- 右边的文字 -->
-					<view class="right-text">1234567890</view>
+					<view class="right-text">{{phone}}</view>
 					<!-- 右箭头图片 -->
 					<image class="right-two" src="../../static/images/arrow-right.png"></image>
 				</view>
@@ -81,10 +81,15 @@
 			return {
 				url: '../../static/images/mine-head-portrait.png',
 				date: currentDate,
-				file: []
+				file: [],
+				// 存储手机号码
+				phone: ''
 			};
 		},
 		methods: {
+			onLoad() {
+				this.phone = uni.getStorageSync('phone')
+			},
 			// 当选择的日期发生改变的时候 改变页面的日期
 			bindDateChange(e) {
 				this.date = e.target.value
@@ -120,7 +125,20 @@
 			},
 			// 性别单选框发生改变的时候
 			radioChange(e) {
-				console.log(e)
+				// console.log(e.detail.value)
+				uni.request({
+					url: "http://192.168.1.143:8086/WNC/user/updateGender",
+					data: {
+						userId: 1,
+						gender: e.detail.value
+					},
+					header: {
+						"Content-Type": "application/x-www-form-urlencoded; charset=utf-8"
+					},
+					success: res => {
+						console.log(res)
+					}
+				});
 			},
 			// 去修改昵称页面
 			goMineNickname() {
@@ -142,10 +160,10 @@
 						console.log(res)
 						this.file = res.tempFilePaths
 						this.url = res.tempFilePaths[0]
-						var imageSrc = res.tempFilePaths[0]
+						// var imageSrc = res.tempFilePaths[0]
 						uni.uploadFile({
 							url: 'http://192.168.1.143:8086/WNC/user/updateimageUrl',
-							filePath: imageSrc,
+							filePath: this.url,
 							name: 'file',
 							formData: {
 									userId: 1
@@ -154,7 +172,6 @@
 								console.log(res)
 							}
 						})
-
 						// uni.request({
 						// 	url: "http://192.168.1.143:8086/WNC/user/updateimageUrl",
 						// 	data: {

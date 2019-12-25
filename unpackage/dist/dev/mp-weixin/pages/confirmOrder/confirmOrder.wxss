@@ -150,13 +150,9 @@
   width: 710rpx;
   background: #ffffff;
   border-radius: 10rpx;
-  margin: 0 auto;
-}
-.con-info.data-v-77801a27 {
+  margin: 20rpx auto 0;
   padding: 0 30rpx;
   box-sizing: border-box;
-  margin-top: 20rpx;
-  margin-bottom: 100rpx;
 }
 .con-list.data-v-77801a27 {
   height: 88rpx;

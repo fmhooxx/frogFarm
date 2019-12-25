@@ -157,12 +157,24 @@ page {
   line-height: 24rpx;
 }
 .pro.data-v-54f60143 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
   font-size: 24rpx;
   font-family: PingFang;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+          justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+          align-items: center;
   color: #999999;
   line-height: 23rpx;
   text-align: center;
   margin-top: 40rpx;
+}
+.pro .right.data-v-54f60143 {
+  color: #3FAF3C;
 }
 /* 推荐样式开始 */
 .tuijian.data-v-54f60143 {

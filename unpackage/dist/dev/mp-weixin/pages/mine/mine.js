@@ -188,6 +188,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 var _default =
 {
   data: function data() {
@@ -234,8 +235,25 @@ var _default =
         text: "我的设置" }],
 
 
-      current: 2 };
+      current: 2,
+      // 控制已登录和未登录的切换显示
+      isLogin: false,
+      // 默认头像
+      defaultHead: '/static/images/head.png',
+      // 默认名称
+      defaultUname: '蛙农场用户',
+      // 存储用户登录的凭证
+      userLogin: '',
+      // 存储手机号码
+      phone: '' };
 
+  },
+  onLoad: function onLoad() {
+    this.userLogin = uni.getStorageSync('userLogin');
+    this.phone = uni.getStorageSync('phone');
+    if (this.userLogin == '') {
+      this.isLogin = true;
+    }
   },
   methods: {
     // 去会员卡页面
@@ -342,6 +360,26 @@ var _default =
               url: "/pages/mineFeedback/mineFeedback" });
 
           }
+    },
+    // 获取用户信息
+    // getUserInfos() {
+    //   uni.getUserInfo({
+    //     success: res => {
+    //       console.log(res)
+    //       this.defaultHead = res.userInfo.avatarUrl
+    //       this.defaultUname = res.userInfo.nickName
+    //       this.isLogin = false
+    //     }
+    //   })
+    // }
+    isUserInfo: function isUserInfo() {
+      if (this.userInfo == '') {
+        uni.navigateTo({
+          url: "/pages/loginRegister/loginRegister" });
+
+      } else {
+        this.isLogin = true;
+      }
     } } };exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
