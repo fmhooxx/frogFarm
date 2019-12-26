@@ -38,7 +38,7 @@
 		<!-- 订单详情头部结束 -->
 
 		<!-- 会员充值列表开始 -->
-		<view class="vip-list">
+		<!-- <view class="vip-list">
 			<view class="list-info flex-row">
 				<view class="left">
 					<view class="price">29999元</view>
@@ -78,7 +78,20 @@
 				</view>
 				<radio color="#39AC36"></radio>
 			</view>
-		</view>
+		</view> -->
+    <view class="vip-list">
+      <radio-group @change="radioChange">
+        <label v-for="(item, index) in list" :key="index">
+          <view class="list-info flex-row">
+            <view class="left">
+              <view class="price">{{item.price}}元</view>
+              <view class="type">{{item.text}}</view>
+            </view>
+            <radio color="#39AC36" :value="item.id" :checked="current == item.id ? true : false "></radio>
+          </view>
+        </label>
+      </radio-group>
+    </view>
 		<!-- 会员充值列表结束 -->
     <!-- 信息部分 -->
     <view class="info">
@@ -105,7 +118,37 @@
 	export default {
 		data() {
 			return {
-				isBox: true
+        isBox: true,
+        // 默认选中项
+        current: 0,
+        // 会员卡数据
+        list: [
+          {
+            id: 0,
+            price: 29999,
+            text: '年卡会员套餐'
+          },
+          {
+            id: 1,
+            price: 19999,
+            text: '半年卡会员套餐'
+          },
+          {
+            id: 2,
+            price: 9999,
+            text: '季卡会员套餐'
+          },
+          {
+            id: 3,
+            price: 49999,
+            text: '月卡会员套餐'
+          },
+          {
+            id: 4,
+            price: 1999,
+            text: '活动卡会员套餐'
+          }
+        ]
 			}
 		},
 		methods: {
@@ -121,6 +164,10 @@
           url: '/pages/vipGiveRecord/vipGiveRecord'
         })
       },
+      radioChange(e) {
+        console.log(e.detail.value)
+        this.current = e.detail.value
+      }
 		}
 	}
 </script>

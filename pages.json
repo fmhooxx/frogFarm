@@ -321,7 +321,13 @@
 	}, {
 		"path": "pages/vipMemberAgreement/vipMemberAgreement",
 		"style": {}
-	}],
+	}    ,{
+            "path" : "pages/vipPurchaseRecord/vipPurchaseRecord",
+            "style" : {
+				"navigationBarTitleText": "购买记录"
+			}
+        }
+    ],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",
 		"navigationBarBackgroundColor": "#fff",

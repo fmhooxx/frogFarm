@@ -34,7 +34,7 @@
 				<view class="info-small-title">规则</view>
 				<view><image src="../../static/images/arrow-right.png"></image></view>
 			</view>
-			<view class="flex-row" @click="goVipGiveRecord">
+			<view class="flex-row" @click="goVipPurchaseRecord">
 				<view class="info-small-title">购买记录</view>
 				<view><image src="../../static/images/arrow-right.png"></image></view>
 			</view>
@@ -69,6 +69,12 @@ export default {
     goVipGiveRecord() {
       uni.navigateTo({
         url: '/pages/vipGiveRecord/vipGiveRecord'
+      })
+    },
+    // 去购买记录页面
+    goVipPurchaseRecord() {
+      uni.navigateTo({
+        url: '/pages/vipPurchaseRecord/vipPurchaseRecord'
       })
     },
     // 去会员管理规则页面

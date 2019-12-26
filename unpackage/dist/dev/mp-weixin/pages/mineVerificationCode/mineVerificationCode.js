@@ -166,21 +166,24 @@ var _default =
       // 点击发送的内容
       sendVal: "点击发送",
       // 倒计时内容
-      num: 6,
+      num: 60,
       // 控制剩余时间的显示与隐藏
       isTime: false,
       // 控制点击发送的显示与隐藏
       isStart: true,
       // 返回的验证码
       ObtainCode: "",
+      // 定时器命名
       timer: "" };
 
   },
   methods: {
     // 发送验证码
     getUpdatePhone: function getUpdatePhone() {var _this = this;
+      // 手机号码的正则表达式
+      var reg = /^(((13[0-9]{1})|(15[0-9]{1})|(16[0-9]{1})|(17[3-8]{1})|(18[0-9]{1})|(19[0-9]{1})|(14[5-7]{1}))+\d{8})$/;
       // 当手机号码输入框不为 0 的时候
-      if (this.telVal == "") {
+      if (reg.test(this.telVal)) {
         // 显示点击发送 隐藏剩余时间
         this.isTime = !this.isTime;
         this.isStart = !this.isStart;
@@ -207,12 +210,20 @@ var _default =
             }
           } });
 
+      } else {
+        uni.showToast({
+          title: "请输入正确的手机号码",
+          duration: 2000,
+          icon: "none" });
+
       }
     },
     // 点击提交按钮
     submitVal: function submitVal() {
+      // 手机号码的正则表达式
+      var reg = /^(((13[0-9]{1})|(15[0-9]{1})|(16[0-9]{1})|(17[3-8]{1})|(18[0-9]{1})|(19[0-9]{1})|(14[5-7]{1}))+\d{8})$/;
       if (
-      this.telVal !== "" &&
+      reg.test(this.phone) &&
       this.codeVal !== "" &&
       this.codeVal !== this.ObtainCode)
       {
@@ -272,7 +283,7 @@ var _default =
           // 当时间为 0 的时候 隐藏定时的内容 显示发送的内容 并且为定时器重新赋值
           _this2.isStart = !_this2.isStart,
           _this2.isTime = !_this2.isTime,
-          _this2.num = 6;
+          _this2.num = 60;
         }
       }, 1000);
     } },

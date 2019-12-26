@@ -227,11 +227,54 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 var _default =
 {
   data: function data() {
     return {
-      isBox: true };
+      isBox: true,
+      // 默认选中项
+      current: 0,
+      // 会员卡数据
+      list: [
+      {
+        id: 0,
+        price: 29999,
+        text: '年卡会员套餐' },
+
+      {
+        id: 1,
+        price: 19999,
+        text: '半年卡会员套餐' },
+
+      {
+        id: 2,
+        price: 9999,
+        text: '季卡会员套餐' },
+
+      {
+        id: 3,
+        price: 49999,
+        text: '月卡会员套餐' },
+
+      {
+        id: 4,
+        price: 1999,
+        text: '活动卡会员套餐' }] };
+
+
 
   },
   methods: {
@@ -246,6 +289,10 @@ var _default =
       uni.navigateTo({
         url: '/pages/vipGiveRecord/vipGiveRecord' });
 
+    },
+    radioChange: function radioChange(e) {
+      console.log(e.detail.value);
+      this.current = e.detail.value;
     } } };exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 

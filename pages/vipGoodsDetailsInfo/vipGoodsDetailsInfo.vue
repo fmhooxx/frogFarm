@@ -12,7 +12,8 @@
 				<view class="swiper-info-title">年卡会员套餐</view>
 				<view class="swiper-info-introduce flex-row">
 					<view>新鲜美味, 品种多多</view>
-					<view class="share">分享有礼</view>
+					<!-- <view class="share">分享有礼</view> -->
+          <button open-type="share" @click="shareClick" class="share">分享有礼</button>
 				</view>
         <!-- 普通价格区域 -->
         <view class="ordinary-price">¥39999</view>
@@ -85,6 +86,10 @@
     },
     onLoad() {
       this.userLogin = uni.getStorageSync('userLogin')
+      // 设置导航条标题
+      // uni.setNavigationBarTitle({
+      //   title: ''
+      // })
     },
 		methods: {
 			//监听页面高度(上滑或者下滑)
@@ -111,6 +116,15 @@
             url: '/pages/confirmOrder/confirmOrder'
           })
         }
+      },
+      shareClick() {
+        uni.share({
+          provider: "weixin",
+          scene: "WXSceneSession",
+          success: res => {
+            console.log(res)
+          }
+        })
       }
 		}
 	}
@@ -159,6 +173,12 @@ swiper-item image {
 }
 
 .share {
+  font-size:28rpx;
+  font-family:Source Han Sans CN;
+  font-weight:500;
+  color: #fff;
+  position: absolute;
+  right: 0;
   min-width: 210rpx;
   height: 70rpx;
   background: rgba(253, 72, 77, 1);

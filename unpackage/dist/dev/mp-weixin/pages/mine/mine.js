@@ -241,7 +241,7 @@ var _default =
       // 默认头像
       defaultHead: '/static/images/head.png',
       // 默认名称
-      defaultUname: '蛙农场用户',
+      // defaultUname: '蛙农场用户',
       // 存储用户登录的凭证
       userLogin: '',
       // 存储手机号码
@@ -253,6 +253,17 @@ var _default =
     this.phone = uni.getStorageSync('phone');
     if (this.userLogin == '') {
       this.isLogin = true;
+    } else {
+      this.isLogin = false;
+    }
+  },
+  onShow: function onShow() {
+    this.userLogin = uni.getStorageSync('userLogin');
+    this.phone = uni.getStorageSync('phone');
+    if (this.userLogin == '') {
+      this.isLogin = true;
+    } else {
+      this.isLogin = false;
     }
   },
   methods: {
@@ -372,8 +383,8 @@ var _default =
     //     }
     //   })
     // }
-    isUserInfo: function isUserInfo() {
-      if (this.userInfo == '') {
+    userInfo: function userInfo() {
+      if (this.userLogin == '') {
         uni.navigateTo({
           url: "/pages/loginRegister/loginRegister" });
 

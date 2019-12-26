@@ -9,7 +9,7 @@
     <view class="login-content">
       <view class="login-tel">
         <input placeholder="请输入手机号" type="number" v-model="phone" focus placeholder-class="tel-password-class" />
-				<view>|<text @click="login">获取验证码</text></view>
+				<view>|<text v-if="isLogin" @click="login">获取验证码</text><text v-else>剩余{{num}}秒</text></view>
       </view>
       <view class="login-password">
         <input placeholder="请输入收到的验证码" type="number" v-model="verificationVal" placeholder-class="tel-password-class" />
@@ -26,9 +26,9 @@
     <!-- 第三方登录 -->
     <view class="login-third">
       <view class="third-text">第三方账号登录</view>
-      <view class="third-img">
+      <button class="third-img">
         <image src="/static/images/wechart.png"></image>
-      </view>
+      </button>
       <view class="third-weixin">微信登录</view>
       <view class="third-footer">登录注册即表示你同意《<text>蛙农场用户协议</text>》和《<text>蛙农场隐私协议</text>》</view>
     </view>
@@ -44,18 +44,26 @@ export default {
       // 验证码输入的内容
       verificationVal: '',
       // 收到的验证码
-      code: ''
+      code: '',
+      // 控制发送以及剩余时间的切换显示
+      isLogin: true,
+      // 定时器命名
+      timer: "",
+      // 倒计时内容
+      num: 60,
     };
   },
   methods: {
 		// (去设置登录密码页面 暂时废弃 直接使用验证码登录 然后跳转到输入邀请码页面)
 		goLoginSetLoginPassword() {
-			if (this.phone !== '' && this.verificationVal == this.code ) {
+      // 手机号码正则表达式
+       var reg = /^(((13[0-9]{1})|(15[0-9]{1})|(16[0-9]{1})|(17[3-8]{1})|(18[0-9]{1})|(19[0-9]{1})|(14[5-7]{1}))+\d{8})$/
+			if (reg.test(this.phone) && this.verificationVal == this.code ) {
         // return uni.navigateTo({
         //   url: "/pages/loginSetLoginPassword/loginSetLoginPassword"
         // })
         // 先假定一个字段 来判断用户的登录状态 未设置过期时间
-        uni.setStorageSync('userLogin', 'userLogin')
+        uni.setStorageSync('userLogin', this.phone)
         return uni.navigateTo({
           url: "/pages/loginInvitationCode/loginInvitationCode"
         })
@@ -67,21 +75,56 @@ export default {
         })
       }
     },
+    // 获取验证码
     login() {
-      uni.request({
-        url: 'http://192.168.1.166:8086/WNC/wxlogin/register',
-        data: {
-          phone: this.phone
-        },
-        header: {
-        'Content-Type': "application/x-www-form-urlencoded; charset=utf-8"
-        },
-        success: res => {
-          console.log(res)
-          this.code = res.data.code
-          uni.setStorageSync('phone', this.phone)
+      // 手机号码正则表达式
+       var reg = /^(((13[0-9]{1})|(15[0-9]{1})|(16[0-9]{1})|(17[3-8]{1})|(18[0-9]{1})|(19[0-9]{1})|(14[5-7]{1}))+\d{8})$/
+      if (reg.test(this.phone)) {
+        this.isLogin = false
+        // 调用倒计时函数
+        this.countDown()
+        uni.request({
+          url: 'http://192.168.1.166:8086/WNC/wxlogin/register',
+          data: {
+            phone: this.phone
+          },
+          header: {
+          'Content-Type': "application/x-www-form-urlencoded; charset=utf-8"
+          },
+          success: res => {
+            console.log(res)
+            this.code = res.data.code
+            uni.setStorageSync('phone', this.phone)
+          }
+        })
+      } else {
+        uni.showToast({
+            title: '请输入正确的手机号码',
+            duration: 2000,
+            icon: 'none'
+        });
+      }
+    },
+    // 倒计时效果
+    countDown() {
+      // 获取倒计时初始值
+      var time = this.num;
+      // 未定时器命名
+      this.timer = setInterval(() => {
+        // 每隔一秒 num 就减一，实现同步
+        time--;
+        // 然后把 num 存进 data，好让用户知道时间在倒计着
+        this.num = time;
+        // 在倒计时还未到0时，这中间可以做其他的事情，按项目需求来
+        if (time == 0) {
+          // 这里特别要注意，计时器是始终一直在走的，如果你的时间为0，那么就要关掉定时器！不然相当耗性能
+          // 因为timer是存在data里面的，所以在关掉时，也要在data里取出后再关闭
+          clearInterval(this.timer);
+          // 当时间为 0 的时候 隐藏定时的内容 显示发送的内容 并且为定时器重新赋值
+          (this.isLogin = true),
+            (this.num = 60);
         }
-      })
+      }, 1000);
     }
   },
   computed: {
@@ -208,10 +251,15 @@ image {
       color:rgba(165,165,165,1);
     }
     .third-img {
+      margin: 20rpx auto 20rpx;
+      width: 88rpx;
+      height: 88rpx;
+      border-radius: 50%;
+      padding: 0;
       image {
         width: 88rpx;
         height: 88rpx;
-        margin: 46rpx 0 21rpx 0
+        border-radius: 50%;
       }
     }
     .third-weixin {

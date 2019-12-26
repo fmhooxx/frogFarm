@@ -224,7 +224,7 @@ var _default =
     },
     radioChange: function radioChange(e) {
       console.log(e.detail.value);
-      // this.current = e.detail.value
+      this.current = e.detail.value;
       // for (let i = 0; i < this.list.length; i++) {
       // 	this.list[i].checked = false			
       // }

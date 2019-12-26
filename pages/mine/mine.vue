@@ -17,7 +17,7 @@
           <!-- 已登录区域 -->
           <view v-else class="left-text">
             <!-- 用户昵称 -->
-            <view class="user">{{defaultUname}}</view>
+            <view class="user">{{userLogin}}</view>
             <!-- 手机号码区域 -->
             <view class="tel">
               <!-- 手机标识 -->
@@ -115,7 +115,7 @@ export default {
       // 默认头像
       defaultHead: '/static/images/head.png',
       // 默认名称
-      defaultUname: '蛙农场用户',
+      // defaultUname: '蛙农场用户',
       // 存储用户登录的凭证
       userLogin: '',
       // 存储手机号码
@@ -127,6 +127,17 @@ export default {
     this.phone = uni.getStorageSync('phone')
     if (this.userLogin == '') {
       this.isLogin = true
+    } else {
+      this.isLogin = false
+    }
+  },
+  onShow() {
+    this.userLogin = uni.getStorageSync('userLogin')
+    this.phone = uni.getStorageSync('phone')
+    if (this.userLogin == '') {
+      this.isLogin = true
+    } else {
+      this.isLogin = false
     }
   },
   methods: {
@@ -246,8 +257,8 @@ export default {
     //     }
     //   })
     // }
-    isUserInfo() {
-      if (this.userInfo == '') {
+    userInfo() {
+      if (this.userLogin == '') {
         uni.navigateTo({
           url: "/pages/loginRegister/loginRegister"
         });

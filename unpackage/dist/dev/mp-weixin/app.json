@@ -65,7 +65,8 @@
     "pages/indexNews/indexNews",
     "pages/indexNewsDetails/indexNewsDetails",
     "pages/vipMemberManagementRules/vipMemberManagementRules",
-    "pages/vipMemberAgreement/vipMemberAgreement"
+    "pages/vipMemberAgreement/vipMemberAgreement",
+    "pages/vipPurchaseRecord/vipPurchaseRecord"
   ],
   "subPackages": [],
   "window": {

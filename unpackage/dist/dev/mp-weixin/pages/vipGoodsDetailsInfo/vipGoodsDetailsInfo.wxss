@@ -32,6 +32,12 @@ swiper-item image.data-v-343755d7 {
   color: #666666;
 }
 .share.data-v-343755d7 {
+  font-size: 28rpx;
+  font-family: Source Han Sans CN;
+  font-weight: 500;
+  color: #fff;
+  position: absolute;
+  right: 0;
   min-width: 210rpx;
   height: 70rpx;
   background: #fd484d;

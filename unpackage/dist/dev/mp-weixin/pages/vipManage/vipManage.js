@@ -197,6 +197,12 @@ var _default =
         url: '/pages/vipGiveRecord/vipGiveRecord' });
 
     },
+    // 去购买记录页面
+    goVipPurchaseRecord: function goVipPurchaseRecord() {
+      uni.navigateTo({
+        url: '/pages/vipPurchaseRecord/vipPurchaseRecord' });
+
+    },
     // 去会员管理规则页面
     goVipMemberManagementRules: function goVipMemberManagementRules() {
       uni.navigateTo({

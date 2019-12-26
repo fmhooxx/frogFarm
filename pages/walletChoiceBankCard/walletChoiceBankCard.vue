@@ -5,7 +5,7 @@
 			<radio-group @change="radioChange">
 				<label class="list" v-for="(item, index) in list" :key="index">
 					<view class="left">
-						<radio :value="item.value" checked="true"/>
+						<radio :value="item.value" :checked="current == item.id ? true : false "/>
 						<view class="content">
 							<view>{{item.uname}}</view>
 							<view class="num">{{item.card_num}}</view>
@@ -100,7 +100,7 @@ export default {
 		},
 		radioChange(e) {
 			console.log(e.detail.value)
-			// this.current = e.detail.value
+			this.current = e.detail.value
 		// for (let i = 0; i < this.list.length; i++) {
 		// 	this.list[i].checked = false			
 		// }

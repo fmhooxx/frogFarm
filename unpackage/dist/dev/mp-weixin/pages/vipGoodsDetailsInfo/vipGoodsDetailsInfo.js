@@ -198,6 +198,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 var _default =
 {
   data: function data() {
@@ -209,6 +210,10 @@ var _default =
   },
   onLoad: function onLoad() {
     this.userLogin = uni.getStorageSync('userLogin');
+    // 设置导航条标题
+    // uni.setNavigationBarTitle({
+    //   title: ''
+    // })
   },
   methods: {
     //监听页面高度(上滑或者下滑)
@@ -235,6 +240,15 @@ var _default =
           url: '/pages/confirmOrder/confirmOrder' });
 
       }
+    },
+    shareClick: function shareClick() {
+      uni.share({
+        provider: "weixin",
+        scene: "WXSceneSession",
+        success: function success(res) {
+          console.log(res);
+        } });
+
     } } };exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
