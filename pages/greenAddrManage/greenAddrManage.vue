@@ -92,7 +92,6 @@
 
 <style lang="less" scoped>
 .addr{
-  height:200rpx;
   background:rgba(255,255,255,1);
   // padding: 0 50rpx 0 20rpx;
   box-sizing: border-box;
@@ -100,6 +99,7 @@
   margin-top: 26rpx
 }
 .addr_do{
+	height: 90rpx;
   display: flex;
   flex-direction: row;
   justify-content: space-between;

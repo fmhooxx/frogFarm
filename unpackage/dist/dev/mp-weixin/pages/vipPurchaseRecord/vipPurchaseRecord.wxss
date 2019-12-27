@@ -1,83 +1,52 @@
-image.data-v-3cdf7007 {
-  width: 100%;
-  height: 100%;
-}
-.give-record .record.data-v-3cdf7007 {
-  height: 132rpx;
+.give-record .head.data-v-3cdf7007 {
+  width: 690rpx;
+  height: 62rpx;
+  margin: 20rpx auto;
+  background-color: #fff;
+  border-radius: 10rpx;
   display: -webkit-box;
   display: -webkit-flex;
   display: flex;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-          justify-content: space-between;
-  padding: 0 30rpx;
-  margin: 10rpx 0;
+  -webkit-box-pack: space-evenly;
+  -webkit-justify-content: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+          align-items: center;
+  text-align: center;
+}
+.give-record .head > view.data-v-3cdf7007 {
+  font-size: 28rpx;
+  font-family: Microsoft YaHei;
+  font-weight: 400;
+  color: #333;
+  width: 33.33%;
+}
+.give-record .footer.data-v-3cdf7007 {
+  border-radius: 10rpx;
+  width: 690rpx;
+  height: 100%;
+  margin: auto;
+  box-sizing: border-box;
   background-color: #fff;
 }
-.give-record .record .record-left.data-v-3cdf7007 {
+.give-record .footer .content.data-v-3cdf7007 {
   display: -webkit-box;
   display: -webkit-flex;
   display: flex;
+  -webkit-box-pack: space-evenly;
+  -webkit-justify-content: space-evenly;
+          justify-content: space-evenly;
+  text-align: center;
+  border-bottom: 1rpx solid #f1f1f1;
 }
-.give-record .record .record-left .left-box.data-v-3cdf7007 {
-  position: relative;
-  margin: 17rpx 25rpx 16rpx 0;
-}
-.give-record .record .record-left .left-box image.data-v-3cdf7007 {
-  width: 160rpx;
-  height: 100rpx;
-}
-.give-record .record .record-left .left-box .box-text.data-v-3cdf7007 {
-  position: absolute;
-  top: 16rpx;
-  left: 34rpx;
-  font-family: PingFang;
+.give-record .footer .content > view.data-v-3cdf7007 {
+  height: 80rpx;
+  line-height: 80rpx;
+  font-size: 28rpx;
+  font-family: Microsoft YaHei;
   font-weight: 400;
-  color: #ffffff;
-}
-.give-record .record .record-left .left-box .box-text .one.data-v-3cdf7007 {
-  font-size: 24rpx;
-}
-.give-record .record .record-left .left-box .box-text .two.data-v-3cdf7007 {
-  font-size: 20rpx;
-  padding-left: 10rpx;
-}
-.give-record .record .record-left .left-box .box-text .two text.data-v-3cdf7007 {
-  font-size: 30rpx;
-  margin-left: 10rpx;
-}
-.give-record .record .record-left .record-info.data-v-3cdf7007 {
-  font-size: 20rpx;
-  font-family: PingFang;
-  font-weight: 500;
-  color: #999999;
-  padding: 16rpx 0;
-}
-.give-record .record .record-left .record-info .tel.data-v-3cdf7007 {
-  font-size: 26rpx;
-  color: #333333;
-}
-.give-record .record .record-left .record-info text.data-v-3cdf7007 {
-  margin-left: 12rpx;
-}
-.give-record .record .record-right.data-v-3cdf7007 {
-  position: relative;
-}
-.give-record .record .record-right image.data-v-3cdf7007 {
-  width: 26rpx;
-  height: 65rpx;
-  line-height: 65rpx;
-  border-radius: 0rpx 0rpx 13rpx 13rpx;
-}
-.give-record .record .record-right .error.data-v-3cdf7007 {
-  -webkit-writing-mode: tb-rl;
-          writing-mode: tb-rl;
-  font-family: PingFang;
-  font-weight: 500;
-  color: #ffffff;
-  font-size: 16rpx;
-  position: absolute;
-  top: 5rpx;
-  left: 2rpx;
+  color: #333;
+  width: 33.33%;
 }
 

@@ -64,6 +64,8 @@ page {
 }
 .news .location-info.data-v-7aab2c0d {
   margin-right: 30rpx;
+  position: absolute;
+  right: 0;
 }
 .news .location-info image.data-v-7aab2c0d {
   width: 44rpx;

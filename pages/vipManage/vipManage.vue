@@ -21,7 +21,7 @@
 
 		<!-- 会员管理开始 -->
 		<view class="manage">
-			<view class="flex-row" @click="toVipGoodsManage">
+			<view class="flex-row" @click="getMeal">
 				<view class="info-small-title">商品管理</view>
 				<view class="default">默认套餐</view>
 				<view><image src="../../static/images/arrow-right.png"></image></view>
@@ -52,9 +52,33 @@ export default {
   data() {
     return {};
   },
+  onLoad() {
+    // 查询会员信息接口
+    this.getVip()
+  },
   methods: {
-		// 点击跳转到商品管理页
-		toVipGoodsManage() {
+    // 查询会员信息接口
+    getVip() {
+      this.$http
+        .get("/memberPackage/getVip", { params: { user_id: 1 } })
+        .then(res => console.log(res));
+    },
+    // getVip() {
+    //   uni.request({
+    //     url: 'http://192.168.1.155:8086/WNC/memberPackage/getVip',
+    //     data: {
+    //       user_id: 1
+    //     },
+    //     header: {
+    //       'Content-Type': "application/x-www-form-urlencoded; charset=utf-8"
+    //     },
+    //     succeee(res) {
+    //       console.log(res)
+    //     }
+    //   })
+    // },
+		// 商品管理接口
+		getMeal() {
 			uni.navigateTo({
 				url: '/pages/vipGoodsManage/vipGoodsManage'
 			})

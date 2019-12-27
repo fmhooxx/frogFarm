@@ -9,7 +9,7 @@
     <view class="login-content">
       <view class="login-tel">
         <input placeholder="请输入手机号" type="number" v-model="phone" focus placeholder-class="tel-password-class" />
-				<view>|<text v-if="isLogin" @click="login">获取验证码</text><text v-else>剩余{{num}}秒</text></view>
+				<view>|<text v-if="isLogin" @click="getCode">获取验证码</text><text v-else>剩余{{num}}秒</text></view>
       </view>
       <view class="login-password">
         <input placeholder="请输入收到的验证码" type="number" v-model="verificationVal" placeholder-class="tel-password-class" />
@@ -26,7 +26,7 @@
     <!-- 第三方登录 -->
     <view class="login-third">
       <view class="third-text">第三方账号登录</view>
-      <button class="third-img">
+      <button class="third-img" open-type="getUserInfo" @click="login">
         <image src="/static/images/wechart.png"></image>
       </button>
       <view class="third-weixin">微信登录</view>
@@ -51,6 +51,8 @@ export default {
       timer: "",
       // 倒计时内容
       num: 60,
+      appId: '',
+      sessionKey: ''
     };
   },
   methods: {
@@ -76,7 +78,7 @@ export default {
       }
     },
     // 获取验证码
-    login() {
+    getCode() {
       // 手机号码正则表达式
        var reg = /^(((13[0-9]{1})|(15[0-9]{1})|(16[0-9]{1})|(17[3-8]{1})|(18[0-9]{1})|(19[0-9]{1})|(14[5-7]{1}))+\d{8})$/
       if (reg.test(this.phone)) {
@@ -125,6 +127,77 @@ export default {
             (this.num = 60);
         }
       }, 1000);
+    },
+    // 微信登录
+    login() {
+      uni.login({
+        //向后台发送第三方平台code和appId数据
+        success: res => {
+          this.appId = uni.getAccountInfoSync().miniProgram.appId;
+          // uni.setStorage({
+          //   key: "appId",
+          //   data: appId
+          // });
+          if (res.code) {
+            // 发起网络请求
+            uni.request({
+              url: "http://192.168.1.155:8086/WNC/wxlogin/code2Session",
+              method: "GET",
+              header: {
+                "Content-Type":
+                  "application/x-www-form-urlencoded; charset=utf-8"
+              },
+              data: {
+                code: res.code,
+                appId: this.appId
+              },
+              dateType: "json",
+              success: res => {
+                console.log(res);
+                if (res.statusCode == 200) {
+                //   //把获取的openid存储在全局中
+                  this.openid = res.data.data.openid;
+                  this.sessionKey = res.data.data.sessionKey;
+                  // uni.getUserInfo({
+                  //   withCredentials: true,
+                  //   success: res => {
+                  //     console.log(res)
+                  //     uni.request({
+                  //       url: '',
+                  //       data: {
+                  //         encryptedData: res.encryptedData,
+                  //         iv: res.iv,
+                  //         rawData: res.rawData,
+                  //         signature: res.signature,
+                  //         appId: that.data.appId,
+                  //         sessionKey: res.data.data.sessionKey
+                  //       },
+                  //       success: res => {
+                  //         var isLogin = true;
+                  //         uni.setStorage({
+                  //           key: "isLogin",
+                  //           data: isLogin
+                  //         });
+                  //       }
+                  //     })
+                  //   },
+                  // fail() {
+                  //     //获取用户信息失败
+                  //     uni.showModal({
+                  //       title: "警告",
+                  //       content: "尚未进行授权，请点击授权获取更多信息。",
+                  //       success: function(res) {}
+                  //     });
+                  //   }
+                  // })
+                }
+              }
+            })
+          } else {
+            console.log('登录失败' + res.errMsg)
+          }
+        }
+      })
     }
   },
   computed: {

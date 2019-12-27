@@ -102,6 +102,7 @@ export default {
     radioChange(e) {
       this.current = e.target.value;
     },
+    // 详细地址发生变化的时候
     bindPickerChange(e) {
       this.address = e.target.value
     }

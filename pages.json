@@ -327,6 +327,14 @@
 				"navigationBarTitleText": "购买记录"
 			}
         }
+        ,{
+            "path" : "pages/indexBanner/indexBanner",
+            "style" : {}
+        }
+        ,{
+            "path" : "pages/indexSwiperBanner/indexSwiperBanner",
+            "style" : {}
+        }
     ],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",

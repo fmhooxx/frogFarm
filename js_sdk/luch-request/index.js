@@ -3,11 +3,12 @@ import Request from './request'
 const test = new Request()
 test.setConfig((config) => {
   /* 设置全局配置 */
-  config.baseUrl = 'http://192.168.1.166:8086'
+  config.baseUrl = 'http://192.168.1.155:8086/WNC'
   config.header = {
-    ...config.header,
-    a: 1,
-    b: 2
+    // ...config.header,
+    // a: 1,
+    // b: 2
+    'Content-Type': "application/x-www-form-urlencoded; charset=utf-8"
   }
   // config.custom = { auth: true }
   return config
@@ -16,8 +17,9 @@ test.setConfig((config) => {
 test.interceptor.request((config, cancel) => {
   /* 请求之前拦截器 */
   config.header = {
-    ...config.header,
-    a: 3
+    // ...config.header,
+    // a: 3
+    'Content-Type': "application/x-www-form-urlencoded; charset=utf-8"
   }
   // if (config.custom.auth) {
   //   config.header.token = 'token'
@@ -50,11 +52,12 @@ const http = new Request()
 
 http.setConfig((config) => {
   /* 设置全局配置 */
-  config.baseUrl = 'http://192.168.1.166:8086' /* 根域名不同 */
+  config.baseUrl = 'http://192.168.1.155:8086/WNC' /* 根域名不同 */
   config.header = {
-    ...config.header,
-    a: 1,
-    b: 2
+    // ...config.header,
+    // a: 1,
+    // b: 2
+    'Content-Type': "application/x-www-form-urlencoded; charset=utf-8"
   }
   return config
 })
@@ -71,8 +74,9 @@ http.validateStatus = (statusCode) => {
 http.interceptor.request((config, cancel) => {
   /* 请求之前拦截器 */
   config.header = {
-    ...config.header,
-    b: 1
+    // ...config.header,
+    // b: 1
+    'Content-Type': "application/x-www-form-urlencoded; charset=utf-8"
   }
   /*
   if (!token) { // 如果token不存在，调用cancel 会取消本次请求，但是该函数的catch() 仍会执行

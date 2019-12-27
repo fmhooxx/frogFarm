@@ -38,7 +38,9 @@ export default {
   data() {
     return {
 			// 输入的金额内容
-			money: ''
+			money: '',
+			// 提现返回的状态
+			status: ''
 		};
 	},
 	onLoad() {
@@ -74,22 +76,50 @@ export default {
 		},
 		// 申请提现接口
 		getAccount() {
-			uni.request({
-				url: 'http://192.168.1.155:8086/WNC/wallet/getAccount',
-				data: {
-					wallet_id: 1,
-					acc_id: 1,
-					// 提现金额
-					money: this.money,
-					user_id: 1
-				},
-				header: {
-					'Content-Type': "application/x-www-form-urlencoded; charset=utf-8"
-				},
-				succeee(res) {
-					console.log(res)
-				}
-			})
+			if (this.money !== '' && this.money >= 0) {
+				uni.request({
+					url: 'http://192.168.1.155:8086/WNC/wallet/getAccount',
+					data: {
+						wallet_id: 1,
+						acc_id: 1,
+						// 提现金额
+						money: this.money,
+						user_id: 1
+					},
+					header: {
+						'Content-Type': "application/x-www-form-urlencoded; charset=utf-8"
+					},
+					succeee(res) {
+						console.log(res)
+						this.status = res.data
+						if (this.status == 200) {
+							uni.showToast({
+									title: '提现成功',
+									duration: 2000,
+									icon: 'none'
+							})
+						} else if (this.status == 500) {
+							uni.showToast({
+									title: '钱包余额不足',
+									duration: 2000,
+									icon: 'none'
+							})
+						} else {
+							uni.showToast({
+								title: '银行卡号或余额不能为空',
+								duration: 2000,
+								icon: 'none'
+							})
+						}
+					}
+				})
+			} else {
+				uni.showToast({
+						title: '请输入提现金额',
+						duration: 2000,
+						icon: 'none'
+				});
+			}
 		}
 	},
 	computed: {

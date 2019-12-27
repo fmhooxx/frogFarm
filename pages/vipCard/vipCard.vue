@@ -120,8 +120,52 @@
 			return {
 				isBox: false
 			}
-		},
+    },
+    onLoad() {
+      // 查询会员信息接口
+      this.getVip()
+      // 查询所有的套餐信息接口
+      this.getFindList()
+    },
 		methods: {
+      // 查询会员信息接口
+      getVip() {
+        this.$http
+          .get("/memberPackage/getVip", { params: { user_id: 1 } })
+          .then(res => console.log(res));
+      },
+      // getVip() {
+      //   uni.request({
+      //     url: 'http://192.168.1.155:8086/WNC/memberPackage/getVip',
+      //     data: {
+      //       user_id: 1
+      //     },
+      //     header: {
+      //       'Content-Type': "application/x-www-form-urlencoded; charset=utf-8"
+      //     },
+      //     succeee(res) {
+      //       console.log(res)
+      //     }
+      //   })
+      // },
+      // 查询所有的套餐信息接口
+        getFindList() {
+          this.$http
+            .get("/memberPackage/findList", {})
+            .then(res => console.log(res));
+        },
+      // getSelectList() {
+      //   uni.request({
+      //     url: 'http://192.168.1.155:8086/WNC/memberPackage/selectList',
+      //     data: {},
+      //     header: {
+      //       'Content-Type': "application/x-www-form-urlencoded; charset=utf-8"
+      //     },
+      //     succeee(res) {
+      //       console.log(res)
+      //     }
+      //   })
+      // },
       // 去会员赠送页面
 			goVipGive() {
         uni.navigateTo({

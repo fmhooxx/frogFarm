@@ -42,7 +42,28 @@ export default {
   data() {
     return {};
   },
-  methods: {}
+  onLoad() {
+    // 获取默认套餐数据接口
+    this.getMeal();
+  },
+  methods: {
+    // 获取默认套餐数据接口
+    getMeal() {
+      uni.request({
+        url: "http://192.168.1.143:8086/WNC/memberPackage/getMeal",
+        data: {
+          // 套餐 id
+          id: 1
+        },
+        header: {
+          "Content-Type": "application/x-www-form-urlencoded; charset=utf-8"
+        },
+        succeee(res) {
+          console.log(res);
+        }
+      });
+    }
+  }
 };
 </script>
 

@@ -49,7 +49,7 @@
         <view v-for="(item, index) in list" :key="index" @click="goOther(index)">
           <view class="list">
             <view class="left">
-              <image :src="item.url"></image>
+              <image :src="item.url" mode="aspectFit"></image>
             </view>
             <view class="right" :class="{ noborder: index === current }">
               <text>{{item.text}}</text>
@@ -70,42 +70,42 @@ export default {
       list: [
         {
           id: 0,
-          url: "/static/images/m1.png",
+          url: "/static/images/m1.jpg",
           text: "我的订单"
         },
         {
           id: 1,
-          url: "/static/images/m2.png",
+          url: "/static/images/m2.jpg",
           text: "我的报名"
         },
         {
           id: 2,
-          url: "/static/images/m3.png",
+          url: "/static/images/m3.jpg",
           text: "我的推荐码"
         },
         {
           id: 3,
-          url: "/static/images/m5.png",
+          url: "/static/images/m5.jpg",
           text: "收货地址"
         },
         {
           id: 4,
-          url: "/static/images/m7.png",
+          url: "/static/images/m7.jpg",
           text: "关于我们"
         },
         {
           id: 5,
-          url: "/static/images/m6.png",
+          url: "/static/images/m6.jpg",
           text: "客服电话"
         },
         {
           id: 6,
-          url: "/static/images/m10.png",
+          url: "/static/images/m10.jpg",
           text: "意见反馈"
         },
         {
           id: 7,
-          url: "/static/images/m9.png",
+          url: "/static/images/m9.jpg",
           text: "我的设置"
         }
       ],
@@ -163,26 +163,32 @@ export default {
     goOther(index) {
       // 去我的订单页面
       if (index === 0) {
+        // return uni.navigateTo({
+        //   url: "/pages/myOrder/myOrder"
+        // });
         return uni.navigateTo({
-          url: "/pages/myOrder/myOrder"
+          url: "/pages/expect/expect"
         });
         // 去我的邀请码
       } else if (index === 2) {
-				uni.request({
-					url: "http://192.168.1.143:8086/WNC/user/getCode",
-					data: {
-						userId: 1,
-					},
-					header: {
-						"Content-Type": "application/x-www-form-urlencoded; charset=utf-8"
-					},
-					success: res => {
-						console.log(res)
-					}
-        });
+				// uni.request({
+				// 	url: "http://192.168.1.143:8086/WNC/user/getCode",
+				// 	data: {
+				// 		userId: 1,
+				// 	},
+				// 	header: {
+				// 		"Content-Type": "application/x-www-form-urlencoded; charset=utf-8"
+				// 	},
+				// 	success: res => {
+				// 		console.log(res)
+				// 	}
+        // });
         return uni.navigateTo({
-          url: "/pages/mineRecommendCourtesy/mineRecommendCourtesy"
+          url: "/pages/expect/expect"
         });
+        // return uni.navigateTo({
+        //   url: "/pages/mineRecommendCourtesy/mineRecommendCourtesy"
+        // });
         // 去设置页面
       } else if (index === 7) {
         return uni.navigateTo({
@@ -235,9 +241,9 @@ export default {
 						console.log(res)
 					}
         });
-        // return uni.navigateTo({
-        //   url: "/pages/mineAboutUs/mineAboutUs"
-        // });
+        return uni.navigateTo({
+          url: "/pages/mineAboutUs/mineAboutUs"
+        });
       }
       // 去意见反馈页面
       else if (index === 6) {
@@ -341,7 +347,7 @@ page {
         height: 50rpx;
         line-height: 50rpx;
         text-align: center;
-        width: 170rpx;
+        width: 200rpx;
         border: 1rpx solid red;
         border: 1rpx solid #f1f1f1;
         border-radius: 50rpx;
@@ -351,6 +357,9 @@ page {
         color:rgba(255,255,255,1);
         background-color: transparent;
         margin-top: 32rpx;
+      }
+      button {
+        border: 1rpx solid transparent;
       }
     }
     // 右边
@@ -430,7 +439,7 @@ page {
   justify-content: space-between;
   align-items: center;
   height: 100rpx;
-  line-height: 80rpx;
+  line-height: 100rpx;
   padding: 0 30rpx;
   .left {
     image {

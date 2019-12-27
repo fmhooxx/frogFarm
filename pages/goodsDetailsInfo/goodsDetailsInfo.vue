@@ -73,7 +73,11 @@
       // 控制回到顶部显示与隐藏
 				goTopStatus: false
 			}
-		},
+    },
+    onLoad() {
+      // 获取单品详情信息接口
+      this.getDetails()
+    },
 		//监听页面高度(上滑或者下滑)
 		onPageScroll(obj) {
 			if (obj.scrollTop > 363) {
@@ -82,6 +86,21 @@
 			this.goTopStatus = false
 		},
 		methods: {
+      // 获取单品详情信息接口
+      getDetails() {
+        uni.request({
+          url: 'http://192.168.1.155:8086/WNC/com/getDetails',
+          data: {
+            com_id: 1
+          },
+          header: {
+            'Content-Type': "application/x-www-form-urlencoded; charset=utf-8"
+          },
+          succeee(res) {
+            console.log(res)
+          }
+        })
+      },
       // 回到顶部
       goToTop() {
         uni.pageScrollTo({

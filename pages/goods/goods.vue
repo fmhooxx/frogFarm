@@ -1,6 +1,7 @@
 <template>
 <!-- 商圈页面 -->
-  <view class="goods">
+<view>
+  <view v-if="false" class="goods">
     <!-- tab 栏内容 -->
     <view class="tabs">
       <view
@@ -51,6 +52,10 @@
       <image src="/static/images/vip-add@2x.png"></image>
     </view>
   </view>
+  <view v-else class="expect-bgi">
+    <image src="../../static/images/expect-bgi.png" ></image>
+  </view>
+</view>
 </template>
 
 <script>
@@ -401,6 +406,18 @@ image {
     position: fixed;
     top: 900rpx;
     right: 26rpx;
+  }
+}
+.expect-bgi {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width:400rpx;
+  height:344rpx;
+  > image {
+    width: 100%;
+    height: 100%;
   }
 }
 </style>

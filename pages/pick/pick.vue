@@ -1,42 +1,47 @@
 <template>
-  <view class="container">
-    <!-- 有消息页面 -->
-    <view v-if="isBox">
-      <swiper :previous-margin="previousMargin" :next-margin="nextMargin" @click="swiperBindchange">
-        <block v-for="(item, index) in qrCode" :key="index">
-          <swiper-item>
-            <view class="count">{{currentIndex+1}}/{{qrCode.length}}</view>
-            <view class="slide-qr" :class=" currentIndex == index ? 'zoom-in' : 'zoom-out' ">
-              <text class="order">订单编号：100012323466</text>
-              <image src="/static/images/qr.png" mode="widthFix" />
-              <view class="mess">
-                <text class="tit">取货时间</text>
-                <text>2019-10-15 07:00-19:00</text>
-                <text class="tit">取货地点</text>
-                <text class="address">合肥市蜀山区合肥市蜀山区合肥市蜀山区合肥市蜀山区合肥市蜀山区合肥市蜀山区合作化路与史河路交...</text>
-              </view>
-              <view class="share">
-                <view class="save">
-                  <image src="/static/images/save.png" mode="widthFix" />
-                  <text>保存</text>
+  <view>
+    <view v-if="false" class="container">
+      <!-- 有消息页面 -->
+      <view v-if="isBox">
+        <swiper :previous-margin="previousMargin" :next-margin="nextMargin" @click="swiperBindchange">
+          <block v-for="(item, index) in qrCode" :key="index">
+            <swiper-item>
+              <view class="count">{{currentIndex+1}}/{{qrCode.length}}</view>
+              <view class="slide-qr" :class=" currentIndex == index ? 'zoom-in' : 'zoom-out' ">
+                <text class="order">订单编号：100012323466</text>
+                <image src="/static/images/qr.png" mode="widthFix" />
+                <view class="mess">
+                  <text class="tit">取货时间</text>
+                  <text>2019-10-15 07:00-19:00</text>
+                  <text class="tit">取货地点</text>
+                  <text class="address">合肥市蜀山区合肥市蜀山区合肥市蜀山区合肥市蜀山区合肥市蜀山区合肥市蜀山区合作化路与史河路交...</text>
                 </view>
-                <view class="shareTo">
-                  分享到：
-                  <image src="/static/images/wechart.png" mode="widthFix" />
-                  <image src="/static/images/qq.png" mode="widthFix" />
+                <view class="share">
+                  <view class="save">
+                    <image src="/static/images/save.png" mode="widthFix" />
+                    <text>保存</text>
+                  </view>
+                  <view class="shareTo">
+                    分享到：
+                    <image src="/static/images/wechart.png" mode="widthFix" />
+                    <image src="/static/images/qq.png" mode="widthFix" />
+                  </view>
                 </view>
               </view>
-            </view>
-          </swiper-item>
-        </block>
-      </swiper>
+            </swiper-item>
+          </block>
+        </swiper>
+      </view>
+      <!-- 无消息页面 -->
+      <!-- <view v-else class="no-index-news">
+        <image src="/static/images/pick-bgi.png"></image>
+        <view class="one">没有货要取 那就休息咯</view>
+        <view class="two">购买完成后将会生成取货二维码</view>
+        <view class="three" @click="goIndex">去逛逛</view>
+      </view> -->
     </view>
-    <!-- 无消息页面 -->
-    <view v-else class="no-index-news">
-      <image src="/static/images/pick-bgi.png"></image>
-      <view class="one">没有货要取 那就休息咯</view>
-      <view class="two">购买完成后将会生成取货二维码</view>
-      <!-- <view class="three" @click="goIndex">去逛逛</view> -->
+    <view v-else class="expect-bgi">
+      <image src="../../static/images/expect-bgi.png"></image>
     </view>
   </view>
 </template>
@@ -216,5 +221,17 @@ swiper {
   -webkit-line-clamp: 3;
   max-height: 100rpx;
   -webkit-box-orient: vertical;
+}
+.expect-bgi {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width:400rpx;
+  height:344rpx;
+  > image {
+    width: 100%;
+    height: 100%;
+  }
 }
 </style>

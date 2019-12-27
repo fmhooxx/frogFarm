@@ -1,6 +1,6 @@
-(global["webpackJsonp"] = global["webpackJsonp"] || []).push([["common/vendor"],[
-/* 0 */,
-/* 1 */
+(global["webpackJsonp"] = global["webpackJsonp"] || []).push([["common/vendor"],{
+
+/***/ 1:
 /*!************************************************************!*\
   !*** ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js ***!
   \************************************************************/
@@ -1527,7 +1527,115 @@ var uni$1 = uni;var _default =
 uni$1;exports.default = _default;
 
 /***/ }),
-/* 2 */
+
+/***/ 14:
+/*!********************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/runtime/componentNormalizer.js ***!
+  \********************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return normalizeComponent; });
+/* globals __VUE_SSR_CONTEXT__ */
+
+// IMPORTANT: Do NOT use ES2015 features in this file (except for modules).
+// This module is a runtime utility for cleaner component module output and will
+// be included in the final webpack user bundle.
+
+function normalizeComponent (
+  scriptExports,
+  render,
+  staticRenderFns,
+  functionalTemplate,
+  injectStyles,
+  scopeId,
+  moduleIdentifier, /* server only */
+  shadowMode /* vue-cli only */
+) {
+  // Vue.extend constructor export interop
+  var options = typeof scriptExports === 'function'
+    ? scriptExports.options
+    : scriptExports
+
+  // render functions
+  if (render) {
+    options.render = render
+    options.staticRenderFns = staticRenderFns
+    options._compiled = true
+  }
+
+  // functional template
+  if (functionalTemplate) {
+    options.functional = true
+  }
+
+  // scopedId
+  if (scopeId) {
+    options._scopeId = 'data-v-' + scopeId
+  }
+
+  var hook
+  if (moduleIdentifier) { // server build
+    hook = function (context) {
+      // 2.3 injection
+      context =
+        context || // cached call
+        (this.$vnode && this.$vnode.ssrContext) || // stateful
+        (this.parent && this.parent.$vnode && this.parent.$vnode.ssrContext) // functional
+      // 2.2 with runInNewContext: true
+      if (!context && typeof __VUE_SSR_CONTEXT__ !== 'undefined') {
+        context = __VUE_SSR_CONTEXT__
+      }
+      // inject component styles
+      if (injectStyles) {
+        injectStyles.call(this, context)
+      }
+      // register component module identifier for async chunk inferrence
+      if (context && context._registeredComponents) {
+        context._registeredComponents.add(moduleIdentifier)
+      }
+    }
+    // used by ssr in case component is cached and beforeCreate
+    // never gets called
+    options._ssrRegister = hook
+  } else if (injectStyles) {
+    hook = shadowMode
+      ? function () { injectStyles.call(this, this.$root.$options.shadowRoot) }
+      : injectStyles
+  }
+
+  if (hook) {
+    if (options.functional) {
+      // for template-only hot-reload because in that case the render fn doesn't
+      // go through the normalizer
+      options._injectStyles = hook
+      // register for functioal component in vue file
+      var originalRender = options.render
+      options.render = function renderWithStyleInjection (h, context) {
+        hook.call(context)
+        return originalRender(h, context)
+      }
+    } else {
+      // inject component registration as beforeCreate hook
+      var existing = options.beforeCreate
+      options.beforeCreate = existing
+        ? [].concat(existing, hook)
+        : [hook]
+    }
+  }
+
+  return {
+    exports: scriptExports,
+    options: options
+  }
+}
+
+
+/***/ }),
+
+/***/ 2:
 /*!******************************************************************************************!*\
   !*** ./node_modules/@dcloudio/vue-cli-plugin-uni/packages/mp-vue/dist/mp.runtime.esm.js ***!
   \******************************************************************************************/
@@ -7489,7 +7597,8 @@ internalMixin(Vue);
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../../../../../webpack/buildin/global.js */ 3)))
 
 /***/ }),
-/* 3 */
+
+/***/ 3:
 /*!***********************************!*\
   !*** (webpack)/buildin/global.js ***!
   \***********************************/
@@ -7519,7 +7628,8 @@ module.exports = g;
 
 
 /***/ }),
-/* 4 */
+
+/***/ 4:
 /*!*********************************************************!*\
   !*** C:/Users/Administrator/Desktop/资料/shop/pages.json ***!
   \*********************************************************/
@@ -7530,7 +7640,8 @@ module.exports = g;
 
 
 /***/ }),
-/* 5 */
+
+/***/ 5:
 /*!*******************************************************!*\
   !*** ./node_modules/@dcloudio/uni-stat/dist/index.js ***!
   \*******************************************************/
@@ -8416,7 +8527,8 @@ main();
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
-/* 6 */
+
+/***/ 6:
 /*!******************************************************!*\
   !*** ./node_modules/@dcloudio/uni-stat/package.json ***!
   \******************************************************/
@@ -8426,140 +8538,8 @@ main();
 module.exports = {"_from":"@dcloudio/uni-stat@^2.0.0-alpha-24420191128001","_id":"@dcloudio/uni-stat@2.0.0-v3-24020191018001","_inBundle":false,"_integrity":"sha512-nYBm5pRrYzrj2dKMqucWSF2PwInUMnn3MLHM/ik3gnLUEKSW61rzcY1RPlUwaH7c+Snm6N+bAJzmj3GvlrlVXA==","_location":"/@dcloudio/uni-stat","_phantomChildren":{},"_requested":{"type":"range","registry":true,"raw":"@dcloudio/uni-stat@^2.0.0-alpha-24420191128001","name":"@dcloudio/uni-stat","escapedName":"@dcloudio%2funi-stat","scope":"@dcloudio","rawSpec":"^2.0.0-alpha-24420191128001","saveSpec":null,"fetchSpec":"^2.0.0-alpha-24420191128001"},"_requiredBy":["/","/@dcloudio/vue-cli-plugin-uni"],"_resolved":"https://registry.npmjs.org/@dcloudio/uni-stat/-/uni-stat-2.0.0-v3-24020191018001.tgz","_shasum":"6ef04326cc0b945726413eebe442ab8f47c7536c","_spec":"@dcloudio/uni-stat@^2.0.0-alpha-24420191128001","_where":"/Users/guoshengqiang/Documents/dcloud-plugins/alpha/uniapp-cli","author":"","bugs":{"url":"https://github.com/dcloudio/uni-app/issues"},"bundleDependencies":false,"deprecated":false,"description":"","devDependencies":{"@babel/core":"^7.5.5","@babel/preset-env":"^7.5.5","eslint":"^6.1.0","rollup":"^1.19.3","rollup-plugin-babel":"^4.3.3","rollup-plugin-clear":"^2.0.7","rollup-plugin-commonjs":"^10.0.2","rollup-plugin-copy":"^3.1.0","rollup-plugin-eslint":"^7.0.0","rollup-plugin-json":"^4.0.0","rollup-plugin-node-resolve":"^5.2.0","rollup-plugin-replace":"^2.2.0","rollup-plugin-uglify":"^6.0.2"},"files":["dist","package.json","LICENSE"],"gitHead":"197e8df53cc9d4c3f6eb722b918ccf51672b5cfe","homepage":"https://github.com/dcloudio/uni-app#readme","license":"Apache-2.0","main":"dist/index.js","name":"@dcloudio/uni-stat","repository":{"type":"git","url":"git+https://github.com/dcloudio/uni-app.git","directory":"packages/uni-stat"},"scripts":{"build":"NODE_ENV=production rollup -c rollup.config.js","dev":"NODE_ENV=development rollup -w -c rollup.config.js"},"version":"2.0.0-v3-24020191018001"};
 
 /***/ }),
-/* 7 */
-/*!**************************************************************************!*\
-  !*** C:/Users/Administrator/Desktop/资料/shop/pages.json?{"type":"style"} ***!
-  \**************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
 
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _default = { "pages": { "pages/index/index": { "navigationBarTitleText": "蛙农场", "usingComponents": {} }, "pages/loginRegister/loginRegister": { "usingComponents": {} }, "pages/login/login": { "navigationBarBackgroundColor": "#fff", "usingComponents": {} }, "pages/goods/goods": { "navigationBarTitleText": "商圈", "navigationBarTextStyle": "white", "navigationBarBackgroundColor": "#48BC5B", "backgroundColor": "#F8F8F8", "usingComponents": {} }, "pages/expect/expect": { "navigationBarTitleText": "消息", "usingComponents": {} }, "pages/greenAddrManageAdd/greenAddrManageAdd": { "navigationBarTitleText": "新建地址", "usingComponents": {} }, "pages/goodsDetailsInfo/goodsDetailsInfo": { "navigationBarTitleText": "商品详情页", "usingComponents": {} }, "pages/confirmOrder/confirmOrder": { "navigationBarTitleText": "确认订单", "usingComponents": {} }, "pages/greenAddrManage/greenAddrManage": { "navigationBarTitleText": "地址管理", "usingComponents": {} }, "pages/vipManage/vipManage": { "navigationBarTitleText": "会员管理", "usingComponents": {} }, "pages/vipGoodsManage/vipGoodsManage": { "navigationBarTitleText": "商品管理", "usingComponents": {} }, "pages/vipDefaultTaoCan/vipDefaultTaoCan": { "navigationBarTitleText": "默认套餐", "usingComponents": {} }, "pages/vipGoodsDetailsInfo/vipGoodsDetailsInfo": { "navigationBarTitleText": "年卡套餐详情", "usingComponents": {} }, "pages/vipCard/vipCard": { "navigationBarTitleText": "个人中心-会员", "navigationBarTextStyle": "white", "navigationBarBackgroundColor": "#333", "usingComponents": {} }, "pages/orderPaySuccess/orderPaySuccess": { "navigationBarTitleText": "支付成功", "usingComponents": {} }, "pages/orderPay/orderPay": { "navigationBarTitleText": "支付", "usingComponents": {} }, "pages/greenOrderList/greenOrderList": { "navigationBarTitleText": "绿色健康订单", "usingComponents": {} }, "pages/greenOrderDetails/greenOrderDetails": { "navigationBarBackgroundColor": "#279524", "backgroundColor": "#F8F8F8", "usingComponents": {} }, "pages/greenOrderDetailBeizhu/greenOrderDetailBeizhu": { "navigationBarTitleText": "支付备注", "usingComponents": {} }, "pages/greenNewGoods/greenNewGoods": { "navigationBarTitleText": "个人中心商品管理-新建", "usingComponents": {} }, "pages/greenHealth/greenHealth": { "navigationBarTitleText": "绿色健康", "usingComponents": {} }, "pages/greenCart/greenCart": { "navigationBarTitleText": "购物车", "usingComponents": {} }, "pages/pick/pick": { "navigationBarTitleText": "取货", "usingComponents": {} }, "pages/mine/mine": { "navigationBarTitleText": "个人中心", "usingComponents": {} }, "pages/cart/cart": { "navigationBarTitleText": "购物车", "usingComponents": {} }, "components/BaseTabbar": { "usingComponents": {} }, "pages/goodsRelease/goodsRelease": { "navigationBarTitleText": "发布", "usingComponents": {} }, "components/BasePopup/BasePopup": { "usingComponents": {} }, "pages/vipGive/vipGive": { "navigationBarTitleText": "会员赠送", "navigationBarTextStyle": "white", "navigationBarBackgroundColor": "#333", "usingComponents": {} }, "pages/details/details": { "navigationBarTitleText": "查看更多", "usingComponents": {} }, "components/suspension/suspension": { "usingComponents": {} }, "pages/vipGiveRecord/vipGiveRecord": { "navigationBarTitleText": "赠送记录", "usingComponents": {} }, "pages/wallet/wallet": { "navigationBarTitleText": "我的钱包", "usingComponents": {} }, "pages/walletCashWithdrawal/walletCashWithdrawal": { "navigationBarTitleText": "提现", "usingComponents": {} }, "pages/walletBindingCard/walletBindingCard": { "navigationBarTitleText": "绑定银行卡", "usingComponents": {} }, "pages/walletChoiceBankCard/walletChoiceBankCard": { "navigationBarTitleText": "选择银行卡", "usingComponents": {} }, "pages/walletRecommendationRules/walletRecommendationRules": { "navigationBarTitleText": "推荐规则", "usingComponents": {} }, "pages/myOrder/myOrder": { "navigationBarTitleText": "我的订单", "usingComponents": {} }, "pages/greenStayPayment/greenStayPayment": { "navigationBarTitleText": "绿色健康: 待支付", "navigationBarTextStyle": "white", "navigationBarBackgroundColor": "#FC6A5D", "backgroundColor": "#F8F8F8", "usingComponents": {} }, "pages/walletRecommendationDetails/walletRecommendationDetails": { "navigationBarTitleText": "推荐明细", "usingComponents": {} }, "pages/walletMyTeam/walletMyTeam": { "navigationBarTitleText": "我的团队", "navigationBarTextStyle": "white", "navigationBarBackgroundColor": "#48BC5B", "usingComponents": {} }, "pages/walletHisFriend/walletHisFriend": { "navigationBarTitleText": "他的好友", "usingComponents": {} }, "pages/walletWithdrawalRules/walletWithdrawalRules": { "navigationBarTitleText": "提现规则", "usingComponents": {} }, "pages/walletMyBankCard/walletMyBankCard": { "navigationBarTitleText": "我的银行卡", "usingComponents": {} }, "pages/mineRecommendCourtesy/mineRecommendCourtesy": { "navigationBarTitleText": "推荐有礼", "usingComponents": {} }, "pages/mineAccountManagement/mineAccountManagement": { "navigationBarTitleText": "账户管理", "usingComponents": {} }, "pages/mineSetUp/mineSetUp": { "navigationBarTitleText": "设置", "usingComponents": {} }, "pages/loginSetLoginPassword/loginSetLoginPassword": { "usingComponents": {} }, "pages/loginInvitationCode/loginInvitationCode": { "usingComponents": {} }, "pages/loginChangepasswordCode/loginChangepasswordCode": { "usingComponents": {} }, "pages/loginChangePassword/loginChangePassword": { "usingComponents": {} }, "pages/mineUserInformation/mineUserInformation": { "navigationBarTitleText": "用户信息", "usingComponents": {} }, "pages/mineNickname/mineNickname": { "navigationBarTitleText": "昵称", "usingComponents": {} }, "pages/mineVerificationCode/mineVerificationCode": { "navigationBarTitleText": "填写验证码", "usingComponents": {} }, "pages/mineVerificationCodeSuccess/mineVerificationCodeSuccess": { "navigationBarTitleText": "更换完成", "usingComponents": {} }, "pages/mineAfterSaleService/mineAfterSaleService": { "navigationBarTitleText": "售后服务", "usingComponents": {} }, "pages/mineCommonProblem/mineCommonProblem": { "navigationBarTitleText": "常见问题", "usingComponents": {} }, "pages/mineAboutUs/mineAboutUs": { "navigationBarTitleText": "关于我们", "usingComponents": {} }, "pages/mineFeedback/mineFeedback": { "navigationBarTitleText": "意见反馈", "usingComponents": {} }, "pages/walletPresentationDetails/walletPresentationDetails": { "navigationBarTitleText": "提现明细", "usingComponents": {} }, "pages/walletSuccessfulWithdrawals/walletSuccessfulWithdrawals": { "navigationBarTitleText": "提现进度", "usingComponents": {} }, "pages/indexLocation/indexLocation": { "navigationBarTitleText": "我的位置", "usingComponents": {} }, "pages/indexNews/indexNews": { "usingComponents": {} }, "pages/indexNewsDetails/indexNewsDetails": { "navigationBarTitleText": "消息详情", "usingComponents": {} }, "pages/vipMemberManagementRules/vipMemberManagementRules": { "navigationBarTitleText": "会员管理规则", "usingComponents": {} }, "pages/vipMemberAgreement/vipMemberAgreement": { "usingComponents": {} }, "pages/vipPurchaseRecord/vipPurchaseRecord": { "navigationBarTitleText": "购买记录", "usingComponents": {} } }, "globalStyle": { "navigationBarTextStyle": "black", "navigationBarBackgroundColor": "#fff", "backgroundColor": "#F8F8F8" } };exports.default = _default;
-
-/***/ }),
-/* 8 */
-/*!*************************************************************************!*\
-  !*** C:/Users/Administrator/Desktop/资料/shop/pages.json?{"type":"stat"} ***!
-  \*************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _default = { "appid": "" };exports.default = _default;
-
-/***/ }),
-/* 9 */,
-/* 10 */,
-/* 11 */,
-/* 12 */,
-/* 13 */,
-/* 14 */
-/*!********************************************************************!*\
-  !*** ./node_modules/vue-loader/lib/runtime/componentNormalizer.js ***!
-  \********************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return normalizeComponent; });
-/* globals __VUE_SSR_CONTEXT__ */
-
-// IMPORTANT: Do NOT use ES2015 features in this file (except for modules).
-// This module is a runtime utility for cleaner component module output and will
-// be included in the final webpack user bundle.
-
-function normalizeComponent (
-  scriptExports,
-  render,
-  staticRenderFns,
-  functionalTemplate,
-  injectStyles,
-  scopeId,
-  moduleIdentifier, /* server only */
-  shadowMode /* vue-cli only */
-) {
-  // Vue.extend constructor export interop
-  var options = typeof scriptExports === 'function'
-    ? scriptExports.options
-    : scriptExports
-
-  // render functions
-  if (render) {
-    options.render = render
-    options.staticRenderFns = staticRenderFns
-    options._compiled = true
-  }
-
-  // functional template
-  if (functionalTemplate) {
-    options.functional = true
-  }
-
-  // scopedId
-  if (scopeId) {
-    options._scopeId = 'data-v-' + scopeId
-  }
-
-  var hook
-  if (moduleIdentifier) { // server build
-    hook = function (context) {
-      // 2.3 injection
-      context =
-        context || // cached call
-        (this.$vnode && this.$vnode.ssrContext) || // stateful
-        (this.parent && this.parent.$vnode && this.parent.$vnode.ssrContext) // functional
-      // 2.2 with runInNewContext: true
-      if (!context && typeof __VUE_SSR_CONTEXT__ !== 'undefined') {
-        context = __VUE_SSR_CONTEXT__
-      }
-      // inject component styles
-      if (injectStyles) {
-        injectStyles.call(this, context)
-      }
-      // register component module identifier for async chunk inferrence
-      if (context && context._registeredComponents) {
-        context._registeredComponents.add(moduleIdentifier)
-      }
-    }
-    // used by ssr in case component is cached and beforeCreate
-    // never gets called
-    options._ssrRegister = hook
-  } else if (injectStyles) {
-    hook = shadowMode
-      ? function () { injectStyles.call(this, this.$root.$options.shadowRoot) }
-      : injectStyles
-  }
-
-  if (hook) {
-    if (options.functional) {
-      // for template-only hot-reload because in that case the render fn doesn't
-      // go through the normalizer
-      options._injectStyles = hook
-      // register for functioal component in vue file
-      var originalRender = options.render
-      options.render = function renderWithStyleInjection (h, context) {
-        hook.call(context)
-        return originalRender(h, context)
-      }
-    } else {
-      // inject component registration as beforeCreate hook
-      var existing = options.beforeCreate
-      options.beforeCreate = existing
-        ? [].concat(existing, hook)
-        : [hook]
-    }
-  }
-
-  return {
-    exports: scriptExports,
-    options: options
-  }
-}
-
-
-/***/ }),
-/* 15 */
+/***/ 688:
 /*!***************************************************************************!*\
   !*** C:/Users/Administrator/Desktop/资料/shop/js_sdk/luch-request/index.js ***!
   \***************************************************************************/
@@ -8567,26 +8547,28 @@ function normalizeComponent (
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.test = exports.http = void 0;var _request = _interopRequireDefault(__webpack_require__(/*! ./request */ 16));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function _objectSpread(target) {for (var i = 1; i < arguments.length; i++) {var source = arguments[i] != null ? arguments[i] : {};var ownKeys = Object.keys(source);if (typeof Object.getOwnPropertySymbols === 'function') {ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) {return Object.getOwnPropertyDescriptor(source, sym).enumerable;}));}ownKeys.forEach(function (key) {_defineProperty(target, key, source[key]);});}return target;}function _defineProperty(obj, key, value) {if (key in obj) {Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });} else {obj[key] = value;}return obj;}
+Object.defineProperty(exports, "__esModule", { value: true });exports.test = exports.http = void 0;var _request = _interopRequireDefault(__webpack_require__(/*! ./request */ 689));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
 
 var test = new _request.default();exports.test = test;
 test.setConfig(function (config) {
   /* 设置全局配置 */
-  config.baseUrl = 'http://192.168.1.166:8086';
-  config.header = _objectSpread({},
-  config.header, {
-    a: 1,
-    b: 2
+  config.baseUrl = 'http://192.168.1.155:8086/WNC';
+  config.header = {
+    // ...config.header,
+    // a: 1,
+    // b: 2
+    'Content-Type': "application/x-www-form-urlencoded; charset=utf-8"
 
     // config.custom = { auth: true }
-  });return config;
+  };return config;
 });
 
 test.interceptor.request(function (config, cancel) {
   /* 请求之前拦截器 */
-  config.header = _objectSpread({},
-  config.header, {
-    a: 3
+  config.header = {
+    // ...config.header,
+    // a: 3
+    'Content-Type': "application/x-www-form-urlencoded; charset=utf-8"
 
     // if (config.custom.auth) {
     //   config.header.token = 'token'
@@ -8595,7 +8577,7 @@ test.interceptor.request(function (config, cancel) {
     if (!token) { // 如果token不存在，调用cancel 会取消本次请求，但是该函数的catch() 仍会执行
       cancel('token 不存在') // 接收一个参数，会传给catch((err) => {}) err.errMsg === 'token 不存在'
     }
-    */ });
+    */ };
   return config;
 });
 
@@ -8619,11 +8601,12 @@ var http = new _request.default();exports.http = http;
 
 http.setConfig(function (config) {
   /* 设置全局配置 */
-  config.baseUrl = 'http://192.168.1.166:8086'; /* 根域名不同 */
-  config.header = _objectSpread({},
-  config.header, {
-    a: 1,
-    b: 2 });
+  config.baseUrl = 'http://192.168.1.155:8086/WNC'; /* 根域名不同 */
+  config.header = {
+    // ...config.header,
+    // a: 1,
+    // b: 2
+    'Content-Type': "application/x-www-form-urlencoded; charset=utf-8" };
 
   return config;
 });
@@ -8639,15 +8622,16 @@ http.validateStatus = function (statusCode) {
 
 http.interceptor.request(function (config, cancel) {
   /* 请求之前拦截器 */
-  config.header = _objectSpread({},
-  config.header, {
-    b: 1
+  config.header = {
+    // ...config.header,
+    // b: 1
+    'Content-Type': "application/x-www-form-urlencoded; charset=utf-8"
 
     /*
-         if (!token) { // 如果token不存在，调用cancel 会取消本次请求，但是该函数的catch() 仍会执行
-           cancel('token 不存在') // 接收一个参数，会传给catch((err) => {}) err.errMsg === 'token 不存在'
-         }
-         */ });
+                                                                       if (!token) { // 如果token不存在，调用cancel 会取消本次请求，但是该函数的catch() 仍会执行
+                                                                         cancel('token 不存在') // 接收一个参数，会传给catch((err) => {}) err.errMsg === 'token 不存在'
+                                                                       }
+                                                                       */ };
   return config;
 });
 
@@ -8665,7 +8649,8 @@ http.interceptor.response(function (response) {
 });
 
 /***/ }),
-/* 16 */
+
+/***/ 689:
 /*!*****************************************************************************!*\
   !*** C:/Users/Administrator/Desktop/资料/shop/js_sdk/luch-request/request.js ***!
   \*****************************************************************************/
@@ -8673,7 +8658,7 @@ http.interceptor.response(function (response) {
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _regenerator = _interopRequireDefault(__webpack_require__(/*! ./node_modules/@babel/runtime/regenerator */ 17));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function _objectSpread(target) {for (var i = 1; i < arguments.length; i++) {var source = arguments[i] != null ? arguments[i] : {};var ownKeys = Object.keys(source);if (typeof Object.getOwnPropertySymbols === 'function') {ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) {return Object.getOwnPropertyDescriptor(source, sym).enumerable;}));}ownKeys.forEach(function (key) {_defineProperty(target, key, source[key]);});}return target;}function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) {try {var info = gen[key](arg);var value = info.value;} catch (error) {reject(error);return;}if (info.done) {resolve(value);} else {Promise.resolve(value).then(_next, _throw);}}function _asyncToGenerator(fn) {return function () {var self = this,args = arguments;return new Promise(function (resolve, reject) {var gen = fn.apply(self, args);function _next(value) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value);}function _throw(err) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err);}_next(undefined);});};}function _classCallCheck(instance, Constructor) {if (!(instance instanceof Constructor)) {throw new TypeError("Cannot call a class as a function");}}function _defineProperties(target, props) {for (var i = 0; i < props.length; i++) {var descriptor = props[i];descriptor.enumerable = descriptor.enumerable || false;descriptor.configurable = true;if ("value" in descriptor) descriptor.writable = true;Object.defineProperty(target, descriptor.key, descriptor);}}function _createClass(Constructor, protoProps, staticProps) {if (protoProps) _defineProperties(Constructor.prototype, protoProps);if (staticProps) _defineProperties(Constructor, staticProps);return Constructor;}function _defineProperty(obj, key, value) {if (key in obj) {Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });} else {obj[key] = value;}return obj;} /**
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _regenerator = _interopRequireDefault(__webpack_require__(/*! ./node_modules/@babel/runtime/regenerator */ 690));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function _objectSpread(target) {for (var i = 1; i < arguments.length; i++) {var source = arguments[i] != null ? arguments[i] : {};var ownKeys = Object.keys(source);if (typeof Object.getOwnPropertySymbols === 'function') {ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) {return Object.getOwnPropertyDescriptor(source, sym).enumerable;}));}ownKeys.forEach(function (key) {_defineProperty(target, key, source[key]);});}return target;}function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) {try {var info = gen[key](arg);var value = info.value;} catch (error) {reject(error);return;}if (info.done) {resolve(value);} else {Promise.resolve(value).then(_next, _throw);}}function _asyncToGenerator(fn) {return function () {var self = this,args = arguments;return new Promise(function (resolve, reject) {var gen = fn.apply(self, args);function _next(value) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value);}function _throw(err) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err);}_next(undefined);});};}function _classCallCheck(instance, Constructor) {if (!(instance instanceof Constructor)) {throw new TypeError("Cannot call a class as a function");}}function _defineProperties(target, props) {for (var i = 0; i < props.length; i++) {var descriptor = props[i];descriptor.enumerable = descriptor.enumerable || false;descriptor.configurable = true;if ("value" in descriptor) descriptor.writable = true;Object.defineProperty(target, descriptor.key, descriptor);}}function _createClass(Constructor, protoProps, staticProps) {if (protoProps) _defineProperties(Constructor.prototype, protoProps);if (staticProps) _defineProperties(Constructor, staticProps);return Constructor;}function _defineProperty(obj, key, value) {if (key in obj) {Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });} else {obj[key] = value;}return obj;} /**
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   * Request 1.0.5
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   * @Class Request
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   * @description luch-request 1.0.4 http请求插件
@@ -9015,18 +9000,20 @@ Request = /*#__PURE__*/function () {function Request() {var _this = this;_classC
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
-/* 17 */
+
+/***/ 690:
 /*!**********************************************************!*\
   !*** ./node_modules/@babel/runtime/regenerator/index.js ***!
   \**********************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! regenerator-runtime */ 18);
+module.exports = __webpack_require__(/*! regenerator-runtime */ 691);
 
 
 /***/ }),
-/* 18 */
+
+/***/ 691:
 /*!************************************************************!*\
   !*** ./node_modules/regenerator-runtime/runtime-module.js ***!
   \************************************************************/
@@ -9057,7 +9044,7 @@ var oldRuntime = hadRuntime && g.regeneratorRuntime;
 // Force reevalutation of runtime.js.
 g.regeneratorRuntime = undefined;
 
-module.exports = __webpack_require__(/*! ./runtime */ 19);
+module.exports = __webpack_require__(/*! ./runtime */ 692);
 
 if (hadRuntime) {
   // Restore the original runtime.
@@ -9073,7 +9060,8 @@ if (hadRuntime) {
 
 
 /***/ }),
-/* 19 */
+
+/***/ 692:
 /*!*****************************************************!*\
   !*** ./node_modules/regenerator-runtime/runtime.js ***!
   \*****************************************************/
@@ -9803,6 +9791,31 @@ if (hadRuntime) {
 );
 
 
+/***/ }),
+
+/***/ 7:
+/*!**************************************************************************!*\
+  !*** C:/Users/Administrator/Desktop/资料/shop/pages.json?{"type":"style"} ***!
+  \**************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _default = { "pages": { "pages/index/index": { "navigationBarTitleText": "蛙农场" }, "pages/loginRegister/loginRegister": {}, "pages/login/login": { "navigationBarBackgroundColor": "#fff" }, "pages/goods/goods": { "navigationBarTitleText": "商圈", "navigationBarTextStyle": "white", "navigationBarBackgroundColor": "#48BC5B", "backgroundColor": "#F8F8F8" }, "pages/expect/expect": { "navigationBarTitleText": "消息" }, "pages/greenAddrManageAdd/greenAddrManageAdd": { "navigationBarTitleText": "新建地址" }, "pages/goodsDetailsInfo/goodsDetailsInfo": { "navigationBarTitleText": "商品详情页" }, "pages/confirmOrder/confirmOrder": { "navigationBarTitleText": "确认订单" }, "pages/greenAddrManage/greenAddrManage": { "navigationBarTitleText": "地址管理" }, "pages/vipManage/vipManage": { "navigationBarTitleText": "会员管理" }, "pages/vipGoodsManage/vipGoodsManage": { "navigationBarTitleText": "商品管理" }, "pages/vipDefaultTaoCan/vipDefaultTaoCan": { "navigationBarTitleText": "默认套餐" }, "pages/vipGoodsDetailsInfo/vipGoodsDetailsInfo": { "navigationBarTitleText": "年卡套餐详情" }, "pages/vipCard/vipCard": { "navigationBarTitleText": "个人中心-会员", "navigationBarTextStyle": "white", "navigationBarBackgroundColor": "#333" }, "pages/orderPaySuccess/orderPaySuccess": { "navigationBarTitleText": "支付成功" }, "pages/orderPay/orderPay": { "navigationBarTitleText": "支付" }, "pages/greenOrderList/greenOrderList": { "navigationBarTitleText": "绿色健康订单" }, "pages/greenOrderDetails/greenOrderDetails": { "navigationBarBackgroundColor": "#279524", "backgroundColor": "#F8F8F8" }, "pages/greenOrderDetailBeizhu/greenOrderDetailBeizhu": { "navigationBarTitleText": "支付备注" }, "pages/greenNewGoods/greenNewGoods": { "navigationBarTitleText": "个人中心商品管理-新建" }, "pages/greenHealth/greenHealth": { "navigationBarTitleText": "绿色健康" }, "pages/greenCart/greenCart": { "navigationBarTitleText": "购物车" }, "pages/pick/pick": { "navigationBarTitleText": "取货" }, "pages/mine/mine": { "navigationBarTitleText": "个人中心" }, "pages/cart/cart": { "navigationBarTitleText": "购物车" }, "components/BaseTabbar": {}, "pages/goodsRelease/goodsRelease": { "navigationBarTitleText": "发布" }, "components/BasePopup/BasePopup": {}, "pages/vipGive/vipGive": { "navigationBarTitleText": "会员赠送", "navigationBarTextStyle": "white", "navigationBarBackgroundColor": "#333" }, "pages/details/details": { "navigationBarTitleText": "查看更多" }, "components/suspension/suspension": {}, "pages/vipGiveRecord/vipGiveRecord": { "navigationBarTitleText": "赠送记录" }, "pages/wallet/wallet": { "navigationBarTitleText": "我的钱包" }, "pages/walletCashWithdrawal/walletCashWithdrawal": { "navigationBarTitleText": "提现" }, "pages/walletBindingCard/walletBindingCard": { "navigationBarTitleText": "绑定银行卡" }, "pages/walletChoiceBankCard/walletChoiceBankCard": { "navigationBarTitleText": "选择银行卡" }, "pages/walletRecommendationRules/walletRecommendationRules": { "navigationBarTitleText": "推荐规则" }, "pages/myOrder/myOrder": { "navigationBarTitleText": "我的订单" }, "pages/greenStayPayment/greenStayPayment": { "navigationBarTitleText": "绿色健康: 待支付", "navigationBarTextStyle": "white", "navigationBarBackgroundColor": "#FC6A5D", "backgroundColor": "#F8F8F8" }, "pages/walletRecommendationDetails/walletRecommendationDetails": { "navigationBarTitleText": "推荐明细" }, "pages/walletMyTeam/walletMyTeam": { "navigationBarTitleText": "我的团队", "navigationBarTextStyle": "white", "navigationBarBackgroundColor": "#48BC5B" }, "pages/walletHisFriend/walletHisFriend": { "navigationBarTitleText": "他的好友" }, "pages/walletWithdrawalRules/walletWithdrawalRules": { "navigationBarTitleText": "提现规则" }, "pages/walletMyBankCard/walletMyBankCard": { "navigationBarTitleText": "我的银行卡" }, "pages/mineRecommendCourtesy/mineRecommendCourtesy": { "navigationBarTitleText": "推荐有礼" }, "pages/mineAccountManagement/mineAccountManagement": { "navigationBarTitleText": "账户管理" }, "pages/mineSetUp/mineSetUp": { "navigationBarTitleText": "设置" }, "pages/loginSetLoginPassword/loginSetLoginPassword": {}, "pages/loginInvitationCode/loginInvitationCode": {}, "pages/loginChangepasswordCode/loginChangepasswordCode": {}, "pages/loginChangePassword/loginChangePassword": {}, "pages/mineUserInformation/mineUserInformation": { "navigationBarTitleText": "用户信息" }, "pages/mineNickname/mineNickname": { "navigationBarTitleText": "昵称" }, "pages/mineVerificationCode/mineVerificationCode": { "navigationBarTitleText": "填写验证码" }, "pages/mineVerificationCodeSuccess/mineVerificationCodeSuccess": { "navigationBarTitleText": "更换完成" }, "pages/mineAfterSaleService/mineAfterSaleService": { "navigationBarTitleText": "售后服务" }, "pages/mineCommonProblem/mineCommonProblem": { "navigationBarTitleText": "常见问题" }, "pages/mineAboutUs/mineAboutUs": { "navigationBarTitleText": "关于我们" }, "pages/mineFeedback/mineFeedback": { "navigationBarTitleText": "意见反馈" }, "pages/walletPresentationDetails/walletPresentationDetails": { "navigationBarTitleText": "提现明细" }, "pages/walletSuccessfulWithdrawals/walletSuccessfulWithdrawals": { "navigationBarTitleText": "提现进度" }, "pages/indexLocation/indexLocation": { "navigationBarTitleText": "我的位置" }, "pages/indexNews/indexNews": {}, "pages/indexNewsDetails/indexNewsDetails": { "navigationBarTitleText": "消息详情" }, "pages/vipMemberManagementRules/vipMemberManagementRules": { "navigationBarTitleText": "会员管理规则" }, "pages/vipMemberAgreement/vipMemberAgreement": {}, "pages/vipPurchaseRecord/vipPurchaseRecord": { "navigationBarTitleText": "购买记录" }, "pages/indexBanner/indexBanner": {}, "pages/indexSwiperBanner/indexSwiperBanner": {} }, "globalStyle": { "navigationBarTextStyle": "black", "navigationBarBackgroundColor": "#fff", "backgroundColor": "#F8F8F8" } };exports.default = _default;
+
+/***/ }),
+
+/***/ 8:
+/*!*************************************************************************!*\
+  !*** C:/Users/Administrator/Desktop/资料/shop/pages.json?{"type":"stat"} ***!
+  \*************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _default = { "appid": "" };exports.default = _default;
+
 /***/ })
-]]);
+
+}]);
 //# sourceMappingURL=../../.sourcemap/mp-weixin/common/vendor.js.map

@@ -246,33 +246,39 @@
 		},
 		methods: {
 			// 获取商品类别数据接口
+			// getClass() {
+			// 	uni.request({
+			// 		url: 'http://192.168.1.155:8086/WNC/com/getClass',
+			// 		data: {},
+			// 		header: {
+			// 			'Content-Type': "application/x-www-form-urlencoded; charset=utf-8"
+			// 		},
+			// 		succeee(res) {
+			// 			console.log(res)
+			// 		}
+			// 	})
+			// },
 			getClass() {
-				uni.request({
-					url: 'http://192.168.1.155:8086/WNC/com/getClass',
-					data: {},
-					header: {
-						'Content-Type': "application/x-www-form-urlencoded; charset=utf-8"
-					},
-					succeee(res) {
-						console.log(res)
-					}
-				})
+				this.$http.get('/com/getClass').then(res => console.log(res))
 			},
 			// 获取分类商品信息数据接口
 			getMarket1() {
-				uni.request({
-					url: 'http://192.168.1.155:8086/WNC/com/getMarket1',
-					data: {
-						id: 1
-					},
-					header: {
-						'Content-Type': "application/x-www-form-urlencoded; charset=utf-8"
-					},
-					succeee(res) {
-						console.log(res)
-					}
-				})
+				this.$http.get('/com/getMarket1', { params: { id: 1 } }).then(res => console.log(res))
 			},
+			// getMarket1() {
+			// 	uni.request({
+			// 		url: 'http://192.168.1.155:8086/WNC/com/getMarket1',
+			// 		data: {
+			// 			id: 1
+			// 		},
+			// 		header: {
+			// 			'Content-Type': "application/x-www-form-urlencoded; charset=utf-8"
+			// 		},
+			// 		succeee(res) {
+			// 			console.log(res)
+			// 		}
+			// 	})
+			// },
 			// 点击左边 重新加载数据
 			tabTap(id) {
 				this.isActive = id

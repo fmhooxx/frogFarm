@@ -5,7 +5,7 @@
 			<swiper :indicator-dots="indicatorDots" indicator-active-color="#48BC5B" :indicator-color="indicatorColor" :autoplay="autoplay"
 			 :interval="interval" :duration="duration" :circular="circular">
 				<block v-for="(item, index) in imgUrls" :key="index">
-					<swiper-item>
+					<swiper-item @click="goindexSwiperBanner">
 						<image :src="item" class="slide-image" mode="widthFix" bindtap="toPath" :data-id="item.id" />
 					</swiper-item>
 				</block>
@@ -16,16 +16,16 @@
 		<!-- 消息以及定位开始 -->
 		<view class="news">
 			<!-- 定位 -->
-			<view class="location" @click="goIndexLocation">
+			<!-- <view class="location" @click="goIndexLocation"> -->
 				<!-- 定位图片 -->
-				<image class="location-img" src="/static/images/posi.png"></image>
+				<!-- <image class="location-img" src="/static/images/posi.png"></image> -->
 				<!-- 地区内容 -->
-				<view class="location-box">
+				<!-- <view class="location-box">
 					<view>合肥市</view>
-				</view>
+				</view> -->
 				<!-- 下拉小箭头 -->
-				<image class="drop-down-img" src="/static/images/down-arrow.png"></image>
-			</view>
+				<!-- <image class="drop-down-img" src="/static/images/down-arrow.png"></image>
+			</view> -->
 			<!-- 信息 -->
 			<view class="location-info" @click="goIndexNews">
 				<image src="/static/images/dialog.png"></image>
@@ -283,7 +283,7 @@
 		<!-- 健康专区结束 -->
 
 		<!-- banner 区域开始 -->
-		<view class="index-banner">
+		<view class="index-banner" @click="goIndexBanner">
 			<image src="/static/images/index-banner.png"></image>
 		</view>
 		<!-- banner 区域结束 -->
@@ -436,6 +436,10 @@
 				// array: ['合肥市'],
 				// 控制默认渲染的城市的选择与隐藏
 				isFlag: true,
+				// 用户中心纬度
+				latitude: null,
+				// 用户中心经度,
+				longitude: null,
 				list: [{
 						id: 1,
 						url: '../../static/images/green-orderlistA.png',
@@ -473,8 +477,70 @@
 		},
 		onLoad() {
 			this.getList()
+			// 显示弹框 获取用户位置信息
+			this.getLocation()
 		},
 		methods: {
+			getLocation() {
+				uni.showModal({
+						content: '获取您当前的位置',
+						success: res => {
+								if (res.confirm) {
+										console.log('用户点击确定');
+										this.getLocationInfo()
+								} else if (res.cancel) {
+										console.log('用户点击取消');
+								}
+						}
+				});
+			},
+			// 获取当前的地理位置
+			getLocationInfo() {
+				//2. 获取地理位置
+				uni.getLocation({
+					type: "wgs84",
+					success: res => {
+						console.log(res)
+						this.latitude = res.latitude;
+						this.longitude = res.longitude;
+						console.log(this.latitude)
+						console.log(this.longitude)
+						let latitude, longitude;
+						latitude = res.latitude.toString();
+						longitude = res.longitude.toString();
+						// uni.request({
+						// 	header: {
+						// 		"Content-Type": "application/text"
+						// 	},
+						// 	url:
+						// 		"http://apis.map.qq.com/ws/geocoder/v1/?location=" +
+						// 		latitude +
+						// 		"," +
+						// 		longitude +
+						// 		"&key=MVGBZ-R2U3U-W5CVY-2PQID-AT4VZ-PDF35",
+						// 	success(re) {
+						// 		console.log("中文位置");
+						// 		console.log(re);
+						// 		if (re.statusCode === 200) {
+						// 			console.log("获取中文街道地理位置成功");
+						// 		} else {
+						// 			console.log("获取信息失败，请重试！");
+						// 		}
+						// 	}
+						// });
+					},
+					fail: res => {
+						console.log(res);
+						if (res.errCode == 2) {
+							uni.showToast({
+								title: "请您打开GPS",
+								duration: 3000,
+								icon: "none"
+							});
+						}
+					}
+				});
+			},
 			// 去绿色健康页面
 			goGreenHealth() {
 				uni.navigateTo({
@@ -493,8 +559,19 @@
 					url: '/pages/indexNews/indexNews'
 				})
 			},
+			// 去首页banner的详情
+			goIndexBanner() {
+				uni.navigateTo({
+					url: '/pages/indexBanner/indexBanner'
+				})
+			},
+			// 去首页轮播图的详情
+			goindexSwiperBanner() {
+				uni.navigateTo({
+					url: '/pages/indexSwiperBanner/indexSwiperBanner'
+				})
+			},
 			getList() {
-				// this.$http.get('/wanongchang/banner/getBanner').then(res => {console.log(res)})
 				// uni.request({
 				// 	url: "http://192.168.1.166:8086/WNC/banner/getBanner",
 				// 	data: {},
@@ -606,6 +683,8 @@
 		// 信息
 		.location-info {
 			margin-right: 30rpx;
+			position: absolute;
+			right: 0;
 
 			image {
 				width: 44rpx;

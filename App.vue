@@ -115,6 +115,9 @@ export default {
 checkbox .wx-checkbox-input {
   border-radius: 50% !important;
   color: #48bc5b !important;
+  width: 35upx;
+  /* 背景的宽 */
+  height: 35upx;
 }
 /* #endif */
 /*每个页面公共css */

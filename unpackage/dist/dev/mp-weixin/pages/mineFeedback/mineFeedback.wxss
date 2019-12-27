@@ -11,12 +11,12 @@ image.data-v-5ab9aa67 {
   padding: 0 30rpx;
 }
 .feedback .textarea-placeholder.data-v-5ab9aa67 {
-  font-size: 32rpx;
+  font-size: 30rpx;
   color: #999;
 }
 .feedback .title.data-v-5ab9aa67 {
   height: 222rpx;
-  font-size: 32rpx;
+  font-size: 30rpx;
   line-height: 60rpx;
   padding-top: 52rpx;
   box-sizing: border-box;

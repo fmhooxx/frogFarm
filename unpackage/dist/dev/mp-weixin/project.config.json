@@ -8,7 +8,7 @@
 	},
 	"compileType": "miniprogram",
 	"libVersion": "2.9.2",
-	"appid": "wx4650e563350d1d20",
+	"appid": "wx06669a797931f541",
 	"projectname": "shop",
 	"simulatorType": "wechat",
 	"simulatorPluginLibVersion": {},
@@ -38,8 +38,22 @@
 			"list": [
 				{
 					"id": -1,
-					"name": "pages/mine/mine",
-					"pathName": "pages/mine/mine",
+					"name": "pages/vipManage/vipManage",
+					"pathName": "pages/vipManage/vipManage",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/vipGoodsManage/vipGoodsManage",
+					"pathName": "pages/vipGoodsManage/vipGoodsManage",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/vipDefaultTaoCan/vipDefaultTaoCan",
+					"pathName": "pages/vipDefaultTaoCan/vipDefaultTaoCan",
 					"query": "",
 					"scene": null
 				},
@@ -59,8 +73,8 @@
 				},
 				{
 					"id": -1,
-					"name": "pages/vipGoodsDetailsInfo/vipGoodsDetailsInfo",
-					"pathName": "pages/vipGoodsDetailsInfo/vipGoodsDetailsInfo",
+					"name": "pages/vipMemberManagementRules/vipMemberManagementRules",
+					"pathName": "pages/vipMemberManagementRules/vipMemberManagementRules",
 					"query": "",
 					"scene": null
 				},
@@ -73,29 +87,8 @@
 				},
 				{
 					"id": -1,
-					"name": "pages/vipGoodsDetailsInfo/vipGoodsDetailsInfo",
-					"pathName": "pages/vipGoodsDetailsInfo/vipGoodsDetailsInfo",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "pages/loginRegister/loginRegister",
-					"pathName": "pages/loginRegister/loginRegister",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "pages/mineVerificationCode/mineVerificationCode",
-					"pathName": "pages/mineVerificationCode/mineVerificationCode",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "pages/mineVerificationCode/mineVerificationCode",
-					"pathName": "pages/mineVerificationCode/mineVerificationCode",
+					"name": "pages/goodsDetailsInfo/goodsDetailsInfo",
+					"pathName": "pages/goodsDetailsInfo/goodsDetailsInfo",
 					"scene": null
 				}
 			]

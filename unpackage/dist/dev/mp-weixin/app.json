@@ -66,7 +66,9 @@
     "pages/indexNewsDetails/indexNewsDetails",
     "pages/vipMemberManagementRules/vipMemberManagementRules",
     "pages/vipMemberAgreement/vipMemberAgreement",
-    "pages/vipPurchaseRecord/vipPurchaseRecord"
+    "pages/vipPurchaseRecord/vipPurchaseRecord",
+    "pages/indexBanner/indexBanner",
+    "pages/indexSwiperBanner/indexSwiperBanner"
   ],
   "subPackages": [],
   "window": {
@@ -109,6 +111,11 @@
         "text": "我的"
       }
     ]
+  },
+  "permission": {
+    "scope.userLocation": {
+      "desc": "页面展示效果"
+    }
   },
   "usingComponents": {
     "base-tabbar": "/components/BaseTabbar",

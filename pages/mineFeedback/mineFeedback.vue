@@ -133,12 +133,12 @@ image {
 .feedback {
 	padding: 0 30rpx;
 	.textarea-placeholder {
-		font-size: 32rpx;
+		font-size: 30rpx;
 		color: #999;
 	}
   .title {
     height: 222rpx;
-    font-size: 32rpx;
+    font-size: 30rpx;
     line-height: 60rpx;
     padding-top: 52rpx;
     box-sizing: border-box;

@@ -150,8 +150,29 @@
           }
         ]
 			}
-		},
+    },
+    onLoad() {
+      // 获取所有会员套餐信息接口
+      this.getFindList()
+    },
 		methods: {
+      // 获取所有会员套餐信息接口
+      // getFindList() {
+      //   uni.request({
+      //     url: "http://192.168.1.155:8086/WNC/memberPackage/findList",
+      //     data: {},
+      //     header: {
+      //       "Content-Type": "application/x-www-form-urlencoded; charset=utf-8"
+      //     },
+      //     succeee(res) {
+      //       console.log(res);
+      //     }
+      //   });
+      // },
+      // 获取所有会员套餐信息接口
+      getFindList() {
+        this.$http.get('/memberPackage/findList', {}).then(res => console.log(res))
+      },
       // 去会员管理页面
       goVipManage() {
         uni.navigateTo({

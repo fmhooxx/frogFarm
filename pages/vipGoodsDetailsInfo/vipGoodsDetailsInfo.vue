@@ -107,7 +107,7 @@
       },
       // 去确定订单页面
       goConfirmOrder() {
-        if (this.userLogin == '') {
+        if (this.userLogin !== '') {
           uni.navigateTo({
             url: '/pages/loginRegister/loginRegister'
           })

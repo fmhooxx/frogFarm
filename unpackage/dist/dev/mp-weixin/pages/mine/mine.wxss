@@ -67,7 +67,7 @@ page {
   height: 50rpx;
   line-height: 50rpx;
   text-align: center;
-  width: 170rpx;
+  width: 200rpx;
   border: 1rpx solid red;
   border: 1rpx solid #f1f1f1;
   border-radius: 50rpx;
@@ -77,6 +77,9 @@ page {
   color: #ffffff;
   background-color: transparent;
   margin-top: 32rpx;
+}
+.head .head-content .content-left button.data-v-7e5b8247 {
+  border: 1rpx solid transparent;
 }
 .head .head-content .content-right.data-v-7e5b8247 {
   width: 130rpx;
@@ -169,7 +172,7 @@ page {
   -webkit-align-items: center;
           align-items: center;
   height: 100rpx;
-  line-height: 80rpx;
+  line-height: 100rpx;
   padding: 0 30rpx;
 }
 .list .left image.data-v-7e5b8247 {

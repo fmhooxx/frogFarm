@@ -277,22 +277,63 @@ export default {
 	},
 	onLoad() {
 		// 获取首页置顶的商品信息
-		this.getMarket()
+		this.getMarket(),
+		// 查询会员信息接口
+		this.getVip(),
+		// 获取所有会员套餐信息
+		this.getFindList()
 	},
   methods: {
-		// 获取首页置顶的商品信息
-		getMarket() {
-			uni.request({
-				url: 'http://192.168.1.155:8086/WNC/com/getMarket',
-				data: {},
-				header: {
-					'Content-Type': "application/x-www-form-urlencoded; charset=utf-8"
-				},
-				succeee(res) {
-					console.log(res)
-				}
-			})
+		// 获取所有会员套餐信息接口
+		getFindList() {
+			this.$http.get('/memberPackage/findList', {}).then(res => console.log(res))
 		},
+		// getFindList() {
+    //   uni.request({
+    //     url: "http://192.168.1.155:8086/WNC/memberPackage/findList",
+    //     data: {},
+    //     header: {
+    //       "Content-Type": "application/x-www-form-urlencoded; charset=utf-8"
+    //     },
+    //     succeee(res) {
+    //       console.log(res);
+    //     }
+    //   });
+		// },
+		// 获取首页置顶的单品商品信息
+		getMarket() {
+			this.$http.get('/com/getMarket', {}).then(res => console.log(res))
+		},
+		// getMarket() {
+		// 	uni.request({
+		// 		url: 'http://192.168.1.155:8086/WNC/com/getMarket',
+		// 		data: {},
+		// 		header: {
+		// 			'Content-Type': "application/x-www-form-urlencoded; charset=utf-8"
+		// 		},
+		// 		succeee(res) {
+		// 			console.log(res)
+		// 		}
+		// 	})
+		// },
+		// 查询会员信息接口
+		getVip() {
+			this.$http.get('/memberPackage/getVip', { params: { user_id: 1 } }).then(res => console.log(res))
+		},
+		// getVip() {
+		// 	uni.request({
+		// 		url: 'http://192.168.1.155:8086/WNC/memberPackage/getVip',
+		// 		data: {
+		// 			user_id: 1
+		// 		},
+		// 		header: {
+		// 			'Content-Type': "application/x-www-form-urlencoded; charset=utf-8"
+		// 		},
+		// 		succeee(res) {
+		// 			console.log(res)
+		// 		}
+		// 	})
+		// },
     //点击会员管理
     toVipManage() {
       uni.navigateTo({
@@ -301,18 +342,6 @@ export default {
     },
     // 单品商品详情页接口
     getDetails() {
-			uni.request({
-				url: 'http://192.168.1.155:8086/WNC/com/getDetails',
-				data: {
-					com_id: 1
-				},
-				header: {
-					'Content-Type': "application/x-www-form-urlencoded; charset=utf-8"
-				},
-				succeee(res) {
-					console.log(res)
-				}
-			})
       uni.navigateTo({
         url: "/pages/goodsDetailsInfo/goodsDetailsInfo"
       });
